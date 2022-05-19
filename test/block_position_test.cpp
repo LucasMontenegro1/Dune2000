@@ -92,6 +92,19 @@ void test_assign(void)
 	TEST_CHECK(pos1.col() == 20);
 }
 
+void test_less_operator(void)
+{
+	BlockPosition pos1(2, 3);
+	BlockPosition pos2(2, 3);
+	BlockPosition pos3(1, 4);
+	BlockPosition pos4(3, 0);
+
+	TEST_CHECK(!(pos1 < pos2));
+	TEST_CHECK(!(pos2 < pos1));
+	TEST_CHECK(pos3 < pos1);
+	TEST_CHECK(pos1 < pos4);
+}
+
 TEST_LIST = {
 	{"getters", test_getters},
 	{"distance_to_self", test_distance_to_self_is_zero},
@@ -101,5 +114,6 @@ TEST_LIST = {
 	{"not_equals", test_not_equals},
 	{"copy_constructor", test_copy_constructor},
 	{"assign", test_assign},
+	{"less_operator", test_less_operator},
 	{NULL,NULL}
 };

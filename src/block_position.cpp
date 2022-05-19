@@ -34,6 +34,16 @@ bool BlockPosition::operator!=(const BlockPosition &other) const
 	return !(*this == other);
 }
 
+bool BlockPosition::operator<(const BlockPosition &other) const
+{
+	bool less_re = this->pos.real() < other.pos.real();
+
+	bool less_im = this->pos.real() == other.pos.real() and\
+		       this->pos.imag() < other.pos.imag();
+
+	return less_re || less_im;
+}
+
 BlockPosition::BlockPosition(const BlockPosition &other) :
 pos(other.pos){}
 
