@@ -32,6 +32,7 @@
 *.app
 client
 server
+*.test
 
 # IDE Files
 .idea/
