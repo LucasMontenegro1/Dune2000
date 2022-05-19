@@ -72,6 +72,26 @@ void test_not_equals(void)
 	TEST_CHECK(pos1 != pos3);
 }
 
+void test_copy_constructor(void)
+{
+	BlockPosition pos1(3, 7);
+	BlockPosition pos2 = pos1;
+
+	TEST_CHECK(pos2.row() == 3);
+	TEST_CHECK(pos2.col() == 7);
+}
+
+void test_assign(void)
+{
+	BlockPosition pos1(3, 7);
+	BlockPosition pos2(10, 20);
+
+	pos1 = pos2;
+
+	TEST_CHECK(pos1.row() == 10);
+	TEST_CHECK(pos1.col() == 20);
+}
+
 TEST_LIST = {
 	{"getters", test_getters},
 	{"distance_to_self", test_distance_to_self_is_zero},
@@ -79,5 +99,7 @@ TEST_LIST = {
 	{"extreme_distance", test_extreme_distance},
 	{"equals", test_equals},
 	{"not_equals", test_not_equals},
+	{"copy_constructor", test_copy_constructor},
+	{"assign", test_assign},
 	{NULL,NULL}
 };

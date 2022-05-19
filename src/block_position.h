@@ -28,6 +28,9 @@ class BlockPosition {
 	bool operator==(const BlockPosition& other) const;
 	bool operator!=(const BlockPosition& other) const;
 
+	BlockPosition(const BlockPosition& other);
+	BlockPosition& operator=(const BlockPosition& other);
+
 	~BlockPosition();
 };
 

@@ -34,4 +34,16 @@ bool BlockPosition::operator!=(const BlockPosition &other) const
 	return !(*this == other);
 }
 
+BlockPosition::BlockPosition(const BlockPosition &other) :
+pos(other.pos){}
+
+BlockPosition& BlockPosition::operator=(const BlockPosition &other)
+{
+	if (this == &other)
+		return *this;
+
+	this->pos = other.pos;
+	return *this;
+}
+
 BlockPosition::~BlockPosition() = default;
