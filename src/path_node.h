@@ -15,7 +15,8 @@ class PathNode {
 	bool origin;
 
 	public:
-	PathNode(BlockPosition pos_, BlockPosition previous_, double g_cost, BlockPosition dst);
+	PathNode(BlockPosition pos_, BlockPosition prev_pos, double g_cost, BlockPosition dst);
+	PathNode(BlockPosition pos_, PathNode prev_node, BlockPosition dst);
 
 	void set_as_origin();
 

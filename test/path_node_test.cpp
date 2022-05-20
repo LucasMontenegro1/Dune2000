@@ -12,14 +12,17 @@ void test_creation_and_getters(void)
 	BlockPosition prev(3, 6);
 	BlockPosition dst(3, 11);
 
-	PathNode node(pos, prev, 0, dst);
+	PathNode node1(pos, prev, 0, dst);
+	PathNode node2(prev, node1, dst);
 
-	TEST_CHECK(node.get_pos() == pos);
-	TEST_CHECK(node.get_previous() == prev);
-	TEST_CHECK(!node.is_origin());
+	TEST_CHECK(node1.get_pos() == pos);
+	TEST_CHECK(node1.get_previous() == prev);
+	TEST_CHECK(!node1.is_origin());
+	TEST_CHECK(node2.get_pos() == prev);
+	TEST_CHECK(node2.get_previous() == pos);
 
-	node.set_as_origin();
-	TEST_CHECK(node.is_origin());
+	node1.set_as_origin();
+	TEST_CHECK(node1.is_origin());
 }
 
 void test_operator_less(void)

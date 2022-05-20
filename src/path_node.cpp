@@ -4,10 +4,17 @@
 
 #include "./path_node.h"
 
-PathNode::PathNode(BlockPosition pos_, BlockPosition previous_, double g_cost_, BlockPosition dst) :
+PathNode::PathNode(BlockPosition pos_, BlockPosition prev_pos, double g_cost_, BlockPosition dst) :
 pos(pos_),
-previous(previous_),
+previous(prev_pos),
 g_cost(g_cost_),
+h_cost(pos.distance_to(dst)),
+origin(false){}
+
+PathNode::PathNode(BlockPosition pos_, PathNode prev_node, BlockPosition dst) :
+pos(pos_),
+previous(prev_node.get_pos()),
+g_cost(prev_node.g_cost + pos.distance_to(previous)),
 h_cost(pos.distance_to(dst)),
 origin(false){}
 
