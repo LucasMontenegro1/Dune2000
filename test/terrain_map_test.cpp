@@ -1,0 +1,88 @@
+//
+// Created by ignat on 21/05/22.
+//
+
+#include "./acutest.h"
+#include "../src/terrain_map.h"
+#include "../src/fremen_movility.h"
+
+void test_at(void)
+{
+	TerrainMap map(20, 22);
+
+	TEST_CHECK(map.at(BlockPosition(0, 0)) == sand);
+	TEST_CHECK(map.at(BlockPosition(19, 21)) == sand);
+	TEST_EXCEPTION(map.at(BlockPosition(20, 0)), std::out_of_range);
+	TEST_EXCEPTION(map.at(BlockPosition(0, 22)), std::out_of_range);
+	TEST_EXCEPTION(map.at(BlockPosition(30, 30)), std::out_of_range);
+}
+
+void test_invalid_org_dst(void)
+{
+	TerrainMap map(4, 5);
+
+	BlockPosition invalid_pos(5, 6);
+	BlockPosition pos(0, 0);
+	FremenMovility mov;
+
+	TEST_EXCEPTION(map.get_path(invalid_pos, pos, &mov), std::out_of_range);
+	TEST_EXCEPTION(map.get_path(pos, invalid_pos, &mov), std::out_of_range);
+}
+
+void test_path_to_self(void)
+{
+	TerrainMap map(4, 5);
+	BlockPosition pos(3, 4);
+	FremenMovility mov;
+
+	std::list<BlockPosition> path = map.get_path(pos, pos, &mov);
+
+	TEST_CHECK(path.size() == 1);
+	TEST_CHECK(pos == path.front());
+	TEST_CHECK(pos == path.back());
+}
+
+void test_straight_path_on_x(void)
+{
+	TerrainMap map(4, 5);
+	BlockPosition org(3, 0);
+	BlockPosition dst(3, 2);
+	FremenMovility mov;
+
+	std::list<BlockPosition> path = map.get_path(org, dst, &mov);
+	auto it = path.cbegin();
+
+	TEST_CHECK(path.size() == 3);
+	TEST_CHECK(*it == org);
+	++it;
+	TEST_CHECK(*it == BlockPosition(3, 1));
+	++it;
+	TEST_CHECK(*it == dst);
+}
+
+void test_diagonal_path(void)
+{
+	TerrainMap map(4, 5);
+	BlockPosition org(3, 0);
+	BlockPosition dst(1, 2);
+	FremenMovility mov;
+
+	std::list<BlockPosition> path = map.get_path(org, dst, &mov);
+	auto it = path.cbegin();
+
+	TEST_CHECK(path.size() == 3);
+	TEST_CHECK(*it == org);
+	++it;
+	TEST_CHECK(*it == BlockPosition(2, 1));
+	++it;
+	TEST_CHECK(*it == dst);
+}
+
+TEST_LIST = {
+	{"at_method", test_at},
+	{"invalid_positions", test_invalid_org_dst},
+	{"path_to_self", test_path_to_self},
+	{"straight_path_on_x", test_straight_path_on_x},
+	{"diagonal_path", test_diagonal_path},
+	{NULL, NULL}
+};

@@ -21,6 +21,9 @@ TerrainMap::TerrainMap(unsigned int rows_, unsigned int cols_)
 	}
 }
 
+/*
+ * Ver algoritmo A*
+ */
 std::list<BlockPosition>
 TerrainMap::get_path(BlockPosition org, BlockPosition dst, const UnitMovility *mov) const
 {
@@ -127,15 +130,16 @@ std::list<BlockPosition>
 TerrainMap::build_path(const std::map<BlockPosition, PathNode> &visited, BlockPosition dst) const
 {
 	std::list<BlockPosition> path;
-	auto const &it = visited.find(dst);
-	PathNode node = it->second;
-	path.push_front(node.get_pos());
+	BlockPosition prev_pos(dst);
+	bool origin = false;
 
-	while (!node.is_origin()) {
-		it = visited(node.get_previous());
-		node = it->second;
+	do {
+		auto const &it = visited.find(prev_pos);
+		PathNode node = it->second;
+		origin = node.is_origin();
 		path.push_front(node.get_pos());
-	}
+		prev_pos = node.get_previous();
+	} while (!origin);
 
 	return path;
 }

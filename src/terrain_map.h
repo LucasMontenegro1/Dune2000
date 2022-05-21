@@ -39,7 +39,7 @@ class TerrainMap {
 	bool already_visited(BlockPosition pos, const std::map<BlockPosition, PathNode> &visited) const;
 
 	std::list<BlockPosition>
-	get_neighbours(BlockPosition pos, const UnitMovility *mov) const
+	get_neighbours(BlockPosition pos, const UnitMovility *mov) const;
 
 	std::list<BlockPosition>
 	build_path(const std::map<BlockPosition, PathNode> &visited, BlockPosition dst) const;
