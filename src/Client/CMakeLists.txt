@@ -4,7 +4,7 @@ project(Client)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 
-add_executable(Client main.cpp Client.cpp Client.h mainwindow.cpp mainwindow.ui sockets.cpp SocketException.cpp)
+add_executable(Client main.cpp Client.cpp firstwindow.cpp ui_firstwindow.h sockets.cpp SocketException.cpp)
 
 find_package(Qt5 COMPONENTS
         Core

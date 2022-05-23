@@ -2,14 +2,14 @@
 #include <QApplication>
 #include <QErrorMessage>
 #include "Client.h"
-#include "mainwindow.h"
+#include "firstwindow.h"
 #include "SocketException.h"
 
 int main(int argc, char* argv[]) {
     QApplication a(argc, argv);
     std::string host;
     std::string port;
-    MainWindow w(host, port);
+    FIrstWindow w(host, port);
     w.show();
     a.exec();
 
@@ -22,6 +22,7 @@ int main(int argc, char* argv[]) {
         QErrorMessage msg;
         msg.showMessage("CONNECTION ERROR");
         msg.exec();
+        return 1;
     }
     return 0;
 }

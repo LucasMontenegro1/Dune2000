@@ -73,9 +73,9 @@ build CMakeFiles/Client.dir/Client.cpp.o: CXX_COMPILER__Client_Debug /home/lucas
   OBJECT_DIR = CMakeFiles/Client.dir
   OBJECT_FILE_DIR = CMakeFiles/Client.dir
 
-build CMakeFiles/Client.dir/mainwindow.cpp.o: CXX_COMPILER__Client_Debug /home/lucas/Desktop/Taller$ I/Taller$ -$ tp$ grupal/Dune2000/src/Client/mainwindow.cpp || cmake_object_order_depends_target_Client
+build CMakeFiles/Client.dir/firstwindow.cpp.o: CXX_COMPILER__Client_Debug /home/lucas/Desktop/Taller$ I/Taller$ -$ tp$ grupal/Dune2000/src/Client/firstwindow.cpp || cmake_object_order_depends_target_Client
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/Client.dir/mainwindow.cpp.o.d
+  DEP_FILE = CMakeFiles/Client.dir/firstwindow.cpp.o.d
   FLAGS = -g -fPIC -std=gnu++17
   INCLUDES = -I"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/include" -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtMultimedia -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork
   OBJECT_DIR = CMakeFiles/Client.dir
@@ -105,7 +105,7 @@ build CMakeFiles/Client.dir/SocketException.cpp.o: CXX_COMPILER__Client_Debug /h
 #############################################
 # Link the executable Client
 
-build Client: CXX_EXECUTABLE_LINKER__Client_Debug CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o CMakeFiles/Client.dir/main.cpp.o CMakeFiles/Client.dir/Client.cpp.o CMakeFiles/Client.dir/mainwindow.cpp.o CMakeFiles/Client.dir/sockets.cpp.o CMakeFiles/Client.dir/SocketException.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8 || Client_autogen
+build Client: CXX_EXECUTABLE_LINKER__Client_Debug CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o CMakeFiles/Client.dir/main.cpp.o CMakeFiles/Client.dir/Client.cpp.o CMakeFiles/Client.dir/firstwindow.cpp.o CMakeFiles/Client.dir/sockets.cpp.o CMakeFiles/Client.dir/SocketException.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8 || Client_autogen
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8
   OBJECT_DIR = CMakeFiles/Client.dir
