@@ -70,6 +70,19 @@ BlockTerrain TerrainMap::at(BlockPosition pos) const
 	return this->map[pos.row()][pos.col()];
 }
 
+BlockTerrain TerrainMap::at(unsigned int row, unsigned int col) const
+{
+	return this->at(BlockPosition(row, col));
+}
+
+void TerrainMap::change_terrain(BlockPosition pos, BlockTerrain terrain)
+{
+	if (this->invalid_position(pos))
+		throw std::out_of_range("Invalid position\n");
+
+	this->map[pos.row()][pos.col()] = terrain;
+}
+
 TerrainMap::~TerrainMap()
 {
 	for (unsigned int i = 0; i < this->rows; i++)

@@ -78,11 +78,26 @@ void test_diagonal_path(void)
 	TEST_CHECK(*it == dst);
 }
 
+void test_change_terrain(void)
+{
+	TerrainMap map(4, 6);
+
+	map.change_terrain(BlockPosition(0, 0), cliffs);
+	map.change_terrain(BlockPosition(1, 1), dunes);
+	map.change_terrain(BlockPosition(2, 2), sand);
+
+	TEST_CHECK(map.at(0, 0) == cliffs);
+	TEST_CHECK(map.at(1, 1) == dunes);
+	TEST_CHECK(map.at(2, 2) == sand);
+	TEST_EXCEPTION(map.change_terrain(BlockPosition(10, 10), cliffs), std::out_of_range);
+}
+
 TEST_LIST = {
 	{"at_method", test_at},
 	{"invalid_positions", test_invalid_org_dst},
 	{"path_to_self", test_path_to_self},
 	{"straight_path_on_x", test_straight_path_on_x},
 	{"diagonal_path", test_diagonal_path},
+	{"change_terrain", test_change_terrain},
 	{NULL, NULL}
 };

@@ -29,6 +29,9 @@ class TerrainMap {
 	get_path(BlockPosition origin, BlockPosition destination, const UnitMobility *mob) const;
 
 	BlockTerrain at(BlockPosition pos) const;
+	BlockTerrain at(unsigned int row, unsigned int col) const;
+
+	void change_terrain(BlockPosition pos, BlockTerrain terrain);
 
 	~TerrainMap();
 
