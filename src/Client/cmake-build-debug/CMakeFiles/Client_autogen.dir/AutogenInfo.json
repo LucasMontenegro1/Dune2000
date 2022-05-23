@@ -100,15 +100,21 @@
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/mainwindow.h",
+			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/firstwindow.h",
 			"Mu",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"EWIEGA46WW/moc_firstwindow.cpp",
 			null
 		],
 		[
 			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/sockets.h",
 			"Mu",
 			"EWIEGA46WW/moc_sockets.cpp",
+			null
+		],
+		[
+			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/ui_firstwindow.h",
+			"Mu",
+			"EWIEGA46WW/moc_ui_firstwindow.cpp",
 			null
 		]
 	],
@@ -182,12 +188,12 @@
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/main.cpp",
+			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/firstwindow.cpp",
 			"Mu",
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/mainwindow.cpp",
+			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/main.cpp",
 			"Mu",
 			null
 		],

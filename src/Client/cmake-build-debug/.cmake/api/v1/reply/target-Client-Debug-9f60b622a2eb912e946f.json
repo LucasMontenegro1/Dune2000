@@ -131,9 +131,9 @@
 				0,
 				1,
 				2,
-				4,
-				6,
-				7
+				3,
+				5,
+				6
 			]
 		}
 	],
@@ -200,23 +200,16 @@
 				0,
 				1,
 				2,
-				4,
-				6,
-				7
+				3,
+				5,
+				6
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				3
-			]
-		},
-		{
-			"name" : "",
-			"sourceIndexes" : 
-			[
-				5
+				4
 			]
 		}
 	],
@@ -243,19 +236,14 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Client.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "mainwindow.cpp",
+			"path" : "firstwindow.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "mainwindow.ui",
-			"sourceGroupIndex" : 2
+			"path" : "ui_firstwindow.h",
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,

@@ -1,13 +1,12 @@
-#include "mainwindow.h"
-#include "./ui_mainwindow.h"
-#include <QtMultimedia/QMediaPlayer>
+#include "firstwindow.h"
+#include "./ui_firstwindow.h"
 #include <QErrorMessage>
 
-MainWindow::MainWindow(std::string& host, std::string& port, QWidget *parent)
+FIrstWindow::FIrstWindow(std::string& host, std::string& port, QWidget *parent)
         : QMainWindow(parent)
         ,host(host)
         ,port(port)
-        , ui(new Ui::MainWindow)
+        , ui(new Ui::FIrstWindow)
         , playing(true)
 {
     ui->setupUi(this);
@@ -19,55 +18,31 @@ MainWindow::MainWindow(std::string& host, std::string& port, QWidget *parent)
     ui->lineEdit_2->setStyleSheet("QLineEdit {background-color: white;}");
 }
 
-MainWindow::~MainWindow()
+FIrstWindow::~FIrstWindow()
 {
     delete ui;
 }
 
 
-void MainWindow::on_lineEdit_cursorPositionChanged(int arg1, int arg2)
+void FIrstWindow::on_FIrstWindow_iconSizeChanged(const QSize &iconSize)
 {
 
 }
 
 
-void MainWindow::on_graphicsView_rubberBandChanged(const QRect &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint)
+void FIrstWindow::on_checkBox_stateChanged(int arg1)
 {
-
-}
-
-void MainWindow::on_Background_linkActivated(const QString &link)
-{
-
-}
-
-
-void MainWindow::on_radioButton_clicked()
-{
-    music->pause();
-}
-
-
-void MainWindow::on_pushButton_clicked(bool checked)
-{
-    if(playing){
+    if(arg1){
         music->pause();
         playing = false;
     }else{
         music->play();
         playing = true;
     }
-
 }
 
 
-void MainWindow::on_frame_customContextMenuRequested(const QPoint &pos)
-{
-
-}
-
-
-void MainWindow::on_StartButton_clicked()
+void FIrstWindow::on_pushButton_clicked()
 {
     QString first(ui->lineEdit->text());
     QString second(ui->lineEdit_2->text());
@@ -80,6 +55,5 @@ void MainWindow::on_StartButton_clicked()
         port = second.toStdString();
         this->close();
     }
-
 }
 
