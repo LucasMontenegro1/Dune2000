@@ -92,6 +92,39 @@ void test_change_terrain(void)
 	TEST_EXCEPTION(map.change_terrain(BlockPosition(10, 10), cliffs), std::out_of_range);
 }
 
+void test_cannot_traverse_destination_block(void)
+{
+	TerrainMap map(4, 5);
+	BlockPosition org(3, 0);
+	BlockPosition dst(1, 2);
+	FremenMobility mob;
+	map.change_terrain(dst, cliffs);
+
+	std::list<BlockPosition> path = map.get_path(org, dst, &mob);
+
+	TEST_CHECK(path.empty());
+}
+
+void test_unreachable_destination(void)
+{
+	TerrainMap map(4, 5);
+	BlockPosition org(3, 0);
+	BlockPosition dst(1, 2);
+	FremenMobility mob;
+	map.change_terrain(BlockPosition(0, 1), cliffs);
+	//map.change_terrain(BlockPosition(0, 2), cliffs);
+	map.change_terrain(BlockPosition(0, 3), cliffs);
+	map.change_terrain(BlockPosition(1, 3), cliffs);
+	map.change_terrain(BlockPosition(2, 3), cliffs);
+	map.change_terrain(BlockPosition(2, 2), cliffs);
+	map.change_terrain(BlockPosition(2, 1), cliffs);
+	map.change_terrain(BlockPosition(1, 1), cliffs);
+
+	std::list<BlockPosition> path = map.get_path(org, dst, &mob);
+
+	TEST_CHECK(path.empty());
+}
+
 TEST_LIST = {
 	{"at_method", test_at},
 	{"invalid_positions", test_invalid_org_dst},
@@ -99,5 +132,7 @@ TEST_LIST = {
 	{"straight_path_on_x", test_straight_path_on_x},
 	{"diagonal_path", test_diagonal_path},
 	{"change_terrain", test_change_terrain},
+	{"untraversable_dst", test_cannot_traverse_destination_block},
+	{"unreachable_destination", test_unreachable_destination},
 	{NULL, NULL}
 };
