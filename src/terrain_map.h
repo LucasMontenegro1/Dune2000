@@ -7,7 +7,7 @@
 
 #include "./block_terrain.h"
 #include "./block_position.h"
-#include "./unit_movility.h"
+#include "./unit_mobility.h"
 #include "./path_node.h"
 #include <list>
 #include <map>
@@ -26,7 +26,7 @@ class TerrainMap {
 	 * Si la lista esta vacia es que no encontro ningun camino
 	 */
 	std::list<BlockPosition>
-	get_path(BlockPosition origin, BlockPosition destination, const UnitMovility *mov) const;
+	get_path(BlockPosition origin, BlockPosition destination, const UnitMobility *mob) const;
 
 	BlockTerrain at(BlockPosition pos) const;
 
@@ -39,7 +39,7 @@ class TerrainMap {
 	bool already_visited(BlockPosition pos, const std::map<BlockPosition, PathNode> &visited) const;
 
 	std::list<BlockPosition>
-	get_neighbours(BlockPosition pos, const UnitMovility *mov) const;
+	get_neighbours(BlockPosition pos, const UnitMobility *mob) const;
 
 	std::list<BlockPosition>
 	build_path(const std::map<BlockPosition, PathNode> &visited, BlockPosition dst) const;
