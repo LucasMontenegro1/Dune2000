@@ -24,7 +24,7 @@ TerrainMap::TerrainMap(unsigned int rows_, unsigned int cols_)
 /*
  * Ver algoritmo A*
  */
-std::list<BlockPosition>
+std::vector<BlockPosition>
 TerrainMap::get_path(BlockPosition org, BlockPosition dst, const UnitMobility *mob) const
 {
 	this->validate_positions(org, dst);
@@ -59,7 +59,7 @@ TerrainMap::get_path(BlockPosition org, BlockPosition dst, const UnitMobility *m
 	if (found_path)
 		return this->build_path(visited, dst);
 	else
-		return std::list<BlockPosition>();
+		return std::vector<BlockPosition>();
 }
 
 BlockTerrain TerrainMap::at(BlockPosition pos) const
@@ -139,10 +139,10 @@ TerrainMap::get_neighbours(BlockPosition pos, const UnitMobility *mob) const
 	return neighbours;
 }
 
-std::list<BlockPosition>
+std::vector<BlockPosition>
 TerrainMap::build_path(const std::map<BlockPosition, PathNode> &visited, BlockPosition dst) const
 {
-	std::list<BlockPosition> path;
+	std::vector<BlockPosition> path;
 	BlockPosition prev_pos(dst);
 	bool origin = false;
 
@@ -150,9 +150,10 @@ TerrainMap::build_path(const std::map<BlockPosition, PathNode> &visited, BlockPo
 		auto const &it = visited.find(prev_pos);
 		PathNode node = it->second;
 		origin = node.is_origin();
-		path.push_front(node.get_pos());
+		path.push_back(node.get_pos());
 		prev_pos = node.get_previous();
 	} while (!origin);
 
+	path.shrink_to_fit();
 	return path;
 }

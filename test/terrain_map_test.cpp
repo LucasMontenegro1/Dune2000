@@ -35,7 +35,7 @@ void test_path_to_self(void)
 	BlockPosition pos(3, 4);
 	FremenMobility mob;
 
-	std::list<BlockPosition> path = map.get_path(pos, pos, &mob);
+	std::vector<BlockPosition> path = map.get_path(pos, pos, &mob);
 
 	TEST_CHECK(path.size() == 1);
 	TEST_CHECK(pos == path.front());
@@ -49,15 +49,12 @@ void test_straight_path_on_x(void)
 	BlockPosition dst(3, 2);
 	FremenMobility mob;
 
-	std::list<BlockPosition> path = map.get_path(org, dst, &mob);
-	auto it = path.cbegin();
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.size() == 3);
-	TEST_CHECK(*it == org);
-	++it;
-	TEST_CHECK(*it == BlockPosition(3, 1));
-	++it;
-	TEST_CHECK(*it == dst);
+	TEST_CHECK(path.at(0) == dst);
+	TEST_CHECK(path.at(1) == BlockPosition(3, 1));
+	TEST_CHECK(path.at(2) == org);
 }
 
 void test_diagonal_path(void)
@@ -67,15 +64,12 @@ void test_diagonal_path(void)
 	BlockPosition dst(1, 2);
 	FremenMobility mob;
 
-	std::list<BlockPosition> path = map.get_path(org, dst, &mob);
-	auto it = path.cbegin();
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.size() == 3);
-	TEST_CHECK(*it == org);
-	++it;
-	TEST_CHECK(*it == BlockPosition(2, 1));
-	++it;
-	TEST_CHECK(*it == dst);
+	TEST_CHECK(path.at(0) == dst);
+	TEST_CHECK(path.at(1) == BlockPosition(2, 1));
+	TEST_CHECK(path.at(2) == org);
 }
 
 void test_change_terrain(void)
@@ -100,7 +94,7 @@ void test_cannot_traverse_destination_block(void)
 	FremenMobility mob;
 	map.change_terrain(dst, cliffs);
 
-	std::list<BlockPosition> path = map.get_path(org, dst, &mob);
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.empty());
 }
@@ -121,7 +115,7 @@ void test_unreachable_destination(void)
 	map.change_terrain(BlockPosition(2, 1), cliffs);
 	map.change_terrain(BlockPosition(1, 1), cliffs);
 
-	std::list<BlockPosition> path = map.get_path(org, dst, &mob);
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.empty());
 }
@@ -140,19 +134,14 @@ void test_path_avoiding_obstacles(void)
 	map.change_terrain(BlockPosition(2, 1), cliffs);
 	map.change_terrain(BlockPosition(1, 1), cliffs);
 
-	std::list<BlockPosition> path = map.get_path(org, dst, &mob);
-	auto it = path.cbegin();
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.size() == 5);
-	TEST_CHECK(*it == org);
-	++it;
-	TEST_CHECK(*it == BlockPosition(3, 1));
-	++it;
-	TEST_CHECK(*it == BlockPosition(3, 2));
-	++it;
-	TEST_CHECK(*it == BlockPosition(2, 3));
-	++it;
-	TEST_CHECK(*it == BlockPosition(1, 2));
+	TEST_CHECK(path.at(4) == org);
+	TEST_CHECK(path.at(3) == BlockPosition(3, 1));
+	TEST_CHECK(path.at(2) == BlockPosition(3, 2));
+	TEST_CHECK(path.at(1) == BlockPosition(2, 3));
+	TEST_CHECK(path.at(0) == dst);
 }
 
 TEST_LIST = {

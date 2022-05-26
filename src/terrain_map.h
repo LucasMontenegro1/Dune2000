@@ -10,6 +10,7 @@
 #include "./unit_mobility.h"
 #include "./path_node.h"
 #include <list>
+#include <vector>
 #include <map>
 
 class TerrainMap {
@@ -25,7 +26,7 @@ class TerrainMap {
 	 * mediante el algoritmo A*
 	 * Si la lista esta vacia es que no encontro ningun camino
 	 */
-	std::list<BlockPosition>
+	std::vector<BlockPosition>
 	get_path(BlockPosition origin, BlockPosition destination, const UnitMobility *mob) const;
 
 	BlockTerrain at(BlockPosition pos) const;
@@ -44,7 +45,7 @@ class TerrainMap {
 	std::list<BlockPosition>
 	get_neighbours(BlockPosition pos, const UnitMobility *mob) const;
 
-	std::list<BlockPosition>
+	std::vector<BlockPosition>
 	build_path(const std::map<BlockPosition, PathNode> &visited, BlockPosition dst) const;
 };
 
