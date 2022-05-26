@@ -3,8 +3,8 @@
 //
 
 #include "./acutest.h"
-#include "../src/terrain_map.h"
-#include "../src/fremen_mobility.h"
+#include "../src/Model/terrain_map.h"
+#include "../src/Model/fremen_mobility.h"
 
 void test_at(void)
 {
