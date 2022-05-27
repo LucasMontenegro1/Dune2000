@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 3.22)
 project(Client)
 
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 
-add_executable(Client main.cpp Client.cpp firstwindow.cpp ui_firstwindow.h sockets.cpp SocketException.cpp)
+add_executable(Client main.cpp Client.cpp firstwindow.cpp ui_firstwindow.h sockets.cpp SocketException.cpp loginscreen.cpp ui_loginscreen.h)
 
+find_package(yaml-cpp REQUIRED)
 find_package(Qt5 COMPONENTS
         Core
         Gui
@@ -15,6 +17,7 @@ find_package(Qt5 COMPONENTS
 find_package(Qt5Multimedia REQUIRED )
 find_package(Qt5MultimediaWidgets REQUIRED)
 
+target_link_libraries(Client yaml-cpp)
 target_link_libraries(Client
         Qt5::Core
         Qt5::Gui

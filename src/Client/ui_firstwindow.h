@@ -19,6 +19,8 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <QDir>
+#include <iostream>
 
 QT_BEGIN_NAMESPACE
 
@@ -42,6 +44,8 @@ public:
 
     void setupUi(QMainWindow *FIrstWindow)
     {
+        QString path = QDir::currentPath();
+        std::cout<<path.toStdString();
         if (FIrstWindow->objectName().isEmpty())
             FIrstWindow->setObjectName(QString::fromUtf8("FIrstWindow"));
         FIrstWindow->resize(900, 600);
@@ -50,7 +54,7 @@ public:
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(299, 0, 601, 600));
-        label->setPixmap(QPixmap(QString::fromUtf8("/home/lucas/Desktop/Webp.net-resizeimage.jpg")));
+        label->setPixmap(QPixmap(QString::fromUtf8("/home/lucas/Desktop/Taller I/Dune2000/src/Client/resources/Webp.net-resizeimage.jpg")));
         frame = new QFrame(centralwidget);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setGeometry(QRect(0, 0, 301, 600));
@@ -60,7 +64,7 @@ public:
         label_2 = new QLabel(frame);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(0, 20, 301, 140));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("/home/lucas/Desktop/0c2f66f43752d47fb49abeea0badf4.png")));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("/home/lucas/Desktop/Taller I/Dune2000/src/Client/resources/0c2f66f43752d47fb49abeea0badf4.png")));
         verticalLayoutWidget = new QWidget(frame);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(10, 250, 271, 61));
@@ -110,11 +114,11 @@ public:
 "}\n"
 "\n"
 "QCheckBox::indicator:unchecked{\n"
-"	image: url(\"/home/lucas/Desktop/switch.png\");\n"
+"	image: url(\"/home/lucas/Desktop/Taller I/Dune2000/src/Client/resources/switch.png\");\n"
 "}\n"
 "\n"
 "QCheckBox::indicator:checked{\n"
-"	image: url(\"/home/lucas/Desktop/off-button.png\");\n"
+"	image: url(\"/home/lucas/Desktop/Taller I/Dune2000/src/Client/resources/off-button.png\");\n"
 "}"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));

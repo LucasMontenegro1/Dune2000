@@ -1,56 +1,112 @@
 # ninja log v5
-4	984	1653325001693589056	CMakeFiles/Client.dir/main.cpp.o	d53a67fe316621ea
-4	936	1653325001645589015	CMakeFiles/Client.dir/Client.cpp.o	128f274c043d2e05
-7	1140	1653168402141201837	CMakeFiles/Client.dir/mainwindow.cpp.o	5a94383c384939cd
-92	1061	1653325173885760221	CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o	525dfa8f5c1ee78
-1143	1447	1653325174269760657	Client	dd927d02f8e85284
-1	49	1653325174529760951	build.ninja	54fbf980f9a99f4e
-1	92	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	8d24452f7978b16d
-4	302	1653169182602500714	CMakeFiles/Client.dir/sockets.cpp.o	37f048acb08686d5
-1	92	0	CMakeFiles/Client_autogen	8d24452f7978b16d
-1	92	0	Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-92	1143	1653325173965760312	CMakeFiles/Client.dir/firstwindow.cpp.o	ce792aff0fa2bf57
-1	92	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-4	256	1653169182554503207	CMakeFiles/Client.dir/SocketException.cpp.o	fa6da3f15d2659b0
-1	5	0	CMakeFiles/Client_autogen	8d24452f7978b16d
-1	5	0	Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-1	5	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	8d24452f7978b16d
-1	5	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-5	1049	1653325209133800967	CMakeFiles/Client.dir/firstwindow.cpp.o	ce792aff0fa2bf57
-1049	1353	1653325209437801325	Client	dd927d02f8e85284
-2	4	0	CMakeFiles/Client_autogen	8d24452f7978b16d
-2	4	0	Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-2	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	8d24452f7978b16d
-2	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-4	1037	1653325222189816466	CMakeFiles/Client.dir/firstwindow.cpp.o	ce792aff0fa2bf57
-1037	1340	1653325222489816824	Client	dd927d02f8e85284
-1	4	0	CMakeFiles/Client_autogen	8d24452f7978b16d
-1	4	0	Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-1	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	8d24452f7978b16d
-1	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-4	1063	1653325264105867673	CMakeFiles/Client.dir/firstwindow.cpp.o	ce792aff0fa2bf57
-1063	1380	1653325264421868067	Client	dd927d02f8e85284
-1	4	0	CMakeFiles/Client_autogen	8d24452f7978b16d
-1	4	0	Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-1	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	8d24452f7978b16d
-1	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-2	5	0	CMakeFiles/Client_autogen	8d24452f7978b16d
-2	5	0	Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-2	5	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	8d24452f7978b16d
-2	5	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-5	1054	1653325286869896366	CMakeFiles/Client.dir/firstwindow.cpp.o	ce792aff0fa2bf57
-1055	1364	1653325287177896758	Client	dd927d02f8e85284
-1	3	0	CMakeFiles/Client_autogen	8d24452f7978b16d
-1	3	0	Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-1	3	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	8d24452f7978b16d
-1	3	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-3	1103	1653325306181921177	CMakeFiles/Client.dir/firstwindow.cpp.o	ce792aff0fa2bf57
-1103	1418	1653325306493921582	Client	dd927d02f8e85284
-1	4	0	CMakeFiles/Client_autogen	8d24452f7978b16d
-1	4	0	Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-1	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	8d24452f7978b16d
-1	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-1	4	0	CMakeFiles/Client_autogen	8d24452f7978b16d
-1	4	0	Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
-1	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	8d24452f7978b16d
-1	4	0	/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	8d24452f7978b16d
+4129	4861	1653407771377749571	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/scantoken.cpp.o	b99f2f21e21cec0
+1158	1776	1653407768293754762	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/emitterstate.cpp.o	fefb8d8049bcd590
+5	1461	1653509554840596448	CMakeFiles/Client.dir/main.cpp.o	a5f20c05c1a6daaa
+2927	3085	1653407769601752568	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/null.cpp.o	8015f6bfe02b0301
+3122	3739	1653407770257751463	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/parser.cpp.o	7eb631eae92dcb21
+5277	5587	1653407771917748656	yaml-cpp/libyaml-cppd.a	2ba8b4e7a5d275c4
+1776	2155	1653407768657754152	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/exp.cpp.o	e07690cfe4c4d015
+5	1787	1653509157882146339	CMakeFiles/Client.dir/Client.cpp.o	c834f74d9ce85855
+3731	4160	1653407770677750755	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/scanscalar.cpp.o	69536e52dc51a7d3
+291	959	1653407767477756124	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/convert.cpp.o	3b6961e848f3d37b
+648	1158	1653407767677755791	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/emit.cpp.o	e0f48887d9b4d1a2
+1844	2453	1653407768969753631	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/memory.cpp.o	14da722ac3250859
+155	1804	1653503487449100074	CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o	1466bebb87cf629c
+2	291	1653407766809757237	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/binary.cpp.o	ce5518dded49d7af
+1	50	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+2930	3311	1653407769805752225	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/ostream_wrapper.cpp.o	cc03b41a91280856
+62	1511	1653503977595561739	CMakeFiles/Client.dir/loginscreen.cpp.o	cf156dd771a77adc
+3823	5315	1653610719221893440	Client	66e3d63797f2b13b
+1	50	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+1	49	1653503164111959335	build.ninja	54fbf980f9a99f4e
+1595	1967	1653423617990116524	CMakeFiles/Client.dir/sockets.cpp.o	55ea7b3b4a9bf3ba
+4671	5018	1653407771537749299	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/stream.cpp.o	eda3aa13cce5592b
+4861	5222	1653407771713749001	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/tag.cpp.o	fdd2f0ffccaa1bfa
+1	50	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/cmake.verify_globs	f1722f42b7de2688
+2453	3121	1653407769637752507	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/nodeevents.cpp.o	b0cff059cc27553c
+2160	2927	1653407769417752877	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/nodebuilder.cpp.o	15905b39ad191a6e
+3740	4128	1653407770645750809	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/scantag.cpp.o	d94a4fa4200562ed
+5	397	1653407766913757065	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilderadapter.cpp.o	902560d520f7c1b2
+1183	1848	1653407768365754641	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/emitterutils.cpp.o	1e2bb7242c31aff6
+1	50	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+50	3823	1653610717730139652	CMakeFiles/Client.dir/firstwindow.cpp.o	495f80caf9a3347b
+1848	2160	1653407768677754119	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/node.cpp.o	2e34b472268a1e0a
+4526	5277	1653407771793748866	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/singledocparser.cpp.o	d302212c564e163
+960	1570	1653407768085755110	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/emitter.cpp.o	8a716da178a218e6
+397	661	1653407767177756624	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/depthguard.cpp.o	9ee094ae881b3008
+2155	2929	1653407769421752871	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/node_data.cpp.o	78307a18fec2a6da
+3085	3731	1653407770249751477	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/parse.cpp.o	562f31aac93d5084
+3687	4526	1653407771041750140	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/scanner.cpp.o	f1e885592aa78248
+1648	1968	1653423618006116180	CMakeFiles/Client.dir/SocketException.cpp.o	19af04520c82446f
+4160	4671	1653407771189749889	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/simplekey.cpp.o	6c022b1dd25b479
+661	1182	1653407767693755764	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/emitfromevents.cpp.o	d14760e19f207324
+3311	3687	1653407770205751551	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/regex_yaml.cpp.o	c4c3e7f4aae981b
+417	648	1653407767165756644	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/directives.cpp.o	c878c33fac348510
+1	417	1653407766933757031	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilder.cpp.o	422dcd2e5f3e0ac4
+1570	1843	1653407768357754655	yaml-cpp/CMakeFiles/yaml-cpp.dir/src/exceptions.cpp.o	85312977efbce722
+1	5	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+1	5	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+1	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+1	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+5	1348	1653610893887797708	CMakeFiles/Client.dir/firstwindow.cpp.o	495f80caf9a3347b
+1348	1801	1653610894339759901	Client	66e3d63797f2b13b
+1	4	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+4	1450	1653610975507142642	CMakeFiles/Client.dir/main.cpp.o	a5f20c05c1a6daaa
+4	1466	1653610975503141872	CMakeFiles/Client.dir/firstwindow.cpp.o	495f80caf9a3347b
+1467	1922	1653610975979233672	Client	66e3d63797f2b13b
+1	4	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+4	1305	1653611085417186006	CMakeFiles/Client.dir/main.cpp.o	a5f20c05c1a6daaa
+4	1385	1653611085493179912	CMakeFiles/Client.dir/firstwindow.cpp.o	495f80caf9a3347b
+1385	1834	1653611085941143990	Client	66e3d63797f2b13b
+1	4	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+2	5	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+2	5	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+5	1331	1653611508534306836	CMakeFiles/Client.dir/firstwindow.cpp.o	495f80caf9a3347b
+1331	1778	1653611508978318289	Client	66e3d63797f2b13b
+1	5	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+1	5	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+1	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+1	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+5	1486	1653611555991795390	CMakeFiles/Client.dir/firstwindow.cpp.o	495f80caf9a3347b
+1486	1937	1653611556439811684	Client	66e3d63797f2b13b
+1	4	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+2	5	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+2	5	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+5	1332	1653611651007894075	CMakeFiles/Client.dir/firstwindow.cpp.o	495f80caf9a3347b
+1332	1794	1653611651467916401	Client	66e3d63797f2b13b
+2	5	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+2	5	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+5	1466	1653611744452725226	CMakeFiles/Client.dir/firstwindow.cpp.o	495f80caf9a3347b
+5	1470	1653611744456725442	CMakeFiles/Client.dir/loginscreen.cpp.o	cf156dd771a77adc
+1470	1946	1653611744928751035	Client	66e3d63797f2b13b
+2	4	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+2	4	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+2	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+2	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+4	1459	1653611807366870353	CMakeFiles/Client.dir/loginscreen.cpp.o	cf156dd771a77adc
+1459	2054	1653611807986309859	Client	66e3d63797f2b13b
+1	4	0	CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen	499c38c8026bc74c
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp	499c38c8026bc74c
+4	1362	1653611878692592043	CMakeFiles/Client.dir/loginscreen.cpp.o	cf156dd771a77adc
+1362	1819	1653611879144349125	Client	66e3d63797f2b13b

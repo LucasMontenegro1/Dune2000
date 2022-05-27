@@ -25,13 +25,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 7,
+				"line" : 8,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 18,
+				"line" : 20,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 21,
 				"parent" : 0
 			}
 		]
@@ -45,7 +51,7 @@
 					"fragment" : "-g"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"fragment" : "-fPIC"
 				},
 				{
@@ -55,23 +61,23 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "QT_CORE_LIB"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "QT_GUI_LIB"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "QT_MULTIMEDIA_LIB"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "QT_NETWORK_LIB"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "QT_WIDGETS_LIB"
 				}
 			],
@@ -79,40 +85,40 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/include"
+					"path" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/include"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/x86_64-linux-gnu/qt5"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/x86_64-linux-gnu/qt5/QtCore"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/x86_64-linux-gnu/qt5/QtGui"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/x86_64-linux-gnu/qt5/QtMultimedia"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/x86_64-linux-gnu/qt5/QtNetwork"
 				}
@@ -122,7 +128,7 @@
 			{
 				"backtraces" : 
 				[
-					2
+					3
 				],
 				"standard" : "17"
 			},
@@ -133,7 +139,8 @@
 				2,
 				3,
 				5,
-				6
+				6,
+				7
 			]
 		}
 	],
@@ -159,16 +166,21 @@
 			},
 			{
 				"backtrace" : 2,
+				"fragment" : "/usr/local/lib/libyaml-cpp.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 2,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 2,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8",
 				"role" : "libraries"
 			},
@@ -177,7 +189,7 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 2,
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8",
 				"role" : "libraries"
 			}
@@ -202,14 +214,16 @@
 				2,
 				3,
 				5,
-				6
+				6,
+				7
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				4
+				4,
+				8
 			]
 		}
 	],
@@ -256,6 +270,17 @@
 			"compileGroupIndex" : 0,
 			"path" : "SocketException.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "loginscreen.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ui_loginscreen.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

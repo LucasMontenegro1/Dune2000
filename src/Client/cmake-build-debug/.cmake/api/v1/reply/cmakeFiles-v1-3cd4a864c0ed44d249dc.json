@@ -123,6 +123,22 @@
 		},
 		{
 			"isExternal" : true,
+			"path" : "/usr/local/share/cmake/yaml-cpp/yaml-cpp-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/share/cmake/yaml-cpp/yaml-cpp-config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/share/cmake/yaml-cpp/yaml-cpp-targets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/share/cmake/yaml-cpp/yaml-cpp-targets-noconfig.cmake"
+		},
+		{
+			"isExternal" : true,
 			"path" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake"
 		},
 		{
@@ -327,8 +343,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug",
-		"source" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client"
+		"build" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug",
+		"source" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client"
 	},
 	"version" : 
 	{

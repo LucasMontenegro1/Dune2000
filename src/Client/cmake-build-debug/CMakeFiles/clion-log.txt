@@ -1,4 +1,4 @@
-/snap/clion/190/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/190/bin/ninja/linux/ninja -G Ninja -S "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client" -B "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug"
+/snap/clion/190/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/190/bin/ninja/linux/ninja -G Ninja -S "/home/lucas/Desktop/Taller I/Dune2000/src/Client" -B "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug"
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug
+-- Build files have been written to: /home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug

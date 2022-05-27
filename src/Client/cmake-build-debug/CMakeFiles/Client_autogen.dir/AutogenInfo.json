@@ -1,16 +1,16 @@
 {
-	"BUILD_DIR" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen",
-	"CMAKE_BINARY_DIR" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client",
+	"BUILD_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen",
+	"CMAKE_BINARY_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client",
 	"CMAKE_EXECUTABLE" : "/snap/clion/190/bin/cmake/linux/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/CMakeLists.txt",
-		"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake",
+		"/home/lucas/Desktop/Taller I/Dune2000/src/Client/CMakeLists.txt",
+		"/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake",
 		"/snap/clion/190/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake",
-		"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/3.22.3/CMakeCCompiler.cmake",
-		"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake",
+		"/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/3.22.3/CMakeCCompiler.cmake",
+		"/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake",
 		"/snap/clion/190/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake",
 		"/snap/clion/190/bin/cmake/linux/share/cmake-3.22/Modules/CMakeGenericSystem.cmake",
 		"/snap/clion/190/bin/cmake/linux/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake",
@@ -31,6 +31,10 @@
 		"/snap/clion/190/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake",
 		"/snap/clion/190/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake",
 		"/snap/clion/190/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake",
+		"/usr/local/share/cmake/yaml-cpp/yaml-cpp-config-version.cmake",
+		"/usr/local/share/cmake/yaml-cpp/yaml-cpp-config.cmake",
+		"/usr/local/share/cmake/yaml-cpp/yaml-cpp-targets.cmake",
+		"/usr/local/share/cmake/yaml-cpp/yaml-cpp-targets-noconfig.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake",
@@ -82,45 +86,57 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfig.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client",
+	"CMAKE_SOURCE_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/Client.h",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/Client.h",
 			"Mu",
 			"EWIEGA46WW/moc_Client.cpp",
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/SocketException.h",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/SocketException.h",
 			"Mu",
 			"EWIEGA46WW/moc_SocketException.cpp",
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/firstwindow.h",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/firstwindow.h",
 			"Mu",
 			"EWIEGA46WW/moc_firstwindow.cpp",
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/sockets.h",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/loginscreen.h",
+			"Mu",
+			"EWIEGA46WW/moc_loginscreen.cpp",
+			null
+		],
+		[
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/sockets.h",
 			"Mu",
 			"EWIEGA46WW/moc_sockets.cpp",
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/ui_firstwindow.h",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/ui_firstwindow.h",
 			"Mu",
 			"EWIEGA46WW/moc_ui_firstwindow.cpp",
+			null
+		],
+		[
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/ui_loginscreen.h",
+			"Mu",
+			"EWIEGA46WW/moc_ui_loginscreen.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"QT_CORE_LIB",
@@ -145,11 +161,11 @@
 		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
 		"/usr/include/x86_64-linux-gnu/qt5/QtMultimedia",
 		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+		"/usr/local/include",
 		"/usr/include/c++/9",
 		"/usr/include/x86_64-linux-gnu/c++/9",
 		"/usr/include/c++/9/backward",
 		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
-		"/usr/local/include",
 		"/usr/include/x86_64-linux-gnu",
 		"/usr/include"
 	],
@@ -164,41 +180,46 @@
 		"-c",
 		"/snap/clion/190/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/Client_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 6,
-	"PARSE_CACHE_FILE" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen.dir/ParseCache.txt",
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
 	"QT_UIC_EXECUTABLE" : "",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 12,
-	"SETTINGS_FILE" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/Client.cpp",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/Client.cpp",
 			"Mu",
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/SocketException.cpp",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/SocketException.cpp",
 			"Mu",
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/firstwindow.cpp",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/firstwindow.cpp",
 			"Mu",
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/main.cpp",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/loginscreen.cpp",
 			"Mu",
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/sockets.cpp",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/main.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/sockets.cpp",
 			"Mu",
 			null
 		]

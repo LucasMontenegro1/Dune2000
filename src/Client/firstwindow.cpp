@@ -11,7 +11,7 @@ FIrstWindow::FIrstWindow(std::string& host, std::string& port, QWidget *parent)
 {
     ui->setupUi(this);
     this->music = new QMediaPlayer(this);
-    music->setMedia(QUrl::fromLocalFile("/home/lucas/Desktop/Dune 2000 - Attack on Arrakis.mp3"));
+    music->setMedia(QUrl::fromLocalFile("/home/lucas/Desktop/Taller I/Dune2000/src/Client/resources/Dune 2000 - Attack on Arrakis.mp3"));
     music->setVolume(50);
     music->play();
     ui->lineEdit->setStyleSheet("QLineEdit {background-color: white;}");
@@ -53,6 +53,7 @@ void FIrstWindow::on_pushButton_clicked()
     }else{
         host = first.toStdString();
         port = second.toStdString();
+        music->pause();
         this->close();
     }
 }

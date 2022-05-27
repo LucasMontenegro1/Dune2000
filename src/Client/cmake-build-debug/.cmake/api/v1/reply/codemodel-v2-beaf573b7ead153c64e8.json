@@ -41,7 +41,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Client::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Client-Debug-9f60b622a2eb912e946f.json",
+					"jsonFile" : "target-Client-Debug-58839aa4d8db0b09cc30.json",
 					"name" : "Client",
 					"projectIndex" : 0
 				},
@@ -58,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client/cmake-build-debug",
-		"source" : "/home/lucas/Desktop/Taller I/Taller - tp grupal/Dune2000/src/Client"
+		"build" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug",
+		"source" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client"
 	},
 	"version" : 
 	{
