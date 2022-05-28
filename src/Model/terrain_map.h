@@ -29,6 +29,8 @@ class TerrainMap {
 	std::vector<BlockPosition>
 	get_path(BlockPosition origin, BlockPosition destination, const UnitMobility *mob) const;
 
+	bool invalid_position(BlockPosition pos) const;
+
 	BlockTerrain at(BlockPosition pos) const;
 	BlockTerrain at(unsigned int row, unsigned int col) const;
 
@@ -37,7 +39,6 @@ class TerrainMap {
 	~TerrainMap();
 
 	private:
-	bool invalid_position(BlockPosition pos) const;
 	void validate_positions(BlockPosition org, BlockPosition dst) const;
 
 	bool already_visited(BlockPosition pos, const std::map<BlockPosition, PathNode> &visited) const;

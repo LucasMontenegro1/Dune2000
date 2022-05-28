@@ -17,6 +17,17 @@ void test_at(void)
 	TEST_EXCEPTION(map.at(BlockPosition(30, 30)), std::out_of_range);
 }
 
+void test_invalid_position(void)
+{
+	TerrainMap map(20, 22);
+
+	TEST_CHECK(map.invalid_position(BlockPosition(20, 0)));
+	TEST_CHECK(map.invalid_position(BlockPosition(0, 22)));
+	TEST_CHECK(map.invalid_position(BlockPosition(30, 30)));
+	TEST_CHECK(!map.invalid_position(BlockPosition(0, 0)));
+	TEST_CHECK(!map.invalid_position(BlockPosition(19, 21)));
+}
+
 void test_invalid_org_dst(void)
 {
 	TerrainMap map(4, 5);
@@ -146,7 +157,8 @@ void test_path_avoiding_obstacles(void)
 
 TEST_LIST = {
 	{"at_method", test_at},
-	{"invalid_positions", test_invalid_org_dst},
+	{"invalid_position", test_invalid_position},
+	{"invalid_path", test_invalid_org_dst},
 	{"path_to_self", test_path_to_self},
 	{"straight_path_on_x", test_straight_path_on_x},
 	{"diagonal_path", test_diagonal_path},
