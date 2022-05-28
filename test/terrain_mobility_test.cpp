@@ -4,11 +4,11 @@
 
 #include "./acutest.h"
 #include "../src/Model/block_terrain.h"
-#include "../src/Model/fremen_mobility.h"
+#include "../src/Model/infantry_mobility.h"
 
-void test_fremen_mobility(void)
+void test_infantry_mobility(void)
 {
-	FremenMobility mobility;
+	InfantryMobility mobility;
 
 	TEST_CHECK(mobility.can_traverse(sand));
 	TEST_CHECK(mobility.can_traverse(dunes));
@@ -18,6 +18,6 @@ void test_fremen_mobility(void)
 }
 
 TEST_LIST = {
-	{"fremen_mobility", test_fremen_mobility},
+	{"fremen_mobility", test_infantry_mobility},
 	{NULL, NULL}
 };

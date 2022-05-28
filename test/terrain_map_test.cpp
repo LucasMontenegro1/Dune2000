@@ -4,7 +4,7 @@
 
 #include "./acutest.h"
 #include "../src/Model/terrain_map.h"
-#include "../src/Model/fremen_mobility.h"
+#include "../src/Model/infantry_mobility.h"
 
 void test_at(void)
 {
@@ -34,7 +34,7 @@ void test_invalid_org_dst(void)
 
 	BlockPosition invalid_pos(5, 6);
 	BlockPosition pos(0, 0);
-	FremenMobility mob;
+	InfantryMobility mob;
 
 	TEST_EXCEPTION(map.get_path(invalid_pos, pos, &mob), std::out_of_range);
 	TEST_EXCEPTION(map.get_path(pos, invalid_pos, &mob), std::out_of_range);
@@ -44,7 +44,7 @@ void test_path_to_self(void)
 {
 	TerrainMap map(4, 5);
 	BlockPosition pos(3, 4);
-	FremenMobility mob;
+	InfantryMobility mob;
 
 	std::vector<BlockPosition> path = map.get_path(pos, pos, &mob);
 
@@ -58,7 +58,7 @@ void test_straight_path_on_x(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(3, 2);
-	FremenMobility mob;
+	InfantryMobility mob;
 
 	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
@@ -73,7 +73,7 @@ void test_diagonal_path(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	FremenMobility mob;
+	InfantryMobility mob;
 
 	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
@@ -102,7 +102,7 @@ void test_cannot_traverse_destination_block(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	FremenMobility mob;
+	InfantryMobility mob;
 	map.change_terrain(dst, cliffs);
 
 	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
@@ -116,7 +116,7 @@ void test_unreachable_destination(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	FremenMobility mob;
+	InfantryMobility mob;
 	map.change_terrain(BlockPosition(0, 1), cliffs);
 	//map.change_terrain(BlockPosition(0, 2), cliffs);
 	map.change_terrain(BlockPosition(0, 3), cliffs);
@@ -136,7 +136,7 @@ void test_path_avoiding_obstacles(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	FremenMobility mob;
+	InfantryMobility mob;
 	map.change_terrain(BlockPosition(0, 1), cliffs);
 	//map.change_terrain(BlockPosition(0, 2), cliffs);
 	map.change_terrain(BlockPosition(0, 3), cliffs);
