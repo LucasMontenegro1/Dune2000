@@ -12,12 +12,11 @@
 class GameScreen {
 	int posX;//Posiciones de la camara respecto al mapa
 	int posY;
-
-	void screen_move(RenderWindow &window, View &view, 
-				int sizeX, int sizeY, Model &model));
 	
 	void check_events(Event &event, Model &model, 
 			ProtocolGame &protocol, Socket &conexion);
+	
+	void draw_elements(RenderWindow &window, Model &model, Camera &camera);
 	
 	public:
 	GameScreen();

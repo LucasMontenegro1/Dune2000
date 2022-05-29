@@ -12,17 +12,29 @@ class Unit: public Drawable{
 	Sprite sprite;
 	Texture texture;
 	bool can_move;
-	int posX;
-	int posY;
+	float posX;
+	float posY;
+	float destX;
+	float destY;
+	float velocity;
+	int largeBitsX;
+	int largeBitsY;
+	int id;
 	
 	public:
+	virtual move();
+	
 	Unit unit();
 	
-	Unit unit(int cordX, int cordY);
+	Unit unit(int cordX, int cordY, int id);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
+	
+	bool is_there(float cord_x, float cord_y);
+	
+	std::tuple<int> get_bits();
 
-	bool is_there(int cord_x, int cord_y) override;
+	bool is_there(float cord_x, float cord_y);
 	
 	void enable_move();
 	
@@ -30,6 +42,12 @@ class Unit: public Drawable{
 	
 	bool can_moves();
 	
+	std::tuple<int> get_bits();
+	
+	void setLastMove(float x, float y);
+	
+	bool is_in_destiny();
+	
 	Unit& operator=(const Unit&& other);
-}
+};
 #endif

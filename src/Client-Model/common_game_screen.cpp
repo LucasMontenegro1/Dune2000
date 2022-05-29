@@ -24,46 +24,35 @@ using namespace sf;
 GameScreen::GameScreen(): posX(0), posY(0) {}
 
 
-void GameScreen::draw_elements(RenderWindow &window, Model &model){
+void GameScreen::draw_elements(RenderWindow &window, Model &model, Camera &camera){
 	for(int i = 0; i < model.get_grounds_size() ; i++){
-		window.draw((model.get_grounds())[i]);
+		std::tuple<int> gBits = model.get_grounds()[i]->get_bits();	
+		if(camera.appears_in_view(std::get<0>(gBits), std::get<1>(gBits), 
+								std::get<2>(gBits), std::get<2>(gBits))		
+		window.draw(*(model.get_grounds()[i]));
 	}
 	for(int i = 0; i < model.get_units_size() ; i++){
-		window.draw((model.get_units())[i]);
+		if(!model.get_units()[i]->is_in_destiny()) (model.get_units()[i])->move();
+		std::tuple<int> uBits = (model.get_units()[i])->get_bits();
+		if(camera.appears_in_view(std::get<0>(uBits), std::get<1>(uBits), 
+								std::get<2>(uBits), std::get<3>(uBits))){
+			window.draw(*(model.get_units()[i]));
+		}
 	}
 }
 
-
-void GameScreen::screen_move(RenderWindow &window, View &view, 
-						int sizeX, int sizeY, Model &model){
-						
-	int large_x_map = model.get_x_size() * 10; //ese 10 lo voy a tener que cambiar por el tamaño
-	int large_y_map = model.get_y_size() * 10; // en bits de cada cuadrado de terreno 
-
-	Vector2i posicion = Mouse::getPosition(window);
-	if(posicion.x + 10 >= sizeX) posX += 1;
-	if(posicion.y + 10 >= sizeY) posY += 1;
-	if(posicion.x - 10 <= 0) posX -= 1;
-	if(posicion.y - 10 <= 0) posY -= 1;
-	if(posX < 0) posX = 0;
-	if(posY < 0) posY = 0;
-	if(posX > large_x_map) posX = large_x_map;
-	if(posY > large_y_map) posY = large_y_map;
-	view.reset(FloatRect(posX, posY, sizeX, sizeY));	
-}
 
 
 void GameScreen::check_events(Event &event, Model &model, 
-			ProtocolGame &protocol, Socket &conexion){
+			ProtocolGame &protocol, Socket &conexion, int posX, int posY){
 	if(event.mouseButton.button == Mouse::Left){
 		if(model.is_unit_there(event.mouseButton.x + posX, event.mouseButton.y + posY){
 			Unit unit = model.get_unit(event.mouseButton.x + posX, event.mouseButton.y + posY);
 			model.unit_enable_move(unit.get_id_unit();); 
 			//todas las otras units quedan inhabilitadas para moverse
-		} else if(model.is_ground_there(event.mouseButton.x + posX, 
-					event.mouseButton.y + posY && model.a_unit_can_moves()){
+		} else if(model.a_unit_can_moves()){
 			Unit unit = model.get_unit_can_moves();
-			protocol.send_unit_move(socket, unit, event.mouseButton.x + posX, 
+			protocol.send_unit_move(conexion, unit, event.mouseButton.x + posX, 
 													event.mouseButton.y + posY);
 		} /*else if(model.is_unit_there(event.mouseButton.x + posX, 
 					event.mouseButton.y + posY && model.a_unit_can_moves()){
@@ -81,23 +70,23 @@ void GameScreen::show(Model &model, ProtocolGame &protocol, Socket &conexion, bo
 	RenderWindow window(VideoMode(sizeX, sizeY), "DUNE");
 	
 	View view;
-	view.reset(FloatRect(posX, posY, sizeX, sizeY));
-	view.setViewport(FloatRect(posX, posY, 1.0f, 1.0f));
+	Camera camera(view, this->posX, this->posY, sizeX, sizeY);
 	
 	while(window.isOpen()){
-		screen_move(window, view, sizeX, sizeY, model);
-		model.update_status(protocol.receive_status(conexion, &was_closed));
+		Vector2i posicion = Mouse::getPosition(window);	
+		camera.update(posicion, model);	
+		
+		model.update_status(protocol.receive_units(conexion, &was_closed));
 		Event event;
 		while(window.pollEvent(event)){
 			if(event.type == Event::Closed){
 				window.close()
 			}
-			check_events(event, model);
+			check_events(event, model, protocol, this->posX, this->posY);
 		}
-	
+		camera.render(window);
+		window.clear();
+		draw_elements(window, model, camera);
+		window.display();
 	}	
-	window.setView(view);
-	draw_elements(window, model);
-	window.clear();
-	window.display();
 }

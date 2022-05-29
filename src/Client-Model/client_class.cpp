@@ -23,7 +23,9 @@ Client::Client(const char* hostname, const char* service): protocol{},
 	
 	
 void Client::show_window(){
-	Model model(protocol.receive_status(conexion, &was_closed);
+	std::vector<Ground*> grounds = protocol.receive_grounds(conexion, &was_closed);
+	std::vector<Unit*> units = protocol.receive_units(conexion, &was_closed);
+	Model model(units, grounds);
 	this->screen.show(model, this->protocol, this->conexion, &was_closed);
 	this->conexion.shutdown(0);
 }

@@ -11,20 +11,55 @@ Model::Model(std::vector<Unit*> &units, std::vector<Ground*> &grounds):
 		units(units), grounds(grounds), one_unit_can_moves(false) {}
 		
 		
-void Model::update_status(std::vector<Unit*> &units, std::vector<Ground*> &grounds){
+void Model::update_status(std::vector<Unit*> &units){
+	for(int i = 0; i < units.size() ; i++){
+		if(have_unit_different_cords(*units[i]){
+			std::tuple<float> origins = (units[i])->get_position();
+			(*units[i])->setLastMove(std::get<0>(origins), std::get<1>(origins));
+		}
+	}
+
 	this->units.deleteUnits();
 	this->units = std::move(units);
-	this->grounds.deleteGrounds();
-	this->grounds = std::move(grounds);
 }
 
+bool Model::have_unit(Unit &unit){
+	bool is_in = false;
+	for(int i = 0; i < this->units.size() ; i++){
+		if((this->units[i])->get_id_unit) == unit.get_id_unit()){
+			std::tuple<float> origins = (this->units[i])->get_position();
+			std::tuple<float> goes = unit.get_position();
+			if(std::get<0>(origins) == std::get<0>(goes) && 
+			std::get<1>(origins) == std::get<1>(goes)) is_in = true;
+		}
+	}
+	return is_in;
+}
 
-Unit Model::get_unit(int cordX, int cordY){
+int Model::get_y_size(){
+	int max = 0;
+	int actual = 0;
+	for(int i = 0; i < this->grounds.size() ; i++){
+		actual = this->grounds[i]->get_y_max();
+		if(actual > max) max = actual;
+	}
+	return max;
+}
+
+int Model::get_x_size(){
+	int max = 0;
+	int actual = 0;
+	for(int i = 0; i < this->grounds.size() ; i++){
+		actual = this->grounds[i]->get_x_max();
+		if(actual > max) max = actual;
+	}
+	return max;
+}
+
+Unit Model::get_unit(float cordX, float cordY){
 	Unit unit;
 	for(int i = 0; i < this->units.size() ; i++){
-		if(is_unit_there(int cordX, int cordY){
-			unit = this->units[i];
-		}
+		if((this->units[i])->is_there(cordX, cordY) unit = (*this->units[i]);	
 	}
 	return unit;
 }
@@ -33,9 +68,7 @@ Unit Model::get_unit(int cordX, int cordY){
 Unit Model::get_unit_can_moves(){
 	Unit unit;
 	for(int i = 0; i < this->units.size() ; i++){
-		if(this->units[i].can_moves()){
-			unit = this->units[i];
-		}
+		if((this->units[i])->can_moves()) unit = this->units[i];
 	}
 	return unit;	
 }
@@ -49,40 +82,30 @@ bool Model::a_unit_can_moves(){
 void Model::unit_enable_move(int unit_id){
 	for(int i = 0; i < this->units.size() ; i++){
 		this->units[i].no_enable_move();
-		if(this->units[i].get_id_unit() == unit_id){
-			this->units[i].enable_move();
+		if((this->units[i])->get_id_unit() == unit_id){
+			(this->units[i])->enable_move();
+			this->one_unit_can_moves = true;
 		}
 	}	
 }
 
 
-bool Model::is_unit_there(int cordX, int cordY){
+bool Model::is_unit_there(float cordX, float cordY){
 	bool is_here = false;
 	for(int i = 0; i < this->units.size() ; i++){
-		if(this->units[i].is_there(int cordX, int cordY)) is_here = true;
+		Unit *ptr = this->units[i];
+		if(ptr->is_there(cordX, cordY)) is_here = true;
 	}	
 	return is_here;
 }
 
 
-bool Model::is_ground_there(int cordX, int cordY){
-	bool is_here = true;
-	for(int i = 0; i < this->units.size() ; i++){
-		if(this->units[i].is_there(int cordX, int cordY)) is_here = false;
-	}		
-	for(int i = 0; i < this->grounds.size() ; i++){
-		if(!this->grounds[i].is_there(int cordX, int cordY)) is_here = false;
-	}		
-	return is_here;
-}
-
-
-int Model::get:grounds_size(){
+int Model::get_grounds_size(){
 	return this->grounds.size();
 }
 
 
-int Model::get:units_size(){
+int Model::get_units_size(){
 	return this->units.size();
 }
 
@@ -98,17 +121,20 @@ std::vector<Units*> Model::get_units(){
 
 void Model::deleteUnits(){
 	for(int i = 0; i < this->units.size() ; i++){
-		delete(this->units[i]);
+		delete(*this->units[i]);
 	}		
 }
 
 void Model::deleteGrounds(){
 	for(int i = 0; i < this->grounds.size() ; i++){
-		delete(this->grounds[i]);
+		delete(*this->grounds[i]);
 	}		
 }
 
-
+Model::~Model(){
+	this->units.deleteUnits();
+	this->grounds.deleteGrounds();
+}
 
 
 
