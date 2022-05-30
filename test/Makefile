@@ -14,5 +14,8 @@ test_path_node: path_node_test.cpp ../src/Model/path_node.cpp ../src/Model/block
 test_terrain_map: terrain_map_test.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
 	g++ $(CFLAGS) -o terrain_map.test terrain_map_test.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
 
+test_control_unit: control_unit_test.cpp ../src/Server/control_unit.cpp ../src/Server/model_unit.cpp ../src/Server/task_create.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
+	g++ $(CFLAGS) -o control_unit.test control_unit_test.cpp ../src/Server/control_unit.cpp ../src/Server/model_unit.cpp ../src/Server/task_create.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
+
 clean:
 	rm -f core *.o *.test
