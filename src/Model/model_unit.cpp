@@ -3,19 +3,14 @@
 //
 
 #include "model_unit.h"
-#include "infantry_mobility.h"
 
 ModelUnit::ModelUnit(BlockPosition starting_pos, int id_) :
 pos(starting_pos),
-id(id_)
-{
-	// Por ahora uso movilidad de infanteria x default
-	this->mobility = std::make_shared<InfantryMobility>();
-}
+id(id_){}
 
 bool ModelUnit::can_traverse(BlockTerrain terrain) const
 {
-	return this->mobility->can_traverse(terrain);
+	return this->mobility.can_traverse(terrain);
 }
 
 void ModelUnit::move_to(BlockPosition next_pos)
@@ -28,7 +23,7 @@ BlockPosition ModelUnit::get_pos() const
 	return this->pos;
 }
 
-UnitMobilityPtr ModelUnit::get_mobility() const
+const UnitMobility &ModelUnit::get_mobility() const
 {
 	return this->mobility;
 }

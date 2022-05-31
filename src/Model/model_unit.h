@@ -6,16 +6,14 @@
 #define DUNE2000_MODEL_UNIT_H
 
 #include "block_position.h"
-#include "unit_mobility.h"
+#include "infantry_mobility.h"
 #include "block_terrain.h"
 #include <string>
 #include <memory>
 
-typedef std::shared_ptr<UnitMobility> UnitMobilityPtr;
-
 class ModelUnit {
 	BlockPosition pos;
-	UnitMobilityPtr mobility;
+	InfantryMobility mobility;
 	int id;
 
 	public:
@@ -25,7 +23,7 @@ class ModelUnit {
 	void move_to(BlockPosition next_pos);
 
 	BlockPosition get_pos() const;
-	UnitMobilityPtr get_mobility() const;
+	const UnitMobility &get_mobility() const;
 	int get_id() const;
 
 	~ModelUnit();
