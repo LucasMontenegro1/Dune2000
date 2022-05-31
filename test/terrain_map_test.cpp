@@ -34,19 +34,19 @@ void test_invalid_org_dst(void)
 
 	BlockPosition invalid_pos(5, 6);
 	BlockPosition pos(0, 0);
-	UnitMobilityPtr mob = std::make_shared<InfantryMobility>();
+	InfantryMobility mob;
 
-	TEST_EXCEPTION(map.get_path(invalid_pos, pos, mob), std::out_of_range);
-	TEST_EXCEPTION(map.get_path(pos, invalid_pos, mob), std::out_of_range);
+	TEST_EXCEPTION(map.get_path(invalid_pos, pos, &mob), std::out_of_range);
+	TEST_EXCEPTION(map.get_path(pos, invalid_pos, &mob), std::out_of_range);
 }
 
 void test_path_to_self(void)
 {
 	TerrainMap map(4, 5);
 	BlockPosition pos(3, 4);
-	UnitMobilityPtr mob = std::make_shared<InfantryMobility>();
+	InfantryMobility mob;
 
-	std::vector<BlockPosition> path = map.get_path(pos, pos, mob);
+	std::vector<BlockPosition> path = map.get_path(pos, pos, &mob);
 
 	TEST_CHECK(path.size() == 1);
 	TEST_CHECK(pos == path.front());
@@ -58,9 +58,9 @@ void test_straight_path_on_x(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(3, 2);
-	UnitMobilityPtr mob = std::make_shared<InfantryMobility>();
+	InfantryMobility mob;
 
-	std::vector<BlockPosition> path = map.get_path(org, dst, mob);
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.size() == 3);
 	TEST_CHECK(path.at(0) == dst);
@@ -73,9 +73,9 @@ void test_diagonal_path(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	UnitMobilityPtr mob = std::make_shared<InfantryMobility>();
+	InfantryMobility mob;
 
-	std::vector<BlockPosition> path = map.get_path(org, dst, mob);
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.size() == 3);
 	TEST_CHECK(path.at(0) == dst);
@@ -102,10 +102,10 @@ void test_cannot_traverse_destination_block(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	UnitMobilityPtr mob = std::make_shared<InfantryMobility>();
+	InfantryMobility mob;
 	map.change_terrain(dst, cliffs);
 
-	std::vector<BlockPosition> path = map.get_path(org, dst, mob);
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.empty());
 }
@@ -116,7 +116,7 @@ void test_unreachable_destination(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	UnitMobilityPtr mob = std::make_shared<InfantryMobility>();
+	InfantryMobility mob;
 	map.change_terrain(BlockPosition(0, 1), cliffs);
 	//map.change_terrain(BlockPosition(0, 2), cliffs);
 	map.change_terrain(BlockPosition(0, 3), cliffs);
@@ -126,7 +126,7 @@ void test_unreachable_destination(void)
 	map.change_terrain(BlockPosition(2, 1), cliffs);
 	map.change_terrain(BlockPosition(1, 1), cliffs);
 
-	std::vector<BlockPosition> path = map.get_path(org, dst, mob);
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.empty());
 }
@@ -136,7 +136,7 @@ void test_path_avoiding_obstacles(void)
 	TerrainMap map(4, 5);
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	UnitMobilityPtr mob = std::make_shared<InfantryMobility>();
+	InfantryMobility mob;
 	map.change_terrain(BlockPosition(0, 1), cliffs);
 	//map.change_terrain(BlockPosition(0, 2), cliffs);
 	map.change_terrain(BlockPosition(0, 3), cliffs);
@@ -145,7 +145,7 @@ void test_path_avoiding_obstacles(void)
 	map.change_terrain(BlockPosition(2, 1), cliffs);
 	map.change_terrain(BlockPosition(1, 1), cliffs);
 
-	std::vector<BlockPosition> path = map.get_path(org, dst, mob);
+	std::vector<BlockPosition> path = map.get_path(org, dst, &mob);
 
 	TEST_CHECK(path.size() == 5);
 	TEST_CHECK(path.at(4) == org);
