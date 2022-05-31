@@ -3,23 +3,19 @@
 //
 
 #include "task_create.h"
+#include "task_resolver.h"
 
 TaskCreate::TaskCreate(BlockPosition pos_) :
 pos(pos_){}
 
-int TaskCreate::perform_task(ControlUnit *cu) const
+int TaskCreate::perform_task(TaskResolver *tr)
 {
-	return cu->create_unit(this->pos);
+	return tr->create_unit(this->pos);
 }
 
 bool TaskCreate::has_next() const
 {
 	return false;
-}
-
-std::shared_ptr <Task> TaskCreate::get_next() const
-{
-	throw std::out_of_range("Invalid operation\n");
 }
 
 TaskCreate::~TaskCreate() noexcept = default;

@@ -3,31 +3,48 @@
 //
 
 #include "control_unit.h"
+#include "task_create.h"
+#include "task_move.h"
 #include <limits>
 
-const int SUCCESS = 0;
-const int FAILURE = 1;
+#include <iostream>
 
 ControlUnit::ControlUnit(unsigned int rows, unsigned int cols) :
 map(rows, cols),
-id_counter(std::numeric_limits<int>::min()){}
+units(),
+id_counter(std::numeric_limits<int>::min()),
+task_resolver(map, units, id_counter){}
 
-void ControlUnit::push_task(std::shared_ptr<Task> task)
+void ControlUnit::create(BlockPosition initial_pos)
 {
-	this->tasks.push_back(task);
+	if (this->map.invalid_position(initial_pos))
+		return;
+
+	std::shared_ptr<Task> task = std::make_shared<TaskCreate>(initial_pos);
+	this->task_resolver.push_task(task);
+}
+
+void ControlUnit::move(int id, BlockPosition dst)
+{
+	if (this->units.count(id) == 0)
+		return;
+	if (this->map.invalid_position(dst))
+		return;
+
+	const ModelUnit &unit = this->units.at(id);
+	BlockPosition org = unit.get_pos();
+	const UnitMobility &mob = unit.get_mobility();
+	std::vector<BlockPosition> path = this->map.get_path(org, dst, &mob);
+
+	if (not path.empty()) {
+		std::shared_ptr <Task> task = std::make_shared<TaskMove>(id, path);
+		this->task_resolver.push_task(task);
+	}
 }
 
 void ControlUnit::update()
 {
-	std::vector<std::shared_ptr<Task>> remaining_tasks;
-
-	for (auto const &task : this->tasks) {
-		int s = task->perform_task(this);
-		if (s == SUCCESS and task->has_next())
-			remaining_tasks.push_back(task->get_next());
-	}
-
-	this->tasks = remaining_tasks;
+	this->task_resolver.perform_tasks();
 }
 
 std::vector<ModelUnit> ControlUnit::get_state() const
@@ -40,14 +57,3 @@ std::vector<ModelUnit> ControlUnit::get_state() const
 }
 
 ControlUnit::~ControlUnit() = default;
-
-int ControlUnit::create_unit(BlockPosition pos)
-{
-	if (this->map.invalid_position(pos))
-		return FAILURE;
-
-	ModelUnit unit(pos, this->id_counter);
-	this->id_counter++;
-	this->units.insert(std::pair<int, ModelUnit>(unit.get_id(), unit));
-	return SUCCESS;
-}

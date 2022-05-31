@@ -6,18 +6,16 @@
 #define DUNE2000_TASK_CREATE_H
 
 #include "./task.h"
-#include "./mock_server.h"
+#include "../Model/block_position.h"
 
 class TaskCreate : public Task {
 	BlockPosition pos;
 	public:
 	TaskCreate(BlockPosition pos_);
 
-	int perform_task(ControlUnit *cu) const override;
+	int perform_task(TaskResolver *tr) override;
 
 	bool has_next() const override;
-
-	virtual std::shared_ptr<Task> get_next() const;
 
 	virtual ~TaskCreate();
 };

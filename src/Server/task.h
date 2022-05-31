@@ -7,15 +7,13 @@
 
 #include <memory>
 
-class ControlUnit;
+class TaskResolver;
 
 class Task {
 	public:
-	virtual int perform_task(ControlUnit *cu) const = 0;
+	virtual int perform_task(TaskResolver *tr) = 0;
 
 	virtual bool has_next() const = 0;
-
-	virtual std::shared_ptr<Task> get_next() const = 0;
 
 	virtual ~Task() = default;
 };
