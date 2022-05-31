@@ -52,7 +52,7 @@ bool Unit::can_moves(){
 	return this->can_move;
 }
 
-std::tuple<int> Unit::get_bits(){
+std::tuple<int, int, int, int> Unit::get_bits(){
 	return std::make_tuple(posX, posY, largeBitsX, largeBitsY);
 }
 

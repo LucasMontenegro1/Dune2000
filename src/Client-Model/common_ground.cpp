@@ -33,6 +33,6 @@ int Ground::get_y_max(){
 	return this->y + this->largo;
 }
 
-std::tuple<int> Ground::get_bits(){
+std::tuple<int, int, int> Ground::get_bits(){
 	return std::make_tuple(this->x, this->y, this->largo);
 }

@@ -26,14 +26,14 @@ GameScreen::GameScreen(): posX(0), posY(0) {}
 
 void GameScreen::draw_elements(RenderWindow &window, Model &model, Camera &camera){
 	for(int i = 0; i < model.get_grounds_size() ; i++){
-		std::tuple<int> gBits = model.get_grounds()[i]->get_bits();	
+		std::tuple<int, int, int> gBits = model.get_grounds()[i]->get_bits();	
 		if(camera.appears_in_view(std::get<0>(gBits), std::get<1>(gBits), 
 								std::get<2>(gBits), std::get<2>(gBits))		
 		window.draw(*(model.get_grounds()[i]));
 	}
 	for(int i = 0; i < model.get_units_size() ; i++){
 		if(!model.get_units()[i]->is_in_destiny()) (model.get_units()[i])->move();
-		std::tuple<int> uBits = (model.get_units()[i])->get_bits();
+		std::tuple<int, int, int, int> uBits = (model.get_units()[i])->get_bits();
 		if(camera.appears_in_view(std::get<0>(uBits), std::get<1>(uBits), 
 								std::get<2>(uBits), std::get<3>(uBits))){
 			window.draw(*(model.get_units()[i]));
