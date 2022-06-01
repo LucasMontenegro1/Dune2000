@@ -7,8 +7,6 @@
 #include "task_move.h"
 #include <limits>
 
-#include <iostream>
-
 ControlUnit::ControlUnit(unsigned int rows, unsigned int cols) :
 map(rows, cols),
 units(),
@@ -32,12 +30,10 @@ void ControlUnit::move(int id, BlockPosition dst)
 		return;
 
 	const ModelUnit &unit = this->units.at(id);
-	BlockPosition org = unit.get_pos();
-	const UnitMobility &mob = unit.get_mobility();
-	std::vector<BlockPosition> path = this->map.get_path(org, dst, &mob);
+	std::vector<BlockPosition> path = this->map.get_path(unit.get_pos(), dst, unit.get_mobility());
 
 	if (not path.empty()) {
-		std::shared_ptr <Task> task = std::make_shared<TaskMove>(id, path);
+		std::shared_ptr<Task> task = std::make_shared<TaskMove>(id, path);
 		this->task_resolver.push_task(task);
 	}
 }
