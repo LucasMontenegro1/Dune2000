@@ -5,8 +5,6 @@
 #ifndef DUNE2000_TASK_H
 #define DUNE2000_TASK_H
 
-#include <memory>
-
 class TaskResolver;
 
 class Task {

@@ -7,11 +7,9 @@
 
 #include "../Model/terrain_map.h"
 #include "../Model/model_unit.h"
-#include "task.h"
 #include "task_resolver.h"
 #include <vector>
 #include <map>
-#include <memory>
 
 class ControlUnit {
 	TerrainMap map;

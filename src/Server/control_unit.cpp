@@ -6,6 +6,7 @@
 #include "task_create.h"
 #include "task_move.h"
 #include <limits>
+#include <memory>
 
 ControlUnit::ControlUnit(unsigned int rows, unsigned int cols) :
 map(rows, cols),

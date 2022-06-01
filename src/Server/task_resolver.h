@@ -8,7 +8,6 @@
 #include "task.h"
 #include "../Model/model_unit.h"
 #include "../Model/terrain_map.h"
-#include "../Model/block_position.h"
 #include <memory>
 
 
