@@ -28,7 +28,7 @@ class TerrainMap {
 	 * Si la lista esta vacia es que no encontro ningun camino
 	 */
 	std::vector<BlockPosition>
-	get_path(BlockPosition origin, BlockPosition destination, const UnitMobility *mob) const;
+	get_path(BlockPosition origin, BlockPosition destination, const UnitMobility &mob) const;
 
 	bool invalid_position(BlockPosition pos) const;
 
@@ -45,7 +45,7 @@ class TerrainMap {
 	bool already_visited(BlockPosition pos, const std::map<BlockPosition, PathNode> &visited) const;
 
 	std::list<BlockPosition>
-	get_neighbours(BlockPosition pos, const UnitMobility *mob) const;
+	get_neighbours(BlockPosition pos, const UnitMobility &mob) const;
 
 	std::vector<BlockPosition>
 	build_path(const std::map<BlockPosition, PathNode> &visited, BlockPosition dst) const;

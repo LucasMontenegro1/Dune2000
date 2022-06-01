@@ -25,7 +25,7 @@ TerrainMap::TerrainMap(unsigned int rows_, unsigned int cols_)
  * Ver algoritmo A*
  */
 std::vector<BlockPosition>
-TerrainMap::get_path(BlockPosition org, BlockPosition dst, const UnitMobility *mob) const
+TerrainMap::get_path(BlockPosition org, BlockPosition dst, const UnitMobility &mob) const
 {
 	this->validate_positions(org, dst);
 
@@ -113,7 +113,7 @@ bool TerrainMap::already_visited(BlockPosition pos, const std::map<BlockPosition
 }
 
 std::list<BlockPosition>
-TerrainMap::get_neighbours(BlockPosition pos, const UnitMobility *mob) const
+TerrainMap::get_neighbours(BlockPosition pos, const UnitMobility &mob) const
 {
 	std::list<BlockPosition> neighbours;
 	unsigned int x, y;
@@ -132,7 +132,7 @@ TerrainMap::get_neighbours(BlockPosition pos, const UnitMobility *mob) const
 		if (this->invalid_position(neighbour))
 			continue;
 
-		if (mob->can_traverse(this->at(neighbour)))
+		if (mob.can_traverse(this->at(neighbour)))
 			neighbours.push_back(neighbour);
 	}
 
