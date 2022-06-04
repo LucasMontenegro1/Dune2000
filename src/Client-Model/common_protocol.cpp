@@ -6,13 +6,14 @@
 #include "common_unit.h"
 
 
-std::vector<Ground*> Protocol::receive_grounds(Socket &socket, bool &was_closed){
-	std::vector<Ground*> grounds;
+Ground Protocol::receive_grounds(Socket &socket, bool &was_closed){
+	std::vector<std::vector<int> > map;
 	for(terrenos){
-		cordX, cordY = terreno
-		Ground ground = new Ground(cordX, cordY, 0);
-		grounds.push_back(&ground);
+		//Convertir el terreno en la matriz e ir 
+		//metiendolo en map, luego crear la clase ground pasandole 
+		//el ancho y largo de la misma
 	}
+	Ground grounds(map, largo, ancho);
 	return grounds;
 }
 	

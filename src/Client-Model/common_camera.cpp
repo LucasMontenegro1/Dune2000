@@ -30,11 +30,19 @@ void Camera::update(Vector2i &posicion, Model &model){
 }
 
 
-bool appears_in_view(int objectX, int objectY, int largeX, int largeY){
+bool Camera::appears_in_view(int objectX, int objectY, int largeX, int largeY){
 	bool appears = false;
 	int show = 0;
 	if(objectX >= posX && objectX + largeX <= posX + sizeX) show += 1;
 	if(objectY >= posY && objectY + largeY <= posY + sizeY) show += 1;
 	if(show == 2) appears = true;
 	return appears;
+}
+
+int Camera::get_posX(){
+	return this->posX;
+}
+	
+int Camera::get_posY(){
+	return this->posY;
 }
