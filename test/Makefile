@@ -22,5 +22,8 @@ test_movable: movable_test.cpp $(MOV_FILES) $(MAP_FILES)
 test_control_unit: control_unit_test.cpp ../src/Server/control_unit.cpp $(MOV_FILES) $(MAP_FILES)
 	g++ $(CFLAGS) -o control_unit.test control_unit_test.cpp ../src/Server/control_unit.cpp $(MOV_FILES) $(MAP_FILES)
 
+test_mock_srv: mock_server_test.cpp ../src/Server/mock_server.cpp ../src/Server/control_unit.cpp $(MOV_FILES) $(MAP_FILES)
+	g++ $(CFLAGS) -o mock_srv.test mock_server_test.cpp ../src/Server/mock_server.cpp ../src/Server/control_unit.cpp $(MOV_FILES) $(MAP_FILES)
+
 clean:
 	rm -f core *.o *.test
