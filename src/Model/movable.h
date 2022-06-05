@@ -32,7 +32,13 @@ class Movable {
 
 	bool is_at_position(BlockPosition position) const;
 
+	BlockPosition get_pos() const;
+
+	BlockPosition facing_pos() const;
+
 	int get_id() const;
+
+	MovableState get_state() const;
 
 	bool has_changed() const;
 

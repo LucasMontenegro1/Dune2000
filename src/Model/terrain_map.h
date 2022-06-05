@@ -12,7 +12,6 @@
 #include <list>
 #include <vector>
 #include <map>
-#include <memory>
 
 class TerrainMap {
 	BlockTerrain **map;

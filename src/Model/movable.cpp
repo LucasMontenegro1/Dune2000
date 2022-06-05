@@ -63,9 +63,27 @@ bool Movable::is_at_position(BlockPosition position) const
 	return this->pos == position;
 }
 
+BlockPosition Movable::get_pos() const
+{
+	return this->pos;
+}
+
+BlockPosition Movable::facing_pos() const
+{
+	if (this->state == neutral)
+		return this->pos;
+	else
+		return this->path.back();
+}
+
 int Movable::get_id() const
 {
 	return this->id;
+}
+
+MovableState Movable::get_state() const
+{
+	return this->state;
 }
 
 bool Movable::has_changed() const
