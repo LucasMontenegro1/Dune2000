@@ -37,6 +37,9 @@ class Movable {
 	bool has_changed() const;
 
 	~Movable();
+
+	Movable(const Movable &other);
+	Movable &operator=(const Movable &other);
 };
 
 #endif //DUNE2000_MOVABLE_H

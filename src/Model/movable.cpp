@@ -74,3 +74,25 @@ bool Movable::has_changed() const
 }
 
 Movable::~Movable() = default;
+
+Movable::Movable(const Movable &other) :
+id(other.id),
+pos(other.pos),
+map(other.map),
+state(other.state),
+changed(other.changed),
+path(other.path){}
+
+Movable &Movable::operator=(const Movable &other)
+{
+	if (this == &other)
+		return *this;
+
+	this->id = other.id;
+	this->pos = other.pos;
+	this->state = other.state;
+	this->changed = other.changed;
+	this->path = other.path;
+
+	return *this;
+}

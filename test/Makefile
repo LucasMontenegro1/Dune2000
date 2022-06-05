@@ -2,7 +2,7 @@ CFLAGS = -Wall -Werror -pedantic -pedantic-errors -std=c++17
 CU_FILES = ../src/Server/control_unit.cpp ../src/Server/task_resolver.cpp
 TASK_FILES = ../src/Server/task_create.cpp ../src/Server/task_move.cpp
 
-all: test_block_position test_path_node test_terrain_map test_terrain_mobility test_control_unit
+all: test_block_position test_path_node test_terrain_map test_terrain_mobility test_movable
 
 test_block_position: block_position_test.cpp ../src/Model/block_position.cpp
 	g++ $(CFLAGS) -o block_position.test block_position_test.cpp ../src/Model/block_position.cpp
