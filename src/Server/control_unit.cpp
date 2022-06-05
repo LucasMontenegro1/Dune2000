@@ -3,24 +3,37 @@
 //
 
 #include "control_unit.h"
-#include "task_create.h"
-#include "task_move.h"
 #include <limits>
-#include <memory>
+
 
 ControlUnit::ControlUnit(unsigned int rows, unsigned int cols) :
 map(rows, cols),
-units(),
-id_counter(std::numeric_limits<int>::min()),
-task_resolver(map, units, id_counter){}
+id_counter(std::numeric_limits<int>::min()){}
+
+void ControlUnit::set_terrains(const Terrains &terrains)
+{
+	for (auto const &it : terrains) {
+		if (not this->map.invalid_position(it.first))
+			this->map.change_terrain(it.first, it.second);
+	}
+}
+
+unsigned int ControlUnit::units_count() const
+{
+	return this->units.size();
+}
 
 void ControlUnit::create(BlockPosition initial_pos)
 {
 	if (this->map.invalid_position(initial_pos))
 		return;
 
-	std::shared_ptr<Task> task = std::make_shared<TaskCreate>(initial_pos);
-	this->task_resolver.push_task(task);
+	Movable unit(this->id_counter, initial_pos, this->map);
+	if (not unit.can_traverse(this->map.at(initial_pos)))
+		return;
+
+	this->units.insert(std::pair<int, Movable>(unit.get_id(), unit));
+	this->id_counter++;
 }
 
 void ControlUnit::move(int id, BlockPosition dst)
@@ -30,23 +43,18 @@ void ControlUnit::move(int id, BlockPosition dst)
 	if (this->map.invalid_position(dst))
 		return;
 
-	const ModelUnit &unit = this->units.at(id);
-	std::vector<BlockPosition> path = this->map.get_path(unit.get_pos(), dst, unit.get_mobility());
-
-	if (not path.empty()) {
-		std::shared_ptr<Task> task = std::make_shared<TaskMove>(id, path);
-		this->task_resolver.push_task(task);
-	}
+	this->units.at(id).move_to(dst);
 }
 
 void ControlUnit::update()
 {
-	this->task_resolver.perform_tasks();
+	for (auto &it : this->units)
+		it.second.act();
 }
 
-std::vector<ModelUnit> ControlUnit::get_state() const
+std::vector<Movable> ControlUnit::get_state() const
 {
-	std::vector<ModelUnit> tmp_units;
+	std::vector<Movable> tmp_units;
 	for (auto const &it : this->units)
 		tmp_units.push_back(it.second);
 

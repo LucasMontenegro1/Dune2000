@@ -6,24 +6,25 @@
 #define DUNE2000_CONTROL_UNIT_H
 
 #include "../Model/terrain_map.h"
-#include "../Model/model_unit.h"
-#include "task_resolver.h"
+#include "../Model/movable.h"
 #include <vector>
 #include <map>
+
+typedef std::vector<std::pair<BlockPosition, BlockTerrain>> Terrains;
 
 class ControlUnit {
 	TerrainMap map;
 
-	std::map<int, ModelUnit> units;
+	std::map<int, Movable> units;
 
 	int id_counter;
-
-	TaskResolver task_resolver;
 
 	public:
 	ControlUnit(unsigned int rows, unsigned int cols);
 
-	//void set_terrains(const Terrains &terrains);
+	void set_terrains(const Terrains &terrains);
+
+	unsigned int units_count() const;
 
 	void create(BlockPosition initial_pos);
 
@@ -31,7 +32,7 @@ class ControlUnit {
 
 	void update();
 
-	std::vector<ModelUnit> get_state() const;
+	std::vector<Movable> get_state() const;
 
 	~ControlUnit();
 };
