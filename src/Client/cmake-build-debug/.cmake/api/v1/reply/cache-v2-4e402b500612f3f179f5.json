@@ -2,18 +2,6 @@
 	"entries" : 
 	[
 		{
-			"name" : "BUILD_TESTING",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Build the testing tree."
-				}
-			],
-			"type" : "BOOL",
-			"value" : "ON"
-		},
-		{
 			"name" : "CMAKE_ADDR2LINE",
 			"properties" : 
 			[
@@ -115,7 +103,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/190/bin/cmake/linux/bin/cmake"
+			"value" : "/snap/clion/193/bin/cmake/linux/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -127,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/190/bin/cmake/linux/bin/cpack"
+			"value" : "/snap/clion/193/bin/cmake/linux/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -139,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/190/bin/cmake/linux/bin/ctest"
+			"value" : "/snap/clion/193/bin/cmake/linux/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -423,7 +411,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/190/bin/cmake/linux/bin/ccmake"
+			"value" : "/snap/clion/193/bin/cmake/linux/bin/ccmake"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -606,198 +594,6 @@
 			"value" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client"
 		},
 		{
-			"name" : "CMAKE_INSTALL_BINDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "User executables (bin)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "bin"
-		},
-		{
-			"name" : "CMAKE_INSTALL_DATADIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Read-only architecture-independent data (DATAROOTDIR)"
-				}
-			],
-			"type" : "PATH",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_INSTALL_DATAROOTDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Read-only architecture-independent data root (share)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "share"
-		},
-		{
-			"name" : "CMAKE_INSTALL_DOCDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Documentation root (DATAROOTDIR/doc/PROJECT_NAME)"
-				}
-			],
-			"type" : "PATH",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_INSTALL_INCLUDEDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "C header files (include)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "include"
-		},
-		{
-			"name" : "CMAKE_INSTALL_INFODIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Info documentation (DATAROOTDIR/info)"
-				}
-			],
-			"type" : "PATH",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_INSTALL_LIBDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Object code libraries (lib)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "lib"
-		},
-		{
-			"name" : "CMAKE_INSTALL_LIBEXECDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Program executables (libexec)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "libexec"
-		},
-		{
-			"name" : "CMAKE_INSTALL_LOCALEDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Locale-dependent data (DATAROOTDIR/locale)"
-				}
-			],
-			"type" : "PATH",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_INSTALL_LOCALSTATEDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Modifiable single-machine data (var)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "var"
-		},
-		{
-			"name" : "CMAKE_INSTALL_MANDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Man documentation (DATAROOTDIR/man)"
-				}
-			],
-			"type" : "PATH",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_INSTALL_OLDINCLUDEDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "C header files for non-gcc (/usr/include)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/include"
-		},
-		{
 			"name" : "CMAKE_INSTALL_PREFIX",
 			"properties" : 
 			[
@@ -810,54 +606,6 @@
 			"value" : "/usr/local"
 		},
 		{
-			"name" : "CMAKE_INSTALL_RUNSTATEDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Run-time variable data (LOCALSTATEDIR/run)"
-				}
-			],
-			"type" : "PATH",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_INSTALL_SBINDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "System admin executables (sbin)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "sbin"
-		},
-		{
-			"name" : "CMAKE_INSTALL_SHAREDSTATEDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Modifiable architecture-independent data (com)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "com"
-		},
-		{
 			"name" : "CMAKE_INSTALL_SO_NO_EXE",
 			"properties" : 
 			[
@@ -868,22 +616,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "1"
-		},
-		{
-			"name" : "CMAKE_INSTALL_SYSCONFDIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Read-only single-machine data (etc)"
-				}
-			],
-			"type" : "PATH",
-			"value" : "etc"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -911,7 +643,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/snap/clion/190/bin/ninja/linux/ninja"
+			"value" : "/snap/clion/193/bin/ninja/linux/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -1102,66 +834,6 @@
 			"value" : "Client"
 		},
 		{
-			"name" : "CMAKE_PROJECT_VERSION",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "0.7.0"
-		},
-		{
-			"name" : "CMAKE_PROJECT_VERSION_MAJOR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "0"
-		},
-		{
-			"name" : "CMAKE_PROJECT_VERSION_MINOR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "7"
-		},
-		{
-			"name" : "CMAKE_PROJECT_VERSION_PATCH",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "0"
-		},
-		{
-			"name" : "CMAKE_PROJECT_VERSION_TWEAK",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : ""
-		},
-		{
 			"name" : "CMAKE_RANLIB",
 			"properties" : 
 			[
@@ -1203,7 +875,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/190/bin/cmake/linux/share/cmake-3.22"
+			"value" : "/snap/clion/193/bin/cmake/linux/share/cmake-3.22"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1442,70 +1114,6 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "COVERAGE_COMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to the coverage program that CTest uses for performing coverage inspection"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcov"
-		},
-		{
-			"name" : "COVERAGE_EXTRA_FLAGS",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Extra command line flags to pass to the coverage tool"
-				}
-			],
-			"type" : "STRING",
-			"value" : "-l"
-		},
-		{
-			"name" : "CTEST_SUBMIT_RETRY_COUNT",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "How many times to retry timed-out CTest submissions."
-				}
-			],
-			"type" : "STRING",
-			"value" : "3"
-		},
-		{
-			"name" : "CTEST_SUBMIT_RETRY_DELAY",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "How long to wait between timed-out CTest submissions."
-				}
-			],
-			"type" : "STRING",
-			"value" : "5"
-		},
-		{
 			"name" : "Client_BINARY_DIR",
 			"properties" : 
 			[
@@ -1542,70 +1150,6 @@
 			"value" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client"
 		},
 		{
-			"name" : "DART_TESTING_TIMEOUT",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Maximum time allowed before CTest will kill the test."
-				}
-			],
-			"type" : "STRING",
-			"value" : "1500"
-		},
-		{
-			"name" : "MAKECOMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Command to build the project"
-				}
-			],
-			"type" : "STRING",
-			"value" : "/snap/clion/190/bin/cmake/linux/bin/cmake --build . --config \"${CTEST_CONFIGURATION_TYPE}\""
-		},
-		{
-			"name" : "MEMORYCHECK_COMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to the memory checking command, used for memory error detection."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "/usr/bin/valgrind"
-		},
-		{
-			"name" : "MEMORYCHECK_SUPPRESSIONS_FILE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "File that contains suppressions for the memory checker"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : ""
-		},
-		{
 			"name" : "Qt5Core_DIR",
 			"properties" : 
 			[
@@ -1616,18 +1160,6 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core"
-		},
-		{
-			"name" : "Qt5EQUIRED_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5EQUIRED."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5EQUIRED_DIR-NOTFOUND"
 		},
 		{
 			"name" : "Qt5Gui_DIR",
@@ -1702,116 +1234,28 @@
 			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5"
 		},
 		{
-			"name" : "SITE",
+			"name" : "SFML_DIR",
 			"properties" : 
 			[
 				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
 					"name" : "HELPSTRING",
-					"value" : "Name of the computer/site where compile is being run"
+					"value" : "The directory containing a CMake configuration file for SFML."
 				}
 			],
-			"type" : "STRING",
-			"value" : "lucas-B85M-D3H-A"
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/SFML"
 		},
 		{
-			"name" : "YAML_BUILD_SHARED_LIBS",
+			"name" : "SFML_DOC_DIR",
 			"properties" : 
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "Build yaml-cpp shared library"
+					"value" : "Path to a file."
 				}
 			],
-			"type" : "BOOL",
-			"value" : "OFF"
-		},
-		{
-			"name" : "YAML_CPP_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/yaml-cpp"
-		},
-		{
-			"name" : "YAML_CPP_BUILD_CONTRIB",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Enable yaml-cpp contrib in library"
-				}
-			],
-			"type" : "BOOL",
-			"value" : "ON"
-		},
-		{
-			"name" : "YAML_CPP_BUILD_TOOLS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Enable parse tools"
-				}
-			],
-			"type" : "BOOL",
-			"value" : "ON"
-		},
-		{
-			"name" : "YAML_CPP_CLANG_FORMAT_EXE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "YAML_CPP_CLANG_FORMAT_EXE-NOTFOUND"
-		},
-		{
-			"name" : "YAML_CPP_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "OFF"
-		},
-		{
-			"name" : "YAML_CPP_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/yaml-cpp"
-		},
-		{
-			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "CMAKE_INSTALL_PREFIX during last run"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "/usr/local"
+			"type" : "PATH",
+			"value" : "SFML_DOC_DIR-NOTFOUND"
 		},
 		{
 			"name" : "yaml-cpp_DIR",
@@ -1824,30 +1268,6 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/local/share/cmake/yaml-cpp"
-		},
-		{
-			"name" : "yaml_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for yaml."
-				}
-			],
-			"type" : "PATH",
-			"value" : "yaml_DIR-NOTFOUND"
-		},
-		{
-			"name" : "yamlcpp_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for yamlcpp."
-				}
-			],
-			"type" : "PATH",
-			"value" : "yamlcpp_DIR-NOTFOUND"
 		}
 	],
 	"kind" : "cache",

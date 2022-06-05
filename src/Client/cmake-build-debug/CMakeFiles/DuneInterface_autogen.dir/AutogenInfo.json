@@ -1,5 +1,5 @@
 {
-	"BUILD_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen",
+	"BUILD_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/DuneInterface_autogen",
 	"CMAKE_BINARY_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug",
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client",
@@ -94,92 +94,11 @@
 	"CMAKE_SOURCE_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
-	"HEADERS" : 
-	[
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/BuildingImageHandler.h",
-			"Mu",
-			"EWIEGA46WW/moc_BuildingImageHandler.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/Button.h",
-			"Mu",
-			"EWIEGA46WW/moc_Button.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/Client.h",
-			"Mu",
-			"EWIEGA46WW/moc_Client.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/ConstructionMenu.h",
-			"Mu",
-			"EWIEGA46WW/moc_ConstructionMenu.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/SocketException.h",
-			"Mu",
-			"EWIEGA46WW/moc_SocketException.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/UnitImageHandler.h",
-			"Mu",
-			"EWIEGA46WW/moc_UnitImageHandler.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/VehicleImageHandler.h",
-			"Mu",
-			"EWIEGA46WW/moc_VehicleImageHandler.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/firstwindow.h",
-			"Mu",
-			"EWIEGA46WW/moc_firstwindow.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/loginscreen.h",
-			"Mu",
-			"EWIEGA46WW/moc_loginscreen.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/sockets.h",
-			"Mu",
-			"EWIEGA46WW/moc_sockets.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/ui_firstwindow.h",
-			"Mu",
-			"EWIEGA46WW/moc_ui_firstwindow.cpp",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/ui_loginscreen.h",
-			"Mu",
-			"EWIEGA46WW/moc_ui_loginscreen.cpp",
-			null
-		]
-	],
+	"HEADERS" : [],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : 
-	[
-		"QT_CORE_LIB",
-		"QT_GUI_LIB",
-		"QT_MULTIMEDIA_LIB",
-		"QT_NETWORK_LIB",
-		"QT_WIDGETS_LIB"
-	],
+	"INCLUDE_DIR" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/DuneInterface_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/DuneInterface_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -189,19 +108,12 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/usr/include/x86_64-linux-gnu/qt5",
-		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
-		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
-		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
-		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
-		"/usr/include/x86_64-linux-gnu/qt5/QtMultimedia",
-		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
-		"/usr/local/include",
 		"/usr/include",
 		"/usr/include/c++/9",
 		"/usr/include/x86_64-linux-gnu/c++/9",
 		"/usr/include/c++/9/backward",
 		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
+		"/usr/local/include",
 		"/usr/include/x86_64-linux-gnu"
 	],
 	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
@@ -215,74 +127,20 @@
 		"-c",
 		"/snap/clion/193/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/DuneInterface_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
-	"MOC_SKIP" : [],
+	"MOC_SKIP" : 
+	[
+		"/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/mocs_compilation.cpp"
+	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/DuneInterface_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
 	"QT_UIC_EXECUTABLE" : "",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 12,
-	"SETTINGS_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/Client_autogen.dir/AutogenUsed.txt",
-	"SOURCES" : 
-	[
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/BuildingImageHandler.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/Button.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/Client.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/ConstructionMenu.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/SocketException.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/UnitImageHandler.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/VehicleImageHandler.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/firstwindow.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/loginscreen.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/main.cpp",
-			"Mu",
-			null
-		],
-		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/sockets.cpp",
-			"Mu",
-			null
-		]
-	],
+	"SETTINGS_FILE" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/CMakeFiles/DuneInterface_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : [],
 	"VERBOSITY" : 0
 }

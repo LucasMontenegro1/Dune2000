@@ -5,7 +5,7 @@ project(Client)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 
-add_executable(Client main.cpp Client.cpp firstwindow.cpp ui_firstwindow.h sockets.cpp SocketException.cpp loginscreen.cpp ui_loginscreen.h)
+add_executable(Client main.cpp Client.cpp firstwindow.cpp ui_firstwindow.h sockets.cpp SocketException.cpp loginscreen.cpp ui_loginscreen.h Button.cpp Button.h ConstructionMenu.cpp ConstructionMenu.h BuildingImageHandler.cpp BuildingImageHandler.h UnitImageHandler.cpp UnitImageHandler.h VehicleImageHandler.cpp VehicleImageHandler.h)
 
 find_package(yaml-cpp REQUIRED)
 find_package(Qt5 COMPONENTS
@@ -13,6 +13,8 @@ find_package(Qt5 COMPONENTS
         Gui
         Widgets
         REQUIRED)
+
+find_package(SFML COMPONENTS system window graphics network audio)
 
 find_package(Qt5Multimedia REQUIRED )
 find_package(Qt5MultimediaWidgets REQUIRED)
@@ -24,3 +26,5 @@ target_link_libraries(Client
         Qt5::Widgets
         Qt5::Multimedia
         )
+
+target_link_libraries(Client sfml-graphics sfml-window sfml-system sfml-audio)
