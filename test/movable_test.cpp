@@ -11,6 +11,7 @@ void test_neutral_act(void)
 	Movable unit(0, BlockPosition(0, 0), map);
 	unit.act();
 
+	TEST_CHECK(not unit.has_changed());
 	TEST_CHECK(unit.is_at_position(BlockPosition(0, 0)));
 }
 
@@ -24,10 +25,13 @@ void test_move_diagonal(void)
 
 	TEST_CHECK(unit.is_at_position(org));
 	unit.act();
+	TEST_CHECK(unit.has_changed());
 	TEST_CHECK(unit.is_at_position(BlockPosition(2, 1)));
 	unit.act();
+	TEST_CHECK(unit.has_changed());
 	TEST_CHECK(unit.is_at_position(dst));
 	unit.act();
+	TEST_CHECK(not unit.has_changed());
 	TEST_CHECK(unit.is_at_position(dst));
 }
 

@@ -2,7 +2,7 @@ CFLAGS = -Wall -Werror -pedantic -pedantic-errors -std=c++17
 CU_FILES = ../src/Server/control_unit.cpp ../src/Server/task_resolver.cpp
 TASK_FILES = ../src/Server/task_create.cpp ../src/Server/task_move.cpp
 
-all: test_block_position test_path_node test_terrain_map test_terrain_mobility
+all: test_block_position test_path_node test_terrain_map test_terrain_mobility test_control_unit
 
 test_block_position: block_position_test.cpp ../src/Model/block_position.cpp
 	g++ $(CFLAGS) -o block_position.test block_position_test.cpp ../src/Model/block_position.cpp
@@ -16,8 +16,8 @@ test_path_node: path_node_test.cpp ../src/Model/path_node.cpp ../src/Model/block
 test_terrain_map: terrain_map_test.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
 	g++ $(CFLAGS) -o terrain_map.test terrain_map_test.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
 
-test_control_unit: control_unit_test.cpp $(CU_FILES) $(TASK_FILES) ../src/Model/model_unit.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
-	g++ $(CFLAGS) -o control_unit.test control_unit_test.cpp $(CU_FILES) $(TASK_FILES) ../src/Model/model_unit.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
+test_movable: movable_test.cpp ../src/Model/movable.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
+	g++ $(CFLAGS) -o movable.test movable_test.cpp ../src/Model/movable.cpp ../src/Model/terrain_map.cpp ../src/Model/block_position.cpp ../src/Model/path_node.cpp ../src/Model/infantry_mobility.cpp
 
 clean:
 	rm -f core *.o *.test
