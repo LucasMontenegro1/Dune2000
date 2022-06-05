@@ -24,13 +24,25 @@ using namespace sf;
 GameScreen::GameScreen(): posX(0), posY(0) {}
 
 
-void GameScreen::draw_elements(RenderWindow &window, Model &model, Camera &camera){
-	for(int i = 0; i < model.get_grounds_size() ; i++){
-		std::tuple<int, int, int> gBits = model.get_grounds()[i]->get_bits();	
-		if(camera.appears_in_view(std::get<0>(gBits), std::get<1>(gBits), 
-								std::get<2>(gBits), std::get<2>(gBits))		
-		window.draw(*(model.get_grounds()[i]));
+void GameScreen::draw_elements(RenderWindow &window, Model &model, 
+		Camera &camera, int sizeX, int sizeY){
+	int posX = camera.get_x();
+	int posY = camera.get_y();
+	int limitX = posX +  sizeX;
+	int limitY = posY + sizeY;
+	Ground &ground = model.get_ground();
+	for(int i = posX; i < limitX; i+=16){
+		for(int j = posY; j < limitY; j +=16){
+			int col = i / 16;
+			int row = j / 16;
+			if(ground.identify_texture(col, row)){
+				ground.set(i,j);
+				window.draw(ground);
+			}
+		}
 	}
+
+
 	for(int i = 0; i < model.get_units_size() ; i++){
 		if(!model.get_units()[i]->is_in_destiny()) (model.get_units()[i])->move();
 		std::tuple<int, int, int, int> uBits = (model.get_units()[i])->get_bits();
@@ -86,7 +98,7 @@ void GameScreen::show(Model &model, ProtocolGame &protocol, Socket &conexion, bo
 		}
 		camera.render(window);
 		window.clear();
-		draw_elements(window, model, camera);
+		draw_elements(window, model, camera, sizeX, sizeY);
 		window.display();
 	}	
 }

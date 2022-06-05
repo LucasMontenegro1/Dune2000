@@ -21,5 +21,9 @@ class Camera {
 	void update(Vector2i &posicion, Model &model);
 	
 	bool appears_in_view(int objectX, int objectY, int largeX, int largeY);
+	
+	int get_posX();
+	
+	int get_posY();
 }
 #endif

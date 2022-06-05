@@ -69,4 +69,32 @@ Unit& Unit::operator=(const Unit&& other) {
     return *this;
 }
 
-
+void Unit::move(){
+	float moveX = posX;
+	float moveY = posY;
+	bool moveRight = false; bool moveLeft = false; 
+	bool moveUp = false; bool moveDown = false;
+	if(destX > x){
+		moveX +=  velocity;
+		moveRight = true;
+	}
+	if(destX < x){
+		moveX -=  velocity;
+		moveLeft = true;
+	}
+	if(destY > y){
+		moveY +=  velocity;
+		moveDown = true;
+	}
+	if(destY < y){
+		moveY -=  velocity;
+		moveUp = true;
+	}
+	modifyMovePosition(moveRight, moveLeft, moveUp, moveDown);
+	sprite.setPosition(moveX, moveY);
+	this->posX = moveX;
+	this->posY = moveY;
+	if((int) moveX == (int) goX) this->destX = moveX;
+	if((int) moveY == (int) goY) this->destY = moveY;		
+	}
+}

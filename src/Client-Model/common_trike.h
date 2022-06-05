@@ -11,14 +11,15 @@ using namespace sf;
 
 class Trike: public Unit{
 	
-	void modifyMovePosition(bool moveRight, bool moveLeft, 
-								bool moveUp, bool moveDown);
+	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
+								bool moveUp, bool moveDown) override;
 	
+	void fillFrames();	
+
 	public:
 	
 	Trike(int cordX, int cordY);
 
-	virtual void move() override;
 	
 }
 #endif

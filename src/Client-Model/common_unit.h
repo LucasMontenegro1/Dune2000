@@ -20,6 +20,8 @@ class Unit: public Drawable{
 	int largeBitsX;
 	int largeBitsY;
 	int id;
+	std::map <int, Vector2f> frames;
+	int actualFrame;
 	
 	public:
 	virtual move();
@@ -31,6 +33,8 @@ class Unit: public Drawable{
 	void draw(RenderTarget &target, RenderStates states) const;
 	
 	bool is_there(float cord_x, float cord_y);
+	
+	void move();
 	
 	std::tuple<int> get_bits();
 

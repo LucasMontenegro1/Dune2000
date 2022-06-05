@@ -15,24 +15,52 @@ void Ground::draw(RenderTarget &target, RenderStates states) const {
 	target.draw(sprite, states);
 }
 
-Ground::Ground(int cordX, int cordY, int type){
-	this->largo = 16;
-	this->x = cordX * largo;
-	this->y = cordY * largo;
-	texture.loadFromFile("terrain.bmp");
+Ground::Ground(std::vector<std::vector<int> > level, int lenght, int width): map(level), 
+					lengthMap(lenght), widthMap(width) {
+	texture.loadFromFile("terrains/terrain.bmp");
 	sprite.setTexture(texture);
-	if(type == 0) sprite.setTextureRect(IntRect(0,8,largo,largo)); //Por ahora solo arena
-	sprite.setPosition(x, y);	
 }
 
-int Ground::get_x_max(){
-	return this->x + this->largo;
+void Ground::is_sand(){
+	sprite.setTextureRect(IntRect(0,8,16,16)); 
 }
 	
-int Ground::get_y_max(){
-	return this->y + this->largo;
+void Ground::is_rock(){
+	sprite.setTextureRect(IntRect(112,240,16,16)); 
+}
+	
+void Ground::is_spice(){
+	sprite.setTextureRect(IntRect(0,305,16,16)); 
 }
 
-std::tuple<int, int, int> Ground::get_bits(){
-	return std::make_tuple(this->x, this->y, this->largo);
+void set(int x, int y){
+	sprite.setPosition(x,y);
 }
+
+bool Ground::identify_texture(int col, int row){
+	bool identify = false;
+	if(col >= lengthMap || row >= widthMap) return false;
+	switch(map[row][col]){
+		case 0:
+			is_sand(); identify = true;
+			break;
+		case 1:
+			is_rock(); identify = true;
+			break;
+		case 2:
+			is_spice(); identify = true;
+			break;
+	}
+	return identify;
+}
+
+
+//
+int Ground::get_ground_y_size(){
+	return lengthMap * 16;
+}
+	
+int Ground::get_ground_x_size(){
+	return widthMap * 16;
+}
+

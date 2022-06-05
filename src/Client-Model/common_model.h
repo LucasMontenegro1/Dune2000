@@ -10,17 +10,16 @@
 
 class Model {
 	std::vector<Unit*> units;
-	std::vector<Ground*> grounds;
+	Ground ground;
 	
 	bool one_unit_can_moves;
 	
 	void deleteUnits();
-	void deleteGrounds();
 	
 	bool have_unit(Unit &unit);
 
 	public:
-	Model(std::vector<Unit*> &units, std::vector<Ground*> &grounds);
+	Model(std::vector<Unit*> &units, Ground &grounds);
 	
 	void update_status(std::vector<Unit*> &units);
 	
@@ -38,13 +37,11 @@ class Model {
 	
 	bool is_unit_there(float cordX, float cordY);
 	
-	int get_grounds_size();
-	
 	int get_units_size();
 	
-	std::vector<Ground*> get_grounds();
+	Ground &get_grounds();
 	
-	std::vector<Units*> get_units();
+	std::vector<Units*> &get_units();
 	
 	~Model();
 	

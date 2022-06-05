@@ -7,7 +7,7 @@
 #include "common_ground.h"
 #include "common_model.h"
 
-Model::Model(std::vector<Unit*> &units, std::vector<Ground*> &grounds): 
+Model::Model(std::vector<Unit*> &units, Ground &grounds): 
 		units(units), grounds(grounds), one_unit_can_moves(false) {}
 		
 		
@@ -37,23 +37,11 @@ bool Model::have_unit(Unit &unit){
 }
 
 int Model::get_y_size(){
-	int max = 0;
-	int actual = 0;
-	for(int i = 0; i < this->grounds.size() ; i++){
-		actual = this->grounds[i]->get_y_max();
-		if(actual > max) max = actual;
-	}
-	return max;
+	return grounds.get_ground_y_size();
 }
 
 int Model::get_x_size(){
-	int max = 0;
-	int actual = 0;
-	for(int i = 0; i < this->grounds.size() ; i++){
-		actual = this->grounds[i]->get_x_max();
-		if(actual > max) max = actual;
-	}
-	return max;
+	return grounds.get_ground_x_size();
 }
 
 Unit Model::get_unit(float cordX, float cordY){
@@ -100,22 +88,18 @@ bool Model::is_unit_there(float cordX, float cordY){
 }
 
 
-int Model::get_grounds_size(){
-	return this->grounds.size();
-}
-
 
 int Model::get_units_size(){
 	return this->units.size();
 }
 
 
-std::vector<Ground*> Model::get_grounds(){
+Ground &Model::get_grounds(){
 	return this->grounds;
 }
 
 	
-std::vector<Units*> Model::get_units(){
+std::vector<Units*> &Model::get_units(){
 	return this->units;
 }
 
@@ -125,15 +109,10 @@ void Model::deleteUnits(){
 	}		
 }
 
-void Model::deleteGrounds(){
-	for(int i = 0; i < this->grounds.size() ; i++){
-		delete(*this->grounds[i]);
-	}		
-}
 
 Model::~Model(){
 	this->units.deleteUnits();
-	this->grounds.deleteGrounds();
+	~this->grounds;	
 }
 
 

@@ -9,22 +9,30 @@
 using namespace sf;
 
 class Ground: public Drawable{
-	Sprite sprite;
 	Texture texture;
+	Sprite sprite;
+	std::vector<std::vector<int> > map;
+	int lengthMap; int widthMap;
 	
-	int x;
-	int y;
-	int largo;
+	void is_sand();
 	
+	void is_rock();
+	
+	void is_spice();
 	public:
-	Ground(int cordX, int cordY, int type);
 	
-	int get_x_max();
+	Ground(std::vector<std::vector<int> > level, int lenght, int width);
 	
-	int get_y_max();
+	bool idenfity_texture(int col, int row);
 	
-	std::tuple<int> get_bits();
+	void set(int x, int y);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
+	
+
+	int get_ground_y_size();
+	
+	int get_ground_x_size();
+	
 };
 #endif
