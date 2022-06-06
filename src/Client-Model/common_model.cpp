@@ -13,17 +13,13 @@ Model::Model(std::vector<Unit*> &units, Ground &grounds):
 		
 void Model::update_status(std::vector<Unit*> &units){
 	for(int i = 0; i < units.size() ; i++){
-		if(have_unit_different_cords(*units[i]){
-			std::tuple<float> origins = (units[i])->get_position();
-			(*units[i])->setLastMove(std::get<0>(origins), std::get<1>(origins));
-		}
+		std::tuple<float> destiny = (units[i])->get_position();
+		(*units[i])->setMove(std::get<0>(destiny), std::get<1>(destiny));
 	}
-
-	this->units.deleteUnits();
-	this->units = std::move(units);
 }
 
-bool Model::have_unit(Unit &unit){
+/*
+bool Model::have_unit_different_cords(Unit &unit){
 	bool is_in = false;
 	for(int i = 0; i < this->units.size() ; i++){
 		if((this->units[i])->get_id_unit) == unit.get_id_unit()){
@@ -35,6 +31,7 @@ bool Model::have_unit(Unit &unit){
 	}
 	return is_in;
 }
+*/
 
 int Model::get_y_size(){
 	return grounds.get_ground_y_size();

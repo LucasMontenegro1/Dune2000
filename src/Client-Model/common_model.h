@@ -16,7 +16,7 @@ class Model {
 	
 	void deleteUnits();
 	
-	bool have_unit(Unit &unit);
+	//bool have_unit_different_cords(Unit &unit);
 
 	public:
 	Model(std::vector<Unit*> &units, Ground &grounds);

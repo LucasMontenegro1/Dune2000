@@ -27,11 +27,10 @@ bool Unit::is_there(float cord_x, float cord_y){
 }
 
 
-void Unit::setLastMove(float x, float y){
-	this->posX = x;
-	this->posY = y;
+void Unit::setMove(float x, float y){
+	this->destX = x;
+	this->destY = y;
 	this->can_move = false;
-	sprite.setPosition(x,y);
 }
 
 void Unit::enable_move(){

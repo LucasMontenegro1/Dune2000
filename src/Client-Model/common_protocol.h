@@ -8,10 +8,15 @@
 #include "common_units.h"
 #include "common_socket.h"
 #include "common_grounds.h"
+#include "mock_server.h"
 
 class Protocol {
+	MockServer server;
+	bool received;
 
 	public:
+	Protocol(): received_units(false);
+	
 	std::vector<Ground*> receive_grounds(Socket &socket, bool &was_closed);
 	
 	
@@ -20,5 +25,6 @@ class Protocol {
 	
 	void send_unit_move(Socket &socket, Unit &unit, float cordX, float cordY);
 	
+	void update();
 }
 #endif
