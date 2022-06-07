@@ -1,5 +1,5 @@
-#ifndef COMMON_MODEL_H
-#define COMMON_MODEL_H
+#ifndef COMMON_CAMERA_H
+#define COMMON_CAMERA_H
 #include <vector>
 #include <string>
 #include <tuple>

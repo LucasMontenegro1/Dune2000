@@ -27,7 +27,7 @@ class Unit: public Drawable{
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
 								bool moveUp, bool moveDown);
 	
-	Unit unit(int cordX, int cordY, int id);
+	Unit(int cordX, int cordY, int id);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 	
