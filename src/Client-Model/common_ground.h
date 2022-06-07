@@ -23,7 +23,7 @@ class Ground: public Drawable{
 	
 	Ground(std::vector<std::vector<int> > level, int lenght, int width);
 	
-	bool idenfity_texture(int col, int row);
+	bool identify_texture(int col, int row);
 	
 	void set(int x, int y);
 	

@@ -15,9 +15,10 @@ class GameScreen {
 	int posY;
 	
 	void check_events(Event &event, Model &model, 
-			ProtocolGame &protocol, int posX, int posY);
+			Protocol &protocol, int posX, int posY);
 	
-	void draw_elements(RenderWindow &window, Model &model, Camera &camera);
+	void draw_elements(RenderWindow &window, Model &model, 
+		Camera &camera, int sizeX, int sizeY);
 	
 	public:
 	GameScreen();

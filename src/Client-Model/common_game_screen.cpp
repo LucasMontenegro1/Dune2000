@@ -16,6 +16,7 @@
 #include "common_model.h"
 #include "common_game_screen.h"
 #include "common_unit.h"
+#include "common_camera.h"
 #include "common_ground.h"
 
 using namespace sf;
@@ -56,9 +57,9 @@ void GameScreen::draw_elements(RenderWindow &window, Model &model,
 
 
 void GameScreen::check_events(Event &event, Model &model, 
-			ProtocolGame &protocol, int posX, int posY){
+			Protocol &protocol, int posX, int posY){
 	if(event.mouseButton.button == Mouse::Left){
-		if(model.is_unit_there(event.mouseButton.x + posX, event.mouseButton.y + posY){
+		if(model.is_unit_there(event.mouseButton.x + posX, event.mouseButton.y + posY)){
 			Unit unit = model.get_unit(event.mouseButton.x + posX, event.mouseButton.y + posY);
 			model.unit_enable_move(unit.get_id_unit();); 
 			//todas las otras units quedan inhabilitadas para moverse
@@ -76,7 +77,7 @@ void GameScreen::check_events(Event &event, Model &model,
 }
 
 
-void GameScreen::show(Model &model, ProtocolGame &protocol){
+void GameScreen::show(Model &model, Protocol &protocol){
 	int sizeX = 500;//Esto en un futuro es 
 	int sizeY = 500;//Algo que se pasa por parametro
 	RenderWindow window(VideoMode(sizeX, sizeY), "DUNE");

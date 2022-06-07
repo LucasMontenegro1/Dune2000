@@ -5,10 +5,6 @@
 #include <time.h>
 #include "common_unit.h"
 
-//Este constructor esta para el caso de crear una unidad temporal para get_unit, aunque
-//no estoy seguro si hara falta
-Unit::Unit() {}
-
 
 Unit::Unit(int cordX, int cordY, int id): posX(cordX), posY(cordY), 
 	can_move(false), destX(cordX), destY(cordY), id(id) {}
@@ -73,19 +69,19 @@ void Unit::move(){
 	float moveY = posY;
 	bool moveRight = false; bool moveLeft = false; 
 	bool moveUp = false; bool moveDown = false;
-	if(destX > x){
+	if(destX > posX){
 		moveX +=  velocity;
 		moveRight = true;
 	}
-	if(destX < x){
+	if(destX < posX){
 		moveX -=  velocity;
 		moveLeft = true;
 	}
-	if(destY > y){
+	if(destY > posY){
 		moveY +=  velocity;
 		moveDown = true;
 	}
-	if(destY < y){
+	if(destY < posY){
 		moveY -=  velocity;
 		moveUp = true;
 	}
@@ -93,7 +89,11 @@ void Unit::move(){
 	sprite.setPosition(moveX, moveY);
 	this->posX = moveX;
 	this->posY = moveY;
-	if((int) moveX == (int) goX) this->destX = moveX;
-	if((int) moveY == (int) goY) this->destY = moveY;		
-	}
+	if((int) moveX == (int) destX) this->destX = moveX;
+	if((int) moveY == (int) destY) this->destY = moveY;		
 }
+
+std::tuple<float, float> Unit::get_position(){
+	return std::make_tuple(this->posX, this->posY);
+}
+

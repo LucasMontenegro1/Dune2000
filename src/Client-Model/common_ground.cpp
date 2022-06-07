@@ -33,7 +33,7 @@ void Ground::is_spice(){
 	sprite.setTextureRect(IntRect(0,305,16,16)); 
 }
 
-void set(int x, int y){
+void Ground::set(int x, int y){
 	sprite.setPosition(x,y);
 }
 

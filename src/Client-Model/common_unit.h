@@ -28,8 +28,6 @@ class Unit: public Drawable{
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
 								bool moveUp, bool moveDown);
 	
-	Unit unit();
-	
 	Unit unit(int cordX, int cordY, int id);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
@@ -51,6 +49,8 @@ class Unit: public Drawable{
 	bool is_in_destiny();
 	
 	int get_id_unit();
+	
+	std::tuple<float, float> get_position();
 	
 	Unit& operator=(const Unit&& other);
 };

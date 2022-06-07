@@ -17,7 +17,7 @@ class Protocol {
 	public:
 	Protocol();
 	
-	std::vector<Ground*> receive_grounds();
+	Ground receive_grounds();
 	
 	
 	std::vector<Unit*> receive_units();

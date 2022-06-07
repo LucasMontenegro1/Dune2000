@@ -6,6 +6,7 @@
 #include "common_unit.h"
 #include "common_trike.h"
 
+using namespace sf;
 
 Trike::Trike(int cordX, int cordY, int id): Unit(cordX, cordY, id) {
 	texture.loadFromFile("trike.png");

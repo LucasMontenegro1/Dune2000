@@ -13,7 +13,7 @@ Model::Model(std::vector<Unit*> &units, Ground &grounds):
 		
 void Model::update_status(std::vector<Unit*> &units){
 	for(int i = 0; i < units.size() ; i++){
-		std::tuple<float> destiny = (units[i])->get_position();
+		std::tuple<float, float> destiny = (units[i])->get_position();
 		(units[i])->setMove(std::get<0>(destiny), std::get<1>(destiny));
 	}
 }
@@ -44,7 +44,7 @@ int Model::get_x_size(){
 Unit Model::get_unit(float cordX, float cordY){
 	Unit unit;
 	for(size_t i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->is_there(cordX, cordY) unit = (*this->units[i]);	
+		if((this->units[i])->is_there(cordX, cordY)) unit = (*this->units[i]);	
 	}
 	return unit;
 }
@@ -53,7 +53,7 @@ Unit Model::get_unit(float cordX, float cordY){
 Unit Model::get_unit_can_moves(){
 	Unit unit;
 	for(size_t i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->can_moves()) unit = this->units[i];
+		if((this->units[i])->can_moves()) unit = (*this->units[i]);
 	}
 	return unit;	
 }
@@ -66,7 +66,7 @@ bool Model::a_unit_can_moves(){
 
 void Model::unit_enable_move(int unit_id){
 	for(size_t i = 0; i < this->units.size() ; i++){
-		this->units[i].no_enable_move();
+		this->units[i]->no_enable_move();
 		if((this->units[i])->get_id_unit() == unit_id){
 			(this->units[i])->enable_move();
 			this->one_unit_can_moves = true;
@@ -92,12 +92,12 @@ int Model::get_units_size(){
 
 
 Ground &Model::get_grounds(){
-	return &this->ground;
+	return this->ground;
 }
 
 	
 std::vector<Unit*> &Model::get_units(){
-	return &this->units;
+	return this->units;
 }
 
 void Model::deleteUnits(){
@@ -109,7 +109,7 @@ void Model::deleteUnits(){
 
 Model::~Model(){
 	deleteUnits();
-	~this->ground;	
+	//~this->ground;	
 }
 
 

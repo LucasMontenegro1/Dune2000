@@ -5,6 +5,7 @@
 #include <tuple>
 #include <SFML/Graphics.hpp>
 #include <time.h>
+#include "common_model.h"
 
 using namespace sf;
 
