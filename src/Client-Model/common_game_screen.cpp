@@ -12,7 +12,7 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_protocol.h"
-#include "common_socket.h"
+//#include "common_socket.h"
 #include "common_model.h"
 #include "common_game_screen.h"
 #include "common_unit.h"

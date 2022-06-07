@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
-#include "common_infantery.h"
+#include "common_trike.h"
 
 
 Trike::Trike(int cordX, int cordY, int id): Unit(cordX, cordY, id) {

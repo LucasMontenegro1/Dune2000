@@ -5,9 +5,9 @@
 #include <tuple>
 #include <SFML/Graphics.hpp>
 #include <time.h>
-#include "common_units.h"
-#include "common_socket.h"
-#include "common_grounds.h"
+#include "common_unit.h"
+//#include "common_socket.h"
+#include "common_ground.h"
 #include "mock_server.h"
 
 class Protocol {

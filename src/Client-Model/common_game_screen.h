@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_protocol.h"
-#include "common_socket.h"
+//#include "common_socket.h"
 #include "common_model.h"
 
 class GameScreen {
