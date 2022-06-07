@@ -25,5 +25,5 @@ class Camera {
 	int get_posX();
 	
 	int get_posY();
-}
+};
 #endif

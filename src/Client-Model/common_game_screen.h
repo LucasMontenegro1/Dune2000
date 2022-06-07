@@ -23,5 +23,5 @@ class GameScreen {
 	
 	void show(Model &model, ProtocolGame &protocol, Socket &conexion, bool was_closed);
 
-}
+};
 #endif

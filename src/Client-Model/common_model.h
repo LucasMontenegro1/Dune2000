@@ -5,8 +5,8 @@
 #include <tuple>
 #include <SFML/Graphics.hpp>
 #include <time.h>
-#include "common_units.h"
-#include "common_grounds.h"
+#include "common_unit.h"
+#include "common_ground.h"
 
 class Model {
 	std::vector<Unit*> units;
@@ -45,5 +45,5 @@ class Model {
 	
 	~Model();
 	
-}
+};
 #endif

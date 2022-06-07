@@ -21,5 +21,5 @@ class Trike: public Unit{
 	Trike(int cordX, int cordY);
 
 	
-}
+};
 #endif

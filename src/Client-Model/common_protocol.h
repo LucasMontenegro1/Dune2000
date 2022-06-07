@@ -8,7 +8,7 @@
 #include "common_unit.h"
 //#include "common_socket.h"
 #include "common_ground.h"
-#include "mock_server.h"
+#include "../Server/mock_server.h"
 
 class Protocol {
 	MockServer server;
@@ -26,5 +26,5 @@ class Protocol {
 	void send_unit_move(Socket &socket, Unit &unit, float cordX, float cordY);
 	
 	void update();
-}
+};
 #endif
