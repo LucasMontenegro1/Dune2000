@@ -86,10 +86,10 @@ void GameScreen::show(Model &model, Protocol &protocol){
 	Camera camera(view, this->posX, this->posY, sizeX, sizeY);
 	
 	while(window.isOpen()){
-		this->protocol.update();
+		protocol.update();
 		Vector2i posicion = Mouse::getPosition(window);	
 		camera.update(posicion, model);	
-		model.update_status(protocol.receive_units(conexion, &was_closed));
+		model.update_status(protocol.receive_units());
 		Event event;
 		while(window.pollEvent(event)){
 			if(event.type == Event::Closed){

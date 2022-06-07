@@ -12,7 +12,7 @@ Model::Model(std::vector<Unit*> &units, Ground &grounds):
 		
 		
 void Model::update_status(std::vector<Unit*> &units){
-	for(int i = 0; i < units.size() ; i++){
+	for(size_t i = 0; i < units.size() ; i++){
 		std::tuple<float, float> destiny = (units[i])->get_position();
 		(units[i])->setMove(std::get<0>(destiny), std::get<1>(destiny));
 	}

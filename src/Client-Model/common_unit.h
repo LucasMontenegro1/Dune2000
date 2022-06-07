@@ -9,8 +9,7 @@
 using namespace sf;
 
 class Unit: public Drawable{
-	Sprite sprite;
-	Texture texture;
+	public:
 	bool can_move;
 	float posX;
 	float posY;
@@ -20,10 +19,10 @@ class Unit: public Drawable{
 	int largeBitsX;
 	int largeBitsY;
 	int id;
-	
-	public:
 	std::map <int, Vector2f> frames;
 	int actualFrame;
+	Sprite sprite;
+	Texture texture;
 	
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
 								bool moveUp, bool moveDown);
