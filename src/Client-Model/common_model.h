@@ -27,7 +27,7 @@ class Model {
 	
 	int get_x_size();
 	
-	Unit get_unit(int cordX, int cordY);
+	Unit get_unit(float cordX, float cordY);
 	
 	Unit get_unit_can_moves();
 	
@@ -41,7 +41,7 @@ class Model {
 	
 	Ground &get_grounds();
 	
-	std::vector<Units*> &get_units();
+	std::vector<Unit*> &get_units();
 	
 	~Model();
 	

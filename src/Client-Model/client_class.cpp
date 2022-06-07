@@ -18,16 +18,15 @@
 
 using namespace sf;
 
-Client::Client(const char* hostname, const char* service): protocol{}, 
-					conexion{hostname, service}, was_closed(false), screen{} {}
+Client::Client(const char* hostname, const char* service): protocol{}, screen{} {}
 	
 	
 void Client::show_window(){
-	std::vector<Ground> ground = protocol.receive_grounds(conexion, &was_closed);
-	std::vector<Unit*> units = protocol.receive_units(conexion, &was_closed);
+	Ground ground = protocol.receive_grounds();
+	std::vector<Unit*> units = protocol.receive_units();
 	Model model(units, ground);
-	this->screen.show(model, this->protocol, this->conexion, &was_closed);
-	this->conexion.shutdown(0);
+	this->screen.show(model, this->protocol);
+	//this->conexion.shutdown(0);
 }
 
 

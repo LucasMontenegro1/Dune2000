@@ -11,9 +11,7 @@
 #include "common_game_screen.h"
 
 class Client {
-    ProtocolGame protocol;
-    Socket conexion;
-    bool was_closed;
+    Protocol protocol;
     GameScreen screen;
     
 	public:

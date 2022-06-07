@@ -56,7 +56,7 @@ void GameScreen::draw_elements(RenderWindow &window, Model &model,
 
 
 void GameScreen::check_events(Event &event, Model &model, 
-			ProtocolGame &protocol, Socket &conexion, int posX, int posY){
+			ProtocolGame &protocol, int posX, int posY){
 	if(event.mouseButton.button == Mouse::Left){
 		if(model.is_unit_there(event.mouseButton.x + posX, event.mouseButton.y + posY){
 			Unit unit = model.get_unit(event.mouseButton.x + posX, event.mouseButton.y + posY);
@@ -64,7 +64,7 @@ void GameScreen::check_events(Event &event, Model &model,
 			//todas las otras units quedan inhabilitadas para moverse
 		} else if(model.a_unit_can_moves()){
 			Unit unit = model.get_unit_can_moves();
-			protocol.send_unit_move(conexion, unit, event.mouseButton.x + posX, 
+			protocol.send_unit_move(unit, event.mouseButton.x + posX, 
 													event.mouseButton.y + posY);
 		} /*else if(model.is_unit_there(event.mouseButton.x + posX, 
 					event.mouseButton.y + posY && model.a_unit_can_moves()){
@@ -76,7 +76,7 @@ void GameScreen::check_events(Event &event, Model &model,
 }
 
 
-void GameScreen::show(Model &model, ProtocolGame &protocol, Socket &conexion, bool was_closed){
+void GameScreen::show(Model &model, ProtocolGame &protocol){
 	int sizeX = 500;//Esto en un futuro es 
 	int sizeY = 500;//Algo que se pasa por parametro
 	RenderWindow window(VideoMode(sizeX, sizeY), "DUNE");

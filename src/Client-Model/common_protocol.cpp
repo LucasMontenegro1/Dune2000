@@ -8,9 +8,9 @@
 #include "mock_server.h"
 
 
-Protocol::Protocol(): server{} {}
+Protocol::Protocol(): server{}, received(false); {}
 
-Ground Protocol::receive_grounds(Socket &socket, bool &was_closed){
+Ground Protocol::receive_grounds(){
 	Cliffs map_received = this->server.get_map();
 	std::vector<std::vector<int> > map;
 	for(int i = 0; i < 360; i++){
@@ -26,7 +26,7 @@ Ground Protocol::receive_grounds(Socket &socket, bool &was_closed){
 }
 	
 	
-std::vector<Unit*> Protocol::receive_units(Socket &socket, bool &was_closed){
+std::vector<Unit*> Protocol::receive_units(){
 	std::vector<struct RawUnit> received_units = this->server.get_state();
 	std::vector<Unit*> units;
 	for(int i = 0; i < received_units.size(); i++){
@@ -40,7 +40,7 @@ std::vector<Unit*> Protocol::receive_units(Socket &socket, bool &was_closed){
 }
 	
 	
-void Protocol::send_unit_move(Socket &socket, Unit &unit, float cordX, float cordY){
+void Protocol::send_unit_move(Unit &unit, float cordX, float cordY){
 	this->server.move_unit(unit.id, (int) cordX / 16, (int) cordY / 16);
 }
 

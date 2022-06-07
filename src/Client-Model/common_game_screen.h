@@ -8,20 +8,21 @@
 #include "common_protocol.h"
 //#include "common_socket.h"
 #include "common_model.h"
+#include "common_camera.h"
 
 class GameScreen {
 	int posX;//Posiciones de la camara respecto al mapa
 	int posY;
 	
 	void check_events(Event &event, Model &model, 
-			ProtocolGame &protocol, Socket &conexion);
+			ProtocolGame &protocol, int posX, int posY);
 	
 	void draw_elements(RenderWindow &window, Model &model, Camera &camera);
 	
 	public:
 	GameScreen();
 	
-	void show(Model &model, ProtocolGame &protocol, Socket &conexion, bool was_closed);
+	void show(Model &model, Protocol &protocol);
 
 };
 #endif

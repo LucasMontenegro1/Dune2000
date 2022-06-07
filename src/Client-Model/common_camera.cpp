@@ -6,6 +6,8 @@
 #include "common_camera.h"
 #include "common_model.h"
 
+using namespace sf;
+
 Camera::Camera(View &view, int &posX, int &posY, int sizeX, int sizeY): 
 	view(view), posX(posX), posY(posY), sizeX(sizeX), sizeY(sizeY) {}
 	

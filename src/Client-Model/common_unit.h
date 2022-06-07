@@ -20,11 +20,13 @@ class Unit: public Drawable{
 	int largeBitsX;
 	int largeBitsY;
 	int id;
+	
+	public:
 	std::map <int, Vector2f> frames;
 	int actualFrame;
 	
-	public:
-	virtual move();
+	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
+								bool moveUp, bool moveDown);
 	
 	Unit unit();
 	
@@ -32,11 +34,9 @@ class Unit: public Drawable{
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 	
-	bool is_there(float cord_x, float cord_y);
-	
 	void move();
 	
-	std::tuple<int> get_bits();
+	std::tuple<int, int, int, int> get_bits();
 
 	bool is_there(float cord_x, float cord_y);
 	
@@ -46,11 +46,11 @@ class Unit: public Drawable{
 	
 	bool can_moves();
 	
-	std::tuple<int> get_bits();
-	
-	void setLastMove(float x, float y);
+	void setMove(float x, float y);
 	
 	bool is_in_destiny();
+	
+	int get_id_unit();
 	
 	Unit& operator=(const Unit&& other);
 };

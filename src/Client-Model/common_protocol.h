@@ -15,15 +15,15 @@ class Protocol {
 	bool received;
 
 	public:
-	Protocol(): received_units(false);
+	Protocol();
 	
-	std::vector<Ground*> receive_grounds(Socket &socket, bool &was_closed);
-	
-	
-	std::vector<Unit*> receive_units(Socket &socket, bool &was_closed);
+	std::vector<Ground*> receive_grounds();
 	
 	
-	void send_unit_move(Socket &socket, Unit &unit, float cordX, float cordY);
+	std::vector<Unit*> receive_units();
+	
+	
+	void send_unit_move(Unit &unit, float cordX, float cordY);
 	
 	void update();
 };

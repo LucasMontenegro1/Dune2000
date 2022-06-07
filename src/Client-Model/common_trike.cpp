@@ -34,10 +34,10 @@ void Trike::modifyMovePosition(bool moveRight, bool moveLeft, bool moveUp, bool 
 	}
 	if(!moveRight && !moveLeft && !moveUp && moveDown) frameDestiny = 17;
 	if(!moveRight && !moveLeft && moveUp && !moveDown) frameDestiny = 1;
-	if(frameActual > frameDestiny){
+	if(actualFrame > frameDestiny){
 		actualFrame--;
 	}
-	if(frameActual < frameDestiny){
+	if(actualFrame < frameDestiny){
 		actualFrame++;
 	}	
 	Vector2f &posicionFrame = frames[actualFrame];	
