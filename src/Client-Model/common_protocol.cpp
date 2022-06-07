@@ -8,7 +8,7 @@
 #include "mock_server.h"
 
 
-Protocol::Protocol(): server{}, received(false); {}
+Protocol::Protocol(): server{}, received(false) {}
 
 Ground Protocol::receive_grounds(){
 	Cliffs map_received = this->server.get_map();
@@ -40,8 +40,8 @@ std::vector<Unit*> Protocol::receive_units(){
 }
 	
 	
-void Protocol::send_unit_move(Unit &unit, float cordX, float cordY){
-	this->server.move_unit(unit.id, (int) cordX / 16, (int) cordY / 16);
+void Protocol::send_unit_move(int unit_id, float cordX, float cordY){
+	this->server.move_unit(unit_id, (int) cordX / 16, (int) cordY / 16);
 }
 
 void Protocol::update(){

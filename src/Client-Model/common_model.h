@@ -27,9 +27,9 @@ class Model {
 	
 	int get_x_size();
 	
-	Unit get_unit(float cordX, float cordY);
+	int get_unit(float cordX, float cordY);
 	
-	Unit get_unit_can_moves();
+	int get_unit_can_moves();
 	
 	bool a_unit_can_moves();
 	

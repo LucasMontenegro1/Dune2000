@@ -12,7 +12,7 @@ Trike::Trike(int cordX, int cordY, int id): Unit(cordX, cordY, id) {
 	texture.loadFromFile("trike.png");
 	sprite.setTexture(texture);
 	sprite.setTextureRect(IntRect(5,60,30,30));
-	sprite.setPosition(x, y);
+	sprite.setPosition(cordX, cordY);
 	this->velocity = 0.1;
 	this->largeBitsX = 30;
 	this->largeBitsY = 30;

@@ -27,11 +27,11 @@ GameScreen::GameScreen(): posX(0), posY(0) {}
 
 void GameScreen::draw_elements(RenderWindow &window, Model &model, 
 		Camera &camera, int sizeX, int sizeY){
-	int posX = camera.get_x();
-	int posY = camera.get_y();
+	int posX = camera.get_posX();
+	int posY = camera.get_posY();
 	int limitX = posX +  sizeX;
 	int limitY = posY + sizeY;
-	Ground &ground = model.get_ground();
+	Ground &ground = model.get_grounds();
 	for(int i = posX; i < limitX; i+=16){
 		for(int j = posY; j < limitY; j +=16){
 			int col = i / 16;
@@ -60,11 +60,11 @@ void GameScreen::check_events(Event &event, Model &model,
 			Protocol &protocol, int posX, int posY){
 	if(event.mouseButton.button == Mouse::Left){
 		if(model.is_unit_there(event.mouseButton.x + posX, event.mouseButton.y + posY)){
-			Unit unit = model.get_unit(event.mouseButton.x + posX, event.mouseButton.y + posY);
-			model.unit_enable_move(unit.get_id_unit();); 
+			int unit = model.get_unit(event.mouseButton.x + posX, event.mouseButton.y + posY);
+			model.unit_enable_move(unit); 
 			//todas las otras units quedan inhabilitadas para moverse
 		} else if(model.a_unit_can_moves()){
-			Unit unit = model.get_unit_can_moves();
+			int unit = model.get_unit_can_moves();
 			protocol.send_unit_move(unit, event.mouseButton.x + posX, 
 													event.mouseButton.y + posY);
 		} /*else if(model.is_unit_there(event.mouseButton.x + posX, 
@@ -89,7 +89,8 @@ void GameScreen::show(Model &model, Protocol &protocol){
 		protocol.update();
 		Vector2i posicion = Mouse::getPosition(window);	
 		camera.update(posicion, model);	
-		model.update_status(protocol.receive_units());
+		std::vector<Unit*> units = protocol.receive_units();
+		model.update_status(units);
 		Event event;
 		while(window.pollEvent(event)){
 			if(event.type == Event::Closed){

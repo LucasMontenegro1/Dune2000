@@ -23,7 +23,7 @@ class Protocol {
 	std::vector<Unit*> receive_units();
 	
 	
-	void send_unit_move(Unit &unit, float cordX, float cordY);
+	void send_unit_move(int unit_id, float cordX, float cordY);
 	
 	void update();
 };

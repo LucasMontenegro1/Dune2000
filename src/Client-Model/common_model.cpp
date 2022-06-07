@@ -41,21 +41,21 @@ int Model::get_x_size(){
 	return ground.get_ground_x_size();
 }
 
-Unit Model::get_unit(float cordX, float cordY){
-	Unit unit;
+int Model::get_unit(float cordX, float cordY){
+	int id;
 	for(size_t i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->is_there(cordX, cordY)) unit = (*this->units[i]);	
+		if((this->units[i])->is_there(cordX, cordY)) this->units[i]->get_id_unit();	
 	}
-	return unit;
+	return id;
 }
 
 
-Unit Model::get_unit_can_moves(){
-	Unit unit;
+int Model::get_unit_can_moves(){
+	int id;
 	for(size_t i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->can_moves()) unit = (*this->units[i]);
+		if((this->units[i])->can_moves()) this->units[i]->get_id_unit();
 	}
-	return unit;	
+	return id;	
 }
 
 
