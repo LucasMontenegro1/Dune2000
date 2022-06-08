@@ -25,7 +25,7 @@ class Unit: public Drawable{
 	Texture texture;
 	
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
-								bool moveUp, bool moveDown);
+								bool moveUp, bool moveDown) = 0;
 	
 	Unit(int cordX, int cordY, int id);
 	
@@ -52,5 +52,7 @@ class Unit: public Drawable{
 	std::tuple<float, float> get_position();
 	
 	Unit& operator=(const Unit&& other);
+
+	virtual ~Unit();
 };
 #endif

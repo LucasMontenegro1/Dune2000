@@ -97,3 +97,4 @@ std::tuple<float, float> Unit::get_position(){
 	return std::make_tuple(this->posX, this->posY);
 }
 
+Unit::~Unit(){}

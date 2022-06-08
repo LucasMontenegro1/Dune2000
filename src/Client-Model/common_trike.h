@@ -20,6 +20,8 @@ class Trike: public Unit{
 	
 	Trike(int cordX, int cordY, int id);
 
+	virtual ~Trike();
+
 	
 };
 #endif

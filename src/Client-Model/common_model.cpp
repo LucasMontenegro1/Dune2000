@@ -102,7 +102,7 @@ std::vector<Unit*> &Model::get_units(){
 
 void Model::deleteUnits(){
 	for(size_t i = 0; i < this->units.size() ; i++){
-		delete(this->units[i]);
+		delete &this->units[i];
 	}		
 }
 

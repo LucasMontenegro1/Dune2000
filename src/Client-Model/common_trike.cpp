@@ -82,4 +82,5 @@ void Trike::fillFrames(){
 	frames.insert(std::pair<int,Vector2f>(32, Vector2f(235,85)));
 }
 
+Trike::~Trike(){}
 
