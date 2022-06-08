@@ -11,11 +11,11 @@ using namespace sf;
 
 class Camera {
 	public:
+	View &view;
 	int &posX;
 	int &posY;
 	int sizeX;
 	int sizeY;
-	View &view;
 	
 	Camera(View &view, int &posX, int &posY, int sizeX, int sizeY);
 	

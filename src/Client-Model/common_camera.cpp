@@ -20,10 +20,18 @@ void Camera::update(Vector2i &posicion, Model &model){
 	int large_y_map = model.get_y_size(); 
 
 	bool move = false;
-	if(posicion.x + 10 >= sizeX) posX += 1; move = true;
-	if(posicion.y + 10 >= sizeY) posY += 1; move = true;
-	if(posicion.x - 10 <= 0) posX -= 1; move = true;
-	if(posicion.y - 10 <= 0) posY -= 1; move = true;
+	if(posicion.x + 10 >= sizeX){
+		posX += 1; move = true;
+	}
+	if(posicion.y + 10 >= sizeY){
+		posY += 1; move = true;
+	}
+	if(posicion.x - 10 <= 0){
+		posX -= 1; move = true;
+	}
+	if(posicion.y - 10 <= 0){
+		posY -= 1; move = true;
+	}
 	if(posX < 0) posX = 0;
 	if(posY < 0) posY = 0;
 	if(posX + sizeX > large_x_map) posX -= 1;

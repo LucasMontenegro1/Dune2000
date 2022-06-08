@@ -4,8 +4,10 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
+#include "common_trike.h"
+#include "common_protocol.h"
 #include "common_ground.h"
-#include "mock_server.h"
+#include "../Server/mock_server.h"
 
 
 Protocol::Protocol(): server{}, received(false) {}
@@ -13,15 +15,15 @@ Protocol::Protocol(): server{}, received(false) {}
 Ground Protocol::receive_grounds(){
 	Cliffs map_received = this->server.get_map();
 	std::vector<std::vector<int> > map;
-	for(int i = 0; i < 360; i++){
+	for(unsigned int i = 0; i < 360; i++){
 		std::vector<int> actual_row;
-		for(int j = 0; j < 360; j++){
-			if(map_received[j].first == i && map_received[j].second == j) actual.row.push_back(3);
+		for(unsigned int j = 0; j < 360; j++){
+			if(map_received[j].first == i && map_received[j].second == j) actual_row.push_back(3);
 			else actual_row.push_back(0);
 		}
 		map.push_back(actual_row);
 	}
-	Ground grounds(map, largo, ancho);
+	Ground grounds(map, 360, 360);
 	return grounds;
 }
 	
@@ -29,7 +31,7 @@ Ground Protocol::receive_grounds(){
 std::vector<Unit*> Protocol::receive_units(){
 	std::vector<struct RawUnit> received_units = this->server.get_state();
 	std::vector<Unit*> units;
-	for(int i = 0; i < received_units.size(); i++){
+	for(size_t i = 0; i < received_units.size(); i++){
 		if(!this->received || !received_units[i].changed){
 			Trike trike(received_units[i].col, received_units[i].row, received_units[i].id);
 			units.push_back(&trike);

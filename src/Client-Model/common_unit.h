@@ -10,9 +10,9 @@ using namespace sf;
 
 class Unit: public Drawable{
 	public:
-	bool can_move;
 	float posX;
 	float posY;
+	bool can_move;
 	float destX;
 	float destY;
 	float velocity;

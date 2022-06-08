@@ -42,7 +42,7 @@ int Model::get_x_size(){
 }
 
 int Model::get_unit(float cordX, float cordY){
-	int id;
+	int id = 0;
 	for(size_t i = 0; i < this->units.size() ; i++){
 		if((this->units[i])->is_there(cordX, cordY)) this->units[i]->get_id_unit();	
 	}
@@ -51,7 +51,7 @@ int Model::get_unit(float cordX, float cordY){
 
 
 int Model::get_unit_can_moves(){
-	int id;
+	int id = 0;
 	for(size_t i = 0; i < this->units.size() ; i++){
 		if((this->units[i])->can_moves()) this->units[i]->get_id_unit();
 	}
