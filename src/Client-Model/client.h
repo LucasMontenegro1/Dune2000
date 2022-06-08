@@ -15,7 +15,7 @@ class Client {
     GameScreen screen;
     
 	public:
-	Client(const char* hostname, const char* service);
+	Client();
 
 	void show_window();
 };

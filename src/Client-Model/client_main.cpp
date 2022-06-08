@@ -13,7 +13,7 @@
 int main(int argc, char *argv[]){
 	//if(argc <= 1) throw "Argumentos insuficientes";
 	try{
-		Client client(argv[1], argv[2]);
+		Client client;
 		client.show_window();
 	} catch (std::exception &excepcion) {
 		std::cout << excepcion.what() << "\n";

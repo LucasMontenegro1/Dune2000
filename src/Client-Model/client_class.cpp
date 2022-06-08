@@ -18,7 +18,7 @@
 
 using namespace sf;
 
-Client::Client(const char* hostname, const char* service): protocol{}, screen{} {}
+Client::Client(): protocol{}, screen{} {}
 	
 	
 void Client::show_window(){

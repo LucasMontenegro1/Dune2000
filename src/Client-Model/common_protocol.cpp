@@ -4,11 +4,11 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
+#include <iostream>
 #include "common_trike.h"
 #include "common_protocol.h"
 #include "common_ground.h"
 #include "../Server/mock_server.h"
-
 
 Protocol::Protocol(): server{}, received(false) {}
 
@@ -29,6 +29,7 @@ Ground Protocol::receive_grounds(){
 	
 	
 std::vector<Unit*> Protocol::receive_units(){
+	this->server.create_unit(0,0);
 	std::vector<struct RawUnit> received_units = this->server.get_state();
 	std::vector<Unit*> units;
 	for(size_t i = 0; i < received_units.size(); i++){
