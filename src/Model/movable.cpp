@@ -18,20 +18,24 @@ changed(true)
 
 void Movable::act()
 {
-	if (this->state == moving) {
-		BlockPosition next_pos = this->path.back();
-		if (this->can_traverse(this->map.at(next_pos))) {
-			this->pos = next_pos;
-			this->path.pop_back();
-			if (this->path.empty())
-				this->state = neutral;
-		} else {
-			this->state = neutral;
-		}
-		this->changed = true;
-	} else {
+	if (this->state == neutral)
 		this->changed = false;
+	else if (this->state == moving)
+		this->act_moving();
+}
+
+void Movable::act_moving()
+{
+	BlockPosition next_pos = this->path.back();
+	if (this->can_traverse(this->map.at(next_pos))) {
+		this->pos = next_pos;
+		this->path.pop_back();
+		if (this->path.empty())
+			this->state = neutral;
+	} else {
+		this->state = neutral;
 	}
+	this->changed = true;
 }
 
 bool Movable::can_traverse(BlockTerrain terrain) const
