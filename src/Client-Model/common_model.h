@@ -32,6 +32,8 @@ class Model {
 	int get_unit_can_moves();
 	
 	bool a_unit_can_moves();
+
+	void no_enable_moves();
 	
 	void unit_enable_move(int unit_id);
 	

@@ -18,6 +18,8 @@
 #include "common_unit.h"
 #include "common_camera.h"
 #include "common_ground.h"
+#include "common_pointer.h"
+
 
 using namespace sf;
 
@@ -62,17 +64,16 @@ void GameScreen::check_events(Event &event, Model &model,
 		if(model.is_unit_there(event.mouseButton.x + posX, event.mouseButton.y + posY)){
 			int unit = model.get_unit(event.mouseButton.x + posX, event.mouseButton.y + posY);
 			model.unit_enable_move(unit); 
-			//todas las otras units quedan inhabilitadas para moverse
-		} else if(model.a_unit_can_moves()){
+		} else {
+			model.no_enable_moves();
+		} 
+	}
+	if(event.mouseButton.button == Mouse::Right){
+		if(model.a_unit_can_moves()){
 			int unit = model.get_unit_can_moves();
 			protocol.send_unit_move(unit, event.mouseButton.x + posX, 
-													event.mouseButton.y + posY);
-		} /*else if(model.is_unit_there(event.mouseButton.x + posX, 
-					event.mouseButton.y + posY && model.a_unit_can_moves()){
-			Unit unit = model.get_unit_can_moves();
-			Unit enemy = model.get_unit(event.mouseButton.x + posX, event.mouseButton.y + posY);
-			protocol.send_unit_atack(socket, unit, enemy);
-		}*/
+										event.mouseButton.y + posY);
+		}
 	}
 }
 
@@ -84,6 +85,8 @@ void GameScreen::show(Model &model, Protocol &protocol){
 	
 	View view;
 	Camera camera(view, this->posX, this->posY, sizeX, sizeY);
+
+	Pointer pointer(window);
 	
 	while(window.isOpen()){
 		protocol.update();
@@ -101,6 +104,7 @@ void GameScreen::show(Model &model, Protocol &protocol){
 		camera.render(window);
 		window.clear();
 		draw_elements(window, model, camera, sizeX, sizeY);
+		pointer.update(posicion, posX, posY, window);
 		window.display();
 	}	
 }

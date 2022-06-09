@@ -7,10 +7,11 @@
 
 
 Unit::Unit(int cordX, int cordY, int id): posX(cordX), posY(cordY), 
-	can_move(false), destX(cordX), destY(cordY), id(id) {}
+	can_move(false), destX(cordX), destY(cordY), id(id), selector{}, cont(0) {}
 
 
 void Unit::draw(RenderTarget &target, RenderStates states) const {
+	if(can_move) target.draw(selector);
 	target.draw(sprite, states);
 }
 
@@ -26,11 +27,11 @@ bool Unit::is_there(float cord_x, float cord_y){
 void Unit::setMove(float x, float y){
 	this->destX = x;
 	this->destY = y;
-	this->can_move = false;
 }
 
 void Unit::enable_move(){
 	this->can_move = true;
+	selector.enable_selection(posX, posY);
 }
 
 int Unit::get_id_unit(){
@@ -87,6 +88,7 @@ void Unit::move(){
 	}
 	modifyMovePosition(moveRight, moveLeft, moveUp, moveDown);
 	sprite.setPosition(moveX, moveY);
+	selector.enable_selection(moveX, moveY);
 	this->posX = moveX;
 	this->posY = moveY;
 	if((int) moveX == (int) destX) this->destX = moveX;

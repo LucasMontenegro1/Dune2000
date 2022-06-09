@@ -6,6 +6,8 @@
 #include "common_unit.h"
 #include "common_ground.h"
 #include "common_model.h"
+#include <iostream>
+
 
 Model::Model(std::vector<Unit*> &units, Ground &grounds): 
 		units(units), ground(grounds), one_unit_can_moves(false) {}
@@ -14,24 +16,10 @@ Model::Model(std::vector<Unit*> &units, Ground &grounds):
 void Model::update_status(std::vector<Unit*> &units){
 	for(size_t i = 0; i < units.size() ; i++){
 		std::tuple<float, float> destiny = (units[i])->get_position();
-		(units[i])->setMove(std::get<0>(destiny), std::get<1>(destiny));
+		(this->units[i])->setMove(std::get<0>(destiny), std::get<1>(destiny));
+		delete units[i];
 	}
 }
-
-/*
-bool Model::have_unit_different_cords(Unit &unit){
-	bool is_in = false;
-	for(int i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->get_id_unit) == unit.get_id_unit()){
-			std::tuple<float> origins = (this->units[i])->get_position();
-			std::tuple<float> goes = unit.get_position();
-			if(std::get<0>(origins) == std::get<0>(goes) && 
-			std::get<1>(origins) == std::get<1>(goes)) is_in = true;
-		}
-	}
-	return is_in;
-}
-*/
 
 int Model::get_y_size(){
 	return ground.get_ground_y_size();
@@ -42,20 +30,28 @@ int Model::get_x_size(){
 }
 
 int Model::get_unit(float cordX, float cordY){
-	int id = 0;
+	int id;
 	for(size_t i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->is_there(cordX, cordY)) this->units[i]->get_id_unit();	
+		if((this->units[i])->is_there(cordX, cordY)) id = this->units[i]->get_id_unit();	
 	}
 	return id;
 }
 
 
 int Model::get_unit_can_moves(){
-	int id = 0;
+	int id;
 	for(size_t i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->can_moves()) this->units[i]->get_id_unit();
+		if((this->units[i])->can_moves()) id =  this->units[i]->get_id_unit();
 	}
 	return id;	
+}
+
+void Model::no_enable_moves(){
+	if(a_unit_can_moves()){
+		for(size_t i = 0; i < this->units.size(); i++){
+			this->units[i]->no_enable_move();
+		}
+	}
 }
 
 
@@ -66,7 +62,6 @@ bool Model::a_unit_can_moves(){
 
 void Model::unit_enable_move(int unit_id){
 	for(size_t i = 0; i < this->units.size() ; i++){
-		this->units[i]->no_enable_move();
 		if((this->units[i])->get_id_unit() == unit_id){
 			(this->units[i])->enable_move();
 			this->one_unit_can_moves = true;

@@ -12,7 +12,6 @@
 
 class Protocol {
 	MockServer server;
-	bool received;
 
 	public:
 	Protocol();

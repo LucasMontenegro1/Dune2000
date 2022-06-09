@@ -35,12 +35,12 @@ void Trike::modifyMovePosition(bool moveRight, bool moveLeft, bool moveUp, bool 
 	}
 	if(!moveRight && !moveLeft && !moveUp && moveDown) frameDestiny = 17;
 	if(!moveRight && !moveLeft && moveUp && !moveDown) frameDestiny = 1;
-	if(actualFrame > frameDestiny){
-		actualFrame--;
+
+	if(cont % 10 == 0){
+		if(actualFrame > frameDestiny) actualFrame--;
+		if(actualFrame < frameDestiny) actualFrame++;
 	}
-	if(actualFrame < frameDestiny){
-		actualFrame++;
-	}	
+	cont++;
 	Vector2f &posicionFrame = frames[actualFrame];	
 	sprite.setTextureRect(IntRect(posicionFrame.x, posicionFrame.y,30,25));
 	}

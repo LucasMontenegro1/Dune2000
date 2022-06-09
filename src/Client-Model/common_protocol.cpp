@@ -10,7 +10,10 @@
 #include "common_ground.h"
 #include "../Server/mock_server.h"
 
-Protocol::Protocol(): server{}, received(false) {}
+Protocol::Protocol(): server{} {
+	this->server.create_unit(0,0);
+	this->server.create_unit(8,8);
+}
 
 Ground Protocol::receive_grounds(){
 	Cliffs map_received = this->server.get_map();
@@ -29,22 +32,20 @@ Ground Protocol::receive_grounds(){
 	
 	
 std::vector<Unit*> Protocol::receive_units(){
-	this->server.create_unit(0,0);
 	std::vector<struct RawUnit> received_units = this->server.get_state();
 	std::vector<Unit*> units;
 	for(size_t i = 0; i < received_units.size(); i++){
-		if(!this->received || !received_units[i].changed){
-			Trike trike(received_units[i].col, received_units[i].row, received_units[i].id);
-			units.push_back(&trike);
-		}
+		if(received_units[i].changed){
+			//Trike trike( (int) received_units[i].col, (int) received_units[i].row, received_units[i].id);
+			units.push_back(new Trike( (int) received_units[i].col * 16, (int) received_units[i].row * 16, received_units[i].id));
+ 		}
 	}
-	if(!this->received) this->received = true;
 	return units;
 }
 	
 	
 void Protocol::send_unit_move(int unit_id, float cordX, float cordY){
-	this->server.move_unit(unit_id, (int) cordX / 16, (int) cordY / 16);
+	this->server.move_unit(unit_id, (int) cordY / 16, (int) cordX / 16);
 }
 
 void Protocol::update(){
