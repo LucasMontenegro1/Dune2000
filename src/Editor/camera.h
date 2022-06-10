@@ -5,7 +5,7 @@
 #include <tuple>
 #include <SFML/Graphics.hpp>
 #include <time.h>
-#include "common_model.h"
+#include "ground.h"
 
 using namespace sf;
 
@@ -21,7 +21,7 @@ class Camera {
 	
 	void render(RenderWindow &window);
 	
-	void update(Vector2i &posicion, Model &model);
+	void update(Vector2i &posicion, Ground &ground);
 	
 	bool appears_in_view(int objectX, int objectY, int largeX, int largeY);
 	

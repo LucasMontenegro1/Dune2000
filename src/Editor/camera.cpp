@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "camera.h"
-#include "common_model.h"
+#include "ground.h"
 
 using namespace sf;
 
@@ -15,9 +15,9 @@ void Camera::render(RenderWindow &window){
 	window.setView(view);
 }
 	
-void Camera::update(Vector2i &posicion, Model &model){
-	int large_x_map = model.get_x_size(); //Aca calculo los puntos mas alejados del mapa
-	int large_y_map = model.get_y_size(); 
+void Camera::update(Vector2i &posicion, Ground& ground){
+	int large_x_map = ground.get_ground_x_size(); //Aca calculo los puntos mas alejados del mapa
+	int large_y_map = ground.get_ground_y_size();
 
 	bool move = false;
 	if(posicion.x + 10 >= sizeX){

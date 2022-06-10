@@ -8,9 +8,14 @@
 #include "Button.h"
 
 class EditorMenu {
+    sf::Texture menuTexture;
+    sf::RectangleShape canvas;
     Button sand;
     Button cliff;
     Button rocks;
+public:
+    EditorMenu(float x, float y, float height, float width);
+    void render(sf::RenderWindow& target);
 };
 
 

@@ -30,9 +30,9 @@ class Ground: public Drawable{
 	void draw(RenderTarget &target, RenderStates states) const;
 	
 
-	int get_ground_y_size();
+	int get_ground_y_size() const;
 	
-	int get_ground_x_size();
+	int get_ground_x_size() const;
 	
 };
 #endif

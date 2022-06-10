@@ -10,24 +10,24 @@ void Ground::draw(RenderTarget &target, RenderStates states) const {
 
 Ground::Ground(std::vector<std::vector<int> > level, int lenght, int width): map(level), 
 					lengthMap(lenght), widthMap(width) {
-	texture.loadFromFile("terrain.bmp");
+	texture.loadFromFile("../resources/terrain.bmp");
 	sprite.setTexture(texture);
 }
 
 void Ground::is_sand(){
-	sprite.setTextureRect(IntRect(0,8,16,16)); 
+	sprite.setTextureRect(IntRect(0,8,16,16));
 }
 	
 void Ground::is_rock(){
-	sprite.setTextureRect(IntRect(112,240,16,16)); 
+	sprite.setTextureRect(IntRect(112,240,16,16));
 }
 	
 void Ground::is_spice(){
-	sprite.setTextureRect(IntRect(0,305,16,16)); 
+	sprite.setTextureRect(IntRect(0,305,16,16));
 }
 
 void Ground::set(int x, int y){
-	sprite.setPosition(x,y);
+	sprite.setPosition((float) x,(float)y);
 }
 
 bool Ground::identify_texture(int col, int row){
@@ -49,11 +49,11 @@ bool Ground::identify_texture(int col, int row){
 
 
 //
-int Ground::get_ground_y_size(){
+int Ground::get_ground_y_size() const{
 	return lengthMap * 16;
 }
 	
-int Ground::get_ground_x_size(){
+int Ground::get_ground_x_size() const{
 	return widthMap * 16;
 }
 

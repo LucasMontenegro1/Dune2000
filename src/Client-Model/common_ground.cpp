@@ -22,15 +22,15 @@ Ground::Ground(std::vector<std::vector<int> > level, int lenght, int width): map
 }
 
 void Ground::is_sand(){
-	sprite.setTextureRect(IntRect(0,8,16,16)); 
+	sprite.setTextureRect(IntRect(0,8,16,16));
 }
 	
 void Ground::is_rock(){
-	sprite.setTextureRect(IntRect(112,240,16,16)); 
+	sprite.setTextureRect(IntRect(112,240,16,16));
 }
 	
 void Ground::is_spice(){
-	sprite.setTextureRect(IntRect(0,305,16,16)); 
+	sprite.setTextureRect(IntRect(0,305,16,16));
 }
 
 void Ground::set(int x, int y){
