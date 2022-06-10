@@ -3,14 +3,14 @@
 //
 
 #include "movable.h"
-#include "infantry_mobility.h"
 
-Movable::Movable(int id_, BlockPosition pos_, const TerrainMap &map_) :
-id(id_),
-pos(pos_),
-map(map_),
-state(neutral),
-changed(true)
+Movable::Movable(unsigned int id_, unsigned int player_id_, unsigned int start_hp,
+		 BlockPosition pos_, const TerrainMap &map_) :
+	Teamable(id_, player_id_, start_hp),
+	pos(pos_),
+	map(map_),
+	state(neutral),
+	changed_pos(false)
 {
 	if (this->map.invalid_position(this->pos))
 		throw std::out_of_range("Movable::Movable : Invalid position\n");
@@ -19,7 +19,7 @@ changed(true)
 void Movable::act()
 {
 	if (this->state == neutral)
-		this->changed = false;
+		this->changed_pos = false;
 	else if (this->state == moving)
 		this->act_moving();
 }
@@ -29,22 +29,14 @@ void Movable::act_moving()
 	BlockPosition next_pos = this->path.back();
 	if (this->can_traverse(this->map.at(next_pos))) {
 		this->pos = next_pos;
+		this->changed_pos = true;
 		this->path.pop_back();
 		if (this->path.empty())
 			this->state = neutral;
 	} else {
+		this->changed_pos = false;
 		this->state = neutral;
 	}
-	this->changed = true;
-}
-
-bool Movable::can_traverse(BlockTerrain terrain) const
-{
-	/*
-	 * Por ahora uso este default
-	 */
-	InfantryMobility mob;
-	return mob.can_traverse(terrain);
 }
 
 void Movable::move_to(BlockPosition dst)
@@ -52,7 +44,7 @@ void Movable::move_to(BlockPosition dst)
 	if (this->map.invalid_position(dst))
 		return;
 
-	InfantryMobility mob;
+	const UnitMobility &mob = this->get_mobility();
 	this->path = this->map.get_path(this->pos, dst, mob);
 	if (this->path.size() >= 2) {
 		this->path.pop_back(); // La primer posicion es la posicion actual
@@ -62,14 +54,44 @@ void Movable::move_to(BlockPosition dst)
 	}
 }
 
-bool Movable::is_at_position(BlockPosition position) const
+unsigned int Movable::distance_to(BlockPosition position) const
 {
-	return this->pos == position;
+	return this->pos.distance_to(position);
 }
+
+std::vector<BlockPosition> Movable::positions_at_range(unsigned short int range) const
+{
+	std::vector<BlockPosition> positions;
+	unsigned int row = this->pos.row();
+	unsigned int col = this->pos.col();
+
+	int x, y;
+	for (x = -range; x <= range; x++) {
+		for (y = -range; y <= range; y++) {
+			BlockPosition position(row + x, col + y);
+			if (not this->map.invalid_position(position)
+			and this->pos.distance_to(position) <= range)
+				positions.push_back(position);
+		}
+	}
+
+	return positions;
+}
+
+bool Movable::changed_position() const
+{
+	return this->changed_pos;
+}
+
 
 BlockPosition Movable::get_pos() const
 {
 	return this->pos;
+}
+
+MovableState Movable::get_state() const
+{
+	return this->state;
 }
 
 BlockPosition Movable::facing_pos() const
@@ -80,23 +102,9 @@ BlockPosition Movable::facing_pos() const
 		return this->path.back();
 }
 
-int Movable::get_id() const
-{
-	return this->id;
-}
-
-MovableState Movable::get_state() const
-{
-	return this->state;
-}
-
-bool Movable::has_changed() const
-{
-	return this->changed;
-}
-
 Movable::~Movable() = default;
 
+/*
 Movable::Movable(const Movable &other) :
 id(other.id),
 pos(other.pos),
@@ -118,3 +126,4 @@ Movable &Movable::operator=(const Movable &other)
 
 	return *this;
 }
+ */

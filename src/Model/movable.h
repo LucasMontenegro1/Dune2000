@@ -5,47 +5,55 @@
 #ifndef DUNE2000_MOVABLE_H
 #define DUNE2000_MOVABLE_H
 
+#include "teamable.h"
 #include "terrain_map.h"
 #include <vector>
+
+typedef unsigned int uint;
 
 enum MovableState {
 	neutral,
 	moving
 };
 
-class Movable {
-	int id;
+class Movable : public Teamable {
 	BlockPosition pos;
 	const TerrainMap &map;
 	MovableState state;
-	bool changed;
+	bool changed_pos;
 	std::vector<BlockPosition> path;
 
 	public:
-	Movable(int id_, BlockPosition pos_, const TerrainMap &map_);
+	Movable(uint id_, uint player_id_, uint start_hp, BlockPosition pos_, const TerrainMap &map_);
 
 	void act();
-
-	bool can_traverse(BlockTerrain terrain) const;
-
 	void move_to(BlockPosition destination);
 
-	bool is_at_position(BlockPosition position) const;
+	virtual unsigned int distance_to(BlockPosition position) const override;
+
+	virtual std::vector<BlockPosition> positions_at_range(unsigned short int range) const override;
+
+	/*
+	 * Devuelve true si la unidad se movio en el
+	 * ultimo act()
+	 */
+	virtual bool changed_position() const override;
+
+	virtual bool can_traverse(BlockTerrain terrain) const = 0;
+	virtual const UnitMobility &get_mobility() const = 0;
 
 	BlockPosition get_pos() const;
-
-	BlockPosition facing_pos() const;
-
-	int get_id() const;
-
 	MovableState get_state() const;
+	BlockPosition facing_pos() const;
+	virtual unsigned int get_class_id() const = 0;
+	virtual unsigned int get_type_id() const = 0;
 
-	bool has_changed() const;
+	virtual ~Movable();
 
-	~Movable();
-
-	Movable(const Movable &other);
-	Movable &operator=(const Movable &other);
+	Movable(const Movable &other) = delete;
+	Movable &operator=(const Movable &other) = delete;
+	Movable(Movable &&other) = delete;
+	Movable &operator=(Movable &&other) = delete;
 
 	private:
 	void act_moving();
