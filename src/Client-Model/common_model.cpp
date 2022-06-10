@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <tuple>
+#include <map>
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
@@ -9,16 +10,17 @@
 #include <iostream>
 
 
-Model::Model(std::vector<Unit*> &units, Ground &grounds): 
+Model::Model(std::map <int, Unit*> &units, Ground &grounds): 
 		units(units), ground(grounds), one_unit_can_moves(false) {}
 		
 		
-void Model::update_status(std::vector<Unit*> &units){
-	for(size_t i = 0; i < units.size() ; i++){
-		std::tuple<float, float> destiny = (units[i])->get_position();
-		(this->units[i])->setMove(std::get<0>(destiny), std::get<1>(destiny));
-		delete units[i];
-	}
+void Model::update_status(std::map <int, Unit*> &new_units){
+	for(auto iter = new_units.begin(); iter != new_units.end(); ++iter){
+		std::tuple<float, float> destiny = iter->second->get_position();
+		this->units[iter->first]->setMove(std::get<0>(destiny), std::get<1>(destiny));
+		delete iter->second;
+	}	
+
 }
 
 int Model::get_y_size(){
@@ -31,27 +33,29 @@ int Model::get_x_size(){
 
 int Model::get_unit(float cordX, float cordY){
 	int id;
-	for(size_t i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->is_there(cordX, cordY)) id = this->units[i]->get_id_unit();	
-	}
+	for(auto iter = units.begin(); iter != units.end(); ++iter){
+		if(iter->second->is_there(cordX, cordY)) id = iter->second->get_id_unit();
+	}	
 	return id;
 }
 
 
-int Model::get_unit_can_moves(){
-	int id;
-	for(size_t i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->can_moves()) id =  this->units[i]->get_id_unit();
-	}
-	return id;	
+std::vector<int> Model::get_units_can_moves(){
+	std::vector<int> ids;
+	for(auto iter = units.begin(); iter != units.end(); ++iter){
+		if(iter->second->can_moves()) ids.push_back(iter->first);
+	}	
+	return ids;	
 }
 
 void Model::no_enable_moves(){
 	if(a_unit_can_moves()){
-		for(size_t i = 0; i < this->units.size(); i++){
-			this->units[i]->no_enable_move();
-		}
+		for(auto iter = units.begin(); iter != units.end(); ++iter){
+			iter->second->no_enable_move();
+		}	
+
 	}
+	this->one_unit_can_moves = false;
 }
 
 
@@ -61,24 +65,23 @@ bool Model::a_unit_can_moves(){
 
 
 void Model::unit_enable_move(int unit_id){
-	for(size_t i = 0; i < this->units.size() ; i++){
-		if((this->units[i])->get_id_unit() == unit_id){
-			(this->units[i])->enable_move();
-			this->one_unit_can_moves = true;
-		}
-	}	
+	units[unit_id]->enable_move();
+	this->one_unit_can_moves = true;
 }
 
 
 bool Model::is_unit_there(float cordX, float cordY){
 	bool is_here = false;
-	for(size_t i = 0; i < this->units.size() ; i++){
-		Unit *ptr = this->units[i];
-		if(ptr->is_there(cordX, cordY)) is_here = true;
+	for(auto iter = units.begin(); iter != units.end(); ++iter){
+		if(iter->second->is_there(cordX, cordY)) is_here = true;
 	}	
 	return is_here;
 }
 
+
+void Model::move_by_position(int id){
+	if(!units[id]->is_in_destiny()) units[id]->move();
+}
 
 
 int Model::get_units_size(){
@@ -91,14 +94,14 @@ Ground &Model::get_grounds(){
 }
 
 	
-std::vector<Unit*> &Model::get_units(){
+std::map <int, Unit*> &Model::get_units(){
 	return this->units;
 }
 
 void Model::deleteUnits(){
-	for(size_t i = 0; i < this->units.size() ; i++){
-		delete &this->units[i];
-	}		
+	for(auto iter = units.begin(); iter != units.end(); ++iter){
+		delete &iter->second;
+	}	
 }
 
 

@@ -9,7 +9,7 @@
 using namespace sf;
 
 Trike::Trike(int cordX, int cordY, int id): Unit(cordX, cordY, id) {
-	texture.loadFromFile("trike.png");
+	texture.loadFromFile("resources/units/trike.png");
 	sprite.setTexture(texture);
 	sprite.setTextureRect(IntRect(5,60,30,30));
 	sprite.setPosition(cordX, cordY);

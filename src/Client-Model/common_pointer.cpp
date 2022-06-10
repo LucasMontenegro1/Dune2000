@@ -21,7 +21,7 @@ Pointer::Pointer(RenderWindow &window){
 	this->frame = 1;
 	this->cont = 0;
 	window.setMouseCursorVisible(false);
-	texture.loadFromFile("cursores.png");
+	texture.loadFromFile("resources/cursores.png");
 	sprite.setTexture(texture);
 	sprite.setTextureRect(IntRect(0,15,30,27)); 
 	fillFrames();

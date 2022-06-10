@@ -5,6 +5,7 @@
 #include <tuple>
 #include <SFML/Graphics.hpp>
 #include <time.h>
+#include <map>
 #include "common_unit.h"
 //#include "common_socket.h"
 #include "common_ground.h"
@@ -19,7 +20,7 @@ class Protocol {
 	Ground receive_grounds();
 	
 	
-	std::vector<Unit*> receive_units();
+	std::map <int, Unit*> receive_units();
 	
 	
 	void send_unit_move(int unit_id, float cordX, float cordY);

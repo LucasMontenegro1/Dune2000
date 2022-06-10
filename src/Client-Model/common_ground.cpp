@@ -17,7 +17,7 @@ void Ground::draw(RenderTarget &target, RenderStates states) const {
 
 Ground::Ground(std::vector<std::vector<int> > level, int lenght, int width): map(level), 
 					lengthMap(lenght), widthMap(width) {
-	texture.loadFromFile("terrain.bmp");
+	texture.loadFromFile("resources/terrains/terrain.bmp");
 	sprite.setTexture(texture);
 }
 

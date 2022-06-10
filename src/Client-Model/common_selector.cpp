@@ -13,7 +13,7 @@ void Selector::draw(RenderTarget &target, RenderStates states) const {
 }
 	
 Selector::Selector(){
-	texture.loadFromFile("cursores.png");
+	texture.loadFromFile("resources/cursores.png");
 	sprite.setTexture(texture);
 	sprite.setTextureRect(IntRect(0,155,30,27)); 
 }

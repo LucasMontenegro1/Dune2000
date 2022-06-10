@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <cstring>
 #include <tuple>
+#include <map>
 #include "client.h"
 #include <vector>
 #include <sstream>
@@ -45,15 +46,14 @@ void GameScreen::draw_elements(RenderWindow &window, Model &model,
 		}
 	}
 
-
-	for(int i = 0; i < model.get_units_size() ; i++){
-		if(!model.get_units()[i]->is_in_destiny()) (model.get_units()[i])->move();
-		std::tuple<int, int, int, int> uBits = (model.get_units()[i])->get_bits();
+	for(auto iter = model.get_units().begin(); iter != model.get_units().end(); ++iter){
+		model.move_by_position(iter->first);
+		std::tuple<int, int, int, int> uBits = iter->second->get_bits();
 		if(camera.appears_in_view(std::get<0>(uBits), std::get<1>(uBits), 
 								std::get<2>(uBits), std::get<3>(uBits))){
-			window.draw(*(model.get_units()[i]));
+			window.draw(*(iter->second));
 		}
-	}
+	}	
 }
 
 
@@ -70,9 +70,11 @@ void GameScreen::check_events(Event &event, Model &model,
 	}
 	if(event.mouseButton.button == Mouse::Right){
 		if(model.a_unit_can_moves()){
-			int unit = model.get_unit_can_moves();
-			protocol.send_unit_move(unit, event.mouseButton.x + posX, 
-										event.mouseButton.y + posY);
+			std::vector<int> units_to_move = model.get_units_can_moves();
+			for(size_t i = 0; i < units_to_move.size(); i++){
+				protocol.send_unit_move(units_to_move[i], event.mouseButton.x + posX, 
+											event.mouseButton.y + posY);
+			}
 		}
 	}
 }
@@ -92,7 +94,7 @@ void GameScreen::show(Model &model, Protocol &protocol){
 		protocol.update();
 		Vector2i posicion = Mouse::getPosition(window);	
 		camera.update(posicion, model);	
-		std::vector<Unit*> units = protocol.receive_units();
+		std::map <int, Unit*> units = protocol.receive_units();
 		model.update_status(units);
 		Event event;
 		while(window.pollEvent(event)){

@@ -15,6 +15,8 @@
 //#include "common_socket.h"
 #include "common_model.h"
 #include "common_game_screen.h"
+#include <map>
+
 
 using namespace sf;
 
@@ -23,7 +25,7 @@ Client::Client(): protocol{}, screen{} {}
 	
 void Client::show_window(){
 	Ground ground = protocol.receive_grounds();
-	std::vector<Unit*> units = protocol.receive_units();
+	std::map <int, Unit*> units = protocol.receive_units();
 	Model model(units, ground);
 	this->screen.show(model, this->protocol);
 	//this->conexion.shutdown(0);

@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <tuple>
+#include <map>
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
@@ -31,14 +32,13 @@ Ground Protocol::receive_grounds(){
 }
 	
 	
-std::vector<Unit*> Protocol::receive_units(){
+std::map <int, Unit*> Protocol::receive_units(){
 	std::vector<struct RawUnit> received_units = this->server.get_state();
-	std::vector<Unit*> units;
+	std::map <int, Unit*> units;
 	for(size_t i = 0; i < received_units.size(); i++){
 		if(received_units[i].changed){
-			//Trike trike( (int) received_units[i].col, (int) received_units[i].row, received_units[i].id);
-			units.push_back(new Trike( (int) received_units[i].col * 16, (int) received_units[i].row * 16, received_units[i].id));
- 		}
+			units.insert(std::pair<int, Unit*>(received_units[i].id, new Trike( (int) received_units[i].col * 16, (int) received_units[i].row * 16, received_units[i].id)));
+		}
 	}
 	return units;
 }
