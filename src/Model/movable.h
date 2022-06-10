@@ -8,11 +8,15 @@
 #include "teamable.h"
 #include "terrain_map.h"
 #include <vector>
+#include <map>
+#include <memory>
 
 typedef unsigned int uint;
+typedef std::shared_ptr<Teamable> TeamablePtr;
 
 enum MovableState {
 	neutral,
+	autoattack,
 	moving
 };
 
@@ -22,9 +26,11 @@ class Movable : public Teamable {
 	MovableState state;
 	bool changed_pos;
 	std::vector<BlockPosition> path;
+	std::map<uint, TeamablePtr> &units;
 
 	public:
-	Movable(uint id_, uint player_id_, uint start_hp, BlockPosition pos_, const TerrainMap &map_);
+	Movable(uint id_, uint player_id_, uint start_hp, BlockPosition pos_,
+		const TerrainMap &map_, std::map<uint, TeamablePtr> &units_);
 
 	void act();
 	void move_to(BlockPosition destination);

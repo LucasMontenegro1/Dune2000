@@ -8,8 +8,9 @@ const unsigned int START_HP = 50;
 const unsigned int INFANTRY_ID = 1;
 const unsigned int LIGHT_INFANTRY_ID = 1;
 
-LightInfantry::LightInfantry(uint id_, uint player_id_, BlockPosition pos_, const TerrainMap &map_) :
-	Movable(id_, player_id_, START_HP, pos_, map_){}
+LightInfantry::LightInfantry(uint id_, uint player_id_, BlockPosition pos_,
+			     const TerrainMap &map_, std::map<uint, TeamablePtr> &units_) :
+	Movable(id_, player_id_, START_HP, pos_, map_, units_){}
 
 bool LightInfantry::can_traverse(BlockTerrain terrain) const
 {

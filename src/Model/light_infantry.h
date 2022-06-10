@@ -12,7 +12,8 @@ class LightInfantry : public Movable {
 	InfantryMobility mob;
 
 	public:
-	LightInfantry(uint id_, uint player_id_, BlockPosition pos_, const TerrainMap &map_);
+	LightInfantry(uint id_, uint player_id_, BlockPosition pos_,
+		      const TerrainMap &map_, std::map<uint, TeamablePtr> &units_);
 
 	virtual bool can_traverse(BlockTerrain terrain) const override;
 	virtual const UnitMobility &get_mobility() const override;

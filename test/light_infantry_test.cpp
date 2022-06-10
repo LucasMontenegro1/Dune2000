@@ -9,7 +9,8 @@
 void test_teamable_construction(void)
 {
 	TerrainMap map(4, 5);
-	LightInfantry unit(1, 2, BlockPosition(3, 0), map);
+	std::map<unsigned int, TeamablePtr> units;
+	LightInfantry unit(1, 2, BlockPosition(3, 0), map, units);
 	TEST_CHECK(!unit.is_dead());
 	TEST_CHECK(unit.get_id() == 1);
 	TEST_CHECK(unit.get_player_id() == 2);
@@ -19,7 +20,8 @@ void test_teamable_construction(void)
 void test_reduce_hp(void)
 {
 	TerrainMap map(4, 5);
-	LightInfantry unit(0, 0, BlockPosition(0, 0), map);
+	std::map<unsigned int, TeamablePtr> units;
+	LightInfantry unit(1, 2, BlockPosition(3, 0), map, units);
 	TEST_CHECK(unit.get_hp() == 50);
 	unit.reduce_hp(30);
 	TEST_CHECK(unit.get_hp() == 20);
@@ -31,7 +33,8 @@ void test_reduce_hp(void)
 void test_movable_construction(void)
 {
 	TerrainMap map(4, 5);
-	LightInfantry unit(1, 2, BlockPosition(3, 0), map);
+	std::map<unsigned int, TeamablePtr> units;
+	LightInfantry unit(1, 2, BlockPosition(3, 0), map, units);
 	TEST_CHECK(unit.get_pos() == BlockPosition(3, 0));
 	TEST_CHECK(unit.get_state() == neutral);
 	TEST_CHECK(unit.facing_pos() == BlockPosition(3, 0));
@@ -41,7 +44,8 @@ void test_movable_construction(void)
 void test_movable_distance(void)
 {
 	TerrainMap map(4, 5);
-	LightInfantry unit(1, 2, BlockPosition(3, 0), map);
+	std::map<unsigned int, TeamablePtr> units;
+	LightInfantry unit(1, 2, BlockPosition(3, 0), map, units);
 	double distance = unit.distance_to(BlockPosition(2, 0));
 	TEST_CHECK(distance == 1);
 }
@@ -49,7 +53,8 @@ void test_movable_distance(void)
 void test_positions_at_range(void)
 {
 	TerrainMap map(4, 5);
-	LightInfantry unit(1, 2, BlockPosition(3, 0), map);
+	std::map<unsigned int, TeamablePtr> units;
+	LightInfantry unit(1, 2, BlockPosition(3, 0), map, units);
 	std::vector<BlockPosition> v = unit.positions_at_range(2);
 	TEST_CHECK(v.size() == 6);
 	auto it = std::find(v.begin(), v.end(), BlockPosition(3, 0));
@@ -70,7 +75,8 @@ void test_positions_at_range(void)
 void test_light_infantry_creation(void)
 {
 	TerrainMap map(4, 5);
-	LightInfantry unit(1, 2, BlockPosition(3, 0), map);
+	std::map<unsigned int, TeamablePtr> units;
+	LightInfantry unit(1, 2, BlockPosition(3, 0), map, units);
 
 	TEST_CHECK(unit.can_traverse(sand));
 	TEST_CHECK(not unit.can_traverse(cliffs));
@@ -81,9 +87,10 @@ void test_light_infantry_creation(void)
 void test_move_diagonal(void)
 {
 	TerrainMap map(4, 5);
+	std::map<unsigned int, TeamablePtr> units;
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	LightInfantry unit(1, 2, org, map);
+	LightInfantry unit(1, 2, org, map, units);
 	unit.move_to(dst);
 	TEST_CHECK(unit.get_state() == moving);
 	TEST_CHECK(unit.get_pos() == org);
@@ -111,9 +118,10 @@ void test_move_avoiding_obstacles(void)
 	map.change_terrain(BlockPosition(2, 2), cliffs);
 	map.change_terrain(BlockPosition(2, 1), cliffs);
 	map.change_terrain(BlockPosition(1, 1), cliffs);
+	std::map<unsigned int, TeamablePtr> units;
 	BlockPosition org(3, 0);
 	BlockPosition dst(1, 2);
-	LightInfantry unit(1, 2, org, map);
+	LightInfantry unit(1, 2, org, map, units);
 	unit.move_to(dst);
 	TEST_CHECK(unit.get_state() == moving);
 	TEST_CHECK(unit.get_pos() == org);

@@ -4,13 +4,14 @@
 
 #include "movable.h"
 
-Movable::Movable(unsigned int id_, unsigned int player_id_, unsigned int start_hp,
-		 BlockPosition pos_, const TerrainMap &map_) :
+Movable::Movable(uint id_, uint player_id_, uint start_hp, BlockPosition pos_,
+		 const TerrainMap &map_, std::map<uint, TeamablePtr> &units_) :
 	Teamable(id_, player_id_, start_hp),
 	pos(pos_),
 	map(map_),
 	state(neutral),
-	changed_pos(false)
+	changed_pos(false),
+	units(units_)
 {
 	if (this->map.invalid_position(this->pos))
 		throw std::out_of_range("Movable::Movable : Invalid position\n");
