@@ -1,0 +1,5 @@
+# ninja log v5
+1	631	1654789117020693652	CMakeFiles/Editor.dir/Button.cpp.o	4895c39cb7b2b574
+2	487	1654790807691825297	CMakeFiles/Editor.dir/main.cpp.o	9c1e968f6983d1c9
+516	571	1654794240303794918	Editor	55052bb60bb404c3
+1	516	1654794240247794509	CMakeFiles/Editor.dir/textBox.cpp.o	d0f730d8ab30d20
