@@ -57,3 +57,8 @@ int Ground::get_ground_x_size() const{
 	return widthMap * 16;
 }
 
+void Ground::setsSprite(int x, int y) {
+    map[x][y] = 2;
+
+}
+

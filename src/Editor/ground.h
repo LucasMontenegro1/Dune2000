@@ -10,7 +10,7 @@ using namespace sf;
 
 class Ground: public Drawable{
 	Texture texture;
-	Sprite sprite;
+
 	std::vector<std::vector<int> > map;
 	int lengthMap; int widthMap;
 	
@@ -20,7 +20,8 @@ class Ground: public Drawable{
 	
 	void is_spice();
 	public:
-	
+    Sprite sprite;
+
 	Ground(std::vector<std::vector<int> > level, int lenght, int width);
 	
 	bool identify_texture(int col, int row);
@@ -29,6 +30,7 @@ class Ground: public Drawable{
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 	
+    void setsSprite(int x, int y);
 
 	int get_ground_y_size() const;
 	
