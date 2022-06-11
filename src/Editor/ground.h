@@ -30,7 +30,7 @@ class Ground: public Drawable{
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 	
-    void setsSprite(int x, int y);
+    void setsSprite(int x, int y, int code);
 
 	int get_ground_y_size() const;
 	

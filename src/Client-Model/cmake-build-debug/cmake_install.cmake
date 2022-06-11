@@ -1,4 +1,4 @@
-# Install script for directory: /home/lucas/Desktop/Taller I/Dune2000/src/Editor
+# Install script for directory: /home/lucas/Desktop/Taller I/Dune2000/src/Client-Model
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

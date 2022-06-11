@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Editor"
+			"path" : "Client_Model"
 		}
 	],
 	"backtrace" : 1,
@@ -11,7 +11,8 @@
 		"commands" : 
 		[
 			"add_executable",
-			"target_link_libraries"
+			"target_link_libraries",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -25,13 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 7,
+				"line" : 10,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 8,
+				"line" : 29,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 6,
 				"parent" : 0
 			}
 		]
@@ -43,9 +50,13 @@
 			[
 				{
 					"fragment" : "-g"
-				},
+				}
+			],
+			"includes" : 
+			[
 				{
-					"fragment" : "-std=gnu++17"
+					"backtrace" : 3,
+					"path" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/."
 				}
 			],
 			"language" : "CXX",
@@ -55,20 +66,23 @@
 				[
 					1
 				],
-				"standard" : "17"
+				"standard" : "14"
 			},
 			"sourceIndexes" : 
 			[
-				0,
 				1,
 				2,
-				4,
-				6,
-				7
+				3,
+				5,
+				7,
+				9,
+				11,
+				13,
+				15
 			]
 		}
 	],
-	"id" : "Editor::@6890427a1f51a3e7e1df",
+	"id" : "Client_Model::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -104,8 +118,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Editor",
-	"nameOnDisk" : "Editor",
+	"name" : "Client_Model",
+	"nameOnDisk" : "Client_Model",
 	"paths" : 
 	{
 		"build" : ".",
@@ -114,23 +128,32 @@
 	"sourceGroups" : 
 	[
 		{
-			"name" : "Source Files",
-			"sourceIndexes" : 
-			[
-				0,
-				1,
-				2,
-				4,
-				6,
-				7
-			]
-		},
-		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
+				0,
+				4,
+				6,
+				8,
+				10,
+				12,
+				14,
+				16
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
 				3,
-				5
+				5,
+				7,
+				9,
+				11,
+				13,
+				15
 			]
 		}
 	],
@@ -138,48 +161,96 @@
 	[
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
+			"path" : "client.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Button.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "textBox.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "textBox.h",
+			"path" : "client_class.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "EditorMenu.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "EditorMenu.h",
+			"path" : "client_main.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "camera.cpp",
+			"path" : "common_camera.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "common_camera.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "ground.cpp",
+			"path" : "common_game_screen.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "common_game_screen.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "common_ground.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "common_ground.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "common_model.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "common_model.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "common_protocol.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "common_protocol.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "common_trike.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "common_trike.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "common_unit.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "common_unit.h",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -11,11 +11,14 @@ class EditorMenu {
     sf::Texture menuTexture;
     sf::RectangleShape canvas;
     Button sand;
-    Button cliff;
+    Button spice;
     Button rocks;
+
 public:
     EditorMenu(float x, float y, float height, float width);
+    void update(sf::RenderWindow& target, sf::Event& e);
     void render(sf::RenderWindow& target);
+
 };
 
 

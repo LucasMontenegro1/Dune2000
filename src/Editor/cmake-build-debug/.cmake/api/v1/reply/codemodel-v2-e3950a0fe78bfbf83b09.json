@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Editor::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Editor-Debug-84ddcaa9cb2d6c04cf2e.json",
+					"jsonFile" : "target-Editor-Debug-6d3b5d74a809b386abc3.json",
 					"name" : "Editor",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/lucas/Desktop/Taller I/Editor/cmake-build-debug",
-		"source" : "/home/lucas/Desktop/Taller I/Editor"
+		"build" : "/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug",
+		"source" : "/home/lucas/Desktop/Taller I/Dune2000/src/Editor"
 	},
 	"version" : 
 	{
