@@ -19,6 +19,9 @@ class Ground: public Drawable{
 	void is_rock();
 	
 	void is_spice();
+
+	void is_cliff();
+	
 	public:
 	
 	Ground(std::vector<std::vector<int> > level, int lenght, int width);

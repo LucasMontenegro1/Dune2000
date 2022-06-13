@@ -10,8 +10,8 @@
 #include <iostream>
 
 
-Model::Model(std::map <int, Unit*> &units, Ground &grounds): 
-		units(units), ground(grounds), one_unit_can_moves(false) {}
+Model::Model(std::map <int, Unit*> &units, Ground &grounds, int team): 
+		units(units), ground(grounds), one_unit_can_moves(false), team(team) {}
 		
 		
 void Model::update_status(std::map <int, Unit*> &new_units){
@@ -21,6 +21,10 @@ void Model::update_status(std::map <int, Unit*> &new_units){
 		delete iter->second;
 	}	
 
+}
+
+int Model::get_team(){
+	return team;
 }
 
 int Model::get_y_size(){
@@ -65,8 +69,10 @@ bool Model::a_unit_can_moves(){
 
 
 void Model::unit_enable_move(int unit_id){
-	units[unit_id]->enable_move();
-	this->one_unit_can_moves = true;
+	if(units[unit_id]->get_team() == team){
+		units[unit_id]->enable_move();
+		this->one_unit_can_moves = true;
+	}
 }
 
 

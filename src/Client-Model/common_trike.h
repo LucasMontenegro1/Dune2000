@@ -18,7 +18,7 @@ class Trike: public Unit{
 
 	public:
 	
-	Trike(int cordX, int cordY, int id);
+	Trike(int cordX, int cordY, int id, int team);
 
 	virtual ~Trike();
 

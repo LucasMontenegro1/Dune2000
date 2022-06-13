@@ -88,7 +88,7 @@ void GameScreen::show(Model &model, Protocol &protocol){
 	View view;
 	Camera camera(view, this->posX, this->posY, sizeX, sizeY);
 
-	Pointer pointer(window);
+	Pointer pointer(window, model.get_team());
 	
 	while(window.isOpen()){
 		protocol.update();
@@ -106,7 +106,7 @@ void GameScreen::show(Model &model, Protocol &protocol){
 		camera.render(window);
 		window.clear();
 		draw_elements(window, model, camera, sizeX, sizeY);
-		pointer.update(posicion, posX, posY, window);
+		pointer.update(posicion, posX, posY, window, model.get_units());
 		window.display();
 	}	
 }

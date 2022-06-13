@@ -17,9 +17,11 @@
 
 using namespace sf;
 
-Pointer::Pointer(RenderWindow &window){
+Pointer::Pointer(RenderWindow &window, int team){
 	this->frame = 1;
 	this->cont = 0;
+	this->is_enemy = false;
+	this->team = team;
 	window.setMouseCursorVisible(false);
 	texture.loadFromFile("resources/cursores.png");
 	sprite.setTexture(texture);
@@ -28,13 +30,28 @@ Pointer::Pointer(RenderWindow &window){
 }
 	
 void Pointer::updateTexture(){
+	if(is_enemy){
+		if(frame > 8) frame++;
+		if(frame < 8 || frame == 16) frame = 9;
+	} else {
+		if(frame < 8) frame++;
+		if(frame >= 8) frame = 1;
+	}
 	Vector2f &posicionFrame = frames[frame];
 	sprite.setTextureRect(IntRect(posicionFrame.x, posicionFrame.y,30,27));
-	frame++;
-	if(frame == 8) frame = 1;
 }
 
-void Pointer::update(Vector2i &posicion, int posX, int posY, RenderWindow &window){
+void Pointer::update(Vector2i &posicion, int posX, int posY, RenderWindow &window, std::map <int, Unit*> &units){
+	for(auto iter = units.begin(); iter != units.end(); ++iter){
+		if(iter->second->get_team() != team){
+			if(iter->second->is_there(posicion.x + posX, posicion.y + posY)){
+				is_enemy = true;
+				break;
+			} else { 
+				is_enemy = false;
+			}
+		}
+	}
 	sprite.setPosition(posicion.x + posX - 15, posicion.y + posY - 15);
 	if(cont % 30 == 0) updateTexture();
 	window.draw(sprite);
@@ -50,4 +67,12 @@ void Pointer::fillFrames(){
 	frames.insert(std::pair<int,Vector2f>(6, Vector2f(168,15)));
 	frames.insert(std::pair<int,Vector2f>(7, Vector2f(200,15)));
 	frames.insert(std::pair<int,Vector2f>(8, Vector2f(233,15)));	
+	frames.insert(std::pair<int,Vector2f>(9, Vector2f(0,70)));	
+	frames.insert(std::pair<int,Vector2f>(10, Vector2f(30,70)));
+	frames.insert(std::pair<int,Vector2f>(11, Vector2f(65,70)));		
+	frames.insert(std::pair<int,Vector2f>(12, Vector2f(95,70)));		
+	frames.insert(std::pair<int,Vector2f>(13, Vector2f(125,70)));		
+	frames.insert(std::pair<int,Vector2f>(14, Vector2f(157,70)));		
+	frames.insert(std::pair<int,Vector2f>(15, Vector2f(187,70)));		
+	frames.insert(std::pair<int,Vector2f>(16, Vector2f(220,70)));	
 }

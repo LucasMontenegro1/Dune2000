@@ -6,8 +6,8 @@
 #include "common_unit.h"
 
 
-Unit::Unit(int cordX, int cordY, int id): posX(cordX), posY(cordY), 
-	can_move(false), destX(cordX), destY(cordY), id(id), selector{}, cont(0) {}
+Unit::Unit(int cordX, int cordY, int id, int team): posX(cordX), posY(cordY), 
+	can_move(false), destX(cordX), destY(cordY), id(id), selector{}, team(team), cont(0) {}
 
 
 void Unit::draw(RenderTarget &target, RenderStates states) const {
@@ -54,6 +54,10 @@ std::tuple<int, int, int, int> Unit::get_bits(){
 
 bool Unit::is_in_destiny(){
 	return destX == posX && destY == posY;
+}
+
+int Unit::get_team(){
+	return team;
 }
 
 Unit& Unit::operator=(const Unit&& other) {
