@@ -12,6 +12,7 @@ using namespace sf;
 
 class Editor {
 private:
+    std::string name;
     int posX;
     int posY;
     View view;
@@ -22,11 +23,13 @@ private:
     Ground* ground;
     std::vector<std::vector<int>> level;
     bool game_over;
+    int players;
     void updateCamera();
 
 public:
-    Editor(sf::Vector2i resolution);
+    Editor(sf::Vector2i resolution,std::string& name,int x, int y, int players);
     void gameloop();
+    void setMap(std::vector<std::vector<int>>);
 };
 
 

@@ -5,7 +5,12 @@ project(Client)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 
-add_executable(Client main.cpp Client.cpp firstwindow.cpp ui_firstwindow.h sockets.cpp SocketException.cpp loginscreen.cpp ui_loginscreen.h Button.cpp Button.h ConstructionMenu.cpp ConstructionMenu.h BuildingImageHandler.cpp BuildingImageHandler.h UnitImageHandler.cpp UnitImageHandler.h VehicleImageHandler.cpp VehicleImageHandler.h)
+add_executable(Client main.cpp Client.cpp firstwindow.cpp ui_firstwindow.h
+        sockets.cpp SocketException.cpp loginscreen.cpp
+        ui_loginscreen.h Button.cpp Button.h ConstructionMenu.cpp
+        ConstructionMenu.h BuildingImageHandler.cpp BuildingImageHandler.h
+        UnitImageHandler.cpp UnitImageHandler.h VehicleImageHandler.cpp VehicleImageHandler.h
+        editormainwindow.h editormainwindow.cpp editormainwindow.ui)
 
 find_package(yaml-cpp REQUIRED)
 find_package(Qt5 COMPONENTS

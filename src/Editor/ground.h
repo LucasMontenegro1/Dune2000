@@ -11,7 +11,7 @@ using namespace sf;
 class Ground: public Drawable{
 	Texture texture;
 
-	std::vector<std::vector<int> > map;
+	std::vector<std::vector<int> >& map;
 	int lengthMap; int widthMap;
 	
 	void is_sand();
@@ -22,7 +22,7 @@ class Ground: public Drawable{
 	public:
     Sprite sprite;
 
-	Ground(std::vector<std::vector<int> > level, int lenght, int width);
+	Ground(std::vector<std::vector<int> >& level, int lenght, int width);
 	
 	bool identify_texture(int col, int row);
 	

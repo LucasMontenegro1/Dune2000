@@ -2,16 +2,20 @@
 // Created by lucas on 10/06/22.
 //
 
+#include <iostream>
 #include "Editor.h"
+#include "StateSaver.h"
 
-Editor::Editor(sf::Vector2i resolution): window(sf::VideoMode(resolution.x, resolution.y),
+Editor::Editor(sf::Vector2i resolution,std::string& name,int x , int y, int players): window(sf::VideoMode(resolution.x, resolution.y),
                                                 "Dune - Editor", sf::Style::Close | sf::Style::Resize),
-                                                game_over(false), menu(0,0,700,1000),level(1000, std::vector<int>(1000)){
+                                                game_over(false), menu(0,0,700,1000),level(y, std::vector<int>(x)),
+                                                name(name),
+                                                players(players){
     this->posX = 0;
     this->posY = 0;
-    this->view.setViewport(sf::FloatRect(0.f, 0.f, 0.75f, 1.0f));
+    this->view.setViewport(sf::FloatRect(0.f, 0.f, 0.75f, 0.75f));
     this->menu_view.setViewport(sf::FloatRect(0.81f, 0.f, 0.25f, 0.70f));
-    this->ground = new Ground(level, 1000, 1000);
+    this->ground = new Ground(level, x, y);
     this->camera = new Camera(view, posX, posY, resolution.x, resolution. y);
 
 }
@@ -19,6 +23,8 @@ Editor::Editor(sf::Vector2i resolution): window(sf::VideoMode(resolution.x, reso
 
 
 void Editor::gameloop() {
+    StateSaver saver;
+    int selection = 1;
     bool dragMode = false;
     while (!game_over) {
         window.clear();
@@ -56,10 +62,14 @@ void Editor::gameloop() {
                     if (WinPos.x < x * scale) {
                         camera->render(window);
                         sf::Vector2f mouse = window.mapPixelToCoords(WinPos);
-                        ground->setsSprite(mouse.y / 16, mouse.x / 16, 2);
+                        ground->setsSprite(mouse.y / 16, mouse.x / 16, selection);
                     }
                 }
-                menu.update(window, event);
+                window.setView(menu_view);
+                menu.update(window, event, selection);
+                if (menu.checkSaved(window, event)){
+                    saver.saveStatus(name, level, players);
+                }
             }
 
             Vector2i posicion = Mouse::getPosition(window);
@@ -95,5 +105,9 @@ void Editor::updateCamera() {
             }
         }
     }
+}
+
+void Editor::setMap(std::vector<std::vector<int>> map) {
+    level = map;
 }
 

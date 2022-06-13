@@ -13,11 +13,13 @@ class EditorMenu {
     Button sand;
     Button spice;
     Button rocks;
+    Button save;
 
 public:
     EditorMenu(float x, float y, float height, float width);
-    void update(sf::RenderWindow& target, sf::Event& e);
+    void update(sf::RenderWindow& target, sf::Event& e, int& selection);
     void render(sf::RenderWindow& target);
+    bool checkSaved(sf::RenderWindow& target, sf::Event& e);
 
 };
 

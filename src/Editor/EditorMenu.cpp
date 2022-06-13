@@ -2,6 +2,7 @@
 // Created by lucas on 09/06/22.
 //
 
+#include <iostream>
 #include "EditorMenu.h"
 
 #define BTN_WIDTH 160
@@ -34,6 +35,10 @@ EditorMenu::EditorMenu(float x, float y, float width, float height) {
     this->spice.setPosition(INITIAL_X+ DIFERENCE*2, INITIAL_Y);
     this->spice.setSize(BTN_WIDTH, BTN_HEIGTH);
 
+    texture.loadFromFile("../resources/saveButton.png");
+    this->save.setTexture(texture);
+    this->save.setPosition(240, 900);
+    this->save.setSize(250, 50);
 }
 
 void EditorMenu::render(sf::RenderWindow &target) {
@@ -41,10 +46,32 @@ void EditorMenu::render(sf::RenderWindow &target) {
     sand.render(target);
     rocks.render(target);
     spice.render(target);
+    save.render(target);
 }
 
-void EditorMenu::update(sf::RenderWindow &target, sf::Event &e) {
+
+void EditorMenu::update(sf::RenderWindow &target, sf::Event &e, int& selection) {
     this->sand.update(e,target);
     this->rocks.update(e, target);
     this->spice.update(e, target);
+    this->save.update(e,target);
+
+    if (sand.is_Clicked(e,target)){
+        selection = 0;
+    } else if(rocks.is_Clicked(e, target)){
+        selection = 1;
+    }else if(spice.is_Clicked(e, target)) {
+        selection = 2;
+    }
+
 }
+
+bool EditorMenu::checkSaved(sf::RenderWindow &target, sf::Event &e) {
+    this->save.update(e,target);
+    if (save.is_Clicked(e, target)){
+        return true;
+    }
+    return false;
+}
+
+
