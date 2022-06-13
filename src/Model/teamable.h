@@ -18,11 +18,16 @@ class Teamable {
 	public:
 	Teamable(unsigned int id_, unsigned int player_id_, unsigned int start_hp);
 
+	virtual bool is_movable() const = 0;
+	virtual bool can_attack() const = 0;
+
 	void reduce_hp(unsigned int dmg);
 	void destroy();
 	bool is_dead() const;
 
-	virtual unsigned int distance_to(BlockPosition pos) const = 0;
+	virtual bool changed_position() const = 0;
+
+	virtual double distance_to(BlockPosition position) const = 0;
 
 	/*
 	 * Devuelve un vector con todas las posiciones que esten a un rango
@@ -30,12 +35,12 @@ class Teamable {
 	 */
 	virtual std::vector<BlockPosition> positions_at_range(unsigned short int range) const = 0;
 
-	virtual bool changed_position() const = 0;
 
-	// getters
 	unsigned int get_id() const;
 	unsigned int get_player_id() const;
+
 	unsigned int get_hp() const;
+
 	virtual unsigned int get_class_id() const = 0;
 	virtual unsigned int get_type_id() const = 0;
 
