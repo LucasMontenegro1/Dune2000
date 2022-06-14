@@ -5,23 +5,31 @@
 #ifndef DUNE2000_LIGHT_INFANTRY_H
 #define DUNE2000_LIGHT_INFANTRY_H
 
-#include "movable.h"
+#include "unit.h"
 #include "infantry_mobility.h"
+#include "assault_rifle.h"
 
-class LightInfantry : public Movable {
+class LightInfantry : public Unit {
 	InfantryMobility mob;
+	AssaultRifle rifle;
 
-	public:
-	LightInfantry(uint id_, uint player_id_, BlockPosition pos_,
-		      const TerrainMap &map_, std::map<uint, TeamablePtr> &units_);
-
-	virtual bool can_traverse(BlockTerrain terrain) const override;
-	virtual const UnitMobility &get_mobility() const override;
+public:
+	LightInfantry(unsigned int id, unsigned int player_id, BlockPosition position,
+	     const TerrainMap &map_, std::map<unsigned int, TeamablePtr> &game_objects,
+	     float creation_mod);
 
 	virtual unsigned int get_class_id() const override;
 	virtual unsigned int get_type_id() const override;
+	virtual unsigned int get_weapon_id() const override;
+	virtual unsigned int get_range() const override;
 
 	virtual ~LightInfantry();
+
+protected:
+	virtual const UnitMobility &get_mobility() const override;
+	virtual bool can_traverse(BlockTerrain terrain) const override;
+	virtual unsigned int traverse_time(BlockTerrain terrain) const override;
+	virtual Weapon &get_weapon() override;
 };
 
 #endif //DUNE2000_LIGHT_INFANTRY_H
