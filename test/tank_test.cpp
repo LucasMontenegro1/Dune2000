@@ -244,10 +244,13 @@ void test_attack_still_target(void)
 	tank1->update(240000);
 	tank2->update(240000);
 	tank1->attack(2); // notar que tank2 esta fuera de rango. tank1 tiene que acercarse
-	tank1->update(0); // no necesita tiempo para setear target
 	TEST_CHECK(tank1->get_state() == chasing);
-	tank1->update(200);
-	TEST_CHECK(tank1->get_position() == BlockPosition(2, 1));
+	tank1->update(100);
+	TEST_CHECK(tank1->get_position() == BlockPosition(3, 0));
+	TEST_CHECK(tank1->get_state() == chasing);
+	tank1->update(100);
+	TEST_CHECK(tank1->get_position() == BlockPosition(2, 0)
+	or tank1->get_position() == BlockPosition(3, 1));
 	TEST_CHECK(tank1->get_state() == attacking);
 	tank1->update(1000);
 	TEST_CHECK(tank2->get_hp() == 23);
@@ -265,20 +268,29 @@ void test_attack_and_chase(void)
 	tank2->update(240000);
 	tank1->attack(2);
 	tank2->move_to(BlockPosition(0, 3));
-	tank1->update(0);
-	tank2->update(0);
 	TEST_CHECK(tank1->get_state() == attacking);
 	TEST_CHECK(tank2->get_state() == moving);
 	tank1->update(200); // tank1 usa estos 200ms para recargar el arma
-	tank2->update(200);
+	tank2->update(200); // tank2 se mueve
 	TEST_CHECK(tank2->changed_position());
-	tank1->update(0); // tank1 se entera que tank2 se fue de rango asi que empieza a perseguirlo
+	TEST_CHECK(tank2->get_position() == BlockPosition(0, 3));
+	tank1->update(200);
+	tank2->update(200);
 	TEST_CHECK(tank1->get_state() == chasing);
 	tank1->update(200);
-	TEST_CHECK(tank1->get_position() == BlockPosition(2, 1));
+	TEST_CHECK(tank1->get_position() == BlockPosition(2, 0)
+	or tank1->get_position() == BlockPosition(3, 1));
+	TEST_CHECK(tank1->get_state() == attacking);
+	tank1->update(800);
+	TEST_CHECK(tank2->get_hp() == 23);
+	/*
+	tank1->update(200);
+	TEST_CHECK(tank1->get_position() == BlockPosition(2, 0)
+	or tank1->get_position() == BlockPosition(3, 1));
 	TEST_CHECK(tank1->get_state() == attacking);
 	tank1->update(800); // ya habia estado 200ms recargando el arma
 	TEST_CHECK(tank2->get_hp() == 23);
+	 */
 }
 
 TEST_LIST = {

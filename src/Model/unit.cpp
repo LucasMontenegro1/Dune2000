@@ -153,7 +153,7 @@ void Unit::act_moving(unsigned int time_delta)
 			this->timer = this->traverse_time(this->map.at(this->pos));
 	} else {
 		this->changed_pos = false;
-		this->state = neutral;
+		this->reset_state();
 	}
 }
 
@@ -169,7 +169,7 @@ void Unit::act_attacking(unsigned int time_delta)
 		unsigned int dmg = weapon.damage(this->target->get_class_id(), time_delta);
 		this->target->reduce_hp(dmg);
 	} else {
-		this->attack(this->target->get_id());
+		this->attack(this->target->get_id()); // recalcular el ataque, se podria optimizar
 	}
 }
 
@@ -184,11 +184,11 @@ void Unit::act_chasing(unsigned int time_delta)
 		this->attack(this->target->get_id());
 	} else {
 		this->act_moving(time_delta);
-		if (not this->changed_pos) {
+		if (not this->changed_pos and this->state == neutral) { // no se puede mover mas
 			this->reset_state();
 			return;
 		}
-		if (this->state == neutral)
+		if (this->state == neutral) // llego a destino
 			this->state = attacking;
 	}
 }
