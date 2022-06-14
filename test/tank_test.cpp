@@ -7,13 +7,6 @@
 
 typedef std::shared_ptr<Unit> UnitPtr;
 
-/*
-TeamablePtr foo(const UnitPtr &ptr)
-{
-	return std::dynamic_pointer_cast<TeamablePtr>(ptr);
-}
- */
-
 void test_create(void)
 {
 	TerrainMap map(4, 5);

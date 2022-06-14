@@ -8,8 +8,6 @@
 #include "unit.h"
 #include "vehicle_mobility.h"
 #include "cannon.h"
-#include <map>
-#include <memory>
 
 class Tank : public Unit {
 	VehicleMobility mob;
