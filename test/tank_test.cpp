@@ -283,14 +283,28 @@ void test_attack_and_chase(void)
 	TEST_CHECK(tank1->get_state() == attacking);
 	tank1->update(800);
 	TEST_CHECK(tank2->get_hp() == 23);
-	/*
-	tank1->update(200);
-	TEST_CHECK(tank1->get_position() == BlockPosition(2, 0)
-	or tank1->get_position() == BlockPosition(3, 1));
+}
+
+void test_target_dies(void)
+{
+	TerrainMap map(4, 5);
+	std::map<unsigned int, TeamablePtr> game_objects;
+	UnitPtr tank1 = std::make_shared<Tank>(1, 2, BlockPosition(3, 0), map, game_objects, 1);
+	UnitPtr tank2 = std::make_shared<Tank>(2, 1, BlockPosition(1, 2), map, game_objects, 1);
+	game_objects.insert(std::pair<unsigned int, TeamablePtr>(tank1->get_id(), tank1));
+	game_objects.insert(std::pair<unsigned int, TeamablePtr>(tank2->get_id(), tank2));
+	tank1->update(240000);
+	tank2->update(240000);
+	tank1->attack(2);
+	for (unsigned int i = 1; i <= 4; i++) {
+		tank1->update(1000);
+		TEST_CHECK(tank2->get_hp() == 30 - 7 * i);
+	}
+	tank1->update(1000);
+	TEST_CHECK(tank2->is_dead());
 	TEST_CHECK(tank1->get_state() == attacking);
-	tank1->update(800); // ya habia estado 200ms recargando el arma
-	TEST_CHECK(tank2->get_hp() == 23);
-	 */
+	tank1->update(0);
+	TEST_CHECK(tank1->get_state() == neutral);
 }
 
 TEST_LIST = {
@@ -306,5 +320,6 @@ TEST_LIST = {
 	{"neutral_lose_target", test_neutral_loses_target},
 	{"attack_still_target", test_attack_still_target},
 	{"attack_and_chase", test_attack_and_chase},
+	{"kill_target", test_target_dies},
 	{NULL, NULL}
 };
