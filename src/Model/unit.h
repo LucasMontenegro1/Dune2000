@@ -7,7 +7,7 @@
 
 #include "teamable.h"
 #include "terrain_map.h"
-#include "weapon.h"
+#include "Weapons/weapon.h"
 #include <map>
 #include <memory>
 

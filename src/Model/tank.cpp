@@ -3,24 +3,22 @@
 //
 
 #include "tank.h"
-
-const unsigned int TANK_HP = 30;
-const unsigned int TANK_CREATION_TIME = 240000;
+#include "configurations.h"
 
 Tank::Tank(unsigned int id, unsigned int player_id, BlockPosition position,
 	   const TerrainMap &map_, std::map<unsigned int, TeamablePtr> &game_objects,
 	   float creation_mod) :
-	Unit(id, player_id, TANK_HP, position, map_, game_objects,
-	     TANK_CREATION_TIME / creation_mod){}
+	Unit(id, player_id, CONFIGS.TANK_HP, position, map_, game_objects,
+	     CONFIGS.TANK_CREATION_TIME / creation_mod){}
 
 unsigned int Tank::get_class_id() const
 {
-	return 2;
+	return CONFIGS.VEHICLE_CLASS_ID;
 }
 
 unsigned int Tank::get_type_id() const
 {
-	return 2;
+	return CONFIGS.TANK_ID;
 }
 
 unsigned int Tank::get_weapon_id() const
@@ -30,7 +28,7 @@ unsigned int Tank::get_weapon_id() const
 
 unsigned int Tank::get_range() const
 {
-	return 4;
+	return CONFIGS.TANK_RANGE;
 }
 
 Tank::~Tank() = default;
@@ -48,9 +46,9 @@ bool Tank::can_traverse(BlockTerrain terrain) const
 unsigned int Tank::traverse_time(BlockTerrain terrain) const
 {
 	if (terrain == dunes)
-		return 400;
+		return 2 * CONFIGS.TANK_TRAVERSE_TIME;
 	else
-		return 200;
+		return CONFIGS.TANK_TRAVERSE_TIME;
 }
 
 Weapon &Tank::get_weapon()

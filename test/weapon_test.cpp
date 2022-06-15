@@ -3,7 +3,7 @@
 //
 
 #include "acutest.h"
-#include "../src/Model/assault_rifle.h"
+#include "../src/Model/Weapons/assault_rifle.h"
 
 const unsigned int INFANTRY_ID = 1;
 const unsigned int VEHICLE_ID = 2;

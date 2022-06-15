@@ -3,24 +3,23 @@
 //
 
 #include "light_infantry.h"
+#include "configurations.h"
 
-const unsigned int LIGHT_INF_HP = 50;
-const unsigned int LIGHT_INF_CREATION_TIME = 60000;
 
 LightInfantry::LightInfantry(unsigned int id, unsigned int player_id, BlockPosition position,
 			     const TerrainMap &map_, std::map<unsigned int, TeamablePtr> &game_objects,
 			     float creation_mod) :
-	Unit(id, player_id, LIGHT_INF_HP, position, map_, game_objects,
-	     LIGHT_INF_CREATION_TIME / creation_mod){}
+	Unit(id, player_id, CONFIGS.L_INFANTRY_HP, position, map_, game_objects,
+	     CONFIGS.L_INFANTRY_CREATION_TIME / creation_mod){}
 
 unsigned int LightInfantry::get_class_id() const
 {
-	return 1;
+	return CONFIGS.INFANTRY_CLASS_ID;
 }
 
 unsigned int LightInfantry::get_type_id() const
 {
-	return 1;
+	return CONFIGS.L_INFANTRY_ID;
 }
 
 unsigned int LightInfantry::get_weapon_id() const
@@ -30,7 +29,7 @@ unsigned int LightInfantry::get_weapon_id() const
 
 unsigned int LightInfantry::get_range() const
 {
-	return 3;
+	return CONFIGS.L_INFANTRY_RANGE;
 }
 
 LightInfantry::~LightInfantry() = default;
@@ -48,9 +47,9 @@ bool LightInfantry::can_traverse(BlockTerrain terrain) const
 unsigned int LightInfantry::traverse_time(BlockTerrain terrain) const
 {
 	if (terrain == dunes)
-		return 900;
+		return 2 * CONFIGS.L_INFANTRY_TRAVERSE_TIME;
 	else
-		return 450;
+		return CONFIGS.L_INFANTRY_TRAVERSE_TIME;
 }
 
 Weapon &LightInfantry::get_weapon()

@@ -6,8 +6,8 @@
 #define DUNE2000_TANK_H
 
 #include "unit.h"
-#include "vehicle_mobility.h"
-#include "cannon.h"
+#include "Mobility/vehicle_mobility.h"
+#include "Weapons/cannon.h"
 
 class Tank : public Unit {
 	VehicleMobility mob;

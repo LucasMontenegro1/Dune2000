@@ -6,8 +6,8 @@
 #define DUNE2000_LIGHT_INFANTRY_H
 
 #include "unit.h"
-#include "infantry_mobility.h"
-#include "assault_rifle.h"
+#include "Mobility/infantry_mobility.h"
+#include "Weapons/assault_rifle.h"
 
 class LightInfantry : public Unit {
 	InfantryMobility mob;
