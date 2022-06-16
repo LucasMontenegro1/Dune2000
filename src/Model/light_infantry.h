@@ -23,11 +23,12 @@ public:
 	virtual unsigned int get_weapon_id() const override;
 	virtual unsigned int get_range() const override;
 
+	virtual bool can_traverse(BlockTerrain terrain) const override;
+
 	virtual ~LightInfantry();
 
 protected:
 	virtual const UnitMobility &get_mobility() const override;
-	virtual bool can_traverse(BlockTerrain terrain) const override;
 	virtual unsigned int traverse_time(BlockTerrain terrain) const override;
 	virtual Weapon &get_weapon() override;
 };

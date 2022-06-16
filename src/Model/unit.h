@@ -43,6 +43,7 @@ public:
 
 	virtual bool is_movable() const override;
 	virtual bool can_attack() const override;
+	virtual bool can_traverse(BlockTerrain terrain) const = 0;
 
 	void update(unsigned int time_delta);
 
@@ -66,7 +67,6 @@ public:
 
 protected:
 	virtual const UnitMobility &get_mobility() const = 0;
-	virtual bool can_traverse(BlockTerrain terrain) const = 0;
 	virtual unsigned int traverse_time(BlockTerrain terrain) const = 0;
 	virtual Weapon &get_weapon() = 0;
 

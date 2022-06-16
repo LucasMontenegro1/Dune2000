@@ -109,6 +109,7 @@ void Unit::act_neutral(unsigned int time_delta)
 	this->changed_pos = false;
 	for (auto &it : this->game_objects) {
 		TeamablePtr tmp = it.second;
+		// TODO: bug: se puede atacar a unidades que estan siendo creadas
 		if (tmp->get_player_id() != this->get_player_id()
 		and tmp->distance_to(this->pos) <= this->get_range()) {
 			this->target = tmp;

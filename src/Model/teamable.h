@@ -38,9 +38,7 @@ class Teamable {
 
 	unsigned int get_id() const;
 	unsigned int get_player_id() const;
-
 	unsigned int get_hp() const;
-
 	virtual unsigned int get_class_id() const = 0;
 	virtual unsigned int get_type_id() const = 0;
 
