@@ -300,6 +300,21 @@ void test_target_dies(void)
 	TEST_CHECK(tank1->get_state() == neutral);
 }
 
+void test_cannot_attack_target_creating(void)
+{
+	TerrainMap map(4, 5);
+	std::map<unsigned int, TeamablePtr> game_objects;
+	UnitPtr tank1 = std::make_shared<Tank>(1, 2, BlockPosition(3, 0), map, game_objects, 1);
+	UnitPtr tank2 = std::make_shared<Tank>(2, 1, BlockPosition(1, 2), map, game_objects, 1);
+	game_objects.insert(std::pair<unsigned int, TeamablePtr>(tank1->get_id(), tank1));
+	game_objects.insert(std::pair<unsigned int, TeamablePtr>(tank2->get_id(), tank2));
+	tank1->update(240000);
+	tank1->update(0);
+	TEST_CHECK(tank1->get_state() == neutral);
+	tank1->attack(2);
+	TEST_CHECK(tank1->get_state() == neutral);
+}
+
 TEST_LIST = {
 	{"create", test_create},
 	{"create_faster", test_create_faster},
@@ -314,5 +329,6 @@ TEST_LIST = {
 	{"attack_still_target", test_attack_still_target},
 	{"attack_and_chase", test_attack_and_chase},
 	{"kill_target", test_target_dies},
+	{"creating_invulnerable", test_cannot_attack_target_creating},
 	{NULL, NULL}
 };

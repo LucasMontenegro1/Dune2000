@@ -20,19 +20,14 @@ class Teamable {
 
 	virtual bool is_movable() const = 0;
 	virtual bool can_attack() const = 0;
+	virtual bool is_damageable() const = 0;
 
 	void reduce_hp(unsigned int dmg);
 	void destroy();
 	bool is_dead() const;
 
 	virtual bool changed_position() const = 0;
-
 	virtual double distance_to(BlockPosition position) const = 0;
-
-	/*
-	 * Devuelve un vector con todas las posiciones que esten a un rango
-	 * maximo "range"
-	 */
 	virtual std::vector<BlockPosition> positions_at_range(unsigned short int range) const = 0;
 
 

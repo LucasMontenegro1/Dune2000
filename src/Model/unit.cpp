@@ -44,9 +44,9 @@ void Unit::update_timer(unsigned int time_delta)
 void Unit::move_to(BlockPosition dst)
 {
 	if (this->state == creating)
-		return;
+		return; // no se puede hacer nada mientras se esta creando
 	else
-		this->reset_state();
+		this->reset_state(); // dar un comando resetea el estado
 
 	if (this->map.invalid_position(dst))
 		return;
@@ -58,14 +58,14 @@ void Unit::move_to(BlockPosition dst)
 		this->state = moving;
 		this->timer = this->traverse_time(this->map.at(this->pos));
 	} else {
-		this->reset_path();
+		this->reset_path(); // solo para ahorrar un poco de memoria pero no es necesario al verdad
 	}
 }
 
 void Unit::attack(unsigned int target_id)
 {
 	if (this->state == creating)
-		return;
+		return; // idem que para moverse
 	else
 		this->reset_state();
 
@@ -73,23 +73,24 @@ void Unit::attack(unsigned int target_id)
 		return;
 
 	TeamablePtr tmp_target = this->game_objects.at(target_id);
-	if (tmp_target->get_player_id() == this->get_player_id())
-		return;
+	if (tmp_target->get_player_id() == this->get_player_id()
+	or not tmp_target->is_damageable())
+		return; // no ataca cosas que sean del mismo equipo o que no se puedan dañar
 
 	if (tmp_target->distance_to(this->pos) <= this->get_range()) {
 		this->target = tmp_target;
-		this->state = attacking;
-	} else {
+		this->state = attacking; // si esta en rango se pone a atacarlo directamente
+	} else { // sino tiene que perseguirlo/acercase
 		std::vector<BlockPosition> at_range = tmp_target->positions_at_range(this->get_range());
 		if (at_range.empty())
-			return;
+			return; // creo que no se puede dar este caso pero por las dudas los pongo
 
 		BlockPosition closest = at_range.front();
 		for (auto const &it : at_range) {
 			if (it.distance_to(this->pos) < closest.distance_to(this->pos))
 				closest = it;
 		}
-		this->move_to(closest);
+		this->move_to(closest); // si no se puede mover a esa posicion, no intenta con otra
 		if (this->state == moving) {
 			this->state = chasing;
 			this->target = tmp_target;
@@ -109,12 +110,12 @@ void Unit::act_neutral(unsigned int time_delta)
 	this->changed_pos = false;
 	for (auto &it : this->game_objects) {
 		TeamablePtr tmp = it.second;
-		// TODO: bug: se puede atacar a unidades que estan siendo creadas
 		if (tmp->get_player_id() != this->get_player_id()
-		and tmp->distance_to(this->pos) <= this->get_range()) {
+		and tmp->distance_to(this->pos) <= this->get_range()
+		and tmp->is_damageable()) {
 			this->target = tmp;
 			this->state = autoattacking;
-			return;
+			return; // se pone a atacar al primero que encuentre en rango
 		}
 	}
 }
@@ -185,7 +186,7 @@ void Unit::act_chasing(unsigned int time_delta)
 		this->attack(this->target->get_id());
 	} else {
 		this->act_moving(time_delta);
-		if (not this->changed_pos and this->state == neutral) { // no se puede mover mas
+		if (not this->changed_pos and this->state == neutral) { // no se pudo mover
 			this->reset_state();
 			return;
 		}
@@ -200,7 +201,6 @@ BlockPosition Unit::facing_position() const
 		return this->path.back();
 	else
 		return this->pos;
-
 }
 
 bool Unit::changed_position() const
@@ -238,6 +238,11 @@ bool Unit::is_movable() const
 }
 
 bool Unit::can_attack() const
+{
+	return this->state != creating;
+}
+
+bool Unit::is_damageable() const
 {
 	return this->state != creating;
 }

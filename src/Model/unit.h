@@ -30,7 +30,7 @@ class Unit : public Teamable {
 	// tiempo - en ms
 	unsigned int creat_time;
 	// atributos que dependen del estado
-	unsigned int timer;
+	unsigned int timer; // timer para saber cuando moverse
 	std::vector<BlockPosition> path;
 	bool changed_pos;
 	TeamablePtr target;
@@ -43,6 +43,7 @@ public:
 
 	virtual bool is_movable() const override;
 	virtual bool can_attack() const override;
+	virtual bool is_damageable() const override;
 	virtual bool can_traverse(BlockTerrain terrain) const = 0;
 
 	void update(unsigned int time_delta);

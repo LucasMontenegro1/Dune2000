@@ -21,7 +21,24 @@ void test_move(void)
 	TEST_CHECK(unit.state == "moving");
 }
 
+void test_autoattack(void)
+{
+	MockServer srv;
+	srv.create_unit(1, 1, 70, 59);
+	srv.create_unit(2, 1, 69, 59);
+	srv.update(60000); // se terminan de crear
+	srv.update(0); // se descubren entre si y se preparan para atacar
+	srv.update(167); // atacan
+	std::vector<RawUnit> units = srv.get_state();
+	TEST_CHECK(units.size() == 2);
+	TEST_CHECK(units.front().hp == 47);
+	TEST_CHECK(units.back().hp == 47);
+	TEST_CHECK(units.front().state == "attacking");
+	TEST_CHECK(units.back().state == "attacking");
+}
+
 TEST_LIST = {
 	{"move", test_move},
+	{"autoattack", test_autoattack},
 	{NULL, NULL}
 };
