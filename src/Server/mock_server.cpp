@@ -3,6 +3,7 @@
 //
 
 #include "mock_server.h"
+#include "../Model/unit.h"
 
 typedef std::pair<BlockPosition, BlockTerrain> TerrainPos;
 
@@ -35,41 +36,56 @@ Cliffs MockServer::get_map() const
 	return cliffs;
 }
 
-void MockServer::create_unit(unsigned int row, unsigned int col)
+void MockServer::create_unit(unsigned int player_id, unsigned int type_id, unsigned int row, unsigned int col)
 {
 	BlockPosition pos(row, col);
-	this->cu.create(pos);
+	this->cu.cmd_create(player_id, type_id, pos);
 }
 
-void MockServer::move_unit(int id, unsigned int row_dst, unsigned int col_dst)
+void MockServer::move_unit(unsigned int id, unsigned int row_dst, unsigned int col_dst)
 {
 	BlockPosition dst(row_dst, col_dst);
-	this->cu.move(id, dst);
+	this->cu.cmd_move(id, dst);
 }
 
-void MockServer::update()
+void MockServer::unit_attack(unsigned int id, unsigned int target_id)
 {
-	this->cu.update();
+	this->cu.cmd_attack(id, target_id);
+}
+
+void MockServer::update(unsigned int time_delta)
+{
+	this->cu.update(time_delta);
 }
 
 std::vector<struct RawUnit> MockServer::get_state() const
 {
-	std::vector<Movable> units = this->cu.get_state();
+	std::vector<shared_ptr<Teamable>> units = this->cu.get_state();
 	std::vector<RawUnit> raw_units;
-	struct RawUnit unit;
+	struct RawUnit raw_unit;
 	for (auto const &it : units) {
-		unit.id = it.get_id();
-		unit.row = it.get_pos().row();
-		unit.col = it.get_pos().col();
-		unit.changed = it.has_changed();
-		unit.facing_row = it.facing_pos().row();
-		unit.facing_col = it.facing_pos().col();
-		MovableState state = it.get_state();
-		if (state == neutral)
-			unit.state = "neutral";
+		shared_ptr<Unit> unit = dynamic_pointer_cast<Unit>(it); // por ahora son todas unidades. Mas adelante con edificio y qcyo va a haber otros tipos
+		if (unit->get_state() == creating)
+			continue;
+
+		raw_unit.id = unit->get_id();
+		raw_unit.player_id = unit->get_player_id();
+		raw_unit.type_id = unit->get_type_id();
+		raw_unit.weapon_id = unit->get_weapon_id();
+		raw_unit.hp = unit->get_hp();
+		raw_unit.row = unit->get_position().row();
+		raw_unit.col = unit->get_position().col();
+		raw_unit.facing_row = unit->facing_position().row();
+		raw_unit.facing_col = unit->facing_position().col();
+		if (unit->get_state() == neutral)
+			raw_unit.state = "neutral";
+		else if (unit->get_state() == autoattacking
+		or unit->get_state() == attacking)
+			raw_unit.state = "attacking";
 		else
-			unit.state = "moving";
-		raw_units.push_back(unit);
+			raw_unit.state = "moving";
+
+		raw_units.push_back(raw_unit);
 	}
 	return raw_units;
 }
