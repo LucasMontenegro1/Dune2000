@@ -8,7 +8,7 @@
 
 using namespace sf;
 
-Trike::Trike(int cordX, int cordY, int id): Unit(cordX, cordY, id) {
+Trike::Trike(int cordX, int cordY, int id, int team): Unit(cordX, cordY, id, team) {
 	texture.loadFromFile("resources/units/trike.png");
 	sprite.setTexture(texture);
 	sprite.setTextureRect(IntRect(5,60,30,30));

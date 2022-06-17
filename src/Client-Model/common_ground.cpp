@@ -33,6 +33,10 @@ void Ground::is_spice(){
 	sprite.setTextureRect(IntRect(0,305,16,16));
 }
 
+void Ground::is_cliff(){
+	sprite.setTextureRect(IntRect(96,40,16,16)); 
+}
+
 void Ground::set(int x, int y){
 	sprite.setPosition(x,y);
 }
@@ -49,6 +53,9 @@ bool Ground::identify_texture(int col, int row){
 			break;
 		case 2:
 			is_spice(); identify = true;
+			break;
+		case 3:
+			is_cliff(); identify = true;
 			break;
 	}
 	return identify;

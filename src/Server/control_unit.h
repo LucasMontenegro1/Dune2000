@@ -6,18 +6,20 @@
 #define DUNE2000_CONTROL_UNIT_H
 
 #include "../Model/terrain_map.h"
-#include "../Model/movable.h"
+#include "../Model/teamable.h"
+#include "entity_factory.h"
 #include <vector>
 #include <map>
+#include <memory>
 
-typedef std::vector<std::pair<BlockPosition, BlockTerrain>> Terrains;
+using namespace std;
+typedef vector<pair<BlockPosition, BlockTerrain>> Terrains;
 
 class ControlUnit {
 	TerrainMap map;
+	std::map<unsigned int, shared_ptr<Teamable>> entities;
 
-	std::map<int, Movable> units;
-
-	int id_counter;
+	EntityFactory factory;
 
 	public:
 	ControlUnit(unsigned int rows, unsigned int cols);
@@ -26,13 +28,13 @@ class ControlUnit {
 
 	unsigned int units_count() const;
 
-	void create(BlockPosition initial_pos);
+	void cmd_create(unsigned int player_id, unsigned int type_id, BlockPosition position);
+	void cmd_move(int id, BlockPosition destination);
+	void cmd_attack(unsigned int id, unsigned int target_id);
 
-	void move(int id, BlockPosition destination);
+	void update(unsigned int time_delta);
 
-	void update();
-
-	std::vector<Movable> get_state() const;
+	std::vector<shared_ptr<Teamable>> get_state() const;
 
 	~ControlUnit();
 };

@@ -19,7 +19,8 @@ enum BlockTerrain {
 	dunes,
 	rock,
 	peaks,
-	cliffs
+	cliffs,
+	construction
 };
 
 #endif //DUNE2000_BLOCKTERRAIN_H

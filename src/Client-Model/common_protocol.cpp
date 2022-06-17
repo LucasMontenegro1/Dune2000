@@ -37,7 +37,8 @@ std::map <int, Unit*> Protocol::receive_units(){
 	std::map <int, Unit*> units;
 	for(size_t i = 0; i < received_units.size(); i++){
 		if(received_units[i].changed){
-			units.insert(std::pair<int, Unit*>(received_units[i].id, new Trike( (int) received_units[i].col * 16, (int) received_units[i].row * 16, received_units[i].id)));
+			units.insert(std::pair<int, Unit*>(received_units[i].id, new Trike( (int) received_units[i].col * 16, 
+													(int) received_units[i].row * 16, received_units[i].id, 0)));
 		}
 	}
 	return units;

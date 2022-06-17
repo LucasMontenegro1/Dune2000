@@ -11,16 +11,16 @@
 
 class Model {
 	std::map <int, Unit*> units;
-	Ground ground;
-	
+	Ground ground;	
 	bool one_unit_can_moves;
+	int team;
 	
 	void deleteUnits();
 	
 	//bool have_unit_different_cords(Unit &unit);
 
 	public:
-	Model(std::map <int, Unit*> &units, Ground &grounds);
+	Model(std::map <int, Unit*> &units, Ground &grounds, int team);
 	
 	void update_status(std::map <int, Unit*> &units);
 	
@@ -43,6 +43,8 @@ class Model {
 	bool is_unit_there(float cordX, float cordY);
 	
 	int get_units_size();
+
+	int get_team();
 	
 	Ground &get_grounds();
 	

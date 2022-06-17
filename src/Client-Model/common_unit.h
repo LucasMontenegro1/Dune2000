@@ -25,12 +25,13 @@ class Unit: public Drawable{
 	Sprite sprite;
 	Texture texture;
 	Selector selector;
+	int team;
 	int cont;
 
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
 								bool moveUp, bool moveDown) = 0;
 	
-	Unit(int cordX, int cordY, int id);
+	Unit(int cordX, int cordY, int id, int team);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 	
@@ -51,6 +52,8 @@ class Unit: public Drawable{
 	bool is_in_destiny();
 	
 	int get_id_unit();
+
+	int get_team();
 	
 	std::tuple<float, float> get_position();
 	

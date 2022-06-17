@@ -3,12 +3,12 @@
 //
 
 #include "control_unit.h"
-#include <limits>
-
+#include "../Model/unit.h"
 
 ControlUnit::ControlUnit(unsigned int rows, unsigned int cols) :
 map(rows, cols),
-id_counter(std::numeric_limits<int>::min()){}
+entities(),
+factory(this->map, this->entities){}
 
 void ControlUnit::set_terrains(const Terrains &terrains)
 {
@@ -20,45 +20,49 @@ void ControlUnit::set_terrains(const Terrains &terrains)
 
 unsigned int ControlUnit::units_count() const
 {
-	return this->units.size();
+	return this->entities.size();
 }
 
-void ControlUnit::create(BlockPosition initial_pos)
+void ControlUnit::cmd_create(unsigned int player_id, unsigned int type_id, BlockPosition position)
 {
-	if (this->map.invalid_position(initial_pos))
-		return;
-
-	Movable unit(this->id_counter, initial_pos, this->map);
-	if (not unit.can_traverse(this->map.at(initial_pos)))
-		return;
-
-	this->units.insert(std::pair<int, Movable>(unit.get_id(), unit));
-	this->id_counter++;
+	this->factory.create(player_id, type_id, position);
 }
 
-void ControlUnit::move(int id, BlockPosition dst)
+void ControlUnit::cmd_move(int id, BlockPosition destination)
 {
-	if (this->units.count(id) == 0)
-		return;
-	if (this->map.invalid_position(dst))
+	if (this->entities.count(id) == 0
+	or this->map.invalid_position(destination))
 		return;
 
-	this->units.at(id).move_to(dst);
+	shared_ptr<Teamable> unit = this->entities.at(id);
+	if (unit->is_movable())
+		dynamic_pointer_cast<Unit>(unit)->move_to(destination);
 }
 
-void ControlUnit::update()
+void ControlUnit::cmd_attack(unsigned int id, unsigned int target_id)
 {
-	for (auto &it : this->units)
-		it.second.act();
+	if (this->entities.count(id) == 0
+	or this->entities.count(target_id) == 0)
+		return;
+
+	shared_ptr<Teamable> unit = this->entities.at(id);
+	if (unit->can_attack())
+		dynamic_pointer_cast<Unit>(unit)->attack(target_id);
 }
 
-std::vector<Movable> ControlUnit::get_state() const
+void ControlUnit::update(unsigned int time_delta)
 {
-	std::vector<Movable> tmp_units;
-	for (auto const &it : this->units)
-		tmp_units.push_back(it.second);
+	for (auto &it : this->entities)
+		dynamic_pointer_cast<Unit>(it.second)->update(time_delta);
+}
 
-	return tmp_units;
+std::vector <shared_ptr<Teamable>> ControlUnit::get_state() const
+{
+	vector<shared_ptr<Teamable>> tmp_entities;
+	for (auto const &it : this->entities)
+		tmp_entities.push_back(it.second);
+
+	return tmp_entities;
 }
 
 ControlUnit::~ControlUnit() = default;

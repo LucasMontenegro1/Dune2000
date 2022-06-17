@@ -14,15 +14,17 @@ class Pointer {
 	int frame;
 	int cont;
 	std::map <int, Vector2f> frames;
-	
+	bool is_enemy;
+	int team;
+		
 	void fillFrames();
 
 	public:
-	Pointer(RenderWindow &window);
+	Pointer(RenderWindow &window, int team);
 	
 	void updateTexture();
 
-	void update(Vector2i &posicion, int posX, int posY, RenderWindow &window);
+	void update(Vector2i &posicion, int posX, int posY, RenderWindow &window, std::map <int, Unit*> &units);
 
 };
 #endif
