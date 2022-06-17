@@ -15,7 +15,8 @@ Unit::Unit(unsigned int id, unsigned int player_id, unsigned int start_hp,
 	state(creating),
 	creat_time(creation_time),
 	timer(creation_time),
-	changed_pos(false){}
+	changed_pos(false),
+	target(nullptr){}
 
 void Unit::update(unsigned int time_delta)
 {
@@ -230,6 +231,14 @@ std::vector <BlockPosition> Unit::positions_at_range(unsigned short range) const
 	}
 
 	return positions;
+}
+
+unsigned int Unit::target_id() const
+{
+	if (this->target.get() == nullptr)
+		return 0;
+	else
+		return this->target->get_id();
 }
 
 bool Unit::is_movable() const
