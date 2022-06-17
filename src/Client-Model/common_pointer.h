@@ -19,10 +19,14 @@ class Pointer {
 		
 	void fillFrames();
 
+	void updateTexture();
+
 	public:
 	Pointer(RenderWindow &window, int team);
-	
-	void updateTexture();
+
+	void unit_move_mode();
+
+	void normal_mode();
 
 	void update(Vector2i &posicion, int posX, int posY, RenderWindow &window, std::map <int, Unit*> &units);
 

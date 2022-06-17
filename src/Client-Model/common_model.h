@@ -17,12 +17,10 @@ class Model {
 	
 	void deleteUnits();
 	
-	//bool have_unit_different_cords(Unit &unit);
-
 	public:
 	Model(std::map <int, Unit*> &units, Ground &grounds, int team);
 	
-	void update_status(std::map <int, Unit*> &units);
+	//void update_status(std::map <int, Unit*> &units);
 	
 	int get_y_size();
 	
@@ -41,6 +39,8 @@ class Model {
 	void unit_enable_move(int unit_id);
 	
 	bool is_unit_there(float cordX, float cordY);
+
+	bool is_enemy_there(float cordX, float cordY);
 	
 	int get_units_size();
 

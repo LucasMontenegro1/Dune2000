@@ -4,10 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
+#include <iostream>
 
 
-Unit::Unit(int cordX, int cordY, int id, int team): posX(cordX), posY(cordY), 
-	can_move(false), destX(cordX), destY(cordY), id(id), selector{}, team(team), cont(0) {}
+
+Unit::Unit(int cordX, int cordY, int id, int team, int hp): posX(cordX), posY(cordY), 
+	can_move(false), destX(cordX), destY(cordY), id(id), selector{}, team(team), cont(0), 
+	hp(hp), max_hp(hp), is_attacking(false) {}
 
 
 void Unit::draw(RenderTarget &target, RenderStates states) const {
@@ -60,15 +63,6 @@ int Unit::get_team(){
 	return team;
 }
 
-Unit& Unit::operator=(const Unit&& other) {
-    this->sprite = other.sprite;
-	this->texture = other.texture;
-	this->can_move = other.can_move;
-	this->posX = other.posX;
-	this->posY = other.posY;
-    return *this;
-}
-
 void Unit::move(){
 	float moveX = posX;
 	float moveY = posY;
@@ -103,4 +97,21 @@ std::tuple<float, float> Unit::get_position(){
 	return std::make_tuple(this->posX, this->posY);
 }
 
-Unit::~Unit(){}
+Unit& Unit::operator=(const Unit&& other) {
+	this->posX = other.posX;
+	this->posY = other.posY;
+	this->can_move = other.can_move;
+	this->destX = other.destX;
+	this->destY = other.destY;
+	this->id = other.id;
+	this->velocity = other.velocity;
+	this->largeBitsX = other.largeBitsX;
+	this->largeBitsY = other.largeBitsY;
+	this->actualFrame = other.actualFrame;
+	this->sprite = other.sprite;
+	this->texture = other.texture;
+	this->selector = other.selector;
+	this->team = other.team;
+	this->cont = other.cont;
+    return *this;
+}
