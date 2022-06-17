@@ -8,11 +8,12 @@
 
 #include <string>
 #include <vector>
+#include "ConstructionCenter.h"
 
 class MapLoader {
 public:
     MapLoader();
-    bool loadMap(std::string& path, std::vector<std::vector<int>>& map,int&,std::string& name);
+    bool loadMap(std::string& path, std::vector<std::vector<int>>& map,int&,std::string& name, std::vector<ConstructionCenter*>& centers);
 };
 
 

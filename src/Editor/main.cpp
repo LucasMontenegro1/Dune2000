@@ -6,6 +6,7 @@
 #include "editormainwindow.h"
 #include "StateSaver.h"
 #include "MapLoader.h"
+#include "Constants.h"
 
 
 int main(int argc, char *argv[]) {
@@ -20,15 +21,17 @@ int main(int argc, char *argv[]) {
     editorView.exec();
 
     if (mode == 1) {
-        Editor editor(Vector2i(1366, 768),name, x, y, players);
+        Editor editor(Vector2i(RESOLUTION_X, RESOLUTION_Y),name, x, y, players);
         editor.gameloop();
     }else if (mode == 2){
+        std::vector<ConstructionCenter*> centers;
         std::vector<std::vector<int>>map;
-        Editor editor(Vector2i(1366, 768),name, x, y, players);
+        Editor editor(Vector2i(RESOLUTION_X, RESOLUTION_Y),name, x, y, players);
         MapLoader loader;
         std::string  path("../map/" + name + ".yaml");
-        loader.loadMap(path, map,players,name);
+        loader.loadMap(path, map,players,name, centers);
         editor.setMap(map);
+        editor.setCenters(centers);
         editor.gameloop();
     }
     return 0;

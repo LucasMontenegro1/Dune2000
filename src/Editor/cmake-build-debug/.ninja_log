@@ -1,27 +1,77 @@
 # ninja log v5
-5	932	1655090410901662546	CMakeFiles/Editor.dir/StateSaver.cpp.o	918e85f2f49f61b4
+5	1121	1655163943097580739	CMakeFiles/Editor.dir/StateSaver.cpp.o	918e85f2f49f61b4
 1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
 1	13	1654913514157963591	CMakeFiles/Editor.dir/Tile.cpp.o	467ea3c227715793
-4	715	1655086433594257881	CMakeFiles/Editor.dir/camera.cpp.o	27f1c6240faf35b5
-6	747	1655086433626257262	CMakeFiles/Editor.dir/ground.cpp.o	4eb7ac25e7edd5cd
-10	3734	1655095174395254204	build.ninja	e9a478930194f2b
-5	1318	1655090668973806746	CMakeFiles/Editor.dir/MapLoader.cpp.o	26c878a8f9f13f11
+17	1192	1655163574838670662	CMakeFiles/Editor.dir/camera.cpp.o	27f1c6240faf35b5
+4	644	1655164246244979833	CMakeFiles/Editor.dir/ground.cpp.o	4eb7ac25e7edd5cd
+10	3734	1655131902988075478	build.ninja	e9a478930194f2b
+6	1438	1655162670176418209	CMakeFiles/Editor.dir/MapLoader.cpp.o	26c878a8f9f13f11
 1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
 4382	8545	1655066422143511885	CMakeFiles/Editor.dir/Button.cpp.o	ad433a0e2ab256ed
-4	1549	1655092573498008150	CMakeFiles/Editor.dir/main.cpp.o	e25964cef0031f9b
+17	2161	1655163575806657096	CMakeFiles/Editor.dir/main.cpp.o	e25964cef0031f9b
 1	642	1654921915604875537	CMakeFiles/Editor.dir/Map.cpp.o	ca6fa551912b7d1d
-6	1748	1655092681416454156	CMakeFiles/Editor.dir/editormainwindow.cpp.o	9193cff247f86daf
-13	616	1655093570768075057	CMakeFiles/Editor.dir/EditorMenu.cpp.o	fc885e61da68794e
-616	1097	1655093571248068483	Editor	ba571caaf4ad4c56
+6	1826	1655162670564411498	CMakeFiles/Editor.dir/editormainwindow.cpp.o	9193cff247f86daf
+4	609	1655144680937045385	CMakeFiles/Editor.dir/EditorMenu.cpp.o	fc885e61da68794e
+644	1114	1655164246708972773	Editor	a2f04edbe728add6
 1	4	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
 8529	9776	1655066423371494315	CMakeFiles/Editor.dir/textBox.cpp.o	e201e24509befe06
+2951	3755	1655161636107882446	CMakeFiles/Editor.dir/ConstructionCenter.cpp.o	93741b3a202eab59
 1	4	0	CMakeFiles/Editor_autogen	779664d2156e04cc
-4	699	1655089552784365888	CMakeFiles/Editor.dir/Editor.cpp.o	3b20c2cd8064f0ae
+5	927	1655164153682401217	CMakeFiles/Editor.dir/Editor.cpp.o	3b20c2cd8064f0ae
 233	1318	1655091589057221380	CMakeFiles/Editor.dir/Editor_autogen/mocs_compilation.cpp.o	e651234d255b4fa6
-122	171	0	CMakeFiles/Editor_autogen	779664d2156e04cc
-122	171	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
-122	171	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
-122	171	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
-171	1189	1655096219049466650	CMakeFiles/Editor.dir/ConstructionCenter.cpp.o	93741b3a202eab59
-171	1284	1655096219145464420	CMakeFiles/Editor.dir/Editor.cpp.o	3b20c2cd8064f0ae
-1284	3612	1655096221469410414	Editor	a2f04edbe728add6
+2	4	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+2	4	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+5	654	1655164293352266061	CMakeFiles/Editor.dir/ground.cpp.o	4eb7ac25e7edd5cd
+654	1126	1655164293820258999	Editor	a2f04edbe728add6
+2	5	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+2	5	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+6	669	1655164506969094183	CMakeFiles/Editor.dir/ground.cpp.o	4eb7ac25e7edd5cd
+669	1187	1655164507481086688	Editor	a2f04edbe728add6
+1	20	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+1	20	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+1	20	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+1	20	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	195	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+2	195	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	195	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	195	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	5	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+2	5	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	4	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+2	4	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	9	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+2	9	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	9	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	9	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+1	3	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+1	3	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+1	3	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+1	3	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+1	11	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+1	11	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+1	11	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+1	11	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	8	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+2	8	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	8	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	8	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+1	4	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+1	4	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+1	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	18	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+2	18	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	18	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	18	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+1	13	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+1	13	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+1	13	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+1	13	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc

@@ -35,6 +35,8 @@ class Ground: public Drawable{
 	int get_ground_y_size() const;
 	
 	int get_ground_x_size() const;
-	
+
+
+    int getTexture(int x, int y);
 };
 #endif

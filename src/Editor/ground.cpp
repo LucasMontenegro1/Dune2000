@@ -1,6 +1,8 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include "ground.h"
+#include "Constants.h"
 
 using namespace sf;
 
@@ -12,6 +14,8 @@ Ground::Ground(std::vector<std::vector<int> >& level, int lenght, int width): ma
 					lengthMap(lenght), widthMap(width) {
 	texture.loadFromFile("../resources/terrain.bmp");
 	sprite.setTexture(texture);
+    sprite.setScale(Vector2f(TSIZE/16,TSIZE/16));
+    //sprite.setSize(Vector2f(TSIZE,TSIZE));
 }
 
 void Ground::is_sand(){
@@ -50,15 +54,19 @@ bool Ground::identify_texture(int col, int row){
 
 //
 int Ground::get_ground_y_size() const{
-	return lengthMap * 16;
+	return lengthMap * TSIZE;
 }
 	
 int Ground::get_ground_x_size() const{
-	return widthMap * 16;
+	return widthMap * TSIZE;
 }
 
 void Ground::setsSprite(int x, int y, int code) {
     map[x][y] = code;
 
+}
+
+int Ground::getTexture(int x , int y){
+    return map[y][x];
 }
 

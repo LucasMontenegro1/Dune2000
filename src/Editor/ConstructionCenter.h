@@ -6,16 +6,24 @@
 #define EDITOR_CONSTRUCTIONCENTER_H
 
 
-#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics.hpp>
+
 
 class ConstructionCenter {
     int x;
     int y;
-    sf::Sprite shape;
+    sf::RectangleShape shape;
+    sf::Texture texture;
+    bool selected;
 public:
+    ConstructionCenter();
     ConstructionCenter(int x, int y);
-    void render(sf::RenderTarget& target);
-
+    void select();
+    void unSelect();
+    bool isSelected();
+    void setPosition(int,int);
+    void render(sf::RenderWindow& target);
+    sf::Vector2i getPosition() const;
 };
 
 

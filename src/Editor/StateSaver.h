@@ -6,11 +6,12 @@
 #define EDITOR_STATESAVER_H
 #include <string>
 #include <vector>
+#include "ConstructionCenter.h"
 
 class StateSaver {
 public:
     StateSaver();
-    void saveStatus(std::string name, std::vector<std::vector<int>> map, int players);
+    void saveStatus(std::string name, std::vector<std::vector<int>> map, int players, std::vector<ConstructionCenter*> centers);
 };
 
 

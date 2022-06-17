@@ -14,6 +14,7 @@ class EditorMenu {
     Button spice;
     Button rocks;
     Button save;
+    Button center;
 
 public:
     EditorMenu(float x, float y, float height, float width);
