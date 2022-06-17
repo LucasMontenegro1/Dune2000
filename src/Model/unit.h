@@ -55,6 +55,7 @@ public:
 	virtual bool changed_position() const override;
 	virtual double distance_to(BlockPosition position) const override;
 	virtual std::vector<BlockPosition> positions_at_range(unsigned short int range) const override;
+	unsigned int target_id() const;
 
 	// getters
 	BlockPosition get_position() const;
