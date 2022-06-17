@@ -39,6 +39,11 @@ EditorMenu::EditorMenu(float x, float y, float width, float height) {
     this->save.setTexture(texture);
     this->save.setPosition(240, 900);
     this->save.setSize(250, 50);
+
+    texture.loadFromFile("../resources/cyard.gif");
+    this->center.setTexture(texture);
+    this->center.setPosition(INITIAL_X, INITIAL_Y + DIFERENCE_Y);
+    this->center.setSize(BTN_WIDTH, BTN_HEIGTH);
 }
 
 void EditorMenu::render(sf::RenderWindow &target) {
@@ -47,6 +52,7 @@ void EditorMenu::render(sf::RenderWindow &target) {
     rocks.render(target);
     spice.render(target);
     save.render(target);
+    center.render(target);
 }
 
 
@@ -55,6 +61,7 @@ void EditorMenu::update(sf::RenderWindow &target, sf::Event &e, int& selection) 
     this->rocks.update(e, target);
     this->spice.update(e, target);
     this->save.update(e,target);
+    this->center.update(e,target);
 
     if (sand.is_Clicked(e,target)){
         selection = 0;
@@ -62,6 +69,8 @@ void EditorMenu::update(sf::RenderWindow &target, sf::Event &e, int& selection) 
         selection = 1;
     }else if(spice.is_Clicked(e, target)) {
         selection = 2;
+    }else if (center.is_Clicked(e, target)){
+        selection = 3;
     }
 
 }

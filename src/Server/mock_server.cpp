@@ -77,6 +77,7 @@ std::vector<struct RawUnit> MockServer::get_state() const
 		raw_unit.col = unit->get_position().col();
 		raw_unit.facing_row = unit->facing_position().row();
 		raw_unit.facing_col = unit->facing_position().col();
+		raw_unit.target_id = unit->target_id();
 		if (unit->get_state() == neutral)
 			raw_unit.state = "neutral";
 		else if (unit->get_state() == autoattacking

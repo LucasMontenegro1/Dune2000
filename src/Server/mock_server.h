@@ -21,6 +21,7 @@ struct RawUnit {
 	unsigned int col;
 	unsigned int facing_row;
 	unsigned int facing_col;
+	unsigned int target_id;
 	std::string state;
 };
 

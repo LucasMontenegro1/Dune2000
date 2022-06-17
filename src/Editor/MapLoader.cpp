@@ -6,15 +6,24 @@
 #include <iostream>
 
 #include "MapLoader.h"
+#include "ConstructionCenter.h"
+
 MapLoader::MapLoader() {
 
 }
 
 
-bool MapLoader::loadMap(std::string& path, std::vector<std::vector<int>>& map, int& players, std::string& name) {
+bool MapLoader::loadMap(std::string& path, std::vector<std::vector<int>>& map, int& players, std::string& name, std::vector<ConstructionCenter*>& centers) {
     YAML::Node config = YAML::LoadFile(path);
     map = config["map"].as<std::vector<std::vector<int>>>();
     players = config["players"].as<int>();
     name = config["name"].as<std::string>();
+    for (int i = 0; i < players ; ++i) {
+        std::string number(std::to_string(i));
+        auto *c = new ConstructionCenter();
+        auto n= config["players"+ number].as<std::vector<int>>();
+        c->setPosition(n[0],n[1]);
+        centers.push_back(c);
+    }
     return true;
 }
