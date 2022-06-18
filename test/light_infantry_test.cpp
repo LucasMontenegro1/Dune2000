@@ -188,10 +188,22 @@ void test_neutral_with_enemies(void)
 	inf2->update(0);
 	TEST_CHECK(inf1->get_state() == autoattacking);
 	TEST_CHECK(inf2->get_state() == autoattacking);
-	inf1->update(167); // tanque dispara 1 x segundo
-	inf2->update(167);
+	inf1->update(166); // tanque dispara 1 x segundo
+	inf2->update(166);
+	TEST_CHECK(inf1->get_hp() == 50);
+	TEST_CHECK(inf2->get_hp() == 50);
+	inf1->update(1); // tanque dispara 1 x segundo
+	inf2->update(1);
 	TEST_CHECK(inf1->get_hp() == 47);
 	TEST_CHECK(inf2->get_hp() == 47);
+	inf1->update(166); // tanque dispara 1 x segundo
+	inf2->update(166);
+	TEST_CHECK(inf1->get_hp() == 47);
+	TEST_CHECK(inf2->get_hp() == 47);
+	inf1->update(1); // tanque dispara 1 x segundo
+	inf2->update(1);
+	TEST_CHECK(inf1->get_hp() == 44);
+	TEST_CHECK(inf2->get_hp() == 44);
 }
 
 void test_neutral_loses_target(void)
