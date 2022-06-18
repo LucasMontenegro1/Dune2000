@@ -27,6 +27,7 @@ void test_create(void)
 	TEST_CHECK(tank.get_weapon_id() == 2); // cañon
 	TEST_CHECK(tank.get_position() == BlockPosition(3, 0));
 	TEST_CHECK(tank.facing_position() == BlockPosition(3, 0));
+	TEST_CHECK(tank.target_id() == 0);
 }
 
 void test_create_faster(void)
@@ -187,7 +188,9 @@ void test_neutral_with_enemies(void)
 	tank1->update(0); // no ncesita pasar tiempo para setear un objetivo
 	tank2->update(0);
 	TEST_CHECK(tank1->get_state() == autoattacking);
+	TEST_CHECK(tank1->target_id() == 2);
 	TEST_CHECK(tank2->get_state() == autoattacking);
+	TEST_CHECK(tank2->target_id() == 1);
 	tank1->update(1000); // tanque dispara 1 x segundo
 	tank2->update(1000);
 	TEST_CHECK(tank1->get_hp() == 23); // daño del cañon es 7
@@ -237,6 +240,7 @@ void test_attack_still_target(void)
 	tank1->update(240000);
 	tank2->update(240000);
 	tank1->attack(2); // notar que tank2 esta fuera de rango. tank1 tiene que acercarse
+	TEST_CHECK(tank1->target_id() == 2);
 	TEST_CHECK(tank1->get_state() == chasing);
 	tank1->update(100);
 	TEST_CHECK(tank1->get_position() == BlockPosition(3, 0));

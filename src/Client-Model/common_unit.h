@@ -20,18 +20,22 @@ class Unit: public Drawable{
 	float velocity;
 	int largeBitsX;
 	int largeBitsY;
-	std::map <int, Vector2f> frames;
 	int actualFrame;
 	Sprite sprite;
 	Texture texture;
 	Selector selector;
 	int team;
 	int cont;
+	int hp;
+	int max_hp;
+	bool is_attacking;
+	int attackX;
+	int attackY;
 
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
-								bool moveUp, bool moveDown) = 0;
+								bool moveUp, bool moveDown);
 	
-	Unit(int cordX, int cordY, int id, int team);
+	Unit(int cordX, int cordY, int id, int team, int hp);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 	
@@ -59,6 +63,5 @@ class Unit: public Drawable{
 	
 	Unit& operator=(const Unit&& other);
 
-	virtual ~Unit();
 };
 #endif

@@ -18,16 +18,25 @@
 using namespace sf;
 
 Pointer::Pointer(RenderWindow &window, int team){
-	this->frame = 1;
+	fillFrames();
+	this->frame = 0;
 	this->cont = 0;
 	this->is_enemy = false;
 	this->team = team;
 	window.setMouseCursorVisible(false);
 	texture.loadFromFile("resources/cursores.png");
 	sprite.setTexture(texture);
-	sprite.setTextureRect(IntRect(0,15,30,27)); 
-	fillFrames();
+	sprite.setTextureRect(IntRect(0,0,15,15)); 
 }
+void Pointer::unit_move_mode(){
+	this->frame = 1;
+}
+	
+void Pointer::normal_mode(){
+	sprite.setTextureRect(IntRect(0,0,15,15));
+	this->frame = 0;
+}
+
 	
 void Pointer::updateTexture(){
 	if(is_enemy){
@@ -53,7 +62,7 @@ void Pointer::update(Vector2i &posicion, int posX, int posY, RenderWindow &windo
 		}
 	}
 	sprite.setPosition(posicion.x + posX - 15, posicion.y + posY - 15);
-	if(cont % 30 == 0) updateTexture();
+	if(cont % 30 == 0 && frame != 0) updateTexture();
 	window.draw(sprite);
 	cont++;
 }

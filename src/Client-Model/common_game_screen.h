@@ -9,12 +9,14 @@
 //#include "common_socket.h"
 #include "common_model.h"
 #include "common_camera.h"
+#include "common_pointer.h"
+
 
 class GameScreen {
 	int posX;//Posiciones de la camara respecto al mapa
 	int posY;
 	
-	void check_events(Event &event, Model &model, 
+	void check_events(Pointer &pointer, Event &event, Model &model, 
 			Protocol &protocol, int posX, int posY);
 	
 	void draw_elements(RenderWindow &window, Model &model, 

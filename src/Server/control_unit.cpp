@@ -54,6 +54,11 @@ void ControlUnit::update(unsigned int time_delta)
 {
 	for (auto &it : this->entities)
 		dynamic_pointer_cast<Unit>(it.second)->update(time_delta);
+
+	for (auto it = this->entities.begin(); it != this->entities.end(); it++) {
+		if (it->second->is_dead())
+			it = this->entities.erase(it);
+	}
 }
 
 std::vector <shared_ptr<Teamable>> ControlUnit::get_state() const
