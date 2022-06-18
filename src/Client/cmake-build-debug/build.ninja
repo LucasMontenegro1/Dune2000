@@ -153,6 +153,14 @@ build CMakeFiles/Client.dir/editormainwindow.cpp.o: CXX_COMPILER__Client_Debug /
   OBJECT_DIR = CMakeFiles/Client.dir
   OBJECT_FILE_DIR = CMakeFiles/Client.dir
 
+build CMakeFiles/Client.dir/UnitButton.cpp.o: CXX_COMPILER__Client_Debug /home/lucas/Desktop/Taller$ I/Dune2000/src/Client/UnitButton.cpp || cmake_object_order_depends_target_Client
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Client.dir/UnitButton.cpp.o.d
+  FLAGS = -g -fPIC -std=gnu++17
+  INCLUDES = -I"/home/lucas/Desktop/Taller I/Dune2000/src/Client/cmake-build-debug/Client_autogen/include" -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtMultimedia -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork
+  OBJECT_DIR = CMakeFiles/Client.dir
+  OBJECT_FILE_DIR = CMakeFiles/Client.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Client
@@ -161,7 +169,7 @@ build CMakeFiles/Client.dir/editormainwindow.cpp.o: CXX_COMPILER__Client_Debug /
 #############################################
 # Link the executable Client
 
-build Client: CXX_EXECUTABLE_LINKER__Client_Debug CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o CMakeFiles/Client.dir/main.cpp.o CMakeFiles/Client.dir/Client.cpp.o CMakeFiles/Client.dir/firstwindow.cpp.o CMakeFiles/Client.dir/sockets.cpp.o CMakeFiles/Client.dir/SocketException.cpp.o CMakeFiles/Client.dir/loginscreen.cpp.o CMakeFiles/Client.dir/Button.cpp.o CMakeFiles/Client.dir/ConstructionMenu.cpp.o CMakeFiles/Client.dir/BuildingImageHandler.cpp.o CMakeFiles/Client.dir/UnitImageHandler.cpp.o CMakeFiles/Client.dir/VehicleImageHandler.cpp.o CMakeFiles/Client.dir/editormainwindow.cpp.o | /usr/local/lib/libyaml-cpp.a /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8 /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1 || Client_autogen
+build Client: CXX_EXECUTABLE_LINKER__Client_Debug CMakeFiles/Client.dir/Client_autogen/mocs_compilation.cpp.o CMakeFiles/Client.dir/main.cpp.o CMakeFiles/Client.dir/Client.cpp.o CMakeFiles/Client.dir/firstwindow.cpp.o CMakeFiles/Client.dir/sockets.cpp.o CMakeFiles/Client.dir/SocketException.cpp.o CMakeFiles/Client.dir/loginscreen.cpp.o CMakeFiles/Client.dir/Button.cpp.o CMakeFiles/Client.dir/ConstructionMenu.cpp.o CMakeFiles/Client.dir/BuildingImageHandler.cpp.o CMakeFiles/Client.dir/UnitImageHandler.cpp.o CMakeFiles/Client.dir/VehicleImageHandler.cpp.o CMakeFiles/Client.dir/editormainwindow.cpp.o CMakeFiles/Client.dir/UnitButton.cpp.o | /usr/local/lib/libyaml-cpp.a /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8 /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1 || Client_autogen
   FLAGS = -g
   LINK_LIBRARIES = /usr/local/lib/libyaml-cpp.a  /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8  /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = CMakeFiles/Client.dir

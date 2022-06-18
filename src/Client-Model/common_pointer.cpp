@@ -51,6 +51,7 @@ void Pointer::updateTexture(){
 }
 
 void Pointer::update(Vector2i &posicion, int posX, int posY, RenderWindow &window, std::map <int, Unit*> &units){
+    sf::Vector2f mousePosition = window.mapPixelToCoords(posicion);
 	for(auto iter = units.begin(); iter != units.end(); ++iter){
 		if(iter->second->get_team() != team){
 			if(iter->second->is_there(posicion.x + posX, posicion.y + posY)){
@@ -63,7 +64,8 @@ void Pointer::update(Vector2i &posicion, int posX, int posY, RenderWindow &windo
 			is_enemy = false;
 		}
 	}
-	sprite.setPosition(posicion.x + posX - 15, posicion.y + posY - 15);
+    sprite.setPosition(mousePosition);
+	//sprite.setPosition(posicion.x + posX - 15, posicion.y + posY - 15);
 	if(cont % 30 == 0 && frame != 0) updateTexture();
 	window.draw(sprite);
 	cont++;
@@ -86,4 +88,12 @@ void Pointer::fillFrames(){
 	frames.insert(std::pair<int,Vector2f>(14, Vector2f(157,70)));		
 	frames.insert(std::pair<int,Vector2f>(15, Vector2f(187,70)));		
 	frames.insert(std::pair<int,Vector2f>(16, Vector2f(220,70)));	
+}
+
+void Pointer::render(RenderWindow &window) {
+    sf::Vector2i WinPos = sf::Mouse::getPosition(window);
+    sf::Vector2f mousePosition = window.mapPixelToCoords(WinPos);
+    sprite.setPosition(mousePosition.x, mousePosition.y);
+    sprite.setScale(Vector2f(2.0f,2.0f));
+    window.draw(this->sprite);
 }
