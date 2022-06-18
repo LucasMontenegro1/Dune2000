@@ -127,6 +127,12 @@
 			null
 		],
 		[
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/UnitButton.h",
+			"Mu",
+			"EWIEGA46WW/moc_UnitButton.cpp",
+			null
+		],
+		[
 			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/UnitImageHandler.h",
 			"Mu",
 			"EWIEGA46WW/moc_UnitImageHandler.cpp",
@@ -256,6 +262,11 @@
 		],
 		[
 			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/SocketException.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Client/UnitButton.cpp",
 			"Mu",
 			null
 		],

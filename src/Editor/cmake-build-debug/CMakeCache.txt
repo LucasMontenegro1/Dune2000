@@ -215,9 +215,6 @@ Editor_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Editor_SOURCE_DIR:STATIC=/home/lucas/Desktop/Taller I/Dune2000/src/Editor
 
-//The directory containing a CMake configuration file for QT.
-QT_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5
-
 //The directory containing a CMake configuration file for Qt5Core.
 Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
 

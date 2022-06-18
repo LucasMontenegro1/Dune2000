@@ -10,7 +10,7 @@ add_executable(Client main.cpp Client.cpp firstwindow.cpp ui_firstwindow.h
         ui_loginscreen.h Button.cpp Button.h ConstructionMenu.cpp
         ConstructionMenu.h BuildingImageHandler.cpp BuildingImageHandler.h
         UnitImageHandler.cpp UnitImageHandler.h VehicleImageHandler.cpp VehicleImageHandler.h
-        editormainwindow.h editormainwindow.cpp editormainwindow.ui)
+        editormainwindow.h editormainwindow.cpp editormainwindow.ui UnitButton.cpp UnitButton.h)
 
 find_package(yaml-cpp REQUIRED)
 find_package(Qt5 COMPONENTS
