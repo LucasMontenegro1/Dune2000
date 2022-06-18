@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.22"
+						"string" : "3.16"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -41,7 +41,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Editor::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Editor-Debug-f633c96ed232dd5fc357.json",
+					"jsonFile" : "target-Editor-Debug-c2da9865576233fdce5f.json",
 					"name" : "Editor",
 					"projectIndex" : 0
 				},

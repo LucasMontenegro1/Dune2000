@@ -145,6 +145,14 @@ build CMakeFiles/Editor.dir/ConstructionCenter.cpp.o: CXX_COMPILER__Editor_Debug
   OBJECT_DIR = CMakeFiles/Editor.dir
   OBJECT_FILE_DIR = CMakeFiles/Editor.dir
 
+build CMakeFiles/Editor.dir/ConstantGetter.cpp.o: CXX_COMPILER__Editor_Debug /home/lucas/Desktop/Taller$ I/Dune2000/src/Editor/ConstantGetter.cpp || cmake_object_order_depends_target_Editor
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Editor.dir/ConstantGetter.cpp.o.d
+  FLAGS = -g -fPIC -std=gnu++17
+  INCLUDES = -I"/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/include" -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtMultimedia -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork
+  OBJECT_DIR = CMakeFiles/Editor.dir
+  OBJECT_FILE_DIR = CMakeFiles/Editor.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Editor
@@ -153,7 +161,7 @@ build CMakeFiles/Editor.dir/ConstructionCenter.cpp.o: CXX_COMPILER__Editor_Debug
 #############################################
 # Link the executable Editor
 
-build Editor: CXX_EXECUTABLE_LINKER__Editor_Debug CMakeFiles/Editor.dir/Editor_autogen/mocs_compilation.cpp.o CMakeFiles/Editor.dir/main.cpp.o CMakeFiles/Editor.dir/Button.cpp.o CMakeFiles/Editor.dir/textBox.cpp.o CMakeFiles/Editor.dir/EditorMenu.cpp.o CMakeFiles/Editor.dir/camera.cpp.o CMakeFiles/Editor.dir/ground.cpp.o CMakeFiles/Editor.dir/Editor.cpp.o CMakeFiles/Editor.dir/StateSaver.cpp.o CMakeFiles/Editor.dir/editormainwindow.cpp.o CMakeFiles/Editor.dir/MapLoader.cpp.o CMakeFiles/Editor.dir/ConstructionCenter.cpp.o | /usr/local/lib/libyaml-cpp.a /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8 /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1 || Editor_autogen
+build Editor: CXX_EXECUTABLE_LINKER__Editor_Debug CMakeFiles/Editor.dir/Editor_autogen/mocs_compilation.cpp.o CMakeFiles/Editor.dir/main.cpp.o CMakeFiles/Editor.dir/Button.cpp.o CMakeFiles/Editor.dir/textBox.cpp.o CMakeFiles/Editor.dir/EditorMenu.cpp.o CMakeFiles/Editor.dir/camera.cpp.o CMakeFiles/Editor.dir/ground.cpp.o CMakeFiles/Editor.dir/Editor.cpp.o CMakeFiles/Editor.dir/StateSaver.cpp.o CMakeFiles/Editor.dir/editormainwindow.cpp.o CMakeFiles/Editor.dir/MapLoader.cpp.o CMakeFiles/Editor.dir/ConstructionCenter.cpp.o CMakeFiles/Editor.dir/ConstantGetter.cpp.o | /usr/local/lib/libyaml-cpp.a /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8 /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1 || Editor_autogen
   FLAGS = -g
   LINK_LIBRARIES = /usr/local/lib/libyaml-cpp.a  /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Multimedia.so.5.12.8  /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = CMakeFiles/Editor.dir

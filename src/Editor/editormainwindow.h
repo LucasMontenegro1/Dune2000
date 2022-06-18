@@ -11,7 +11,6 @@ struct Game{
     std::string name;
     int x;
     int y;
-    std::vector<std::vector<int>> map;
     int players;
 };
 

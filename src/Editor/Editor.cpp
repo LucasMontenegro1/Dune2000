@@ -8,7 +8,8 @@
 #include "Editor.h"
 #include "StateSaver.h"
 #include "ConstructionCenter.h"
-#include "Constants.h"
+#include "EditorException.h"
+#include <SFML/Audio.hpp>
 
 Editor::Editor(sf::Vector2i resolution,std::string& name,int x , int y, int players): window(sf::VideoMode(resolution.x, resolution.y),
                                                 "Dune - Editor", sf::Style::Close | sf::Style::Resize),
@@ -27,9 +28,14 @@ Editor::Editor(sf::Vector2i resolution,std::string& name,int x , int y, int play
 
 
 void Editor::gameloop() {
+    int TSIZE = ConstantGetter::getTsize();
     StateSaver saver;
     int selection = 1;
     bool dragMode = false;
+    sf::Music music;
+    if (!music.openFromFile(ConstantGetter::getResourcePath()+"music.ogg"))
+        throw EditorException("Error abriendo archivos");
+    music.play();
     while (!game_over) {
         window.clear();
         window.setView(view);
@@ -74,13 +80,13 @@ void Editor::gameloop() {
                         dragMode = false;
                     }
                 }
-                if ((event.type == sf::Event::MouseButtonPressed || dragMode) && selection!=3) {
+                if ((event.type == sf::Event::MouseButtonPressed || dragMode) && selection!=-1) {
                     if (!dragMode) {
                         if (event.mouseButton.button == sf::Mouse::Left) setSprite(selection);
                     } else {
                         setSprite(selection);
                     }
-                } else if (event.type == sf::Event::MouseButtonPressed && selection ==3){
+                } else if (event.type == sf::Event::MouseButtonPressed && selection ==-1){
                     if (event.mouseButton.button == sf::Mouse::Left) {
                         window.setView(view);
                         sf::Vector2i WinPos = sf::Mouse::getPosition(window);
@@ -136,6 +142,7 @@ void Editor::gameloop() {
 }
 
 void Editor::updateCamera() {
+    int TSIZE = ConstantGetter::getTsize();
     posX = camera->get_posX();
     posY = camera->get_posY();
     int limitX = posX +  window.getSize().x;
@@ -157,6 +164,7 @@ void Editor::setMap(std::vector<std::vector<int>> map) {
 }
 
 void Editor::setSprite(int selection) {
+    int TSIZE = ConstantGetter::getTsize();
     window.setView(view);
     sf::Vector2i WinPos = sf::Mouse::getPosition(window);
     sf::Vector2f pos = view.getSize();

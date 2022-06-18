@@ -2,7 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "ground.h"
-#include "Constants.h"
+
+#include "ConstantGetter.h"
 
 using namespace sf;
 
@@ -12,7 +13,8 @@ void Ground::draw(RenderTarget &target, RenderStates states) const {
 
 Ground::Ground(std::vector<std::vector<int> >& level, int lenght, int width): map(level),
 					lengthMap(lenght), widthMap(width) {
-	texture.loadFromFile("../resources/terrain.bmp");
+    int TSIZE = ConstantGetter::getTsize();
+    texture.loadFromFile(ConstantGetter::getResourcePath() + "terrain.bmp");
 	sprite.setTexture(texture);
     sprite.setScale(Vector2f(TSIZE/16,TSIZE/16));
     //sprite.setSize(Vector2f(TSIZE,TSIZE));
@@ -28,6 +30,18 @@ void Ground::is_rock(){
 	
 void Ground::is_spice(){
 	sprite.setTextureRect(IntRect(0,305,16,16));
+}
+
+void Ground::is_cliff() {
+    sprite.setTextureRect(IntRect(90,40,16,16));
+}
+
+void Ground::is_top() {
+    sprite.setTextureRect(IntRect(144,100,16,16));
+}
+
+void Ground::is_dune() {
+    sprite.setTextureRect(IntRect(16,280,16,16));
 }
 
 void Ground::set(int x, int y){
@@ -47,6 +61,15 @@ bool Ground::identify_texture(int col, int row){
 		case 2:
 			is_spice(); identify = true;
 			break;
+        case 3:
+            is_cliff(); identify = true;
+            break;
+        case 4:
+            is_top(); identify = true;
+            break;
+        case 5:
+            is_dune(); identify = true;
+            break;
 	}
 	return identify;
 }
@@ -54,11 +77,13 @@ bool Ground::identify_texture(int col, int row){
 
 //
 int Ground::get_ground_y_size() const{
-	return lengthMap * TSIZE;
+    int TSIZE = ConstantGetter::getTsize();
+    return lengthMap * TSIZE;
 }
 	
 int Ground::get_ground_x_size() const{
-	return widthMap * TSIZE;
+    int TSIZE = ConstantGetter::getTsize();
+    return widthMap * TSIZE;
 }
 
 void Ground::setsSprite(int x, int y, int code) {
@@ -69,4 +94,5 @@ void Ground::setsSprite(int x, int y, int code) {
 int Ground::getTexture(int x , int y){
     return map[y][x];
 }
+
 

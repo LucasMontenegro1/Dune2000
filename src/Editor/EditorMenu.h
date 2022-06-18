@@ -14,6 +14,9 @@ class EditorMenu {
     Button spice;
     Button rocks;
     Button save;
+    Button cliff;
+    Button top;
+    Button dune;
     Button center;
 
 public:
