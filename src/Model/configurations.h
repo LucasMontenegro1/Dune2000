@@ -24,6 +24,12 @@ struct Configurations {
 	unsigned int TANK_RANGE;
 	unsigned int TANK_TRAVERSE_TIME;
 
+	unsigned int TRIKE_ID;
+	unsigned int TRIKE_HP;
+	unsigned int TRIKE_CREATION_TIME;
+	unsigned int TRIKE_RANGE;
+	unsigned int TRIKE_TRAVERSE_TIME;
+
 	// Weapons
 	unsigned int ASSAULT_RIFLE_ID;
 	unsigned int ASSAULT_RIFLE_DMG;
