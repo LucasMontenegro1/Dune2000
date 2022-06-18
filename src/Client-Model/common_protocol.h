@@ -7,6 +7,8 @@
 #include <time.h>
 #include <map>
 #include "common_unit.h"
+#include "common_trike.h"
+#include "common_tank.h"
 //#include "common_socket.h"
 #include "common_ground.h"
 #include "common_frames.cpp"
@@ -15,6 +17,8 @@
 class Protocol {
 	MockServer server;
 	Skins skins;
+
+	void foundEliminate(std::map <int, Unit*> &units, std::vector<struct RawUnit> &received_units);
 
 	public:
 	Protocol();

@@ -59,6 +59,8 @@ void Pointer::update(Vector2i &posicion, int posX, int posY, RenderWindow &windo
 			} else { 
 				is_enemy = false;
 			}
+		} else {
+			is_enemy = false;
 		}
 	}
 	sprite.setPosition(posicion.x + posX - 15, posicion.y + posY - 15);

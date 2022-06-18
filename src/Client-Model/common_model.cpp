@@ -14,7 +14,7 @@ Model::Model(std::map <int, Unit*> &units, Ground &grounds, int team):
 		units(units), ground(grounds), one_unit_can_moves(false), team(team) {}
 		
 /*	
-void Model::update_status(std::map <int, Unit*> &new_units){
+void Model::update(std::map <int, Unit*> &new_units){
 	for(auto iter = new_units.begin(); iter != new_units.end(); ++iter){
 		std::tuple<float, float> destiny = iter->second->get_position();
 		this->units[iter->first]->setMove(std::get<0>(destiny), std::get<1>(destiny));
@@ -99,6 +99,7 @@ bool Model::is_enemy_there(float cordX, float cordY){
 void Model::move_by_position(int id){
 	if(!units[id]->is_in_destiny()) units[id]->move();
 }
+
 
 
 int Model::get_units_size(){

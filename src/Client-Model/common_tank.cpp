@@ -5,6 +5,7 @@
 #include <time.h>
 #include "common_unit.h"
 #include "common_tank.h"
+#include "common_assault.h"
 
 using namespace sf;
 
@@ -57,5 +58,49 @@ void Tank::modifyMovePosition(bool moveRight, bool moveLeft,
 	canion.setTextureRect(IntRect(posicionFrameCanion.x, posicionFrameCanion.y,20,20));	
 		
 	canion.setPosition(posX + 5, posY + 1);
+	cont++;
+}
+
+
+void Tank::updateCanion(){
+	int frameDestiny = actualFrameCanion;
+	bool moveRight = false; bool moveLeft = false; 
+	bool moveUp = false; bool moveDown = false;
+	if(attackX > posX && attackX - 15 > posX){
+		moveRight = true;
+	}
+	if(attackX < posX && attackX + 15 < posX){
+		moveLeft = true;
+	}
+	if(attackY > posY && attackY - 15 > posY){
+		moveDown = true;
+	}
+	if(attackY < posY && attackY + 15 < posY){
+		moveUp = true;
+	}
+	if(moveRight){
+		if(moveUp) frameDestiny = 36;
+		if(moveDown) frameDestiny = 46;
+		else if(!moveUp && !moveDown) frameDestiny = 41;	
+	}
+	if(moveLeft){
+		if(moveUp) frameDestiny = 61;
+		if(moveDown) frameDestiny = 53;
+		else if(!moveUp && !moveDown) frameDestiny = 57;		}
+	if(!moveRight && !moveLeft && !moveUp && moveDown) frameDestiny = 49;
+	if(!moveRight && !moveLeft && moveUp && !moveDown) frameDestiny = 33;
+		
+	if(actualFrameCanion > frameDestiny) actualFrameCanion--;
+	if(actualFrameCanion < frameDestiny) actualFrameCanion++;
+	if(actualFrameCanion == frameDestiny) weapon.animate(posX, posY, attacking);
+
+	Vector2f &posicionFrameCanion = frames[actualFrameCanion];
+	canion.setTextureRect(IntRect(posicionFrameCanion.x, posicionFrameCanion.y,20,20));
+}
+
+
+void Tank::animate_attack(){
+	if(cont % 10 == 0) updateCanion();
+	canion.setPosition(posX + 5,posY + 1);
 	cont++;
 }

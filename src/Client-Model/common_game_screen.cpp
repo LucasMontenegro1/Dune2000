@@ -51,6 +51,10 @@ void GameScreen::draw_elements(RenderWindow &window, Model &model,
 		if(camera.appears_in_view(std::get<0>(uBits), std::get<1>(uBits), 
 								std::get<2>(uBits), std::get<3>(uBits))){
 			window.draw(*iter->second);
+			if(iter->second->is_attacking()){
+				iter->second->animate_attack();
+				window.draw(iter->second->get_weapon());
+			}
 		}
 	}	
 }
@@ -90,14 +94,12 @@ void GameScreen::show(Model &model, Protocol &protocol){
 	int sizeX = 500;//Esto en un futuro es 
 	int sizeY = 500;//Algo que se pasa por parametro
 	RenderWindow window(VideoMode(sizeX, sizeY), "DUNE");
-	
 	View view;
 	Camera camera(view, this->posX, this->posY, sizeX, sizeY);
 
 	Pointer pointer(window, model.get_team());
 	
 	while(window.isOpen()){
-		protocol.update();
 		Vector2i posicion = Mouse::getPosition(window);	
 		camera.update(posicion, model);	
 		protocol.receive_units(model.get_units());
@@ -113,5 +115,6 @@ void GameScreen::show(Model &model, Protocol &protocol){
 		draw_elements(window, model, camera, sizeX, sizeY);
 		pointer.update(posicion, posX, posY, window, model.get_units());
 		window.display();
+		protocol.update();
 	}	
 }

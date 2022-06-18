@@ -20,7 +20,7 @@ class Model {
 	public:
 	Model(std::map <int, Unit*> &units, Ground &grounds, int team);
 	
-	//void update_status(std::map <int, Unit*> &units);
+	//void update(std::map <int, Unit*> &units);
 	
 	int get_y_size();
 	

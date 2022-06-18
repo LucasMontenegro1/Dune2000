@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/agus/Documentos/tallerI/Dune2000'
+make: Leaving directory '/home/agus/Documentos/tallerI/Dune2000'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
