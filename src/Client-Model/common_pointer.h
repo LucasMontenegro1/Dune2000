@@ -30,5 +30,6 @@ class Pointer {
 
 	void update(Vector2i &posicion, int posX, int posY, RenderWindow &window, std::map <int, Unit*> &units);
 
+    void render(RenderWindow &window);
 };
 #endif

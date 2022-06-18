@@ -20,6 +20,7 @@
 #include "common_camera.h"
 #include "common_ground.h"
 #include "common_pointer.h"
+#include "ConstructionMenu.h"
 
 
 using namespace sf;
@@ -91,30 +92,43 @@ void GameScreen::check_events(Pointer &pointer, Event &event, Model &model,
 
 
 void GameScreen::show(Model &model, Protocol &protocol){
-	int sizeX = 500;//Esto en un futuro es 
-	int sizeY = 500;//Algo que se pasa por parametro
-	RenderWindow window(VideoMode(sizeX, sizeY), "DUNE");
-	View view;
-	Camera camera(view, this->posX, this->posY, sizeX, sizeY);
+    int sizeX = 1150;//Esto en un futuro es
+    int sizeY = 700;//Algo que se pasa por parametro
+    RenderWindow window(VideoMode(sizeX, sizeY), "DUNE");
 
-	Pointer pointer(window, model.get_team());
-	
-	while(window.isOpen()){
-		Vector2i posicion = Mouse::getPosition(window);	
-		camera.update(posicion, model);	
-		protocol.receive_units(model.get_units());
-		Event event;
-		while(window.pollEvent(event)){
-			if(event.type == Event::Closed){
-				window.close();
-			}
-			check_events(pointer, event, model, protocol, this->posX, this->posY);
-		}
-		camera.render(window);
-		window.clear();
-		draw_elements(window, model, camera, sizeX, sizeY);
-		pointer.update(posicion, posX, posY, window, model.get_units());
-		window.display();
-		protocol.update();
-	}	
+    View menu_view;
+    menu_view.setViewport(sf::FloatRect(0.81f, 0.f, 0.25f, 0.70f));
+    ConstructionMenu menu(0,0,700,1000,"Harkonnen");
+
+    View view;
+    view.setViewport(sf::FloatRect(0.f, 0.f, 1.0f, 1.0f));
+    Camera camera(view, this->posX, this->posY, sizeX, sizeY);
+
+    Pointer pointer(window, model.get_team());
+
+    while(window.isOpen()){
+        protocol.update();
+        Vector2i posicion = Mouse::getPosition(window);
+        camera.update(posicion, model);
+        protocol.receive_units(model.get_units());
+        Event event;
+        while(window.pollEvent(event)){
+            if(event.type == Event::Closed){
+                window.close();
+            }
+            check_events(pointer, event, model, protocol, this->posX, this->posY);
+            menu.update(event,window);
+        }
+        camera.render(window);
+        window.clear();
+        window.setView(view);
+        draw_elements(window, model, camera, sizeX, sizeY);
+        pointer.update(posicion, posX, posY, window, model.get_units());
+        window.setView(menu_view);
+        pointer.render(window);
+        menu.render(window);
+        pointer.render(window);
+        window.display();
+        protocol.update();
+    }
 }
