@@ -29,6 +29,10 @@ void StateSaver::saveStatus(std::string name,std::vector<std::vector<int>> map, 
         out << YAML::Value << pos;
         i++;
     }
+    out << YAML::Key << "rows";
+    out << YAML::Value << map.size();
+    out << YAML::Key << "cols";
+    out << YAML::Value << map[0].size();
     out << YAML::Key << "map";
     out << YAML::Value << map;
 

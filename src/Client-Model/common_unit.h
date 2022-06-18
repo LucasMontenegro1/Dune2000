@@ -6,6 +6,8 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_selector.h"
+#include "common_assault.h"
+
 
 using namespace sf;
 
@@ -20,18 +22,24 @@ class Unit: public Drawable{
 	float velocity;
 	int largeBitsX;
 	int largeBitsY;
-	std::map <int, Vector2f> frames;
 	int actualFrame;
 	Sprite sprite;
 	Texture texture;
 	Selector selector;
+	RectangleShape lifeMax;
+	RectangleShape lifeRest;
 	int team;
 	int cont;
+	int hp;
+	int max_hp;
+	bool attacking;
+	int attackX;
+	int attackY;
 
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
-								bool moveUp, bool moveDown) = 0;
+								bool moveUp, bool moveDown);
 	
-	Unit(int cordX, int cordY, int id, int team);
+	Unit(int cordX, int cordY, int id, int team, int hp);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 	
@@ -42,23 +50,34 @@ class Unit: public Drawable{
 	bool is_there(float cord_x, float cord_y);
 	
 	void enable_move();
+
+	virtual Assault get_weapon();
 	
 	void no_enable_move();
+
+	virtual void animate_attack();
 	
 	bool can_moves();
 	
 	void setMove(float x, float y);
+
+	void setAttack(std::tuple<float, float> position_target);
 	
 	bool is_in_destiny();
+
+	bool is_attacking();
 	
 	int get_id_unit();
 
 	int get_team();
+
+	int get_hp();
+
+	void modifyHp(int new_hp);
 	
 	std::tuple<float, float> get_position();
 	
 	Unit& operator=(const Unit&& other);
 
-	virtual ~Unit();
 };
 #endif

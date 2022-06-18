@@ -13,6 +13,7 @@
 class MapLoader {
 public:
     MapLoader();
+    bool loadMapPreview(std::string& path,int& rows, int& cols,int&,std::string& name);
     bool loadMap(std::string& path, std::vector<std::vector<int>>& map,int&,std::string& name, std::vector<ConstructionCenter*>& centers);
 };
 

@@ -18,6 +18,7 @@
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
+#include "ConstantGetter.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -57,6 +58,7 @@ public:
 
     void setupUi(QMainWindow *EditorMainWindow)
     {
+        std::string path = ConstantGetter::getResourcePath();
         if (EditorMainWindow->objectName().isEmpty())
             EditorMainWindow->setObjectName(QString::fromUtf8("EditorMainWindow"));
         EditorMainWindow->resize(491, 650);
@@ -70,7 +72,7 @@ public:
         label = new QLabel(page);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(0, 0, 491, 651));
-        label->setPixmap(QPixmap(QString::fromUtf8("../resources/EditorMain.jpg")));
+        label->setPixmap(QPixmap(QString::fromStdString(path + "EditorMain.jpg")));
         label->setScaledContents(true);
         new_2 = new QPushButton(page);
         new_2->setObjectName(QString::fromUtf8("new_2"));
@@ -108,7 +110,7 @@ public:
         label_2 = new QLabel(page_2);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(-20, -20, 531, 851));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("../resources/editornew.jpg")));
+        label_2->setPixmap(QPixmap(QString::fromStdString(path + "editornew.jpg")));
         label_2->setScaledContents(true);
         gameName = new QLineEdit(page_2);
         gameName->setObjectName(QString::fromUtf8("gameName"));
@@ -191,7 +193,7 @@ public:
         label_7 = new QLabel(page_3);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(-10, -20, 561, 1261));
-        label_7->setPixmap(QPixmap(QString::fromUtf8("../resources/load.jpg")));
+        label_7->setPixmap(QPixmap(QString::fromStdString(path + "load.jpg")));
         label_7->setScaledContents(true);
         startLoad = new QPushButton(page_3);
         startLoad->setObjectName(QString::fromUtf8("startLoad"));

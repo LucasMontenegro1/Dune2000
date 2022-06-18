@@ -7,14 +7,15 @@
 
 
 #include <SFML/Graphics.hpp>
+#include "ConstantGetter.h"
 
 
 class ConstructionCenter {
-    int x;
-    int y;
+    int x{};
+    int y{};
     sf::RectangleShape shape;
     sf::Texture texture;
-    bool selected;
+    bool selected{};
 public:
     ConstructionCenter();
     ConstructionCenter(int x, int y);

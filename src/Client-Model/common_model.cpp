@@ -13,15 +13,15 @@
 Model::Model(std::map <int, Unit*> &units, Ground &grounds, int team): 
 		units(units), ground(grounds), one_unit_can_moves(false), team(team) {}
 		
-		
-void Model::update_status(std::map <int, Unit*> &new_units){
+/*	
+void Model::update(std::map <int, Unit*> &new_units){
 	for(auto iter = new_units.begin(); iter != new_units.end(); ++iter){
 		std::tuple<float, float> destiny = iter->second->get_position();
 		this->units[iter->first]->setMove(std::get<0>(destiny), std::get<1>(destiny));
 		delete iter->second;
 	}	
-
 }
+*/
 
 int Model::get_team(){
 	return team;
@@ -69,25 +69,37 @@ bool Model::a_unit_can_moves(){
 
 
 void Model::unit_enable_move(int unit_id){
+	/*
 	if(units[unit_id]->get_team() == team){
 		units[unit_id]->enable_move();
 		this->one_unit_can_moves = true;
 	}
+	*/
+	units[unit_id]->enable_move();
+	this->one_unit_can_moves = true;
 }
 
 
 bool Model::is_unit_there(float cordX, float cordY){
 	bool is_here = false;
 	for(auto iter = units.begin(); iter != units.end(); ++iter){
-		if(iter->second->is_there(cordX, cordY)) is_here = true;
+		if(iter->second->is_there(cordX, cordY) && iter->second->get_team() == team) is_here = true;
 	}	
 	return is_here;
 }
 
+bool Model::is_enemy_there(float cordX, float cordY){
+	bool is_here = false;
+	for(auto iter = units.begin(); iter != units.end(); ++iter){
+		if(iter->second->is_there(cordX, cordY) && iter->second->get_team() != team) is_here = true;
+	}	
+	return is_here;
+}
 
 void Model::move_by_position(int id){
 	if(!units[id]->is_in_destiny()) units[id]->move();
 }
+
 
 
 int Model::get_units_size(){

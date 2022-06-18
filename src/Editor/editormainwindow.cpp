@@ -24,23 +24,17 @@ EditorMainWindow::EditorMainWindow(std::string& name,int& x, int& y, int& mode, 
 
     MapLoader loader;
     std::string path = "../map/";
-    std::vector<ConstructionCenter*> centers;
     for (const auto & entry : std::filesystem::directory_iterator(path)){
         std::string path = entry.path();
         if (path.find("yaml")){
             Game newGame;
-            loader.loadMap(path,newGame.map,newGame.players, newGame.name, centers);
-            newGame.y = newGame.map.size();
-            newGame.x = newGame.map[0].size();
+            loader.loadMapPreview(path,newGame.y, newGame.x, newGame.players,newGame.name);
             games.push_back(newGame);
         }
     }
     for (int i = 0; i < games.size() ; ++i) {
         QString n = QString::fromStdString(games[i].name);
         ui->comboBox->addItem(n);
-    }
-    for (auto & center : centers) {
-        delete center;
     }
 }
 
