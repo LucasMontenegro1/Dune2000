@@ -27,3 +27,12 @@ bool MapLoader::loadMap(std::string& path, std::vector<std::vector<int>>& map, i
     }
     return true;
 }
+
+bool MapLoader::loadMapPreview(std::string &path, int &rows, int &cols, int &players, std::string &name) {
+    YAML::Node config = YAML::LoadFile(path);
+    players = config["players"].as<int>();
+    name = config["name"].as<std::string>();
+    rows = config["rows"].as<int>();
+    cols = config["cols"].as<int>();
+    return true;
+}

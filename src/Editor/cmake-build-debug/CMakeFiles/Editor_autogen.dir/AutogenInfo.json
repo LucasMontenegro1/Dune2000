@@ -107,9 +107,9 @@
 			null
 		],
 		[
-			"/home/lucas/Desktop/Taller I/Dune2000/src/Editor/Constants.h",
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstantGetter.h",
 			"Mu",
-			"EWIEGA46WW/moc_Constants.cpp",
+			"EWIEGA46WW/moc_ConstantGetter.cpp",
 			null
 		],
 		[
@@ -122,6 +122,12 @@
 			"/home/lucas/Desktop/Taller I/Dune2000/src/Editor/Editor.h",
 			"Mu",
 			"EWIEGA46WW/moc_Editor.cpp",
+			null
+		],
+		[
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Editor/EditorException.h",
+			"Mu",
+			"EWIEGA46WW/moc_EditorException.cpp",
 			null
 		],
 		[
@@ -234,6 +240,11 @@
 	[
 		[
 			"/home/lucas/Desktop/Taller I/Dune2000/src/Editor/Button.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstantGetter.cpp",
 			"Mu",
 			null
 		],

@@ -19,6 +19,14 @@ class Ground: public Drawable{
 	void is_rock();
 	
 	void is_spice();
+
+    void is_cliff();
+
+    void is_top();
+
+    void is_dune();
+
+
 	public:
     Sprite sprite;
 
