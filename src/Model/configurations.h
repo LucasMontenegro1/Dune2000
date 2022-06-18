@@ -30,6 +30,15 @@ struct Configurations {
 	unsigned int TRIKE_RANGE;
 	unsigned int TRIKE_TRAVERSE_TIME;
 
+	// Buildings
+	unsigned int BUILDING_CLASS_ID;
+
+	unsigned int CENTRE_ID;
+	unsigned int CENTRE_HP;
+	unsigned int CENTRE_WIDTH;
+	unsigned int CENTRE_LENGTH;
+	unsigned int CENTRE_ENERGY;
+
 	// Weapons
 	unsigned int ASSAULT_RIFLE_ID;
 	unsigned int ASSAULT_RIFLE_DMG;
