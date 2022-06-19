@@ -25,18 +25,18 @@ struct RawUnit {
 	std::string state;
 };
 
+struct map_coor {
+	unsigned int row;
+	unsigned int col;
+};
+
 class MockServer {
 	ControlUnit cu;
 
-	Terrains terrains;
-
-	public:
+public:
 	MockServer();
 
-	/*
-	 * Mapa solo contiene arena y acantilados (sand y cliffs)
-	 */
-	Cliffs get_map() const;
+	void load_map(std::vector<std::pair<struct map_coor, unsigned int>> terrains);
 
 	void create_unit(unsigned int player_id, unsigned int type_id, unsigned int row, unsigned int col);
 
@@ -49,6 +49,9 @@ class MockServer {
 	std::vector<struct RawUnit> get_state() const;
 
 	~MockServer();
+
+private:
+	BlockTerrain parse_terrain(unsigned int terrain_id) const;
 };
 
 #endif //DUNE2000_MOCKSERVER_H

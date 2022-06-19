@@ -8,6 +8,10 @@
 void test_move(void)
 {
 	MockServer srv;
+	vector<pair<struct map_coor, unsigned int>> terrains;
+	for (unsigned int i = 60; i <= 100; i++)
+		terrains.push_back(pair<struct map_coor, unsigned >({i, 60}, 4));
+	srv.load_map(terrains);
 	srv.create_unit(1, 1, 70, 59);
 	srv.update(60000);
 	unsigned int id = srv.get_state().front().id;

@@ -6,6 +6,14 @@
 #define DUNE2000_CONFIGURATIONS_H
 
 struct Configurations {
+	// Terrains
+	unsigned int SAND_ID;
+	unsigned int DUNES_ID;
+	unsigned int ROCK_ID;
+	unsigned int PEAKS_ID;
+	unsigned int CLIFFS_ID;
+	unsigned int CONSTRUCTION_ID;
+
 	// Infantry
 	unsigned int INFANTRY_CLASS_ID;
 
