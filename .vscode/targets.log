@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 18 20:07:18 2022
+# Make data base, printed on Sat Jun 18 22:59:30 2022
 
 # Variables
 
@@ -69,7 +71,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 MANAGERPID = 961
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-cf71f1a0-bf30-4d12-9c54-5c92bd642491.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1bc1d24d-ae2f-43d0-b3d7-f898477ccbdd.sock
 # environment
 VSCODE_CWD = /home/agus
 # default
@@ -97,7 +99,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3670
+GIO_LAUNCHED_DESKTOP_FILE_PID = 68476
 # automatic
 %F = $(notdir $%)
 # environment
@@ -203,7 +205,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3670
+VSCODE_PID = 68476
 # variable set hash-table stats:
 # Load=97/1024=9%, Rehash=0, Collisions=12/119=10%
 
@@ -271,8 +273,6 @@ GNUmakefile:
 # strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Sat Jun 18 20:07:18 2022
+# Finished Make data base on Sat Jun 18 22:59:30 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-
