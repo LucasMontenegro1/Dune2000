@@ -11,10 +11,12 @@
 
 
 Unit::Unit(int cordX, int cordY, int id, int team, int hp): posX(cordX), posY(cordY), 
-	can_move(false), destX(cordX), destY(cordY), id(id), selector{}, team(team), cont(0), 
+	can_move(false), destX(cordX), destY(cordY), id(id), selector{}, team(team), 
 	hp(hp), max_hp(hp), attacking(false) {
 		lifeMax.setSize(Vector2f(30,3));
 		lifeMax.setFillColor(sf::Color::Black);
+		lifeMax.setPosition(cordX, cordY - 5);
+		lifeRest.setPosition(cordX, cordX - 5);
 	}
 
 
@@ -35,9 +37,13 @@ bool Unit::is_there(float cord_x, float cord_y){
 	return is_in == 2;
 }
 
-Assault Unit::get_weapon(){
-	Assault a;
-	return a;
+Sprite Unit::get_weapon(){
+	Sprite x;
+	return x;
+}
+
+void Unit::setNeutral(){
+	attacking = false;
 }
 
 void Unit::setMove(float x, float y){
@@ -68,10 +74,16 @@ int Unit::get_hp(){
 	return hp;
 }
 
+
 void Unit::modifyHp(int new_hp){
 	int life = hp * 30 / max_hp;
 	lifeRest.setSize(Vector2f(life,3));
-	lifeRest.setFillColor(sf::Color::Green);
+	int porcentual_life = hp * 100 / max_hp;
+	if(porcentual_life < 30){
+		lifeRest.setFillColor(sf::Color::Red);
+	} else {
+		lifeRest.setFillColor(sf::Color::Green);
+	}
 	this->hp = new_hp;
 }
 
@@ -95,27 +107,57 @@ int Unit::get_team(){
 	return team;
 }
 
+bool Unit::animate_destruction(){
+	can_move = false;
+	max_hp = hp;
+	Color color = sprite.getColor();
+	uint8_t transparency = color.a;
+	if(transparency > 10){
+		transparency -= 30;
+		sprite.setColor(sf::Color(255,255,255,transparency));
+		return false; 
+	} else {
+
+		return true;
+	}
+}
+
+int Unit::calculeFramePosition(bool moveRight, bool moveLeft, bool moveUp, bool moveDown){
+	int frameDestiny;
+	if(moveRight){
+		if(moveUp) frameDestiny = 5;
+		if(moveDown) frameDestiny = 13;
+		else if(!moveUp && !moveDown) frameDestiny = 9;		
+	}
+	if(moveLeft){
+		if(moveUp) frameDestiny = 29;
+		if(moveDown) frameDestiny = 21;
+		else if(!moveUp && !moveDown) frameDestiny = 25;
+	}
+	if(!moveRight && !moveLeft && !moveUp && moveDown) frameDestiny = 17;
+	if(!moveRight && !moveLeft && moveUp && !moveDown) frameDestiny = 1;
+	return frameDestiny;
+}
+
 void Unit::move(){
 	float moveX = posX;
 	float moveY = posY;
 	bool moveRight = false; bool moveLeft = false; 
 	bool moveUp = false; bool moveDown = false;
-	if(destX > posX){
+	if( (int) destX > (int) posX){
 		moveX +=  velocity;
 		moveRight = true;
 		attacking = false;
-	}
-	if(destX < posX){
+	} else if((int) destX < (int) posX){
 		moveX -=  velocity;
 		moveLeft = true;
 		attacking = false;
 	}
-	if(destY > posY){
+	if( (int) destY > (int) posY){
 		moveY +=  velocity;
 		moveDown = true;
 		attacking = false;
-	}
-	if(destY < posY){
+	} else if((int) destY < (int) posY){
 		moveY -=  velocity;
 		moveUp = true;
 		attacking = false;
@@ -150,6 +192,5 @@ Unit& Unit::operator=(const Unit&& other) {
 	this->texture = other.texture;
 	this->selector = other.selector;
 	this->team = other.team;
-	this->cont = other.cont;
     return *this;
 }

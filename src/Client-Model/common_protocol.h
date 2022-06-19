@@ -18,14 +18,12 @@ class Protocol {
 	MockServer server;
 	Skins skins;
 
-	void foundEliminate(std::map <int, Unit*> &units, std::vector<struct RawUnit> &received_units);
-
 	public:
 	Protocol();
 	
 	Ground receive_grounds();
 	
-	void receive_units(std::map <int, Unit*> &units);
+	std::vector<struct RawUnit> receive_units(std::map <int, Unit*> &units);
 	
 	void send_unit_attack(int unit_id, int unit_target_id);
 	

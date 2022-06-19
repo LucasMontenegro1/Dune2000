@@ -155,6 +155,21 @@ void test_path_avoiding_obstacles(void)
 	TEST_CHECK(path.at(0) == dst);
 }
 
+void test_filter(void)
+{
+	TerrainMap map(4, 5);
+	map.change_terrain(BlockPosition(1, 1), cliffs);
+	std::vector<BlockPosition> positions;
+	InfantryMobility mob;
+	positions.push_back(BlockPosition(0, 0));
+	positions.push_back(BlockPosition(1, 1));
+	positions.push_back(BlockPosition(4, 5));
+	std::vector<BlockPosition> filtered = map.filter(positions, mob);
+
+	TEST_CHECK(filtered.size() == 1);
+	TEST_CHECK(filtered.front() == BlockPosition(0, 0));
+}
+
 TEST_LIST = {
 	{"at_method", test_at},
 	{"invalid_position", test_invalid_position},
@@ -166,5 +181,6 @@ TEST_LIST = {
 	{"untraversable_dst", test_cannot_traverse_destination_block},
 	{"unreachable_destination", test_unreachable_destination},
 	{"path_avoiding_obstacles", test_path_avoiding_obstacles},
+	{"filer", test_filter},
 	{NULL, NULL}
 };

@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <sys/socket.h>
 #include <cstring>
+#include <typeinfo>
 #include <tuple>
 #include <map>
 #include "client.h"
@@ -29,8 +30,7 @@ using namespace sf;
 GameScreen::GameScreen(): posX(0), posY(0) {}
 
 
-void GameScreen::draw_elements(RenderWindow &window, Model &model, 
-						Camera &camera, int sizeX, int sizeY){
+void GameScreen::draw_grounds(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
 	int posX = camera.get_posX();
 	int posY = camera.get_posY();
 	int limitX = posX +  sizeX;
@@ -46,6 +46,17 @@ void GameScreen::draw_elements(RenderWindow &window, Model &model,
 			}
 		}
 	}
+}
+
+void GameScreen::draw_units(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
+	for(size_t i = 0; i < model.get_units_to_eliminate().size(); i++){
+		bool is_finish = model.get_units_to_eliminate()[i]->animate_destruction();
+		if(!is_finish) window.draw(*model.get_units_to_eliminate()[i]);
+		else {
+			//draw.explosiones
+			model.eliminate_unit(i);
+		}
+	}
 	for(auto iter = model.get_units().begin(); iter != model.get_units().end(); ++iter){
 		model.move_by_position(iter->first);
 		std::tuple<int, int, int, int> uBits = iter->second->get_bits();
@@ -57,7 +68,13 @@ void GameScreen::draw_elements(RenderWindow &window, Model &model,
 				window.draw(iter->second->get_weapon());
 			}
 		}
-	}	
+	}
+}
+
+
+void GameScreen::draw_elements(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
+	draw_grounds(window, model, camera, sizeX, sizeY);
+	draw_units(window, model, camera, sizeX, sizeY);
 }
 
 

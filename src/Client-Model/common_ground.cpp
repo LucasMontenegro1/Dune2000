@@ -29,6 +29,11 @@ void Ground::is_rock(){
 	sprite.setTextureRect(IntRect(112,240,16,16));
 }
 	
+void Ground::is_dune(){
+	//Hay que arreglarlo
+	sprite.setTextureRect(IntRect(112,240,16,16));
+}
+
 void Ground::is_spice(){
 	sprite.setTextureRect(IntRect(0,305,16,16));
 }
@@ -49,12 +54,15 @@ bool Ground::identify_texture(int col, int row){
 			is_sand(); identify = true;
 			break;
 		case 1:
-			is_rock(); identify = true;
+			is_dune(); identify = true;
 			break;
 		case 2:
-			is_spice(); identify = true;
+			is_rock(); identify = true;
 			break;
 		case 3:
+			is_spice(); identify = true;
+			break;
+		case 4:
 			is_cliff(); identify = true;
 			break;
 	}

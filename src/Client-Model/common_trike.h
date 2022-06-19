@@ -11,12 +11,9 @@
 
 using namespace sf;
 
-class Trike: public Unit{
+class Trike: public Unit {
 	std::map <int, Vector2f> &frames;
 	Assault weapon;
-	
-	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
-								bool moveUp, bool moveDown) override;
 	
 	void pointTo();
 
@@ -24,9 +21,12 @@ class Trike: public Unit{
 	
 	Trike(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int team, int hp);
 
+	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
+								bool moveUp, bool moveDown) override;
+
 	virtual void animate_attack() override;
 
-	virtual Assault get_weapon() override;
+	virtual Sprite get_weapon() override;
 
 	virtual ~Trike();
 

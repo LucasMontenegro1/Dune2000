@@ -17,6 +17,8 @@ class Ground: public Drawable{
 	void is_sand();
 	
 	void is_rock();
+
+	void is_dune();
 	
 	void is_spice();
 

@@ -4,6 +4,7 @@ UNIT_FILES = ../src/Model/unit.cpp ../src/Model/teamable.cpp ../src/Model/Weapon
 INFANTRY_FILES = ../src/Model/light_infantry.cpp ../src/Model/Mobility/infantry_mobility.cpp
 VEHICLE_FILES = ../src/Model/tank.cpp ../src/Model/Mobility/vehicle_mobility.cpp
 WEAPON_FILES = ../src/Model/Weapons/assault_rifle.cpp ../src/Model/Weapons/cannon.cpp
+BUILDING_FILES = ../src/Model/building.cpp ../src/Model/teamable.cpp ../src/Model/block_position.cpp ../src/Server/configuration_loader.cpp
 SRV_FILES = ../src/Server/mock_server.cpp ../src/Server/control_unit.cpp ../src/Server/entity_factory.cpp ../src/Server/configuration_loader.cpp
 
 all: test_block_position test_path_node test_terrain_map test_terrain_mobility test_tank test_light_infantry test_weapons
@@ -31,6 +32,9 @@ test_tank: tank_test.cpp ../src/Model/tank.cpp ../src/Model/Weapons/cannon.cpp .
 
 test_srv: mock_server_test.cpp $(SRV_FILES) $(INFANTRY_FILES) $(VEHICLE_FILES) $(WEAPON_FILES) $(UNIT_FILES) $(MAP_FILES)
 	g++ $(CFLAGS) -o srv.test mock_server_test.cpp $(SRV_FILES) $(INFANTRY_FILES) $(VEHICLE_FILES) $(WEAPON_FILES) $(UNIT_FILES) $(MAP_FILES)
+
+test_centre: construction_centre_test.cpp ../src/Model/construction_centre.cpp $(BUILDING_FILES)
+	g++ $(CFLAGS) -o centre.test construction_centre_test.cpp ../src/Model/construction_centre.cpp $(BUILDING_FILES)
 
 test_control_unit: control_unit_test.cpp ../src/Server/control_unit.cpp $(MOV_FILES) $(MAP_FILES)
 	g++ $(CFLAGS) -o control_unit.test control_unit_test.cpp ../src/Server/control_unit.cpp $(MOV_FILES) $(MAP_FILES)

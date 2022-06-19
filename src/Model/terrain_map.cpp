@@ -98,6 +98,19 @@ bool TerrainMap::invalid_position(BlockPosition pos) const
 	return invalid;
 }
 
+std::vector<BlockPosition>
+TerrainMap::filter(const std::vector<BlockPosition> &positions, const UnitMobility &mob) const
+{
+	std::vector<BlockPosition> filtered;
+	for (auto const &pos : positions) {
+		if (not this->invalid_position(pos)) {
+			if (mob.can_traverse(this->at(pos)))
+				filtered.push_back(pos);
+		}
+	}
+	return filtered;
+}
+
 void TerrainMap::validate_positions(BlockPosition org, BlockPosition dst) const
 {
 	if (this->invalid_position(org))

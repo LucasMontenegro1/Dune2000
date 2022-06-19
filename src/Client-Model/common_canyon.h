@@ -1,5 +1,5 @@
-#ifndef COMMON_ASSAULT_H
-#define COMMON_ASSAULT_H
+#ifndef COMMON_CANYON_H
+#define COMMON_CANYON_H
 #include <vector>
 #include <string>
 #include <tuple>
@@ -7,26 +7,26 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 
+
 using namespace sf;
 
 
-class Assault: public Drawable{
-	Sprite sprite;
+class Canyon: public Drawable{
+    Sprite sprite;
 	Texture texture;
 	Image image;
 	int cont;
 
-	void updateTexture(int frame);
+	void updateTexture();
 
     public:
     void draw(RenderTarget &target, RenderStates states) const;
 
-    Assault();
+    Canyon();
 
-	void animate(float posX, float posY, bool is_attacking, int frame);
+	void animate(float posX, float posY, bool is_attacking);
 
     Sprite getSprite();
-
 
 };
 #endif

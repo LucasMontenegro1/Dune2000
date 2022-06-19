@@ -12,7 +12,6 @@ class Pointer {
 	Texture texture;
 	Sprite sprite;
 	int frame;
-	int cont;
 	std::map <int, Vector2f> frames;
 	bool is_enemy;
 	int team;

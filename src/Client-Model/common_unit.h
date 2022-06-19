@@ -6,8 +6,6 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_selector.h"
-#include "common_assault.h"
-
 
 using namespace sf;
 
@@ -29,7 +27,6 @@ class Unit: public Drawable{
 	RectangleShape lifeMax;
 	RectangleShape lifeRest;
 	int team;
-	int cont;
 	int hp;
 	int max_hp;
 	bool attacking;
@@ -51,7 +48,7 @@ class Unit: public Drawable{
 	
 	void enable_move();
 
-	virtual Assault get_weapon();
+	virtual Sprite get_weapon();
 	
 	void no_enable_move();
 
@@ -73,7 +70,13 @@ class Unit: public Drawable{
 
 	int get_hp();
 
+	void setNeutral();
+
 	void modifyHp(int new_hp);
+
+	int calculeFramePosition(bool moveRight, bool moveLeft, bool moveUp, bool moveDown);
+
+	bool animate_destruction();
 	
 	std::tuple<float, float> get_position();
 	

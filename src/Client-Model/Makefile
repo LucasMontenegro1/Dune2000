@@ -6,10 +6,11 @@ INFANTRY_FILES = ../Model/light_infantry.cpp ../Model/Mobility/infantry_mobility
 VEHICLE_FILES = ../Model/tank.cpp ../Model/Mobility/vehicle_mobility.cpp
 WEAPON_FILES = ../Model/Weapons/assault_rifle.cpp ../Model/Weapons/cannon.cpp
 SRV_FILES = ../Server/mock_server.cpp ../Server/control_unit.cpp ../Server/entity_factory.cpp ../Server/configuration_loader.cpp
-CLIENT_FILES = client_class.cpp common_camera.cpp common_game_screen.cpp common_ground.cpp common_model.cpp common_protocol.cpp common_pointer.cpp common_selector.cpp common_frames.cpp common_assault.cpp Button.cpp Button.h ConstructionMenu.cpp ConstructionMenu.h BuildingImageHandler.cpp BuildingImageHandler.h UnitImageHandler.cpp UnitImageHandler.h VehicleImageHandler.cpp VehicleImageHandler.h
-UNITS_FILES = common_tank.cpp common_trike.cpp common_unit.cpp
+CLIENT_FILES = client_class.cpp common_camera.cpp common_game_screen.cpp common_ground.cpp common_model.cpp common_protocol.cpp common_pointer.cpp common_selector.cpp common_frames.cpp Button.cpp Button.h ConstructionMenu.cpp ConstructionMenu.h BuildingImageHandler.cpp BuildingImageHandler.h UnitImageHandler.cpp UnitImageHandler.h VehicleImageHandler.cpp VehicleImageHandler.h  
+UNITS_FILES = common_tank.cpp common_trike.cpp common_unit.cpp 
+WEAPONS_FILES = common_assault.cpp common_canyon.cpp
 
 
-client: client_main.cpp $(CLIENT_FILES) $(SRV_FILES) $(INFANTRY_FILES) $(VEHICLE_FILES) $(WEAPON_FILES) $(UNIT_FILES) $(MAP_FILES) $(UNITS_FILES)
-	g++ $(CFLAGS) -o client client_main.cpp $(CLIENT_FILES) $(SRV_FILES) $(INFANTRY_FILES) $(VEHICLE_FILES) $(WEAPON_FILES) $(UNIT_FILES) $(MAP_FILES) $(UNITS_FILES) $(LIBS)
+client: client_main.cpp $(CLIENT_FILES) $(SRV_FILES) $(INFANTRY_FILES) $(VEHICLE_FILES) $(WEAPON_FILES) $(UNIT_FILES) $(MAP_FILES) $(UNITS_FILES) $(WEAPONS_FILES)
+	g++ $(CFLAGS) -o client client_main.cpp $(CLIENT_FILES) $(SRV_FILES) $(INFANTRY_FILES) $(VEHICLE_FILES) $(WEAPON_FILES) $(UNIT_FILES) $(MAP_FILES) $(UNITS_FILES) $(LIBS) $(WEAPONS_FILES)
 
