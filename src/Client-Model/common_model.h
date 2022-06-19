@@ -8,19 +8,23 @@
 #include <time.h>
 #include "common_unit.h"
 #include "common_ground.h"
+#include "../Server/mock_server.h"
 
 class Model {
 	std::map <int, Unit*> units;
+	std::vector<Unit*> units_to_eliminate;
 	Ground ground;	
 	bool one_unit_can_moves;
 	int team;
 	
 	void deleteUnits();
 	
+	void foundEliminate(std::vector<struct RawUnit> &received_units);
+
 	public:
 	Model(std::map <int, Unit*> &units, Ground &grounds, int team);
 	
-	//void update(std::map <int, Unit*> &units);
+	void update(std::vector<struct RawUnit> &received_units);
 	
 	int get_y_size();
 	
@@ -31,6 +35,8 @@ class Model {
 	int get_unit(float cordX, float cordY);
 	
 	std::vector<int> get_units_can_moves();
+
+	std::vector<Unit*> get_units_to_eliminate();
 	
 	bool a_unit_can_moves();
 
@@ -45,7 +51,9 @@ class Model {
 	int get_units_size();
 
 	int get_team();
-	
+
+	void eliminate_unit(size_t position);
+
 	Ground &get_grounds();
 	
 	std::map <int, Unit*> &get_units();

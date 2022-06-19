@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <sys/socket.h>
 #include <cstring>
+#include <typeinfo>
 #include <tuple>
 #include <map>
 #include "client.h"
@@ -20,6 +21,7 @@
 #include "common_camera.h"
 #include "common_ground.h"
 #include "common_pointer.h"
+#include "../Server/mock_server.h"
 
 
 using namespace sf;
@@ -28,8 +30,7 @@ using namespace sf;
 GameScreen::GameScreen(): posX(0), posY(0) {}
 
 
-void GameScreen::draw_elements(RenderWindow &window, Model &model, 
-						Camera &camera, int sizeX, int sizeY){
+void GameScreen::draw_grounds(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
 	int posX = camera.get_posX();
 	int posY = camera.get_posY();
 	int limitX = posX +  sizeX;
@@ -45,6 +46,17 @@ void GameScreen::draw_elements(RenderWindow &window, Model &model,
 			}
 		}
 	}
+}
+
+void GameScreen::draw_units(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
+	for(size_t i = 0; i < model.get_units_to_eliminate().size(); i++){
+		bool is_finish = model.get_units_to_eliminate()[i]->animate_destruction();
+		if(!is_finish) window.draw(*model.get_units_to_eliminate()[i]);
+		else {
+			//draw.explosiones
+			model.eliminate_unit(i);
+		}
+	}
 	for(auto iter = model.get_units().begin(); iter != model.get_units().end(); ++iter){
 		model.move_by_position(iter->first);
 		std::tuple<int, int, int, int> uBits = iter->second->get_bits();
@@ -56,7 +68,13 @@ void GameScreen::draw_elements(RenderWindow &window, Model &model,
 				window.draw(iter->second->get_weapon());
 			}
 		}
-	}	
+	}
+}
+
+
+void GameScreen::draw_elements(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
+	draw_grounds(window, model, camera, sizeX, sizeY);
+	draw_units(window, model, camera, sizeX, sizeY);
 }
 
 
@@ -99,10 +117,14 @@ void GameScreen::show(Model &model, Protocol &protocol){
 
 	Pointer pointer(window, model.get_team());
 	
+
+
 	while(window.isOpen()){
+		window.setFramerateLimit(60);
 		Vector2i posicion = Mouse::getPosition(window);	
 		camera.update(posicion, model);	
-		protocol.receive_units(model.get_units());
+		std::vector<struct RawUnit> received = protocol.receive_units(model.get_units());
+		model.update(received);
 		Event event;
 		while(window.pollEvent(event)){
 			if(event.type == Event::Closed){

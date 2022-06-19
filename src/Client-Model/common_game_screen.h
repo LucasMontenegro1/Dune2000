@@ -16,12 +16,14 @@ class GameScreen {
 	int posX;//Posiciones de la camara respecto al mapa
 	int posY;
 	
-	void check_events(Pointer &pointer, Event &event, Model &model, 
-			Protocol &protocol, int posX, int posY);
+	void check_events(Pointer &pointer, Event &event, Model &model, Protocol &protocol, int posX, int posY);
 	
-	void draw_elements(RenderWindow &window, Model &model, 
-		Camera &camera, int sizeX, int sizeY);
+	void draw_elements(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY);
+
+	void draw_units(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY);
 	
+	void draw_grounds(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY);
+
 	public:
 	GameScreen();
 	

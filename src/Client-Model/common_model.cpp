@@ -7,21 +7,36 @@
 #include "common_unit.h"
 #include "common_ground.h"
 #include "common_model.h"
+#include "../Server/mock_server.h"
 #include <iostream>
 
 
 Model::Model(std::map <int, Unit*> &units, Ground &grounds, int team): 
 		units(units), ground(grounds), one_unit_can_moves(false), team(team) {}
 		
-/*	
-void Model::update(std::map <int, Unit*> &new_units){
-	for(auto iter = new_units.begin(); iter != new_units.end(); ++iter){
-		std::tuple<float, float> destiny = iter->second->get_position();
-		this->units[iter->first]->setMove(std::get<0>(destiny), std::get<1>(destiny));
-		delete iter->second;
+	
+void Model::foundEliminate(std::vector<struct RawUnit> &received_units){
+	bool is = false;
+	for(auto iter = units.begin(); iter != units.end(); ++iter){
+		for(size_t i = 0; i < received_units.size(); i++){
+			if((unsigned int) iter->first == received_units[i].id){
+				is = true;
+			}
+		}
+		if(!is){
+			units_to_eliminate.push_back(iter->second);
+			//delete iter->second;
+			units.erase(iter);
+		} 
+		is = false;
 	}	
 }
-*/
+
+
+void Model::update(std::vector<struct RawUnit> &received_units){
+	if(received_units.size() < units.size()) foundEliminate(received_units);
+}
+
 
 int Model::get_team(){
 	return team;
@@ -100,7 +115,9 @@ void Model::move_by_position(int id){
 	if(!units[id]->is_in_destiny()) units[id]->move();
 }
 
-
+std::vector<Unit*> Model::get_units_to_eliminate(){
+	return units_to_eliminate;
+}
 
 int Model::get_units_size(){
 	return this->units.size();
@@ -111,6 +128,10 @@ Ground &Model::get_grounds(){
 	return this->ground;
 }
 
+void Model::eliminate_unit(size_t position){
+	auto elem_to_remove = units_to_eliminate.begin() + position;
+	units_to_eliminate.erase(elem_to_remove);
+}
 	
 std::map <int, Unit*> &Model::get_units(){
 	return this->units;

@@ -5,16 +5,16 @@
 #include <time.h>
 #include "common_unit.h"
 #include "common_tank.h"
-#include "common_assault.h"
+#include "common_canyon.h"
 
 using namespace sf;
 
-Tank::Tank(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int team, int hp): Unit(cordX, cordY, id, team, hp), frames(frames) {
+TankClient::TankClient(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int team, int hp): Unit(cordX, cordY, id, team, hp), frames(frames) {
     texture.loadFromFile("resources/units/harkonnenTank.png");
 	sprite.setTexture(texture);
     sprite.setTextureRect(IntRect(5,2,30,25));
 	sprite.setPosition(cordX, cordY);
-    this->velocity = 0.1;	
+    this->velocity = 0.8;	
 	this->largeBitsX = 35;
 	this->largeBitsY = 35;
 	this->actualFrame = 17;
@@ -24,60 +24,37 @@ Tank::Tank(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int t
 	canion.setPosition(cordX + 5, cordY + 1);
 }
 
-void Tank::draw(RenderTarget &target, RenderStates states) const {
+void TankClient::draw(RenderTarget &target, RenderStates states) const {
+	if(hp < max_hp){
+		target.draw(lifeMax, states);
+		target.draw(lifeRest, states);
+	}
 	if(can_move) target.draw(selector);
 	target.draw(sprite, states);
 	target.draw(canion, states);
 }
 
-void Tank::modifyMovePosition(bool moveRight, bool moveLeft, 
-							bool moveUp, bool moveDown){
-	int frameDestiny;
-	if(moveRight){
-		if(moveUp) frameDestiny = 5;
-		if(moveDown) frameDestiny = 13;
-		else if(!moveUp && !moveDown) frameDestiny = 9;		
-	}
-	if(moveLeft){
-		if(moveUp) frameDestiny = 29;
-		if(moveDown) frameDestiny = 21;
-		else if(!moveUp && !moveDown) frameDestiny = 25;
-	}
-	if(!moveRight && !moveLeft && !moveUp && moveDown) frameDestiny = 17;
-	if(!moveRight && !moveLeft && moveUp && !moveDown) frameDestiny = 1;
-
-	if(cont % 10 == 0){
-		if(actualFrame > frameDestiny) actualFrame--;
-		if(actualFrame < frameDestiny) actualFrame++;
-	}
+void TankClient::modifyMovePosition(bool moveRight, bool moveLeft, bool moveUp, bool moveDown){
+	int frameDestiny = Unit::calculeFramePosition(moveRight, moveLeft, moveUp, moveDown);
+	if(actualFrame > frameDestiny) actualFrame--;
+	if(actualFrame < frameDestiny) actualFrame++;
 	Vector2f &posicionFrame = frames[actualFrame];	
 	sprite.setTextureRect(IntRect(posicionFrame.x, posicionFrame.y,30,25));
-
 	actualFrameCanion = actualFrame + 32;
 	Vector2f &posicionFrameCanion = frames[actualFrameCanion];
 	canion.setTextureRect(IntRect(posicionFrameCanion.x, posicionFrameCanion.y,20,20));	
-		
 	canion.setPosition(posX + 5, posY + 1);
-	cont++;
 }
 
 
-void Tank::updateCanion(){
+void TankClient::updateCanion(){
 	int frameDestiny = actualFrameCanion;
 	bool moveRight = false; bool moveLeft = false; 
 	bool moveUp = false; bool moveDown = false;
-	if(attackX > posX && attackX - 15 > posX){
-		moveRight = true;
-	}
-	if(attackX < posX && attackX + 15 < posX){
-		moveLeft = true;
-	}
-	if(attackY > posY && attackY - 15 > posY){
-		moveDown = true;
-	}
-	if(attackY < posY && attackY + 15 < posY){
-		moveUp = true;
-	}
+	if(attackX > posX && attackX - 15 > posX) moveRight = true;
+	if(attackX < posX && attackX + 15 < posX) moveLeft = true;
+	if(attackY > posY && attackY - 15 > posY) moveDown = true;
+	if(attackY < posY && attackY + 15 < posY) moveUp = true;
 	if(moveRight){
 		if(moveUp) frameDestiny = 36;
 		if(moveDown) frameDestiny = 46;
@@ -86,7 +63,8 @@ void Tank::updateCanion(){
 	if(moveLeft){
 		if(moveUp) frameDestiny = 61;
 		if(moveDown) frameDestiny = 53;
-		else if(!moveUp && !moveDown) frameDestiny = 57;		}
+		else if(!moveUp && !moveDown) frameDestiny = 57;		
+	}
 	if(!moveRight && !moveLeft && !moveUp && moveDown) frameDestiny = 49;
 	if(!moveRight && !moveLeft && moveUp && !moveDown) frameDestiny = 33;
 		
@@ -98,9 +76,14 @@ void Tank::updateCanion(){
 	canion.setTextureRect(IntRect(posicionFrameCanion.x, posicionFrameCanion.y,20,20));
 }
 
-
-void Tank::animate_attack(){
-	if(cont % 10 == 0) updateCanion();
-	canion.setPosition(posX + 5,posY + 1);
-	cont++;
+Sprite TankClient::get_weapon(){
+	return weapon.getSprite();
 }
+
+
+void TankClient::animate_attack(){
+	updateCanion();
+	canion.setPosition(posX + 5,posY + 1);
+}
+
+TankClient::~TankClient(){}

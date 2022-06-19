@@ -20,7 +20,6 @@ using namespace sf;
 Pointer::Pointer(RenderWindow &window, int team){
 	fillFrames();
 	this->frame = 0;
-	this->cont = 0;
 	this->is_enemy = false;
 	this->team = team;
 	window.setMouseCursorVisible(false);
@@ -64,9 +63,8 @@ void Pointer::update(Vector2i &posicion, int posX, int posY, RenderWindow &windo
 		}
 	}
 	sprite.setPosition(posicion.x + posX - 15, posicion.y + posY - 15);
-	if(cont % 30 == 0 && frame != 0) updateTexture();
+	if(frame != 0) updateTexture();
 	window.draw(sprite);
-	cont++;
 }
 	
 void Pointer::fillFrames(){

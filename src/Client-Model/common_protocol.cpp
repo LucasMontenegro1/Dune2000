@@ -13,6 +13,7 @@
 #include "../Server/mock_server.h"
 
 Protocol::Protocol(): server{}, skins{} {
+	this->server.create_unit(0, 2, 0, 0);
 	this->server.create_unit(0, 1, 5, 5);
 	this->server.create_unit(1, 1, 15,15);
 	this->server.create_unit(1, 1, 0,30);
@@ -33,26 +34,10 @@ Ground Protocol::receive_grounds(){
 	return grounds;
 }
 
-void Protocol::foundEliminate(std::map <int, Unit*> &units, std::vector<struct RawUnit> &received_units){
-	bool is = false;
-	for(auto iter = units.begin(); iter != units.end(); ++iter){
-		for(size_t i = 0; i < received_units.size(); i++){
-			if((unsigned int) iter->first == received_units[i].id){
-				is = true;
-			}
-		}
-		if(!is){
-			//delete iter->second;
-			units.erase(iter);
-		} 
-		is = false;
-	}	
-}
 
 	
-void Protocol::receive_units(std::map <int, Unit*> &units){
+std::vector<struct RawUnit> Protocol::receive_units(std::map <int, Unit*> &units){
 	std::vector<struct RawUnit> received_units = this->server.get_state();
-	if(received_units.size() < units.size()) foundEliminate(units, received_units);
 	for(size_t i = 0; i < received_units.size(); i++){
 		int id_received = received_units[i].id;
 		if(units.count(id_received) != 0){
@@ -60,21 +45,24 @@ void Protocol::receive_units(std::map <int, Unit*> &units){
 				units[id_received]->setMove(received_units[i].col * 16, received_units[i].row * 16);
 			}
 			if(received_units[i].state == "attacking"){
-				if(units.count(received_units[i].target_id) == 0) continue;
+ 				if(units.count(received_units[i].target_id) == 0) continue;
 				units[id_received]->setAttack(units[received_units[i].target_id]->get_position());
 				units[received_units[i].target_id]->modifyHp(received_units[i].hp);
+			} else if(received_units[i].state == "neutral"){
+				units[id_received]->setNeutral();
 			}
 		} else {
-			//if(received_units[i].type_id == 1){
+			if(received_units[i].type_id == 1){
 				units.insert(std::pair<int, Unit*>(received_units[i].id, new Trike(skins.trike, (int) received_units[i].col * 16, 
 							(int) received_units[i].row * 16, received_units[i].id, received_units[i].player_id, received_units[i].hp)));	
-			//}
-			//if(received_units[i].type_id == 2){
-			//	units.insert(std::pair<int, Unit*>(received_units[i].id, new Tank(skins.tank, (int) received_units[i].col * 16, 
-			//				(int) received_units[i].row * 16, received_units[i].id, received_units[i].player_id, received_units[i].hp)));		
-			//}
+			}
+			if(received_units[i].type_id == 2){
+				units.insert(std::pair<int, Unit*>(received_units[i].id, new TankClient(skins.tank, (int) received_units[i].col * 16, 
+							(int) received_units[i].row * 16, received_units[i].id, received_units[i].player_id, received_units[i].hp)));		
+			}
 		}
 	}
+	return received_units;
 }
 
 

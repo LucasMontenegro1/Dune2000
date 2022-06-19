@@ -6,27 +6,42 @@
 #include <time.h>
 #include "common_assault.h"
 
+
 using namespace sf;
 
 Assault::Assault(){
-	image.loadFromFile("resources/assaultWeapon/002b06a9.bmp");
+	image.loadFromFile("resources/assaultWeapon/1.bmp");
 	image.createMaskFromColor(sf::Color::Black);
 	texture.loadFromImage(image);
 	sprite.setTexture(texture);
+	cont = 0;
 }
 
 void Assault::draw(RenderTarget &target, RenderStates states) const {
 	target.draw(sprite, states);
 }
 
-void Assault::updateTexture(){
-
+void Assault::updateTexture(int frame){
+	std::string f = "resources/assaultWeapon/" + std::to_string(frame) + ".bmp";
+	image.loadFromFile(f);
+	image.createMaskFromColor(sf::Color::Black);
+	texture.loadFromImage(image);
+	sprite.setTexture(texture);
 }
 
-void Assault::animate(float posX, float posY, bool is_attacking){
+
+void Assault::animate(float posX, float posY, bool is_attacking, int frame){
 	if(is_attacking){
-		sprite.setPosition(posX, posY);
-		if(cont % 10 == 0) updateTexture();
+		updateTexture(frame);
+		if(cont % 8 == 0 || cont + 1 % 8 == 0 || cont - 1 % 8 == 0){
+			sprite.setPosition(posX, posY);
+		} else {
+			sprite.setPosition(-50,-50);
+		}
 		cont++;
 	}
+}
+
+Sprite Assault::getSprite(){
+    return sprite;
 }
