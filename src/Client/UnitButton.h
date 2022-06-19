@@ -12,7 +12,13 @@ private:
     sf::Text timerText;
     sf::Text timesPressedText;
     int timesPressed;
+    sf::Clock clock;
+    int countdown;
+    int timeElapse;
 public:
+    void update(sf::Event& e, sf::RenderWindow& window);
+    void render(sf::RenderWindow& target);
+    bool is_Clicked (sf::Event& e, sf::RenderWindow& window);
     UnitButton();
 };
 

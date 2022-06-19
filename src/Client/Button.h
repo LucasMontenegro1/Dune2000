@@ -10,7 +10,7 @@
 enum button_states{BTN_CLICKED, BTN_IDLE, BTN_PRESSED, BTN_HOVERED};
 
 class Button {
-private:
+protected:
     button_states state;
     sf::Texture texture;
     sf::RectangleShape shape;

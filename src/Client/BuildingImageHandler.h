@@ -6,10 +6,11 @@
 #define BUILDINGIMAGEHANDLER_H
 
 #include "Button.h"
+#include "UnitButton.h"
 
 class BuildingImageHandler {
     std::string house;
-    Button airTrap;
+    UnitButton airTrap;
     Button lightFactory;
     Button heavyFactory;
     Button refinery;
