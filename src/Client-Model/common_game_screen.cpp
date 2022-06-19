@@ -101,6 +101,7 @@ void GameScreen::check_events(Pointer &pointer, Event &event, Model &model,
 				} else {
 					protocol.send_unit_move(units_to_move[i], event.mouseButton.x + posX, 
 											event.mouseButton.y + posY);
+					model.reproduceSoundMove(units_to_move[i]);
 				}
 			}
 		}
@@ -124,10 +125,10 @@ void GameScreen::show(Model &model, Protocol &protocol){
     Pointer pointer(window, model.get_team());
 
     while(window.isOpen()){
-        protocol.update();
+        //protocol.update();
         Vector2i posicion = Mouse::getPosition(window);
         camera.update(posicion, model);
-        protocol.receive_units(model.get_units());
+		model.update(protocol.receive_units(model.get_units()));
         Event event;
         while(window.pollEvent(event)){
             if(event.type == Event::Closed){

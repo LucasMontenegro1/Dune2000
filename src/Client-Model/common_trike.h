@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <tuple>
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
@@ -14,6 +15,8 @@ using namespace sf;
 class Trike: public Unit {
 	std::map <int, Vector2f> &frames;
 	Assault weapon;
+	SoundBuffer buffer;
+	Sound moveSound;
 	
 	void pointTo();
 
@@ -27,6 +30,8 @@ class Trike: public Unit {
 	virtual void animate_attack() override;
 
 	virtual Sprite get_weapon() override;
+
+	virtual void reproduceMove() override;
 
 	virtual ~Trike();
 

@@ -63,7 +63,7 @@ void Pointer::update(Vector2i &posicion, int posX, int posY, RenderWindow &windo
 			is_enemy = false;
 		}
 	}
-    sprite.setPosition(mousePosition);
+    sprite.setPosition(mousePosition.x - 15, mousePosition.y - 15);
 	//sprite.setPosition(posicion.x + posX - 15, posicion.y + posY - 15);
 	if(frame != 0) updateTexture();
 	window.draw(sprite);
@@ -92,6 +92,6 @@ void Pointer::render(RenderWindow &window) {
     sf::Vector2i WinPos = sf::Mouse::getPosition(window);
     sf::Vector2f mousePosition = window.mapPixelToCoords(WinPos);
     sprite.setPosition(mousePosition.x, mousePosition.y);
-    sprite.setScale(Vector2f(2.0f,2.0f));
+    sprite.setScale(Vector2f(1.0f,1.0f));
     window.draw(this->sprite);
 }

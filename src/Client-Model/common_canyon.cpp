@@ -3,6 +3,7 @@
 #include <string>
 #include <tuple>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <time.h>
 #include "common_canyon.h"
 
@@ -10,29 +11,37 @@
 using namespace sf;
 
 Canyon::Canyon(){
-	image.loadFromFile("resources/assaultWeapon/002b06a9.bmp");
+	image.loadFromFile("resources/canyonWeapon/1.bmp");
 	image.createMaskFromColor(sf::Color::Black);
 	texture.loadFromImage(image);
 	sprite.setTexture(texture);
 	cont = 0;
+	buffer.loadFromFile("resources/sounds/attacks/shot.wav");
+	attackSound.setBuffer(buffer);
+	attackSound.setVolume(2);
 }
 
 void Canyon::draw(RenderTarget &target, RenderStates states) const {
 	target.draw(sprite, states);
 }
 
-void Canyon::updateTexture(){
-	
+void Canyon::updateTexture(int frame){
+	std::string f = "resources/canyonWeapon/" + std::to_string(frame) + ".bmp";
+	image.loadFromFile(f);
+	image.createMaskFromColor(sf::Color::Black);
+	texture.loadFromImage(image);
+	sprite.setTexture(texture);
 }
 
-void Canyon::animate(float posX, float posY, bool is_attacking){
+void Canyon::animate(float posX, float posY, bool is_attacking, int frame){
+	updateTexture(frame);
 	if(is_attacking){
-		if(cont % 6 == 0 || cont + 1 % 6 == 0 || cont + 1 % 6 == 0){
+		if(cont % 8 == 0 || cont + 1 % 8 == 0 || cont + 1 % 8 == 0){
+			attackSound.play();
 			sprite.setPosition(posX, posY);
 		} else {
 			sprite.setPosition(-50,-50);
 		}
-		updateTexture();
 		cont++;
 	}
 }

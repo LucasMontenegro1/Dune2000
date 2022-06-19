@@ -1,5 +1,5 @@
 CFLAGS = -Wall -Werror -pedantic -pedantic-errors -std=c++17
-LIBS=-lsfml-graphics -lsfml-window -lsfml-system
+LIBS=-lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
 MAP_FILES = ../Model/terrain_map.cpp ../Model/block_position.cpp ../Model/path_node.cpp
 UNIT_FILES = ../Model/unit.cpp ../Model/teamable.cpp ../Model/Weapons/weapon.cpp
 INFANTRY_FILES = ../Model/light_infantry.cpp ../Model/Mobility/infantry_mobility.cpp

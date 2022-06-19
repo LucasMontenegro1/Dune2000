@@ -2,6 +2,7 @@
 #include <string>
 #include <tuple>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <time.h>
 #include "common_unit.h"
 #include "common_tank.h"
@@ -22,6 +23,9 @@ TankClient::TankClient(std::map <int, Vector2f> &frames, int cordX, int cordY, i
 	canion.setTexture(texture);
 	canion.setTextureRect(IntRect(8,109,10,18));
 	canion.setPosition(cordX + 5, cordY + 1);
+	buffer.loadFromFile("resources/sounds/moves/tankMove.wav");
+	moveSound.setBuffer(buffer);
+	moveSound.setVolume(5);
 }
 
 void TankClient::draw(RenderTarget &target, RenderStates states) const {
@@ -70,7 +74,7 @@ void TankClient::updateCanion(){
 		
 	if(actualFrameCanion > frameDestiny) actualFrameCanion--;
 	if(actualFrameCanion < frameDestiny) actualFrameCanion++;
-	if(actualFrameCanion == frameDestiny) weapon.animate(posX, posY, attacking);
+	if(actualFrameCanion == frameDestiny) weapon.animate(posX, posY, attacking, actualFrameCanion);
 
 	Vector2f &posicionFrameCanion = frames[actualFrameCanion];
 	canion.setTextureRect(IntRect(posicionFrameCanion.x, posicionFrameCanion.y,20,20));
@@ -78,6 +82,10 @@ void TankClient::updateCanion(){
 
 Sprite TankClient::get_weapon(){
 	return weapon.getSprite();
+}
+
+void TankClient::reproduceMove(){
+	moveSound.play();
 }
 
 

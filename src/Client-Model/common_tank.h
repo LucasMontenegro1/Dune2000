@@ -7,6 +7,7 @@
 #include <time.h>
 #include "common_unit.h"
 #include "common_canyon.h"
+#include <SFML/Audio.hpp>
 
 
 using namespace sf;
@@ -16,6 +17,8 @@ class TankClient: public Unit {
 	Sprite canion;
 	std::map <int, Vector2f> &frames;
     Canyon weapon;
+	SoundBuffer buffer;
+	Sound moveSound;
 
     void updateCanion();
 
@@ -30,6 +33,8 @@ class TankClient: public Unit {
     virtual void animate_attack() override;
 
 	virtual Sprite get_weapon() override;
+
+	virtual void reproduceMove() override;
 	
     virtual ~TankClient();
 

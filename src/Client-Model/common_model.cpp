@@ -33,7 +33,7 @@ void Model::foundEliminate(std::vector<struct RawUnit> &received_units){
 }
 
 
-void Model::update(std::vector<struct RawUnit> &received_units){
+void Model::update(std::vector<struct RawUnit> received_units){
 	if(received_units.size() < units.size()) foundEliminate(received_units);
 }
 
@@ -84,12 +84,6 @@ bool Model::a_unit_can_moves(){
 
 
 void Model::unit_enable_move(int unit_id){
-	/*
-	if(units[unit_id]->get_team() == team){
-		units[unit_id]->enable_move();
-		this->one_unit_can_moves = true;
-	}
-	*/
 	units[unit_id]->enable_move();
 	this->one_unit_can_moves = true;
 }
@@ -127,6 +121,11 @@ int Model::get_units_size(){
 Ground &Model::get_grounds(){
 	return this->ground;
 }
+
+void Model::reproduceSoundMove(int id){
+	units[id]->reproduceMove();
+}
+
 
 void Model::eliminate_unit(size_t position){
 	auto elem_to_remove = units_to_eliminate.begin() + position;

@@ -6,6 +6,8 @@
 #include <map>
 #include <SFML/Graphics.hpp>
 #include <time.h>
+#include <SFML/Audio.hpp>
+
 
 using namespace sf;
 
@@ -14,6 +16,8 @@ class Assault: public Drawable{
 	Sprite sprite;
 	Texture texture;
 	Image image;
+	SoundBuffer buffer;
+	Sound attackSound;
 	int cont;
 
 	void updateTexture(int frame);

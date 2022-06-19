@@ -37,6 +37,7 @@ bool Unit::is_there(float cord_x, float cord_y){
 	return is_in == 2;
 }
 
+
 Sprite Unit::get_weapon(){
 	Sprite x;
 	return x;
@@ -170,7 +171,7 @@ void Unit::move(){
 	this->posX = moveX;
 	this->posY = moveY;
 	if((int) moveX == (int) destX) this->destX = moveX;
-	if((int) moveY == (int) destY) this->destY = moveY;		
+	if((int) moveY == (int) destY) this->destY = moveY;	
 }
 
 std::tuple<float, float> Unit::get_position(){

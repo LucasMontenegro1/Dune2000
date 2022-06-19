@@ -59,6 +59,8 @@ class Unit: public Drawable{
 	void setMove(float x, float y);
 
 	void setAttack(std::tuple<float, float> position_target);
+
+	virtual void reproduceMove();
 	
 	bool is_in_destiny();
 

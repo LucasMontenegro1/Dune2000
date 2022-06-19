@@ -2,6 +2,7 @@
 #include <string>
 #include <tuple>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <time.h>
 #include "common_unit.h"
 #include "common_trike.h"
@@ -20,6 +21,9 @@ Trike::Trike(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int
 	this->largeBitsX = 35;
 	this->largeBitsY = 35;
 	this->actualFrame = 17;
+	buffer.loadFromFile("resources/sounds/moves/trikeMove.wav");
+	moveSound.setBuffer(buffer);
+	moveSound.setVolume(5);
 }
 
 
@@ -34,6 +38,10 @@ void Trike::modifyMovePosition(bool moveRight, bool moveLeft, bool moveUp, bool 
 void Trike::animate_attack(){
 	pointTo();
 	sprite.setPosition(posX,posY);
+}
+
+void Trike::reproduceMove(){
+	moveSound.play();
 }
 
 

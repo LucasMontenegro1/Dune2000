@@ -22,30 +22,23 @@ Protocol::Protocol(): server{}, skins{} {
 
 Ground Protocol::receive_grounds(){
 	vector<pair<struct map_coor, unsigned int>> terrains;
-	for(unsigned int i = 0; i < 100; i++){
-		for(unsigned int j = 0; j < 100; j++){
-			terrains.push_back(pair<struct map_coor, unsigned >({i, j}, 0));
-		}
-	}
-	/*
 	for (unsigned int i = 60; i <= 100; i++)
 		terrains.push_back(pair<struct map_coor, unsigned >({i, 60}, 4));
 	this->server.load_map(terrains);
-*/
+
 	std::vector<std::vector<int> > map;
-	for(size_t i = 0; i < terrains.size(); i++){
+	for(size_t row = 0; row <= 360; row++){
 		std::vector<int> actual_row;
-		size_t col = 0;
-		while(terrains[i].first.row == i){
-			if(col == terrains[i].first.col){
-				actual_row.push_back(terrains[i].second);
-			}
-			col++;
+		for(size_t col = 0; col <= 360; col++){
+			actual_row.push_back(0);
 		}
 		map.push_back(actual_row);
 	}
+	for(size_t i = 0; i < terrains.size(); i++){
+		map[terrains[i].first.row][terrains[i].first.col] = terrains[i].second;
+	}
 
-	Ground grounds(map, 90, 90);
+	Ground grounds(map, 360, 360);
 	return grounds;
 }
 

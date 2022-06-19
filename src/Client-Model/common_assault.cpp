@@ -3,6 +3,7 @@
 #include <string>
 #include <tuple>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <time.h>
 #include "common_assault.h"
 
@@ -15,6 +16,9 @@ Assault::Assault(){
 	texture.loadFromImage(image);
 	sprite.setTexture(texture);
 	cont = 0;
+	buffer.loadFromFile("resources/sounds/attacks/shot.wav");
+	attackSound.setBuffer(buffer);
+	attackSound.setVolume(2);
 }
 
 void Assault::draw(RenderTarget &target, RenderStates states) const {
@@ -34,6 +38,7 @@ void Assault::animate(float posX, float posY, bool is_attacking, int frame){
 	if(is_attacking){
 		updateTexture(frame);
 		if(cont % 8 == 0 || cont + 1 % 8 == 0 || cont - 1 % 8 == 0){
+			attackSound.play();
 			sprite.setPosition(posX, posY);
 		} else {
 			sprite.setPosition(-50,-50);

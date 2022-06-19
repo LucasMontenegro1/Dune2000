@@ -24,7 +24,7 @@ class Model {
 	public:
 	Model(std::map <int, Unit*> &units, Ground &grounds, int team);
 	
-	void update(std::vector<struct RawUnit> &received_units);
+	void update(std::vector<struct RawUnit> received_units);
 	
 	int get_y_size();
 	
@@ -37,6 +37,8 @@ class Model {
 	std::vector<int> get_units_can_moves();
 
 	std::vector<Unit*> get_units_to_eliminate();
+
+	void reproduceSoundMove(int id);
 	
 	bool a_unit_can_moves();
 
