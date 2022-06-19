@@ -17,20 +17,35 @@ Protocol::Protocol(): server{}, skins{} {
 	this->server.create_unit(0, 1, 5, 5);
 	this->server.create_unit(1, 1, 15,15);
 	this->server.create_unit(1, 1, 0,30);
+
 }
 
 Ground Protocol::receive_grounds(){
-	Cliffs map_received = this->server.get_map();
+	vector<pair<struct map_coor, unsigned int>> terrains;
+	for(unsigned int i = 0; i < 100; i++){
+		for(unsigned int j = 0; j < 100; j++){
+			terrains.push_back(pair<struct map_coor, unsigned >({i, j}, 0));
+		}
+	}
+	/*
+	for (unsigned int i = 60; i <= 100; i++)
+		terrains.push_back(pair<struct map_coor, unsigned >({i, 60}, 4));
+	this->server.load_map(terrains);
+*/
 	std::vector<std::vector<int> > map;
-	for(unsigned int i = 0; i < 360; i++){
+	for(size_t i = 0; i < terrains.size(); i++){
 		std::vector<int> actual_row;
-		for(unsigned int j = 0; j < 360; j++){
-			if(map_received[j].first == i && map_received[j].second == j) actual_row.push_back(3);
-			else actual_row.push_back(0);
+		size_t col = 0;
+		while(terrains[i].first.row == i){
+			if(col == terrains[i].first.col){
+				actual_row.push_back(terrains[i].second);
+			}
+			col++;
 		}
 		map.push_back(actual_row);
 	}
-	Ground grounds(map, 360, 360);
+
+	Ground grounds(map, 90, 90);
 	return grounds;
 }
 
