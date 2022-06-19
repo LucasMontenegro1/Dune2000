@@ -4,36 +4,22 @@
 
 #include "mock_server.h"
 #include "../Model/unit.h"
+#include "../Model/configurations.h"
 
 typedef std::pair<BlockPosition, BlockTerrain> TerrainPos;
 
 MockServer::MockServer() :
-cu(360, 360)
-{
-	for (unsigned int i = 60; i <= 100; i++)
-		this->terrains.push_back(TerrainPos(BlockPosition(i, 60), cliffs));
-	for (unsigned int i = 0; i <= 50; i++)
-		this->terrains.push_back(TerrainPos(BlockPosition(i, 120), cliffs));
-	for (unsigned int i = 50; i <= 60; i++)
-		this->terrains.push_back(TerrainPos(BlockPosition(i, 121), cliffs));
-	for (unsigned int i = 122; i <= 140; i++)
-		this->terrains.push_back(TerrainPos(BlockPosition(61, i), cliffs));
-	for (unsigned int i = 0; i <= 50; i++)
-		this->terrains.push_back(TerrainPos(BlockPosition(62 + i, 141 + i), cliffs));
-	for (unsigned int i = 30; i <= 320; i++)
-		this->terrains.push_back(TerrainPos(BlockPosition(i, 250), cliffs));
+cu(360, 360){}
 
-	this->cu.set_terrains(terrains);
-}
-
-Cliffs MockServer::get_map() const
+void MockServer::load_map(std::vector<std::pair<struct map_coor, unsigned int>> terrains)
 {
-	Cliffs cliffs;
-	for (auto const &it : this->terrains) {
-		std::pair<unsigned int, unsigned> pos(it.first.row(), it.first.col());
-		cliffs.push_back(pos);
+	vector<pair<BlockPosition, BlockTerrain>> cu_terrains;
+	for (auto const &it : terrains) {
+		BlockPosition pos(it.first.row, it.first.col);
+		BlockTerrain terrain = this->parse_terrain(it.second);
+		cu_terrains.push_back(pair<BlockPosition, BlockTerrain>(pos, terrain));
 	}
-	return cliffs;
+	this->cu.set_terrains(cu_terrains);
 }
 
 void MockServer::create_unit(unsigned int player_id, unsigned int type_id, unsigned int row, unsigned int col)
@@ -92,3 +78,19 @@ std::vector<struct RawUnit> MockServer::get_state() const
 }
 
 MockServer::~MockServer() = default;
+
+BlockTerrain MockServer::parse_terrain(unsigned int terrain_id) const
+{
+	if (terrain_id == CONFIGS.DUNES_ID)
+		return dunes;
+	else if (terrain_id == CONFIGS.ROCK_ID)
+		return rock;
+	else if (terrain_id == CONFIGS.PEAKS_ID)
+		return peaks;
+	else if (terrain_id == CONFIGS.CLIFFS_ID)
+		return cliffs;
+	else if (terrain_id == CONFIGS.CONSTRUCTION_ID)
+		return construction;
+	else
+		return sand;
+}

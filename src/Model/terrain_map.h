@@ -31,6 +31,13 @@ class TerrainMap {
 
 	bool invalid_position(BlockPosition pos) const;
 
+	/*
+	 * Devuelve la posiciones validas por las que puede
+	 * pasar la movilidad
+	 */
+	std::vector<BlockPosition>
+	filter(const std::vector<BlockPosition> &positions, const UnitMobility &mob) const;
+
 	BlockTerrain at(BlockPosition pos) const;
 	BlockTerrain at(unsigned int row, unsigned int col) const;
 
