@@ -71,9 +71,21 @@ void GameScreen::draw_units(RenderWindow &window, Model &model, Camera &camera, 
 	}
 }
 
+void GameScreen::draw_builds(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
+	for(auto iter = model.get_builds().begin(); iter != model.get_builds().end(); ++iter){
+		std::tuple<int, int, int, int> uBits = iter->second->get_bits();
+		if(camera.appears_in_view(std::get<0>(uBits), std::get<1>(uBits), 
+								std::get<2>(uBits), std::get<3>(uBits))){
+			iter->second->animateBuild();
+			window.draw(*iter->second);
+		}
+	}
+}
+
 
 void GameScreen::draw_elements(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
 	draw_grounds(window, model, camera, sizeX, sizeY);
+	draw_builds(window, model, camera, sizeX, sizeY);
 	draw_units(window, model, camera, sizeX, sizeY);
 }
 
@@ -101,8 +113,8 @@ void GameScreen::check_events(Pointer &pointer, Event &event, Model &model,
 				} else {
 					protocol.send_unit_move(units_to_move[i], event.mouseButton.x + posX, 
 											event.mouseButton.y + posY);
-					model.reproduceSoundMove(units_to_move[i]);
 				}
+				model.reproduceSoundMove(units_to_move[i]);
 			}
 		}
 	}

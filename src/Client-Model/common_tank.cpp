@@ -7,6 +7,8 @@
 #include "common_unit.h"
 #include "common_tank.h"
 #include "common_canyon.h"
+#include <iostream>
+
 
 using namespace sf;
 
@@ -71,7 +73,7 @@ void TankClient::updateCanion(){
 	}
 	if(!moveRight && !moveLeft && !moveUp && moveDown) frameDestiny = 49;
 	if(!moveRight && !moveLeft && moveUp && !moveDown) frameDestiny = 33;
-		
+
 	if(actualFrameCanion > frameDestiny) actualFrameCanion--;
 	if(actualFrameCanion < frameDestiny) actualFrameCanion++;
 	if(actualFrameCanion == frameDestiny) weapon.animate(posX, posY, attacking, actualFrameCanion);

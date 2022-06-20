@@ -5,6 +5,8 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
+#include "common_build.h"
+#include "common_windtrap.h"
 #include <iostream>
 #include "common_trike.h"
 #include "common_tank.h"
@@ -16,7 +18,7 @@ Protocol::Protocol(): server{}, skins{} {
 	this->server.create_unit(0, 2, 0, 0);
 	this->server.create_unit(0, 1, 5, 5);
 	this->server.create_unit(1, 1, 15,15);
-	this->server.create_unit(1, 1, 0,30);
+	this->server.create_unit(1, 1, 5,30);
 
 }
 
@@ -40,6 +42,10 @@ Ground Protocol::receive_grounds(){
 
 	Ground grounds(map, 360, 360);
 	return grounds;
+}
+
+void Protocol::receive_builds(std::map <int, BuildClient*> &builds){
+	builds.insert(std::pair<int, BuildClient*>(0, new WindTrap(skins.windTrapA, 0, 50, 0, 100)));
 }
 
 

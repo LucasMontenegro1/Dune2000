@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include <map>
+#include "common_build.h"
 #include "common_unit.h"
 #include "common_trike.h"
 #include "common_tank.h"
@@ -24,6 +25,8 @@ class Protocol {
 	Ground receive_grounds();
 	
 	std::vector<struct RawUnit> receive_units(std::map <int, Unit*> &units);
+
+	void receive_builds(std::map <int, BuildClient*> &builds);
 	
 	void send_unit_attack(int unit_id, int unit_target_id);
 	

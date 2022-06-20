@@ -21,6 +21,8 @@ class GameScreen {
 	void draw_elements(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY);
 
 	void draw_units(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY);
+
+	void draw_builds(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY);
 	
 	void draw_grounds(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY);
 

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 19 03:31:45 2022
+# Make data base, printed on Mon Jun 20 17:27:28 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ VSCODE_NLS_CONFIG = {"locale":"es-419","availableLanguages":{},"_languagePackSup
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:47529
+JOURNAL_STREAM = 8:50276
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -69,9 +69,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 976
+MANAGERPID = 1026
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b0e9328f-0d85-46ae-9ea7-1a4f48082563.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5f920e78-7652-4b7e-92f7-941441dd7a77.sock
 # environment
 VSCODE_CWD = /home/agus
 # default
@@ -81,7 +81,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/AgusCD:@/tmp/.ICE-unix/1303,unix/AgusCD:/tmp/.ICE-unix/1303
+SESSION_MANAGER = local/AgusCD:@/tmp/.ICE-unix/1353,unix/AgusCD:/tmp/.ICE-unix/1353
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -91,7 +91,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 5aa2363b86e643db8f9a2e63a5227323
+INVOCATION_ID = c053478031f94df8a468c48562d0714c
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -99,7 +99,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2009
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1737
 # automatic
 %F = $(notdir $%)
 # environment
@@ -111,7 +111,7 @@ PWD = /home/agus/Documentos/tallerI/Dune2000
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1200
+SSH_AGENT_PID = 1249
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -167,6 +167,7 @@ VSCODE_IPC_HOOK = /run/user/1000/vscode-8b700a3c-1.67.2-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
+ 
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
@@ -205,7 +206,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2009
+VSCODE_PID = 1737
 # variable set hash-table stats:
 # Load=97/1024=9%, Rehash=0, Collisions=12/119=10%
 
@@ -273,6 +274,6 @@ GNUmakefile:
 # strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Sun Jun 19 03:31:45 2022
+# Finished Make data base on Mon Jun 20 17:27:28 2022
 
  

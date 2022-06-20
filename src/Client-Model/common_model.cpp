@@ -5,14 +5,15 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
+#include "common_build.h"
 #include "common_ground.h"
 #include "common_model.h"
 #include "../Server/mock_server.h"
 #include <iostream>
 
 
-Model::Model(std::map <int, Unit*> &units, Ground &grounds, int team): 
-		units(units), ground(grounds), one_unit_can_moves(false), team(team) {}
+Model::Model(std::map <int, Unit*> &units, std::map <int, BuildClient*> &builds, Ground &grounds, int team): 
+		units(units), builds(builds), ground(grounds), one_unit_can_moves(false), team(team) {}
 		
 	
 void Model::foundEliminate(std::vector<struct RawUnit> &received_units){
@@ -134,6 +135,10 @@ void Model::eliminate_unit(size_t position){
 	
 std::map <int, Unit*> &Model::get_units(){
 	return this->units;
+}
+
+std::map <int, BuildClient*> &Model::get_builds(){
+	return this->builds;
 }
 
 void Model::deleteUnits(){

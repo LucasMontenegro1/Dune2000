@@ -9,10 +9,16 @@ using namespace sf;
 struct Skins{
 	std::map <int, Vector2f> tank;
 	std::map <int, Vector2f> trike;
+	std::map <int, Vector2f> windTrapH;
+	std::map <int, Vector2f> windTrapO;
+	std::map <int, Vector2f> windTrapA;
 	
 	Skins(){
 		llenarFramesTank();
 		llenarFramesTrike();
+		llenarFrameswindTrapH();
+		llenarFrameswindTrapO();
+		llenarFrameswindTrapA();
 	}
 	
     private:
@@ -118,5 +124,34 @@ struct Skins{
 		trike.insert(std::pair<int,Vector2f>(32, Vector2f(235,85)));
 	}
 	
+	void llenarFrameswindTrapH(){
+		windTrapH.insert(std::pair<int,Vector2f>(0, Vector2f(70,135)));
+		windTrapH.insert(std::pair<int,Vector2f>(1, Vector2f(0,135)));
+		windTrapH.insert(std::pair<int,Vector2f>(2, Vector2f(0,213)));
+		windTrapH.insert(std::pair<int,Vector2f>(3, Vector2f(40,213)));
+		windTrapH.insert(std::pair<int,Vector2f>(4, Vector2f(80,213)));
+		windTrapH.insert(std::pair<int,Vector2f>(5, Vector2f(120,213)));
+		windTrapH.insert(std::pair<int,Vector2f>(6, Vector2f(160,213)));
+	}
+
+	void llenarFrameswindTrapA(){
+		windTrapA.insert(std::pair<int,Vector2f>(0, Vector2f(65,0)));
+		windTrapA.insert(std::pair<int,Vector2f>(1, Vector2f(0,0)));
+		windTrapA.insert(std::pair<int,Vector2f>(2, Vector2f(0,75)));
+		windTrapA.insert(std::pair<int,Vector2f>(3, Vector2f(44,75)));
+		windTrapA.insert(std::pair<int,Vector2f>(4, Vector2f(44,75)));
+		windTrapA.insert(std::pair<int,Vector2f>(5, Vector2f(125,75)));
+		windTrapA.insert(std::pair<int,Vector2f>(6, Vector2f(165,75)));
+	}
+	
+	void llenarFrameswindTrapO(){
+		windTrapO.insert(std::pair<int,Vector2f>(0, Vector2f(70,270)));
+		windTrapO.insert(std::pair<int,Vector2f>(1, Vector2f(0,270)));
+		windTrapO.insert(std::pair<int,Vector2f>(2, Vector2f(0,340)));
+		windTrapO.insert(std::pair<int,Vector2f>(3, Vector2f(40,340)));
+		windTrapO.insert(std::pair<int,Vector2f>(4, Vector2f(79,340)));
+		windTrapO.insert(std::pair<int,Vector2f>(5, Vector2f(120,340)));
+		windTrapO.insert(std::pair<int,Vector2f>(6, Vector2f(160,340)));
+	}
 	
 };

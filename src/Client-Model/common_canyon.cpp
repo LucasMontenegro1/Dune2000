@@ -11,7 +11,7 @@
 using namespace sf;
 
 Canyon::Canyon(){
-	image.loadFromFile("resources/canyonWeapon/1.bmp");
+	image.loadFromFile("resources/canyonWeapon/49.bmp");
 	image.createMaskFromColor(sf::Color::Black);
 	texture.loadFromImage(image);
 	sprite.setTexture(texture);
