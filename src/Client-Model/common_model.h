@@ -12,6 +12,7 @@
 
 class Model {
 	std::map <int, Unit*> units;
+	//std::map <int, Build*> builds;
 	std::vector<Unit*> units_to_eliminate;
 	Ground ground;	
 	bool one_unit_can_moves;

@@ -128,7 +128,8 @@ void GameScreen::show(Model &model, Protocol &protocol){
         //protocol.update();
         Vector2i posicion = Mouse::getPosition(window);
         camera.update(posicion, model);
-		model.update(protocol.receive_units(model.get_units()));
+		model.update(protocol.receive_units(model.get_units())/*,protocol.receive_builds(model.get_builds())*/);
+		//
         Event event;
         while(window.pollEvent(event)){
             if(event.type == Event::Closed){
