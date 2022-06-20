@@ -6,13 +6,14 @@
 #define UNITIMAGEHANDLER_H
 
 #include "Button.h"
+#include "UnitButton.h"
 
 class UnitImageHandler {
     std::string house;
-    Button lightInfantry;
-    Button heavyInfantry;
-    Button fremen;
-    Button sardukar;
+    UnitButton lightInfantry;
+    UnitButton heavyInfantry;
+    UnitButton fremen;
+    UnitButton sardukar;
     void setUnitTextures();
     void handleUnitActions(sf::Event &event, sf::RenderWindow& target);
 public:
@@ -20,6 +21,7 @@ public:
     void displayUnits(sf::RenderWindow& window);
     void updateUnits(sf::Event &event, sf::RenderWindow& target);
     explicit UnitImageHandler(std::string house);
+    void updateTimers();
 };
 
 

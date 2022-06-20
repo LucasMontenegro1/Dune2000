@@ -87,3 +87,8 @@ void Protocol::send_unit_move(int unit_id, float cordX, float cordY){
 void Protocol::update(){
 	this->server.update(10);
 }
+
+void Protocol::createTrike() {
+    this->server.create_unit(0, 1, 10, 10);
+}
+

@@ -6,6 +6,7 @@
 #define BUILDINGIMAGEHANDLER_H
 
 #include "Button.h"
+#include "UnitButton.h"
 
 class BuildingImageHandler {
     std::string house;

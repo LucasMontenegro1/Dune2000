@@ -116,7 +116,7 @@ void GameScreen::show(Model &model, Protocol &protocol){
 
     View menu_view;
     menu_view.setViewport(sf::FloatRect(0.81f, 0.f, 0.25f, 0.70f));
-    ConstructionMenu menu(0,0,700,1000,"Harkonnen");
+    ConstructionMenu menu(0,0,700,1000,"Atreides",protocol);
 
     View view;
     view.setViewport(sf::FloatRect(0.f, 0.f, 1.0f, 1.0f));

@@ -9,6 +9,7 @@
 #include "BuildingImageHandler.h"
 #include "UnitImageHandler.h"
 #include "VehicleImageHandler.h"
+#include "common_protocol.h"
 
 enum active{
     BUILDINGS,
@@ -34,7 +35,7 @@ private:
     sf::Texture tx;
     active activeState;
 public:
-    ConstructionMenu(float x, float y, float width, float height, std::string House);
+    ConstructionMenu(float x, float y, float width, float height, std::string House, Protocol& aProtocol);
     void render(sf::RenderWindow& target);
     void update(sf::Event event,sf::RenderWindow& target);
 };

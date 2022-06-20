@@ -30,5 +30,7 @@ class Protocol {
 	void send_unit_move(int unit_id, float cordX, float cordY);
 	
 	void update();
+
+    void createTrike();
 };
 #endif

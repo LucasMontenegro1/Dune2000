@@ -13,9 +13,9 @@
 #define DIFERENCE_Y 100
 
 
-ConstructionMenu::ConstructionMenu(float x, float y, float width, float height, std::string house): buildingHandler(house),
+ConstructionMenu::ConstructionMenu(float x, float y, float width, float height, std::string house, Protocol& aProtocol): buildingHandler(house),
                                                                                                     unitHandler(house),
-                                                                                                    vehicleHandler(house){
+                                                                                                    vehicleHandler(house,aProtocol){
     this->house = house;
     tx.loadFromFile("Structures/menuCanvas.png");
     this->canvas.setPosition(sf::Vector2f(x,y));
@@ -74,6 +74,8 @@ void ConstructionMenu::render(sf::RenderWindow& target) {
     buildings.render(target);
     units.render(target);
     vehicles.render(target);
+    vehicleHandler.updateTimers();
+    unitHandler.updateTimers();
 
     if (activeState == BUILDINGS) {
         buildingHandler.displayBuildings(target);
@@ -89,6 +91,7 @@ void ConstructionMenu::update(sf::Event event, sf::RenderWindow &target) {
     buildings.update(event,target);
     units.update(event,target);
     vehicles.update(event,target);
+
 
     if (buildings.is_Clicked(event,target)){
         activeState = BUILDINGS;
