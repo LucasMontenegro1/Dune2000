@@ -74,6 +74,8 @@ void ConstructionMenu::render(sf::RenderWindow& target) {
     buildings.render(target);
     units.render(target);
     vehicles.render(target);
+    vehicleHandler.updateTimers();
+    unitHandler.updateTimers();
 
     if (activeState == BUILDINGS) {
         buildingHandler.displayBuildings(target);
@@ -89,6 +91,7 @@ void ConstructionMenu::update(sf::Event event, sf::RenderWindow &target) {
     buildings.update(event,target);
     units.update(event,target);
     vehicles.update(event,target);
+
 
     if (buildings.is_Clicked(event,target)){
         activeState = BUILDINGS;
@@ -113,6 +116,7 @@ void ConstructionMenu::update(sf::Event event, sf::RenderWindow &target) {
     if (activeState == VEHICLES){
         vehicleHandler.updateVehicles(event, target);
     }
+
 }
 
 

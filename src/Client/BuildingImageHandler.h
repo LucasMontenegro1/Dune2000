@@ -10,7 +10,7 @@
 
 class BuildingImageHandler {
     std::string house;
-    UnitButton airTrap;
+    Button airTrap;
     Button lightFactory;
     Button heavyFactory;
     Button refinery;

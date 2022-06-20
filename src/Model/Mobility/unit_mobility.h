@@ -5,7 +5,7 @@
 #ifndef DUNE2000_UNIT_MOBILITY_H
 #define DUNE2000_UNIT_MOBILITY_H
 
-#include "../block_terrain.h"
+#include "../Map/block_terrain.h"
 
 class UnitMobility {
 	public:

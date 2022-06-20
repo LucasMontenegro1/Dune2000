@@ -117,5 +117,29 @@ void VehicleImageHandler::updateVehicles(sf::Event &event, sf::RenderWindow &tar
 }
 
 void VehicleImageHandler::HandleVehiclesActions(sf::Event &event, sf::RenderWindow &window) {
+    if (tank.is_Clicked(event, window)){
 
+    }else if (trike.is_Clicked(event,window)){
+
+    }else if (sonicTank.is_Clicked(event,window)){
+
+    }else if (raider.is_Clicked(event, window)){
+
+    }else if (devastator.is_Clicked(event, window)){
+
+    }else if (deviator.is_Clicked(event,window)){
+
+    }else if (harvester.is_Clicked(event, window)){
+
+    }
+}
+
+void VehicleImageHandler::updateTimers() {
+    tank.updateTimer();
+    trike.updateTimer();
+    sonicTank.updateTimer();
+    raider.updateTimer();
+    devastator.updateTimer();
+    deviator.updateTimer();
+    harvester.updateTimer();
 }

@@ -3,7 +3,7 @@
 //
 
 #include "mock_server.h"
-#include "../Model/unit.h"
+#include "../Model/Entities/unit.h"
 #include "../Model/configurations.h"
 
 typedef std::pair<BlockPosition, BlockTerrain> TerrainPos;

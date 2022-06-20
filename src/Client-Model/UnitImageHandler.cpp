@@ -71,10 +71,25 @@ void UnitImageHandler::updateUnits(sf::Event &event, sf::RenderWindow &target) {
     }else if (house == "Harkonnen"){
         this->sardukar.update(event,target);
     }
-    handleUnitActions(event,target);
+    handleUnitActions(event, target);
 }
 
 void UnitImageHandler::handleUnitActions(sf::Event &event, sf::RenderWindow& target) {
+    if (lightInfantry.is_Clicked(event,target)){
 
+    }else if (heavyInfantry.is_Clicked(event,target)){
+
+    }else if (fremen.is_Clicked(event,target)){
+
+    }else if (sardukar.is_Clicked(event,target)){
+
+    }
+}
+
+void UnitImageHandler::updateTimers() {
+    lightInfantry.updateTimer();
+    heavyInfantry.updateTimer();
+    fremen.updateTimer();
+    sardukar.updateTimer();
 }
 

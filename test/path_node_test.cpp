@@ -3,7 +3,7 @@
 //
 
 #include "./acutest.h"
-#include "../src/Model/path_node.h"
+#include "../src/Model/Map/path_node.h"
 #include <queue>
 
 void test_creation_and_getters(void)

@@ -11,7 +11,7 @@
 #define DIFERENCE 180
 #define DIFERENCE_Y 100
 
-VehicleImageHandler::VehicleImageHandler(std::string house): house(house) {
+VehicleImageHandler::VehicleImageHandler(std::string house, Protocol& aProtocol): house(house), protocol(aProtocol) {
 }
 
 void VehicleImageHandler::setVehicleMenu() {
@@ -117,5 +117,30 @@ void VehicleImageHandler::updateVehicles(sf::Event &event, sf::RenderWindow &tar
 }
 
 void VehicleImageHandler::HandleVehiclesActions(sf::Event &event, sf::RenderWindow &window) {
+    if (tank.is_Clicked(event, window)){
 
+    }else if (trike.is_Clicked(event,window)){
+        protocol.createTrike();
+        std::cout<<"creo trike";
+    }else if (sonicTank.is_Clicked(event,window)){
+
+    }else if (raider.is_Clicked(event, window)){
+
+    }else if (devastator.is_Clicked(event, window)){
+
+    }else if (deviator.is_Clicked(event,window)){
+
+    }else if (harvester.is_Clicked(event, window)){
+
+    }
+}
+
+void VehicleImageHandler::updateTimers() {
+    tank.updateTimer();
+    trike.updateTimer();
+    sonicTank.updateTimer();
+    raider.updateTimer();
+    devastator.updateTimer();
+    deviator.updateTimer();
+    harvester.updateTimer();
 }
