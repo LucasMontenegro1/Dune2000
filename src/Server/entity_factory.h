@@ -26,6 +26,7 @@ public:
 private:
 	void mk_linfantry(unsigned int player_id, BlockPosition position);
 	void mk_tank(unsigned int player_id, BlockPosition position);
+	void mk_trike(unsigned int player_id, BlockPosition position);
 };
 
 #endif //DUNE2000_ENTITY_FACTORY_H

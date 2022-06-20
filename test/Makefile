@@ -30,6 +30,9 @@ test_weapons: weapon_test.cpp ../src/Model/Weapons/weapon.cpp ../src/Model/Weapo
 test_tank: tank_test.cpp ../src/Model/Entities/tank.cpp ../src/Model/Weapons/cannon.cpp ../src/Model/Mobility/vehicle_mobility.cpp $(UNIT_FILES) $(MAP_FILES) ../src/Server/configuration_loader.cpp
 	g++ $(CFLAGS) -o tank.test tank_test.cpp ../src/Model/Entities/tank.cpp ../src/Model/Weapons/cannon.cpp ../src/Model/Mobility/vehicle_mobility.cpp $(UNIT_FILES) $(MAP_FILES) ../src/Server/configuration_loader.cpp
 
+test_trike: trike_test.cpp ../src/Model/Entities/trike.cpp ../src/Model/Weapons/assault_rifle.cpp ../src/Model/Mobility/vehicle_mobility.cpp $(UNIT_FILES) $(MAP_FILES) ../src/Server/configuration_loader.cpp
+	g++ $(CFLAGS) -o trike.test trike_test.cpp ../src/Model/Entities/trike.cpp ../src/Model/Weapons/assault_rifle.cpp ../src/Model/Mobility/vehicle_mobility.cpp $(UNIT_FILES) $(MAP_FILES) ../src/Server/configuration_loader.cpp
+
 test_srv: mock_server_test.cpp $(SRV_FILES) $(INFANTRY_FILES) $(VEHICLE_FILES) $(WEAPON_FILES) $(UNIT_FILES) $(MAP_FILES)
 	g++ $(CFLAGS) -o srv.test mock_server_test.cpp $(SRV_FILES) $(INFANTRY_FILES) $(VEHICLE_FILES) $(WEAPON_FILES) $(UNIT_FILES) $(MAP_FILES)
 
