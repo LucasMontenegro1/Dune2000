@@ -142,9 +142,7 @@ std::map <int, BuildClient*> &Model::get_builds(){
 }
 
 void Model::deleteUnits(){
-	for(auto iter = units.begin(); iter != units.end(); ++iter){
-		delete &iter->second;
-	}	
+    units.clear();
 }
 
 
