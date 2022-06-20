@@ -3,7 +3,7 @@
 //
 
 #include "acutest.h"
-#include "../src/Model/tank.h"
+#include "../src/Model/Entities/tank.h"
 #include "../src/Model/configurations.h"
 
 typedef std::shared_ptr<Unit> UnitPtr;

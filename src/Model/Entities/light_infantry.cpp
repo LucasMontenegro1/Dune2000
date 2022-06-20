@@ -3,7 +3,7 @@
 //
 
 #include "light_infantry.h"
-#include "configurations.h"
+#include "../configurations.h"
 
 
 LightInfantry::LightInfantry(unsigned int id, unsigned int player_id, BlockPosition position,

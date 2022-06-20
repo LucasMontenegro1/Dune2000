@@ -3,7 +3,7 @@
 //
 
 #include "control_unit.h"
-#include "../Model/unit.h"
+#include "../Model/Entities/unit.h"
 
 ControlUnit::ControlUnit(unsigned int rows, unsigned int cols) :
 map(rows, cols),

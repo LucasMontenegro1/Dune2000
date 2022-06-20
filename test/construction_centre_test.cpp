@@ -3,7 +3,7 @@
 //
 
 #include "acutest.h"
-#include "../src/Model/construction_centre.h"
+#include "../src/Model/Entities/construction_centre.h"
 #include "../src/Model/configurations.h"
 #include <algorithm>
 

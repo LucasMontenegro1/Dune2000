@@ -3,7 +3,7 @@
 //
 
 #include "construction_centre.h"
-#include "configurations.h"
+#include "../configurations.h"
 
 ConstructionCentre::ConstructionCentre(unsigned int id, unsigned int player_id,
 				       BlockPosition position) :

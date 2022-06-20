@@ -4,8 +4,8 @@
 
 #include "entity_factory.h"
 #include "../Model/configurations.h"
-#include "../Model/light_infantry.h"
-#include "../Model/tank.h"
+#include "../Model/Entities/light_infantry.h"
+#include "../Model/Entities/tank.h"
 
 EntityFactory::EntityFactory(TerrainMap &cu_map, std::map<unsigned int, TeamablePtr> &cu_entities) :
 	map(cu_map),

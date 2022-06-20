@@ -6,8 +6,8 @@
 #define DUNE2000_UNIT_H
 
 #include "teamable.h"
-#include "terrain_map.h"
-#include "Weapons/weapon.h"
+#include "../Map/terrain_map.h"
+#include "../Weapons/weapon.h"
 #include <map>
 #include <memory>
 

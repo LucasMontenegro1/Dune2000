@@ -5,7 +5,7 @@
 #ifndef DUNE2000_TEAMABLE_H
 #define DUNE2000_TEAMABLE_H
 
-#include "block_position.h"
+#include "../Map/block_position.h"
 #include <vector>
 
 const unsigned int INVALID_ID = 0;

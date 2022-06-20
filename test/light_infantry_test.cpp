@@ -3,7 +3,7 @@
 //
 
 #include "acutest.h"
-#include "../src/Model/light_infantry.h"
+#include "../src/Model/Entities/light_infantry.h"
 
 typedef std::shared_ptr<Unit> UnitPtr;
 
