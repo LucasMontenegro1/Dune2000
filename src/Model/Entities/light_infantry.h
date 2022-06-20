@@ -1,20 +1,20 @@
 //
-// Created by ignat on 13/06/22.
+// Created by ignat on 10/06/22.
 //
 
-#ifndef DUNE2000_TANK_H
-#define DUNE2000_TANK_H
+#ifndef DUNE2000_LIGHT_INFANTRY_H
+#define DUNE2000_LIGHT_INFANTRY_H
 
 #include "unit.h"
-#include "Mobility/vehicle_mobility.h"
-#include "Weapons/cannon.h"
+#include "../Mobility/infantry_mobility.h"
+#include "../Weapons/assault_rifle.h"
 
-class Tank : public Unit {
-	VehicleMobility mob;
-	Cannon cannon;
+class LightInfantry : public Unit {
+	InfantryMobility mob;
+	AssaultRifle rifle;
 
 public:
-	Tank(unsigned int id, unsigned int player_id, BlockPosition position,
+	LightInfantry(unsigned int id, unsigned int player_id, BlockPosition position,
 	     const TerrainMap &map_, std::map<unsigned int, TeamablePtr> &game_objects,
 	     float creation_mod);
 
@@ -25,7 +25,7 @@ public:
 
 	virtual bool can_traverse(BlockTerrain terrain) const override;
 
-	virtual ~Tank();
+	virtual ~LightInfantry();
 
 protected:
 	virtual const UnitMobility &get_mobility() const override;
@@ -33,4 +33,4 @@ protected:
 	virtual Weapon &get_weapon() override;
 };
 
-#endif //DUNE2000_TANK_H
+#endif //DUNE2000_LIGHT_INFANTRY_H

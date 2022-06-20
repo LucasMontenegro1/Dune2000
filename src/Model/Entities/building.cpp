@@ -3,7 +3,7 @@
 //
 
 #include "building.h"
-#include "configurations.h"
+#include "../configurations.h"
 
 Building::Building(unsigned int id, unsigned int player_id, unsigned int hp,
 		   BlockPosition pos_, unsigned int width_, unsigned int length_,

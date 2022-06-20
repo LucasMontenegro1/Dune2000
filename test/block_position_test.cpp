@@ -3,7 +3,7 @@
 //
 
 #include "./acutest.h"
-#include "../src/Model/block_position.h"
+#include "../src/Model/Map/block_position.h"
 #include <cmath>
 #include <limits>
 

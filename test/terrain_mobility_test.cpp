@@ -3,7 +3,7 @@
 //
 
 #include "./acutest.h"
-#include "../src/Model/block_terrain.h"
+#include "../src/Model/Map/block_terrain.h"
 #include "../src/Model/Mobility/infantry_mobility.h"
 
 void test_infantry_mobility(void)

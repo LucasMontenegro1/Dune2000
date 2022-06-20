@@ -6,8 +6,8 @@
 #define DUNE2000_TRIKE_H
 
 #include "unit.h"
-#include "Mobility/vehicle_mobility.h"
-#include "Weapons/assault_rifle.h"
+#include "../Mobility/vehicle_mobility.h"
+#include "../Weapons/assault_rifle.h"
 
 class Trike : public Unit {
 	VehicleMobility mob;

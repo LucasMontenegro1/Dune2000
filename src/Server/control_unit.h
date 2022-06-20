@@ -5,8 +5,8 @@
 #ifndef DUNE2000_CONTROL_UNIT_H
 #define DUNE2000_CONTROL_UNIT_H
 
-#include "../Model/terrain_map.h"
-#include "../Model/teamable.h"
+#include "../Model/Map/terrain_map.h"
+#include "../Model/Entities/teamable.h"
 #include "entity_factory.h"
 #include <vector>
 #include <map>

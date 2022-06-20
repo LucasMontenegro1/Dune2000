@@ -3,7 +3,7 @@
 //
 
 #include "tank.h"
-#include "configurations.h"
+#include "../configurations.h"
 
 Tank::Tank(unsigned int id, unsigned int player_id, BlockPosition position,
 	   const TerrainMap &map_, std::map<unsigned int, TeamablePtr> &game_objects,
