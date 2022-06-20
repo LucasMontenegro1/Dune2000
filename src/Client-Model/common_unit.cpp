@@ -86,6 +86,8 @@ void Unit::modifyHp(int new_hp){
 		lifeRest.setFillColor(sf::Color::Green);
 	}
 	this->hp = new_hp;
+	lifeMax.setPosition(posX, posY - 5);
+	lifeRest.setPosition(posX, posY - 5);
 }
 
 void Unit::no_enable_move(){

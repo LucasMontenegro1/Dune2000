@@ -74,9 +74,9 @@ void GameScreen::draw_units(RenderWindow &window, Model &model, Camera &camera, 
 void GameScreen::draw_builds(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
 	for(auto iter = model.get_builds().begin(); iter != model.get_builds().end(); ++iter){
 		std::tuple<int, int, int, int> uBits = iter->second->get_bits();
+		iter->second->animateBuild();
 		if(camera.appears_in_view(std::get<0>(uBits), std::get<1>(uBits), 
 								std::get<2>(uBits), std::get<3>(uBits))){
-			iter->second->animateBuild();
 			window.draw(*iter->second);
 		}
 	}
