@@ -8,6 +8,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <queue>
+#include <memory>
 
 template<class T>
 class BlockingQueue {
@@ -29,6 +30,11 @@ public:
 	 * por move semantics y hace un pop
 	 */
 	T pop();
+
+	/*
+	 * Devuelve un puntero a null si la cola esta vacia
+	 */
+	std::shared_ptr<T> try_pop();
 
 	~BlockingQueue();
 
@@ -74,6 +80,18 @@ T BlockingQueue<T>::pop()
 	T val = std::move(this->q.front());
 	this->q.pop();
 	return std::move(val);
+}
+
+template<class T>
+std::shared_ptr<T> BlockingQueue<T>::try_pop()
+{
+	std::lock_guard<std::mutex> lck(this->mtx);
+	if (this->empty())
+		return std::shared_ptr<T>();
+
+	std::shared_ptr<T> ptr = std::make_shared<T>(std::move(this->q.front()));
+	this->q.pop();
+	return ptr;
 }
 
 template<class T>
