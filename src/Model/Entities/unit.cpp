@@ -20,6 +20,9 @@ Unit::Unit(unsigned int id, unsigned int player_id, unsigned int start_hp,
 
 void Unit::update(unsigned int time_delta)
 {
+	if (this->is_dead())
+		return;
+
 	if (this->state == creating)
 		this->act_creating(time_delta);
 	else if (this->state == neutral)
