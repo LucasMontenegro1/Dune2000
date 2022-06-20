@@ -137,9 +137,7 @@ std::map <int, Unit*> &Model::get_units(){
 }
 
 void Model::deleteUnits(){
-	for(auto iter = units.begin(); iter != units.end(); ++iter){
-		delete &iter->second;
-	}	
+    units.clear();
 }
 
 
