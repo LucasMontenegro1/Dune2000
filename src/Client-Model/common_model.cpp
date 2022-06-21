@@ -8,6 +8,7 @@
 #include "common_build.h"
 #include "common_ground.h"
 #include "common_model.h"
+#include "common_explosion.h"
 #include "../Server/mock_server.h"
 #include <iostream>
 
@@ -26,6 +27,8 @@ void Model::foundEliminate(std::vector<struct RawUnit> &received_units){
 		}
 		if(!is){
 			units_to_eliminate.push_back(iter->second);
+			std::tuple<float, float> position = iter->second->get_position();
+			explosions.push_back(new Explosion(std::get<0>(position), std::get<1>(position)));
 			//delete iter->second;
 			units.erase(iter);
 		} 
@@ -59,6 +62,14 @@ int Model::get_unit(float cordX, float cordY){
 	return id;
 }
 
+int Model::get_build(float cordX, float cordY){
+	int id;
+	for(auto iter = builds.begin(); iter != builds.end(); ++iter){
+		if(iter->second->is_there(cordX, cordY)) id = iter->second->get_id_build();
+	}	
+	return id;
+}
+
 
 std::vector<int> Model::get_units_can_moves(){
 	std::vector<int> ids;
@@ -78,17 +89,36 @@ void Model::no_enable_moves(){
 	this->one_unit_can_moves = false;
 }
 
+void Model::deselected_builds(){
+	for(auto iter = builds.begin(); iter != builds.end(); ++iter){
+		iter->second->deselected_structure();
+	}
+}
 
 bool Model::a_unit_can_moves(){
 	return this->one_unit_can_moves;
 }
 
+std::vector<Explosion*> Model::get_explosions(){
+	return explosions;
+}
 
 void Model::unit_enable_move(int unit_id){
 	units[unit_id]->enable_move();
 	this->one_unit_can_moves = true;
 }
 
+void Model::build_selected(int build_id){
+	builds[build_id]->selected_structure();
+}
+
+bool Model::is_build_there(float cordX, float cordY){
+	bool is_here = false;
+	for(auto iter = builds.begin(); iter != builds.end(); ++iter){
+		if(iter->second->is_there(cordX, cordY) && iter->second->get_team() == team) is_here = true;
+	}	
+	return is_here;
+}
 
 bool Model::is_unit_there(float cordX, float cordY){
 	bool is_here = false;
@@ -139,6 +169,11 @@ std::map <int, Unit*> &Model::get_units(){
 
 std::map <int, BuildClient*> &Model::get_builds(){
 	return this->builds;
+}
+
+void Model::delete_explosion(int i){
+	delete explosions[i];
+	explosions.erase(explosions.begin() + i);
 }
 
 void Model::deleteUnits(){

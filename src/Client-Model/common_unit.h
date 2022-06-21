@@ -82,7 +82,5 @@ class Unit: public Drawable{
 	
 	std::tuple<float, float> get_position();
 	
-	Unit& operator=(const Unit&& other);
-
 };
 #endif

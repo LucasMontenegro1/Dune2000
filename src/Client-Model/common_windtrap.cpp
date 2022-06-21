@@ -17,7 +17,7 @@
 using namespace sf;
 
 
-WindTrap::WindTrap(std::map <int, Vector2f> &frames, float x, float y, int team, int hp): BuildClient(x,y,team, hp), frames(frames) {
+WindTrap::WindTrap(std::map <int, Vector2f> &frames, float x, float y, int team, int id, int hp): BuildClient(x,y,team, id, hp), frames(frames) {
 	this->largeBitsX = 65;
 	this->largeBitsY = 75;
 	this->is_constructed = false;

@@ -16,10 +16,11 @@
 using namespace sf;
 
 
-BuildClient::BuildClient(float x, float y, int team, int hp): is_selected(false), posX(x), posY(y), cont(0), frameBuild(1), hp(hp), hpMax(hp), team(team){
+BuildClient::BuildClient(float x, float y, int team, int id, int hp): 
+		is_selected(false), posX(x), posY(y), id(id), cont(0), frameBuild(1), hp(hp), hpMax(hp), team(team){
 	lifeMax.setSize(Vector2f(70,3));
 	lifeMax.setFillColor(sf::Color::Black);  
-	int c = hp * 30 / hpMax;
+	int c = hp * 70 / hpMax;
 	lifeRest.setSize(Vector2f(c,3));
 	lifeRest.setFillColor(sf::Color::Green);
 	lifeMax.setPosition(x, y - 8);
@@ -28,7 +29,7 @@ BuildClient::BuildClient(float x, float y, int team, int hp): is_selected(false)
 	
 void BuildClient::modifyHp(int new_hp){
 	/*
-		int life = hp * 30 / max_hp;
+		int life = hp * 70 / max_hp;
 		lifeRest.setSize(Vector2f(life,3));
 		int porcentual_life = hp * 100 / max_hp;
 		if(porcentual_life < 30){
@@ -63,6 +64,10 @@ void BuildClient::selected_structure(){
 
 void BuildClient::deselected_structure(){
     this->is_selected = false;
+}
+
+int BuildClient::get_id_build(){
+	return id;
 }
 
 

@@ -36,14 +36,14 @@ void Canyon::updateTexture(int frame){
 void Canyon::animate(float posX, float posY, bool is_attacking, int frame){
 	updateTexture(frame);
 	if(is_attacking){
-		if(cont % 500 == 0 || cont + 1 % 500 == 0 || cont + 1 % 500 == 0){
+		if(cont % 600 == 0 || cont + 1 % 600 == 0 || cont + 1 % 600 == 0){
 			attackSound.play();
 			sprite.setPosition(posX, posY);
 		} else {
 			sprite.setPosition(-50,-50);
 		}
 		cont++;
-	}
+	} else cont = 0;
 }
 
 Sprite Canyon::getSprite(){

@@ -19,7 +19,6 @@ Protocol::Protocol(): server{}, skins{} {
 	this->server.create_unit(0, 1, 5, 5);
 	this->server.create_unit(1, 1, 15,15);
 	this->server.create_unit(1, 1, 5,30);
-
 }
 
 Ground Protocol::receive_grounds(){
@@ -39,13 +38,12 @@ Ground Protocol::receive_grounds(){
 	for(size_t i = 0; i < terrains.size(); i++){
 		map[terrains[i].first.row][terrains[i].first.col] = terrains[i].second;
 	}
-
 	Ground grounds(map, 360, 360);
 	return grounds;
 }
 
 void Protocol::receive_builds(std::map <int, BuildClient*> &builds){
-	builds.insert(std::pair<int, BuildClient*>(0, new WindTrap(skins.windTrapA, 0, 50, 0, 100)));
+	builds.insert(std::pair<int, BuildClient*>(1, new WindTrap(skins.windTrapA, 0, 50, 0, 1, 100)));
 }
 
 
@@ -67,7 +65,7 @@ std::vector<struct RawUnit> Protocol::receive_units(std::map <int, Unit*> &units
 			}
 		} else {
 			if(received_units[i].type_id == 1){
-				units.insert(std::pair<int, Unit*>(received_units[i].id, new Trike(skins.trike, (int) received_units[i].col * 16, 
+				units.insert(std::pair<int, Unit*>(received_units[i].id, new TrikeClient(skins.trike, (int) received_units[i].col * 16, 
 							(int) received_units[i].row * 16, received_units[i].id, received_units[i].player_id, received_units[i].hp)));	
 			}
 			if(received_units[i].type_id == 2){

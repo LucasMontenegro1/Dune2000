@@ -53,7 +53,6 @@ void GameScreen::draw_units(RenderWindow &window, Model &model, Camera &camera, 
 		bool is_finish = model.get_units_to_eliminate()[i]->animate_destruction();
 		if(!is_finish) window.draw(*model.get_units_to_eliminate()[i]);
 		else {
-			//draw.explosiones
 			model.eliminate_unit(i);
 		}
 	}
@@ -82,11 +81,25 @@ void GameScreen::draw_builds(RenderWindow &window, Model &model, Camera &camera,
 	}
 }
 
+void GameScreen::draw_explosions(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
+	for(size_t i = 0; i < model.get_explosions().size(); i++){
+		if(!model.get_explosions()[i]->finish()){
+			model.get_explosions()[i]->animateExplosion();
+			std::tuple<int, int, int, int> eBits = model.get_explosions()[i]->get_bits();
+			if(camera.appears_in_view(std::get<0>(eBits), std::get<1>(eBits), 
+									std::get<2>(eBits), std::get<3>(eBits))){
+				window.draw(*model.get_explosions()[i]);
+			}
+		} else model.delete_explosion(i);
+	}
+}
+
 
 void GameScreen::draw_elements(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
 	draw_grounds(window, model, camera, sizeX, sizeY);
 	draw_builds(window, model, camera, sizeX, sizeY);
 	draw_units(window, model, camera, sizeX, sizeY);
+	draw_explosions(window, model, camera, sizeX, sizeY);
 }
 
 
@@ -102,6 +115,12 @@ void GameScreen::check_events(Pointer &pointer, Event &event, Model &model,
 			model.no_enable_moves();
 			pointer.normal_mode();
 		} 
+		if(model.is_build_there(event.mouseButton.x + posX, event.mouseButton.y + posY)){
+			int build = model.get_build(event.mouseButton.x + posX, event.mouseButton.y + posY);
+			model.build_selected(build);
+		} else {
+			model.deselected_builds();
+		}
 	}
 	if(event.mouseButton.button == Mouse::Right){
 		if(model.a_unit_can_moves()){

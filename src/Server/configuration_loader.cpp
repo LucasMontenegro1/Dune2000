@@ -25,7 +25,7 @@ const struct Configurations CONFIGS {
 	200,
 	3,
 	80,
-	120000,
+	1,//120000,
 	4,
 	113,
 	3,

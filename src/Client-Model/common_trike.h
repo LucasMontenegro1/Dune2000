@@ -12,7 +12,7 @@
 
 using namespace sf;
 
-class Trike: public Unit {
+class TrikeClient: public Unit {
 	std::map <int, Vector2f> &frames;
 	Assault weapon;
 	SoundBuffer buffer;
@@ -22,7 +22,7 @@ class Trike: public Unit {
 
 	public:
 	
-	Trike(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int team, int hp);
+	TrikeClient(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int team, int hp);
 
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
 								bool moveUp, bool moveDown) override;
@@ -33,7 +33,7 @@ class Trike: public Unit {
 
 	virtual void reproduceMove() override;
 
-	virtual ~Trike();
+	virtual ~TrikeClient();
 
 	
 };

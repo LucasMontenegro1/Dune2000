@@ -26,7 +26,7 @@ class WindTrap: public BuildClient{
 
 	public:
 	
-	WindTrap(std::map <int, Vector2f> &frames, float x, float y, int team, int hp);
+	WindTrap(std::map <int, Vector2f> &frames, float x, float y, int team, int id, int hp);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 		

@@ -180,20 +180,3 @@ std::tuple<float, float> Unit::get_position(){
 	return std::make_tuple(this->posX, this->posY);
 }
 
-Unit& Unit::operator=(const Unit&& other) {
-	this->posX = other.posX;
-	this->posY = other.posY;
-	this->can_move = other.can_move;
-	this->destX = other.destX;
-	this->destY = other.destY;
-	this->id = other.id;
-	this->velocity = other.velocity;
-	this->largeBitsX = other.largeBitsX;
-	this->largeBitsY = other.largeBitsY;
-	this->actualFrame = other.actualFrame;
-	this->sprite = other.sprite;
-	this->texture = other.texture;
-	this->selector = other.selector;
-	this->team = other.team;
-    return *this;
-}

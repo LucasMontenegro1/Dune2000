@@ -17,6 +17,7 @@ class BuildClient: public Drawable{
 	RectangleShape lifeRest;
 	float posX;
 	float posY;
+	int id;
 	int largeBitsX;
 	int largeBitsY;
 	int cont;
@@ -25,7 +26,7 @@ class BuildClient: public Drawable{
 	int hpMax;
 	int team;
 
-	BuildClient(float x, float y, int team, int hp);
+	BuildClient(float x, float y, int team, int id, int hp);
 
 	void draw(RenderTarget &target, RenderStates states) const;
 		
@@ -38,6 +39,8 @@ class BuildClient: public Drawable{
     void deselected_structure();
 	
 	int get_team();
+
+	int get_id_build();
 	
 	std::tuple<int, int, int, int> get_bits();
 	

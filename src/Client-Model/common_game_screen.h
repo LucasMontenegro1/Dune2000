@@ -26,6 +26,8 @@ class GameScreen {
 	
 	void draw_grounds(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY);
 
+	void draw_explosions(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY);
+
 	public:
 	GameScreen();
 	
