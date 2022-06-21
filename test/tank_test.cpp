@@ -283,7 +283,7 @@ void test_attack_and_chase(void)
 	TEST_CHECK(tank2->get_hp() == CONFIGS.TANK_HP - CONFIGS.CANNON_DMG);
 }
 
-// TODO: sacar hardcodeo de los tests
+
 void test_target_dies(void)
 {
 	TerrainMap map(4, 5);
@@ -295,11 +295,12 @@ void test_target_dies(void)
 	tank1->update(CONFIGS.TANK_CREATION_TIME);
 	tank2->update(CONFIGS.TANK_CREATION_TIME);
 	tank1->attack(2);
+	// este test puede fallar si se modifica el daño del cañon
 	for (unsigned int i = 1; i <= 4; i++) {
 		tank1->update(CONFIGS.CANNON_RECHARGE_TIME);
-		TEST_CHECK(tank2->get_hp() == 30 - 7 * i);
+		TEST_CHECK(tank2->get_hp() == 30 - CONFIGS.CANNON_DMG * i);
 	}
-	tank1->update(1000);
+	tank1->update(CONFIGS.CANNON_RECHARGE_TIME);
 	TEST_CHECK(tank2->is_dead());
 	TEST_CHECK(tank1->get_state() == attacking);
 	tank1->update(0);
@@ -314,7 +315,7 @@ void test_cannot_attack_target_creating(void)
 	UnitPtr tank2 = std::make_shared<Tank>(2, 1, BlockPosition(1, 2), map, game_objects, 1);
 	game_objects.insert(std::pair<unsigned int, TeamablePtr>(tank1->get_id(), tank1));
 	game_objects.insert(std::pair<unsigned int, TeamablePtr>(tank2->get_id(), tank2));
-	tank1->update(240000);
+	tank1->update(CONFIGS.TANK_CREATION_TIME);
 	tank1->update(0);
 	TEST_CHECK(tank1->get_state() == neutral);
 	tank1->attack(2);

@@ -11,6 +11,11 @@
 
 typedef std::shared_ptr<Teamable> TeamablePtr;
 
+/*
+ * Factory de entidades a partir de su type_id
+ * Es necesario modificar y recompilar cada vez que se
+ * implemente un nuevo tipo de entidad
+ */
 class EntityFactory {
 	TerrainMap &map;
 	std::map<unsigned int, TeamablePtr> &entities;

@@ -17,6 +17,7 @@ typedef vector<pair<BlockPosition, BlockTerrain>> Terrains;
 
 class ControlUnit {
 	TerrainMap map;
+
 	std::map<unsigned int, shared_ptr<Teamable>> entities;
 
 	EntityFactory factory;
