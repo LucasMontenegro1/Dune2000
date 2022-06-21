@@ -37,6 +37,7 @@ void ControlUnit::cmd_move(int id, BlockPosition destination)
 	shared_ptr<Teamable> unit = this->entities.at(id);
 	if (unit->is_movable())
 		dynamic_pointer_cast<Unit>(unit)->move_to(destination);
+	// hay que hacer el casteo a algo que entienda el comando mover
 }
 
 void ControlUnit::cmd_attack(unsigned int id, unsigned int target_id)
@@ -48,6 +49,7 @@ void ControlUnit::cmd_attack(unsigned int id, unsigned int target_id)
 	shared_ptr<Teamable> unit = this->entities.at(id);
 	if (unit->can_attack())
 		dynamic_pointer_cast<Unit>(unit)->attack(target_id);
+	// idem que para mover
 }
 
 void ControlUnit::update(unsigned int time_delta)
