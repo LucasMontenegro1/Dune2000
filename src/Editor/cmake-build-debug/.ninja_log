@@ -18,3 +18,15 @@
 0	159	0	CMakeFiles/Editor_autogen	779664d2156e04cc
 810	2014	1655593745400983910	CMakeFiles/Editor.dir/Editor.cpp.o	3b20c2cd8064f0ae
 3308	4390	1655593747776887885	CMakeFiles/Editor.dir/Editor_autogen/mocs_compilation.cpp.o	e651234d255b4fa6
+13	232	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+13	232	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+13	232	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+13	232	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+232	3353	1655780923321418119	CMakeFiles/Editor.dir/Editor.cpp.o	3b20c2cd8064f0ae
+3353	6425	1655780926393322526	Editor	714ce1692124fa11
+2	5	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+2	5	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+6	253	1655780976347808074	CMakeFiles/Editor.dir/ConstantGetter.cpp.o	430535de4334a5ae
+253	779	1655780976871792573	Editor	714ce1692124fa11
