@@ -13,7 +13,7 @@
 #define DIFERENCE_Y 100
 
 
-ConstructionMenu::ConstructionMenu(float x, float y, float width, float height, std::string house, Protocol& aProtocol): buildingHandler(house),
+ConstructionMenu::ConstructionMenu(float x, float y, float width, float height, std::string house, Protocol& aProtocol):
                                                                                                     unitHandler(house),
                                                                                                     vehicleHandler(house,aProtocol){
     this->house = house;
@@ -24,15 +24,9 @@ ConstructionMenu::ConstructionMenu(float x, float y, float width, float height, 
 
     setHouse();
 
-    buildingHandler.setBuildingMenu();
+
     unitHandler.setUnitMenu();
     vehicleHandler.setVehicleMenu();
-
-    buildings.setPosition(20,520);
-    buildings.setSize(70,45);
-    sf::Texture build;
-    build.loadFromFile("Structures/buildings.png");
-    buildings.setTexture(build);
 
     units.setPosition(20,578);
     units.setSize(70,45);
@@ -46,7 +40,7 @@ ConstructionMenu::ConstructionMenu(float x, float y, float width, float height, 
     vehicle.loadFromFile("Structures/vehicles.png");
     vehicles.setTexture(vehicle);
 
-    activeState = BUILDINGS;
+    activeState = UNITS;
 }
 
 void ConstructionMenu::setHouse() {
@@ -71,15 +65,12 @@ void ConstructionMenu::setHouse() {
 void ConstructionMenu::render(sf::RenderWindow& target) {
     target.draw(this->canvas);
     target.draw(this->houseImage);
-    buildings.render(target);
     units.render(target);
     vehicles.render(target);
     vehicleHandler.updateTimers();
     unitHandler.updateTimers();
 
-    if (activeState == BUILDINGS) {
-        buildingHandler.displayBuildings(target);
-    }else if(activeState == UNITS){
+     if(activeState == UNITS){
         unitHandler.displayUnits(target);
     }else if (activeState == VEHICLES){
         vehicleHandler.displayVehicles(target);
@@ -88,14 +79,9 @@ void ConstructionMenu::render(sf::RenderWindow& target) {
 
 
 void ConstructionMenu::update(sf::Event event, sf::RenderWindow &target) {
-    buildings.update(event,target);
     units.update(event,target);
     vehicles.update(event,target);
 
-
-    if (buildings.is_Clicked(event,target)){
-        activeState = BUILDINGS;
-    }
 
     if (units.is_Clicked(event,target)){
         activeState = UNITS;
@@ -107,10 +93,6 @@ void ConstructionMenu::update(sf::Event event, sf::RenderWindow &target) {
 
     if (activeState == UNITS){
         unitHandler.updateUnits(event,target);
-    }
-
-    if (activeState == BUILDINGS){
-        buildingHandler.updateBuildings(event,target);
     }
 
     if (activeState == VEHICLES){
