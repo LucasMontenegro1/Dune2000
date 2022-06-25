@@ -13,24 +13,27 @@
 using namespace sf;
 
 class TankClient: public Unit {
+	Canyon weapon;
 	int actualFrameCanion;
 	Sprite canion;
 	std::map <int, Vector2f> &frames;
-    Canyon weapon;
 	SoundBuffer buffer;
 	Sound moveSound;
 
-    void updateCanion();
+    bool updateCanion();
+
+	void choose_class(int type);
 
 	public:
-	TankClient(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int team, int hp);
+	TankClient(int type, std::map <int, Vector2f> &frames, std::map <int, Vector2f> &canionFrames, 
+									int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &framesDamage);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 
     virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
 							bool moveUp, bool moveDown) override;
 
-    virtual void animate_attack() override;
+    virtual bool animate_attack() override;
 
 	virtual Sprite get_weapon() override;
 

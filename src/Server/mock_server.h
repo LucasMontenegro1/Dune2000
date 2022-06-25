@@ -23,6 +23,7 @@ struct RawUnit {
 	unsigned int facing_col;
 	unsigned int target_id;
 	std::string state;
+	unsigned int team;
 };
 
 struct map_coor {

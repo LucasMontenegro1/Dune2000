@@ -8,13 +8,11 @@
 #include <time.h>
 #include "common_unit.h"
 #include "common_ground.h"
-#include "common_build.h"
 #include "common_explosion.h"
 #include "../Server/mock_server.h"
 
 class Model {
 	std::map <int, Unit*> units;
-	std::map <int, BuildClient*> builds;
 	std::vector<Explosion*> explosions;
 	std::vector<Unit*> units_to_eliminate;
 	Ground ground;	
@@ -26,7 +24,7 @@ class Model {
 	void foundEliminate(std::vector<struct RawUnit> &received_units);
 
 	public:
-	Model(std::map <int, Unit*> &units, std::map <int, BuildClient*> &builds, Ground &grounds, int team);
+	Model(std::map <int, Unit*> &units, Ground &grounds, int team);
 	
 	void update(std::vector<struct RawUnit> received_units);
 	
@@ -75,8 +73,6 @@ class Model {
 	Ground &get_grounds();
 	
 	std::map <int, Unit*> &get_units();
-
-	std::map <int, BuildClient*> &get_builds();
 	
 	~Model();
 	

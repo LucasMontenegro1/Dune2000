@@ -32,11 +32,16 @@ class Unit: public Drawable{
 	bool attacking;
 	int attackX;
 	int attackY;
+	bool damaged;
+	Texture damageTexture;
+	Sprite damageSprite;
+	int actualFrameDamage;
+	std::map <int, Vector2f> &damageFrames;
 
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
 								bool moveUp, bool moveDown);
 	
-	Unit(int cordX, int cordY, int id, int team, int hp);
+	Unit(int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &frames);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
 	
@@ -52,7 +57,11 @@ class Unit: public Drawable{
 	
 	void no_enable_move();
 
-	virtual void animate_attack();
+	bool was_damaged();
+
+	virtual bool animate_attack();
+
+	void animate_damage();
 	
 	bool can_moves();
 	

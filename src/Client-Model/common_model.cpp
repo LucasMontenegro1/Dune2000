@@ -5,7 +5,6 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
-#include "common_build.h"
 #include "common_ground.h"
 #include "common_model.h"
 #include "common_explosion.h"
@@ -13,13 +12,14 @@
 #include <iostream>
 
 
-Model::Model(std::map <int, Unit*> &units, std::map <int, BuildClient*> &builds, Ground &grounds, int team): 
-		units(units), builds(builds), ground(grounds), one_unit_can_moves(false), team(team) {}
+Model::Model(std::map <int, Unit*> &units, Ground &grounds, int team): 
+		units(units), ground(grounds), one_unit_can_moves(false), team(team) {}
 		
 	
 void Model::foundEliminate(std::vector<struct RawUnit> &received_units){
 	bool is = false;
 	for(auto iter = units.begin(); iter != units.end(); ++iter){
+		if(units.size() == 1) break;
 		for(size_t i = 0; i < received_units.size(); i++){
 			if((unsigned int) iter->first == received_units[i].id){
 				is = true;
@@ -28,7 +28,7 @@ void Model::foundEliminate(std::vector<struct RawUnit> &received_units){
 		if(!is){
 			units_to_eliminate.push_back(iter->second);
 			std::tuple<float, float> position = iter->second->get_position();
-			explosions.push_back(new Explosion(std::get<0>(position), std::get<1>(position)));
+			explosions.push_back(new Explosion(std::get<0>(position) - 10, std::get<1>(position) - 10));
 			//delete iter->second;
 			units.erase(iter);
 		} 
@@ -62,14 +62,6 @@ int Model::get_unit(float cordX, float cordY){
 	return id;
 }
 
-int Model::get_build(float cordX, float cordY){
-	int id;
-	for(auto iter = builds.begin(); iter != builds.end(); ++iter){
-		if(iter->second->is_there(cordX, cordY)) id = iter->second->get_id_build();
-	}	
-	return id;
-}
-
 
 std::vector<int> Model::get_units_can_moves(){
 	std::vector<int> ids;
@@ -89,11 +81,6 @@ void Model::no_enable_moves(){
 	this->one_unit_can_moves = false;
 }
 
-void Model::deselected_builds(){
-	for(auto iter = builds.begin(); iter != builds.end(); ++iter){
-		iter->second->deselected_structure();
-	}
-}
 
 bool Model::a_unit_can_moves(){
 	return this->one_unit_can_moves;
@@ -108,17 +95,6 @@ void Model::unit_enable_move(int unit_id){
 	this->one_unit_can_moves = true;
 }
 
-void Model::build_selected(int build_id){
-	builds[build_id]->selected_structure();
-}
-
-bool Model::is_build_there(float cordX, float cordY){
-	bool is_here = false;
-	for(auto iter = builds.begin(); iter != builds.end(); ++iter){
-		if(iter->second->is_there(cordX, cordY) && iter->second->get_team() == team) is_here = true;
-	}	
-	return is_here;
-}
 
 bool Model::is_unit_there(float cordX, float cordY){
 	bool is_here = false;
@@ -165,10 +141,6 @@ void Model::eliminate_unit(size_t position){
 	
 std::map <int, Unit*> &Model::get_units(){
 	return this->units;
-}
-
-std::map <int, BuildClient*> &Model::get_builds(){
-	return this->builds;
 }
 
 void Model::delete_explosion(int i){

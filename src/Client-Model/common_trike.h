@@ -13,21 +13,22 @@
 using namespace sf;
 
 class TrikeClient: public Unit {
-	std::map <int, Vector2f> &frames;
 	Assault weapon;
+	std::map <int, Vector2f> &frames;
 	SoundBuffer buffer;
 	Sound moveSound;
 	
-	void pointTo();
+	bool pointTo();
 
 	public:
 	
-	TrikeClient(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int team, int hp);
+	TrikeClient(std::map <int, Vector2f> &frames, std::map <int, Vector2f> &framesAssault, int cordX, int cordY, 
+							int id, int team, int hp, std::map <int, Vector2f> &framesDamage);
 
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
 								bool moveUp, bool moveDown) override;
 
-	virtual void animate_attack() override;
+	virtual bool animate_attack() override;
 
 	virtual Sprite get_weapon() override;
 

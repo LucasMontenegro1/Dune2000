@@ -12,7 +12,8 @@
 
 using namespace sf;
 
-TrikeClient::TrikeClient(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int team, int hp): Unit(cordX, cordY, id, team, hp), frames(frames) {
+TrikeClient::TrikeClient(std::map <int, Vector2f> &frames, std::map <int, Vector2f> &framesAssault, int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &framesDamage): 
+	Unit(cordX, cordY, id, team, hp, framesDamage), weapon(framesAssault), frames(frames) {
 	texture.loadFromFile("resources/units/trike.png");
 	sprite.setTexture(texture);
 	sprite.setTextureRect(IntRect(5,60,30,30));
@@ -35,9 +36,10 @@ void TrikeClient::modifyMovePosition(bool moveRight, bool moveLeft, bool moveUp,
 	sprite.setTextureRect(IntRect(posicionFrame.x, posicionFrame.y,30,25));
 	}
 	
-void TrikeClient::animate_attack(){
-	pointTo();
+bool TrikeClient::animate_attack(){
+	bool is_attacking = pointTo();
 	sprite.setPosition(posX,posY);
+	return is_attacking;
 }
 
 void TrikeClient::reproduceMove(){
@@ -45,8 +47,9 @@ void TrikeClient::reproduceMove(){
 }
 
 
-void TrikeClient::pointTo(){
+bool TrikeClient::pointTo(){
 	int frameDestiny = actualFrame;
+	bool is_attacking = false;
 	bool moveRight = false; bool moveLeft = false; 
 	bool moveUp = false; bool moveDown = false;
 	if(attackX > posX && attackX - 15 > posX) moveRight = true;
@@ -57,10 +60,13 @@ void TrikeClient::pointTo(){
 
 	if(actualFrame > frameDestiny) actualFrame--;
 	if(actualFrame < frameDestiny) actualFrame++;
-	if(actualFrame == frameDestiny) weapon.animate(posX + 5, posY + 5, attacking, actualFrame);
+	if(actualFrame == frameDestiny){ 
+		weapon.animate(posX, posY, attacking, actualFrame); is_attacking = true;
+	}
 
 	Vector2f &posicionFrame = frames[actualFrame];
 	sprite.setTextureRect(IntRect(posicionFrame.x, posicionFrame.y,30,25));
+	return is_attacking;
 }
 
 Sprite TrikeClient::get_weapon(){

@@ -9,11 +9,31 @@
 #include "common_canyon.h"
 #include <iostream>
 
+#define HARKONNEN 1
+#define ATREIDES 2
+#define ORDOS 3 
 
 using namespace sf;
 
-TankClient::TankClient(std::map <int, Vector2f> &frames, int cordX, int cordY, int id, int team, int hp): Unit(cordX, cordY, id, team, hp), frames(frames) {
-    texture.loadFromFile("resources/units/harkonnenTank.png");
+void TankClient::choose_class(int type){
+	switch(type){
+		case HARKONNEN:
+   			texture.loadFromFile("resources/units/harkonnenTank.png");
+			break;
+		case ATREIDES:
+   			texture.loadFromFile("resources/units/atreidesTank.png");
+			break;
+		case ORDOS:
+   			texture.loadFromFile("resources/units/ordosTank.png");
+			break;
+	}
+}
+
+
+
+TankClient::TankClient(int type, std::map <int, Vector2f> &frames, std::map <int, Vector2f> &canionFrames, int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &framesDamage): 
+		Unit(cordX, cordY, id, team, hp, framesDamage), weapon(canionFrames), frames(frames) {
+	choose_class(type);
 	sprite.setTexture(texture);
     sprite.setTextureRect(IntRect(5,2,30,25));
 	sprite.setPosition(cordX, cordY);
@@ -53,8 +73,9 @@ void TankClient::modifyMovePosition(bool moveRight, bool moveLeft, bool moveUp, 
 }
 
 
-void TankClient::updateCanion(){
+bool TankClient::updateCanion(){
 	int frameDestiny = actualFrameCanion;
+	bool is_attacking = false;
 	bool moveRight = false; bool moveLeft = false; 
 	bool moveUp = false; bool moveDown = false;
 	if(attackX > posX && attackX - 15 > posX) moveRight = true;
@@ -76,10 +97,13 @@ void TankClient::updateCanion(){
 
 	if(actualFrameCanion > frameDestiny) actualFrameCanion--;
 	if(actualFrameCanion < frameDestiny) actualFrameCanion++;
-	if(actualFrameCanion == frameDestiny) weapon.animate(posX, posY, attacking, actualFrameCanion);
+	if(actualFrameCanion == frameDestiny){
+		weapon.animate(posX, posY, attacking, actualFrameCanion); is_attacking = true;
+	}
 
 	Vector2f &posicionFrameCanion = frames[actualFrameCanion];
 	canion.setTextureRect(IntRect(posicionFrameCanion.x, posicionFrameCanion.y,20,20));
+	return is_attacking;
 }
 
 Sprite TankClient::get_weapon(){
@@ -91,9 +115,10 @@ void TankClient::reproduceMove(){
 }
 
 
-void TankClient::animate_attack(){
-	updateCanion();
+bool TankClient::animate_attack(){
+	bool is_attacking = updateCanion();
 	canion.setPosition(posX + 5,posY + 1);
+	return is_attacking;
 }
 
 TankClient::~TankClient(){}

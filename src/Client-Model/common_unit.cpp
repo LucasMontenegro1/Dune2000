@@ -10,13 +10,16 @@
 
 
 
-Unit::Unit(int cordX, int cordY, int id, int team, int hp): posX(cordX), posY(cordY), 
-	can_move(false), destX(cordX), destY(cordY), id(id), selector{}, team(team), 
-	hp(hp), max_hp(hp), attacking(false) {
+Unit::Unit(int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &frames): posX(cordX), posY(cordY), 
+	can_move(false), destX(cordX), destY(cordY), id(id), selector{}, team(team),
+	hp(hp), max_hp(hp), attacking(false), damaged(false), actualFrameDamage(1), damageFrames(frames) {
 		lifeMax.setSize(Vector2f(30,3));
 		lifeMax.setFillColor(sf::Color::Black);
 		lifeMax.setPosition(cordX, cordY - 5);
 		lifeRest.setPosition(cordX, cordX - 5);
+		damageTexture.loadFromFile("resources/hit.png");
+		damageSprite.setTexture(damageTexture);
+		damageSprite.setScale(0.2,0.2);
 	}
 
 
@@ -27,6 +30,7 @@ void Unit::draw(RenderTarget &target, RenderStates states) const {
 	}
 	if(can_move) target.draw(selector);
 	target.draw(sprite, states);
+	if(damaged) target.draw(damageSprite);
 }
 
 
@@ -37,6 +41,13 @@ bool Unit::is_there(float cord_x, float cord_y){
 	return is_in == 2;
 }
 
+void Unit::animate_damage(){
+	Vector2f &posicionFrame = damageFrames[actualFrameDamage];
+	damageSprite.setTextureRect(IntRect(posicionFrame.x, posicionFrame.y,170,225));
+	damageSprite.setPosition(posX,posY);
+	actualFrameDamage++;
+	if(actualFrameDamage == 6){ actualFrameDamage = 1; damaged = false; }
+}
 
 Sprite Unit::get_weapon(){
 	Sprite x;
@@ -85,9 +96,14 @@ void Unit::modifyHp(int new_hp){
 	} else {
 		lifeRest.setFillColor(sf::Color::Green);
 	}
+	if(this->hp > new_hp) damaged = true;
 	this->hp = new_hp;
 	lifeMax.setPosition(posX, posY - 5);
 	lifeRest.setPosition(posX, posY - 5);
+}
+
+bool Unit::was_damaged(){
+	return damaged;
 }
 
 void Unit::no_enable_move(){

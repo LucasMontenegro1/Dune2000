@@ -12,20 +12,23 @@
 using namespace sf;
 
 
-class Canyon: public Drawable{
+class Canyon {
+	std::map <int, Vector2f> &frames;
     Sprite sprite;
 	Texture texture;
 	Image image;
 	SoundBuffer buffer;
 	Sound attackSound;
 	int cont;
+	int actualFrame;
 
-	void updateTexture(int frame);
+	void canyonPosition(float posX, float posY, int frame);
+
+	void updateTexture();
 
     public:
-    void draw(RenderTarget &target, RenderStates states) const;
 
-    Canyon();
+    Canyon(std::map <int, Vector2f> &frames);
 
 	void animate(float posX, float posY, bool is_attacking, int frame);
 

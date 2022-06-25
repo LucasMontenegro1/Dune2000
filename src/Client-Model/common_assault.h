@@ -12,20 +12,23 @@
 using namespace sf;
 
 
-class Assault: public Drawable{
+class Assault{
+	std::map <int, Vector2f> &frames;
 	Sprite sprite;
 	Texture texture;
 	Image image;
 	SoundBuffer buffer;
 	Sound attackSound;
 	int cont;
+	int actualFrame;
 
-	void updateTexture(int frame);
+	void canyonPosition(float posX, float posY, int frame);
+
+	void updateTexture();
 
     public:
-    void draw(RenderTarget &target, RenderStates states) const;
 
-    Assault();
+    Assault(std::map <int, Vector2f> &frames);
 
 	void animate(float posX, float posY, bool is_attacking, int frame);
 

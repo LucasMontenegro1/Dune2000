@@ -5,26 +5,30 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include "common_unit.h"
-#include "common_build.h"
-#include "common_windtrap.h"
 #include <iostream>
 #include "common_trike.h"
 #include "common_tank.h"
 #include "common_protocol.h"
 #include "common_ground.h"
 #include "../Server/mock_server.h"
+#include <netinet/in.h>
+
+#define BITS 16
+#define HARKONNEN 1
+#define ATREIDES 2
+#define ORDOS 3 
 
 Protocol::Protocol(): server{}, skins{} {
-	this->server.create_unit(0, 2, 0, 0);
-	this->server.create_unit(0, 1, 5, 5);
-	this->server.create_unit(1, 1, 15,15);
+	this->server.create_unit(0, 1, 0, 30);
 	this->server.create_unit(1, 1, 5,30);
+	this->server.create_unit(0, 2, 0, 10);
+	this->server.create_unit(1, 1, 5,10);
 }
 
 Ground Protocol::receive_grounds(){
 	vector<pair<struct map_coor, unsigned int>> terrains;
 	for (unsigned int i = 60; i <= 100; i++)
-		terrains.push_back(pair<struct map_coor, unsigned >({i, 60}, 4));
+		terrains.push_back(pair<struct map_coor, unsigned >({i, 60}, 1));
 	this->server.load_map(terrains);
 
 	std::vector<std::vector<int> > map;
@@ -42,36 +46,42 @@ Ground Protocol::receive_grounds(){
 	return grounds;
 }
 
-void Protocol::receive_builds(std::map <int, BuildClient*> &builds){
-	builds.insert(std::pair<int, BuildClient*>(1, new WindTrap(skins.windTrapA, 0, 50, 0, 1, 100)));
+
+void Protocol::updateUnits(std::map <int, Unit*> &units, struct RawUnit &unit_received){
+	if(unit_received.state == "moving"){
+		units[unit_received.id]->setMove(unit_received.col * BITS, unit_received.row * BITS);
+	}
+	if(unit_received.state == "attacking"){
+ 		if(units.count(unit_received.target_id) == 0) return;
+		units[unit_received.id]->setAttack(units[unit_received.target_id]->get_position());
+	} else if(unit_received.state == "neutral"){
+		units[unit_received.id]->setNeutral();
+	}
+	units[unit_received.id]->modifyHp(unit_received.hp);
 }
 
-
+void Protocol::appendUnits(std::map <int, Unit*> &units, struct RawUnit &unit_received){
+	switch(unit_received.type_id){
+		case 1:
+			units.insert(std::pair<int, Unit*>(unit_received.id, new TrikeClient(skins.trike, skins.shoot, (int) unit_received.col * BITS, 
+							(int) unit_received.row * BITS, unit_received.id, unit_received.player_id, unit_received.hp, skins.damage)));	
+			break;
+		case 2:
+			units.insert(std::pair<int, Unit*>(unit_received.id, new TankClient(HARKONNEN, skins.tankH, skins.shoot, (int) unit_received.col * BITS, 
+						(int) unit_received.row * BITS, unit_received.id, unit_received.player_id, unit_received.hp, skins.damage)));		
+			break;
+	}
+}
 	
 std::vector<struct RawUnit> Protocol::receive_units(std::map <int, Unit*> &units){
+	//std::vector<struct RawUnit> received_units = receive_state(socket);
 	std::vector<struct RawUnit> received_units = this->server.get_state();
 	for(size_t i = 0; i < received_units.size(); i++){
 		int id_received = received_units[i].id;
 		if(units.count(id_received) != 0){
-			if(received_units[i].state == "moving"){
-				units[id_received]->setMove(received_units[i].col * 16, received_units[i].row * 16);
-			}
-			if(received_units[i].state == "attacking"){
- 				if(units.count(received_units[i].target_id) == 0) continue;
-				units[id_received]->setAttack(units[received_units[i].target_id]->get_position());
-				units[received_units[i].target_id]->modifyHp(received_units[i].hp);
-			} else if(received_units[i].state == "neutral"){
-				units[id_received]->setNeutral();
-			}
+			updateUnits(units, received_units[i]);
 		} else {
-			if(received_units[i].type_id == 1){
-				units.insert(std::pair<int, Unit*>(received_units[i].id, new TrikeClient(skins.trike, (int) received_units[i].col * 16, 
-							(int) received_units[i].row * 16, received_units[i].id, received_units[i].player_id, received_units[i].hp)));	
-			}
-			if(received_units[i].type_id == 2){
-				units.insert(std::pair<int, Unit*>(received_units[i].id, new TankClient(skins.tank, (int) received_units[i].col * 16, 
-							(int) received_units[i].row * 16, received_units[i].id, received_units[i].player_id, received_units[i].hp)));		
-			}
+			appendUnits(units, received_units[i]);
 		}
 	}
 	return received_units;
@@ -79,13 +89,27 @@ std::vector<struct RawUnit> Protocol::receive_units(std::map <int, Unit*> &units
 
 
 void Protocol::send_unit_attack(int unit_id, int unit_target_id){
+	/*
+	uint64_t unit_player = htons(unit_id);
+	uint64_t unit_enemy = htons(unit_target_id);
+	socket.send(&unit_player, 4);
+	socket.send(&unit_enemy, 4);
+	*/
 	this->server.unit_attack(unit_id, unit_target_id);
 }
 
 
 	
 void Protocol::send_unit_move(int unit_id, float cordX, float cordY){
-	this->server.move_unit(unit_id, (int) cordY / 16, (int) cordX / 16);
+	/*
+	uint64_t unit_player = htons(unit_id);
+	uint32_t go_x = htons(cordX / BITS);
+	uint32_t go_Y = htons(cordY / BITS);
+	socket.send(&unit_player, 4);
+	socket.send(&go_x, 2);
+	socket.send(&go_y, 2);
+	*/
+	this->server.move_unit(unit_id, (int) cordY / BITS, (int) cordX / BITS);
 }
 
 void Protocol::update(){
@@ -96,3 +120,70 @@ void Protocol::createTrike() {
     this->server.create_unit(0, 1, 10, 10);
 }
 
+
+//SERIALIZE -----------------------------------------------------------------------------
+
+/*
+uint8_t Protocol::receive_player_code(Socket &socket){
+	uint8_t code;
+	socket.recieve(&code, 1);
+	return code;
+}
+
+Ground Protocol::receive_grounds(Socket &socket){
+	uint64_t lenght_reveived; uint64_t widht_received; uint64_t lenght; uint64_t widht;
+	socket.receive(&lenght_reveived, 4); 
+	socket.receive(&widht_reveived, 4);
+	lenght = ntohs(length_received);
+	widht = ntohs(widht_received);
+	std::vector<std::vector<int> > map;
+	for(size_t row = 0; row <=  lenght; row++){
+		std::vector<int> actual_row;
+		for(size_t col = 0; col <= widht; col++){
+			uint8_t actual;
+			socket.receive(&actual, 1);
+			actual_row.push_back(actual);
+		}
+		map.push_back(actual_row);
+	}
+	Ground grounds(map, 360, 360);
+	return grounds;
+}
+
+std::vector<struct RawUnit> Protocol::receive_state(Socket &socket){
+	std::vector<RawUnit> raw_units;
+	struct RawUnit raw_unit;
+	uint64_t size_received; uint64_t size;
+	socket.receive(&size_received, 4);
+	size = ntohs(size_received);
+	for(size_t i = 0; i < size; i++){
+		uint8_t playerCode;
+		socket.receive(&playerCode, 1);
+		raw_unit.player_id = playerCode;
+		uint8_t team;
+		socket.receive(&team, 1);
+		raw_unit.player_id = playerCode;
+		uint8_t type;
+		socket.receive(&type, 1);
+		raw_unit.type = type;
+		uint8_t row;
+		socket.receive(&row, 1);
+		raw_unit.row = row;
+		uint8_t col;
+		socket.receive(&col, 1);
+		raw_unit.col = col;
+		uint8_t hp;
+		socket.receive(&hp, 1);
+		raw_unit.hp = hp;
+		uint8_t state; uint8_t target;
+		socket.receive(&state, 1);
+		if(state == 2) socket.receive(&target, 1);
+		else target = 0
+		raw_unit.state = state;
+		raw_unit.target = target;
+	}
+	return raw_units;
+}
+
+
+*/

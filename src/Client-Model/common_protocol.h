@@ -6,7 +6,6 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 #include <map>
-#include "common_build.h"
 #include "common_unit.h"
 #include "common_trike.h"
 #include "common_tank.h"
@@ -19,14 +18,16 @@ class Protocol {
 	MockServer server;
 	Skins skins;
 
+	void updateUnits(std::map <int, Unit*> &units, struct RawUnit &unit_received);
+
+	void appendUnits(std::map <int, Unit*> &units, struct RawUnit &unit_received);
+
 	public:
 	Protocol();
 	
 	Ground receive_grounds();
 	
 	std::vector<struct RawUnit> receive_units(std::map <int, Unit*> &units);
-
-	void receive_builds(std::map <int, BuildClient*> &builds);
 	
 	void send_unit_attack(int unit_id, int unit_target_id);
 	
@@ -35,5 +36,11 @@ class Protocol {
 	void update();
 
     void createTrike();
+
+	//SERIALIZE -----------------------------------------------------------------------------
+	/*
+	uint8_t Protocol::receive_player_code(Socket &socket);
+
+	*/
 };
 #endif

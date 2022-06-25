@@ -24,13 +24,12 @@ Client::Client(): protocol{}, screen{} {}
 	
 	
 void Client::show_window(){
-	int team = 0; //Protocol.receive_player_code();
+	//Sistema para unirse a partidas
+	int team = 0; //protocol.receive_player_code(socket);
 	Ground ground = protocol.receive_grounds();
 	std::map <int, Unit*> units;
-	std::map <int, BuildClient*> builds;
 	protocol.receive_units(units);
-	protocol.receive_builds(builds);
-	Model model(units, builds, ground, team);
+	Model model(units, ground, team);
 	this->screen.show(model, this->protocol);
 	//this->conexion.shutdown(0);
 }
