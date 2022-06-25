@@ -12,7 +12,6 @@
 #include "common_protocol.h"
 
 enum active{
-    BUILDINGS,
     UNITS,
     VEHICLES
 };
@@ -20,11 +19,9 @@ enum active{
 class ConstructionMenu {
 private:
     std::string house;
-    Button buildings;
     Button units;
     Button vehicles;
 
-    BuildingImageHandler buildingHandler;
     UnitImageHandler unitHandler;
     VehicleImageHandler vehicleHandler;
 

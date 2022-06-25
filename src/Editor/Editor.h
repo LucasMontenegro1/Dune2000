@@ -27,7 +27,7 @@ private:
     bool game_over;
     int players;
     void updateCamera();
-    bool ceckConstruction(int, int);
+    bool checkConstruction(int, int);
     void setSprite(int);
 
 public:

@@ -91,7 +91,7 @@ void Editor::gameloop() {
                         window.setView(view);
                         sf::Vector2i WinPos = sf::Mouse::getPosition(window);
                         sf::Vector2f mouse = window.mapPixelToCoords(WinPos);
-                        if (ceckConstruction(mouse.x / TSIZE, mouse.y / TSIZE)) {
+                        if (checkConstruction(mouse.x / TSIZE, mouse.y / TSIZE)) {
                             auto *c = new ConstructionCenter();
                             c->setPosition(mouse.x / TSIZE, mouse.y / TSIZE);
                             centers.push_back(c);
@@ -179,7 +179,7 @@ void Editor::setSprite(int selection) {
     }
 }
 
-bool Editor::ceckConstruction(int x1, int y1) {
+bool Editor::checkConstruction(int x1, int y1) {
     sf::Vector2i WinPos = sf::Mouse::getPosition(window);
     sf::Vector2f pos = view.getSize();
     int _x = window.getSize().x;
@@ -214,6 +214,8 @@ Editor::~Editor() {
     for (int i = 0; i <centers.size() ; ++i) {
         delete centers[i];
     }
+    delete this->ground;
+    delete this->camera;
 }
 
 void Editor::setCenters(std::vector<ConstructionCenter *>& centers) {

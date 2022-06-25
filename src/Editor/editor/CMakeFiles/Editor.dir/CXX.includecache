@@ -6,29 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/Button.cpp
-iostream
--
-Button.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/Button.h
-
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/Button.h
 SFML/Graphics.hpp
 -
-
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstantGetter.cpp
-ConstantGetter.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstantGetter.h
 
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstantGetter.h
 string
 -
 SFML/System/Vector2.hpp
 -
-
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstructionCenter.cpp
-ConstructionCenter.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstructionCenter.h
 
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstructionCenter.h
 SFML/Graphics.hpp
@@ -68,27 +54,9 @@ ConstructionCenter.h
 string
 -
 
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/EditorMenu.cpp
-iostream
--
-EditorMenu.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/EditorMenu.h
-ConstantGetter.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstantGetter.h
-
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/EditorMenu.h
 Button.h
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/Button.h
-
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/MapLoader.cpp
-yaml-cpp/yaml.h
--
-iostream
--
-MapLoader.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/MapLoader.h
-ConstructionCenter.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstructionCenter.h
 
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/MapLoader.h
 string
@@ -97,16 +65,6 @@ vector
 -
 ConstructionCenter.h
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstructionCenter.h
-
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/StateSaver.cpp
-StateSaver.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/StateSaver.h
-ConstructionCenter.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/ConstructionCenter.h
-yaml-cpp/yaml.h
--
-fstream
--
 
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/StateSaver.h
 string
@@ -221,12 +179,6 @@ MapLoader.h
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/MapLoader.h
 EditorException.h
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/EditorException.h
-
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/textBox.cpp
-textBox.h
-/home/lucas/Desktop/Taller I/Dune2000/src/Editor/textBox.h
-SFML/Graphics.hpp
--
 
 /home/lucas/Desktop/Taller I/Dune2000/src/Editor/textBox.h
 SFML/Graphics/Transformable.hpp

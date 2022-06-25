@@ -1,20 +1,20 @@
 # ninja log v5
-2664	2932	1655593746292947802	CMakeFiles/Editor.dir/ConstantGetter.cpp.o	430535de4334a5ae
+64	4418	1655847227213085941	CMakeFiles/Editor.dir/ConstantGetter.cpp.o	430535de4334a5ae
 834	1965	1655593745352985853	CMakeFiles/Editor.dir/StateSaver.cpp.o	918e85f2f49f61b4
-0	159	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+2	63	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
 160	797	1655593744185033237	CMakeFiles/Editor.dir/camera.cpp.o	27f1c6240faf35b5
 798	1431	1655593744821007419	CMakeFiles/Editor.dir/ground.cpp.o	4eb7ac25e7edd5cd
-1	62	1655593751912721885	build.ninja	e9a478930194f2b
+1	62	1655999747562603887	build.ninja	e9a478930194f2b
 1965	3458	1655593746844925491	CMakeFiles/Editor.dir/MapLoader.cpp.o	26c878a8f9f13f11
-0	159	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
+2	63	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
 2932	3571	1655593746960920801	CMakeFiles/Editor.dir/Button.cpp.o	ad433a0e2ab256ed
-3458	4996	1655593748384863393	CMakeFiles/Editor.dir/main.cpp.o	e25964cef0031f9b
+64	6595	1655847229389058560	CMakeFiles/Editor.dir/main.cpp.o	e25964cef0031f9b
 1431	3307	1655593746688931795	CMakeFiles/Editor.dir/editormainwindow.cpp.o	9193cff247f86daf
 160	810	1655593744197032749	CMakeFiles/Editor.dir/EditorMenu.cpp.o	fc885e61da68794e
-4996	5794	1655593749180831371	Editor	714ce1692124fa11
-0	159	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
+6595	9043	1655847231833027817	Editor	714ce1692124fa11
+2	63	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
 159	834	1655593744225031612	CMakeFiles/Editor.dir/textBox.cpp.o	e201e24509befe06
 2014	2664	1655593746040957988	CMakeFiles/Editor.dir/ConstructionCenter.cpp.o	93741b3a202eab59
-0	159	0	CMakeFiles/Editor_autogen	779664d2156e04cc
-810	2014	1655593745400983910	CMakeFiles/Editor.dir/Editor.cpp.o	3b20c2cd8064f0ae
+2	63	0	CMakeFiles/Editor_autogen	779664d2156e04cc
+64	4452	1655847227245085539	CMakeFiles/Editor.dir/Editor.cpp.o	3b20c2cd8064f0ae
 3308	4390	1655593747776887885	CMakeFiles/Editor.dir/Editor_autogen/mocs_compilation.cpp.o	e651234d255b4fa6
