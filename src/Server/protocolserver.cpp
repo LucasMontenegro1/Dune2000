@@ -1,6 +1,6 @@
 #include "protocolServer.h"
 
-
+/*
 void ProtocolServer::send_player_code(Socket &socket){
     uint8_t playerCode; //Esto ya lo tendrias
     socket.send(&playerCode, 1);
@@ -61,3 +61,4 @@ void ProtocolServer::receive_unit_attack(Socket &socket){
 	uint64_t unit_enemy = ntohs(unit_enemy_received);
     //y aca tendrias que ver que haces con esos dos datos
 }
+*/
