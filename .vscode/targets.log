@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 25 17:13:58 2022
+# Make data base, printed on Sat Jun 25 22:32:59 2022
 
 # Variables
 
@@ -49,11 +49,10 @@ VSCODE_NLS_CONFIG = {"locale":"es-419","availableLanguages":{},"_languagePackSup
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:51277
+JOURNAL_STREAM = 8:36405
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
- 
 MAKEFILE_LIST := 
 # automatic
 @F = $(notdir $@)
@@ -70,9 +69,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1075
+MANAGERPID = 1056
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c72ca757-89b0-47c6-8539-73521359a3e0.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0ae898d6-9dc1-44a0-8280-0836c29f38e5.sock
 # environment
 VSCODE_CWD = /home/agus
 # default
@@ -82,7 +81,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/AgusCD:@/tmp/.ICE-unix/1399,unix/AgusCD:/tmp/.ICE-unix/1399
+SESSION_MANAGER = local/AgusCD:@/tmp/.ICE-unix/1383,unix/AgusCD:/tmp/.ICE-unix/1383
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -92,7 +91,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 8f0986f171654f848400a31a544010cd
+INVOCATION_ID = dae1affb0bc84c358c4a2804c5cdd680
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -100,7 +99,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2164
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1916
 # automatic
 %F = $(notdir $%)
 # environment
@@ -112,7 +111,7 @@ PWD = /home/agus/Documentos/tallerI/Dune2000
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1296
+SSH_AGENT_PID = 1280
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -206,7 +205,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2164
+VSCODE_PID = 1916
 # variable set hash-table stats:
 # Load=97/1024=9%, Rehash=0, Collisions=12/119=10%
 
@@ -216,9 +215,9 @@ VSCODE_PID = 2164
 
 # Directories
 
-# . (device 2051, inode 6960866): 9 files, no impossibilities.
+# . (device 2051, inode 6960866): 12 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -258,7 +257,6 @@ GNUmakefile:
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
- 
 #  Failed to be updated.
 
 # files hash-table stats:
@@ -269,13 +267,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 141 B / avg = 8 B
-# current buf: size = 8162 B / used = 141 B / count = 17 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 212 B / avg = 10 B
+# current buf: size = 8162 B / used = 212 B / count = 20 / avg = 10 B
 
-# strcache performance: lookups = 20 / hit rate = 15%
+# strcache performance: lookups = 23 / hit rate = 13%
 # hash-table stats:
- 
-# Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Sat Jun 25 17:13:58 2022
+# Load=20/8192=0%, Rehash=0, Collisions=1/23=4%
+# Finished Make data base on Sat Jun 25 22:32:59 2022
 
  

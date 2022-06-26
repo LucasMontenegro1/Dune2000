@@ -157,10 +157,13 @@ std::vector<struct RawUnit> Protocol::receive_state(Socket &socket){
 	socket.receive(&size_received, 4);
 	size = ntohs(size_received);
 	for(size_t i = 0; i < size; i++){
+		uint8_t id_unit;
+		socket.receive(&id_unit, 1);
+		raw_unit.id = id_unit;
 		uint8_t playerCode;
 		socket.receive(&playerCode, 1);
 		raw_unit.player_id = playerCode;
-		uint8_t team;
+		uint8_t team; //Este team se refiere a si es harkonnen ordos...etc
 		socket.receive(&team, 1);
 		raw_unit.player_id = playerCode;
 		uint8_t type;
