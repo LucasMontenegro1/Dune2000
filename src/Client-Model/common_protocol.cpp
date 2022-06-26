@@ -13,6 +13,8 @@
 #include "../Server/mock_server.h"
 #include <netinet/in.h>
 
+#define ALIAD 0
+#define ENEMY -1
 #define BITS 16
 #define HARKONNEN 1
 #define ATREIDES 2
@@ -23,6 +25,7 @@ Protocol::Protocol(): server{}, skins{} {
 	this->server.create_unit(1, 1, 5,30);
 	this->server.create_unit(0, 2, 0, 10);
 	this->server.create_unit(1, 1, 5,10);
+	this->server.create_unit(1, 2, 0,20);
 }
 
 Ground Protocol::receive_grounds(){
@@ -60,20 +63,43 @@ void Protocol::updateUnits(std::map <int, Unit*> &units, struct RawUnit &unit_re
 	units[unit_received.id]->modifyHp(unit_received.hp);
 }
 
-void Protocol::appendUnits(std::map <int, Unit*> &units, struct RawUnit &unit_received){
+
+void Protocol::create_unit_by_team(std::map <int, Unit*> &units, struct RawUnit &unit_received, int side){
+	switch(unit_received.team){
+		case 0:
+			units.insert(std::pair<int, Unit*>(unit_received.id, new TankClient(side, HARKONNEN, skins.tankH, skins.shoot, (int) unit_received.col * BITS, 
+						(int) unit_received.row * BITS, unit_received.id, unit_received.player_id, unit_received.hp, skins.damage)));		
+			break;
+		case 1:
+			units.insert(std::pair<int, Unit*>(unit_received.id, new TankClient(side, ATREIDES, skins.tankA, skins.shoot, (int) unit_received.col * BITS, 
+						(int) unit_received.row * BITS, unit_received.id, unit_received.player_id, unit_received.hp, skins.damage)));		
+			break;
+		case 2:
+			units.insert(std::pair<int, Unit*>(unit_received.id, new TankClient(side, ORDOS, skins.tankO, skins.shoot, (int) unit_received.col * BITS, 
+						(int) unit_received.row * BITS, unit_received.id, unit_received.player_id, unit_received.hp, skins.damage)));		
+			break;
+	}
+}
+
+
+void Protocol::appendUnits(std::map <int, Unit*> &units, struct RawUnit &unit_received, int team){
+	int side;
+	if(team == (int) unit_received.player_id) side = ALIAD;
+	else side = ENEMY;
 	switch(unit_received.type_id){
 		case 1:
-			units.insert(std::pair<int, Unit*>(unit_received.id, new TrikeClient(skins.trike, skins.shoot, (int) unit_received.col * BITS, 
+			units.insert(std::pair<int, Unit*>(unit_received.id, new TrikeClient(side, skins.trike, skins.shoot, (int) unit_received.col * BITS, 
 							(int) unit_received.row * BITS, unit_received.id, unit_received.player_id, unit_received.hp, skins.damage)));	
 			break;
 		case 2:
-			units.insert(std::pair<int, Unit*>(unit_received.id, new TankClient(HARKONNEN, skins.tankH, skins.shoot, (int) unit_received.col * BITS, 
+			//create_unit_by_team(units, unit_received, side);
+			units.insert(std::pair<int, Unit*>(unit_received.id, new TankClient(side, HARKONNEN, skins.tankH, skins.shoot, (int) unit_received.col * BITS, 
 						(int) unit_received.row * BITS, unit_received.id, unit_received.player_id, unit_received.hp, skins.damage)));		
 			break;
 	}
 }
 	
-std::vector<struct RawUnit> Protocol::receive_units(std::map <int, Unit*> &units){
+std::vector<struct RawUnit> Protocol::receive_units(std::map <int, Unit*> &units, int team){
 	//std::vector<struct RawUnit> received_units = receive_state(socket);
 	std::vector<struct RawUnit> received_units = this->server.get_state();
 	for(size_t i = 0; i < received_units.size(); i++){
@@ -81,7 +107,7 @@ std::vector<struct RawUnit> Protocol::receive_units(std::map <int, Unit*> &units
 		if(units.count(id_received) != 0){
 			updateUnits(units, received_units[i]);
 		} else {
-			appendUnits(units, received_units[i]);
+			appendUnits(units, received_units[i], team);
 		}
 	}
 	return received_units;

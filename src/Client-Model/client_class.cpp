@@ -28,7 +28,7 @@ void Client::show_window(){
 	int team = 0; //protocol.receive_player_code(socket);
 	Ground ground = protocol.receive_grounds();
 	std::map <int, Unit*> units;
-	protocol.receive_units(units);
+	protocol.receive_units(units, team);
 	Model model(units, ground, team);
 	this->screen.show(model, this->protocol);
 	//this->conexion.shutdown(0);

@@ -17,12 +17,16 @@ class TrikeClient: public Unit {
 	std::map <int, Vector2f> &frames;
 	SoundBuffer buffer;
 	Sound moveSound;
+	Image image;
+
 	
 	bool pointTo();
 
+	void selectTexture(int side);
+
 	public:
 	
-	TrikeClient(std::map <int, Vector2f> &frames, std::map <int, Vector2f> &framesAssault, int cordX, int cordY, 
+	TrikeClient(int side, std::map <int, Vector2f> &frames, std::map <int, Vector2f> &framesAssault, int cordX, int cordY, 
 							int id, int team, int hp, std::map <int, Vector2f> &framesDamage);
 
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 

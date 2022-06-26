@@ -18,16 +18,18 @@ class Protocol {
 	MockServer server;
 	Skins skins;
 
+	void create_unit_by_team(std::map <int, Unit*> &units, struct RawUnit &unit_received, int side);
+
 	void updateUnits(std::map <int, Unit*> &units, struct RawUnit &unit_received);
 
-	void appendUnits(std::map <int, Unit*> &units, struct RawUnit &unit_received);
+	void appendUnits(std::map <int, Unit*> &units, struct RawUnit &unit_received, int team);
 
 	public:
 	Protocol();
 	
 	Ground receive_grounds();
 	
-	std::vector<struct RawUnit> receive_units(std::map <int, Unit*> &units);
+	std::vector<struct RawUnit> receive_units(std::map <int, Unit*> &units, int team);
 	
 	void send_unit_attack(int unit_id, int unit_target_id);
 	

@@ -9,31 +9,48 @@
 #include "common_canyon.h"
 #include <iostream>
 
+#define ALIAD 0
+#define ENEMY -1
 #define HARKONNEN 1
 #define ATREIDES 2
 #define ORDOS 3 
 
 using namespace sf;
 
-void TankClient::choose_class(int type){
+void TankClient::selectTexture(int side, int type){
 	switch(type){
 		case HARKONNEN:
-   			texture.loadFromFile("resources/units/harkonnenTank.png");
+			if(side == ALIAD) texture.loadFromFile("resources/units/harkonnenTank.png");
+   			if(side == ENEMY){
+				image.loadFromFile("resources/units/harkonnenTankenemy.png");
+				image.createMaskFromColor(Color::White);
+				texture.loadFromImage(image);
+			}
 			break;
 		case ATREIDES:
-   			texture.loadFromFile("resources/units/atreidesTank.png");
+			if(side == ALIAD) texture.loadFromFile("resources/units/atreidesTank.png");
+			if(side == ENEMY){
+				image.loadFromFile("resources/units/atreidesTankenemy.png");
+				image.createMaskFromColor(Color::White);
+				texture.loadFromImage(image);
+			}
 			break;
 		case ORDOS:
-   			texture.loadFromFile("resources/units/ordosTank.png");
+			if(side == ALIAD) texture.loadFromFile("resources/units/ordosTank.png");
+   			if(side == ENEMY){
+				image.loadFromFile("resources/units/ordosTankenemy.png");
+				image.createMaskFromColor(Color::White);
+				texture.loadFromImage(image);
+			}
 			break;
 	}
 }
 
 
 
-TankClient::TankClient(int type, std::map <int, Vector2f> &frames, std::map <int, Vector2f> &canionFrames, int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &framesDamage): 
+TankClient::TankClient(int side, int type, std::map <int, Vector2f> &frames, std::map <int, Vector2f> &canionFrames, int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &framesDamage): 
 		Unit(cordX, cordY, id, team, hp, framesDamage), weapon(canionFrames), frames(frames) {
-	choose_class(type);
+	selectTexture(side, type);
 	sprite.setTexture(texture);
     sprite.setTextureRect(IntRect(5,2,30,25));
 	sprite.setPosition(cordX, cordY);

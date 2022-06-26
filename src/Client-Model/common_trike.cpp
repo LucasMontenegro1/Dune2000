@@ -9,12 +9,25 @@
 #include "common_assault.h"
 #include <iostream>
 
+#define ALIAD 0
+#define ENEMY -1
 
 using namespace sf;
 
-TrikeClient::TrikeClient(std::map <int, Vector2f> &frames, std::map <int, Vector2f> &framesAssault, int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &framesDamage): 
+void TrikeClient::selectTexture(int side){
+	if(side == ALIAD){
+		texture.loadFromFile("resources/units/trike.png");
+	}
+	if(side == ENEMY){
+		image.loadFromFile("resources/units/trikeenemy.png");
+		image.createMaskFromColor(Color::White);
+		texture.loadFromImage(image);
+	}
+}
+
+TrikeClient::TrikeClient(int side, std::map <int, Vector2f> &frames, std::map <int, Vector2f> &framesAssault, int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &framesDamage): 
 	Unit(cordX, cordY, id, team, hp, framesDamage), weapon(framesAssault), frames(frames) {
-	texture.loadFromFile("resources/units/trike.png");
+	selectTexture(side);
 	sprite.setTexture(texture);
 	sprite.setTextureRect(IntRect(5,60,30,30));
 	sprite.setPosition(cordX, cordY);

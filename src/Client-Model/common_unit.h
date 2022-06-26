@@ -38,6 +38,7 @@ class Unit: public Drawable{
 	int actualFrameDamage;
 	std::map <int, Vector2f> &damageFrames;
 
+
 	virtual void modifyMovePosition(bool moveRight, bool moveLeft, 
 								bool moveUp, bool moveDown);
 	

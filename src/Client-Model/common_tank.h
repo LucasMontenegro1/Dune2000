@@ -19,13 +19,15 @@ class TankClient: public Unit {
 	std::map <int, Vector2f> &frames;
 	SoundBuffer buffer;
 	Sound moveSound;
+	Image image;
+
 
     bool updateCanion();
 
-	void choose_class(int type);
+	void selectTexture(int side, int type);
 
 	public:
-	TankClient(int type, std::map <int, Vector2f> &frames, std::map <int, Vector2f> &canionFrames, 
+	TankClient(int side, int type, std::map <int, Vector2f> &frames, std::map <int, Vector2f> &canionFrames, 
 									int cordX, int cordY, int id, int team, int hp, std::map <int, Vector2f> &framesDamage);
 	
 	void draw(RenderTarget &target, RenderStates states) const;
