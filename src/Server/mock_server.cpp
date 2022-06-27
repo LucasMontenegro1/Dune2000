@@ -8,8 +8,21 @@
 
 typedef std::pair<BlockPosition, BlockTerrain> TerrainPos;
 
-MockServer::MockServer() :
-cu(360, 360){}
+MockServer::MockServer(int limitPlayres, std::string playerName, int team) :
+cu(360, 360){
+	players.insert(std::pair<std::string, int>(playerName, team));
+	this->limitPlayers = limitPlayers;
+	this->actualPlayers = 1;
+}
+
+bool MockServer::addPlayer(std::string playerName, int team){
+	if(actualPlayers + 1 > limitPlayers) return false;
+	players.insert(std::pair<std::string, int>(playerName, team));
+}
+
+std::tuple<int, int> MockServer::listGame(){
+	return make_tuple(limitPlayers, actualPlayers);
+}
 
 void MockServer::load_map(std::vector<std::pair<struct map_coor, unsigned int>> terrains)
 {
