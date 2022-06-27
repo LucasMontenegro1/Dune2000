@@ -6,7 +6,7 @@
 #include <sys/socket.h>
 #include <cstring>
 #include <tuple>
-#include "client.h"
+#include "client_class.h"
 #include <vector>
 #include <sstream>
 #include <SFML/Graphics.hpp>

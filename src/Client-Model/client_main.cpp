@@ -4,7 +4,7 @@
 #include <arpa/inet.h>
 #include <stdlib.h>
 #include <sys/socket.h>
-#include "client.h"
+#include "client_class.h"
 
 #define ERROR 1
 #define SUCCESS 0

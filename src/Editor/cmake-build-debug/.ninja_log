@@ -1,20 +1,20 @@
 # ninja log v5
-64	4418	1655847227213085941	CMakeFiles/Editor.dir/ConstantGetter.cpp.o	430535de4334a5ae
-834	1965	1655593745352985853	CMakeFiles/Editor.dir/StateSaver.cpp.o	918e85f2f49f61b4
-2	63	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
-160	797	1655593744185033237	CMakeFiles/Editor.dir/camera.cpp.o	27f1c6240faf35b5
-798	1431	1655593744821007419	CMakeFiles/Editor.dir/ground.cpp.o	4eb7ac25e7edd5cd
-1	62	1655999747562603887	build.ninja	e9a478930194f2b
-1965	3458	1655593746844925491	CMakeFiles/Editor.dir/MapLoader.cpp.o	26c878a8f9f13f11
-2	63	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	779664d2156e04cc
-2932	3571	1655593746960920801	CMakeFiles/Editor.dir/Button.cpp.o	ad433a0e2ab256ed
-64	6595	1655847229389058560	CMakeFiles/Editor.dir/main.cpp.o	e25964cef0031f9b
-1431	3307	1655593746688931795	CMakeFiles/Editor.dir/editormainwindow.cpp.o	9193cff247f86daf
-160	810	1655593744197032749	CMakeFiles/Editor.dir/EditorMenu.cpp.o	fc885e61da68794e
-6595	9043	1655847231833027817	Editor	714ce1692124fa11
-2	63	0	Editor_autogen/mocs_compilation.cpp	779664d2156e04cc
-159	834	1655593744225031612	CMakeFiles/Editor.dir/textBox.cpp.o	e201e24509befe06
-2014	2664	1655593746040957988	CMakeFiles/Editor.dir/ConstructionCenter.cpp.o	93741b3a202eab59
-2	63	0	CMakeFiles/Editor_autogen	779664d2156e04cc
-64	4452	1655847227245085539	CMakeFiles/Editor.dir/Editor.cpp.o	3b20c2cd8064f0ae
-3308	4390	1655593747776887885	CMakeFiles/Editor.dir/Editor_autogen/mocs_compilation.cpp.o	e651234d255b4fa6
+4043	4297	1656255179649500497	CMakeFiles/Editor.dir/ConstantGetter.cpp.o	9fd3f0d4cfda9d32
+894	2441	1656255177793579095	CMakeFiles/Editor.dir/StateSaver.cpp.o	3599bd24741063b6
+2	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/Editor_autogen/mocs_compilation.cpp	151bfe691a87559e
+5	696	1656255176049653275	CMakeFiles/Editor.dir/camera.cpp.o	cd37a80aca7ea4fb
+696	1421	1656255176773622446	CMakeFiles/Editor.dir/ground.cpp.o	6fa8320f06e871ec
+0	80	1656255182285389477	build.ninja	4c3c7346a75153bf
+2281	6234	1656255181581419058	CMakeFiles/Editor.dir/MapLoader.cpp.o	8489886c772c1783
+2	4	0	/home/lucas/Desktop/Taller I/Dune2000/src/Editor/cmake-build-debug/CMakeFiles/Editor_autogen	151bfe691a87559e
+4361	5053	1656255180405468583	CMakeFiles/Editor.dir/Button.cpp.o	93916d60a50cb28e
+4297	6017	1656255181369427975	CMakeFiles/Editor.dir/main.cpp.o	5adddbf3c66957b4
+1421	4043	1656255179393511317	CMakeFiles/Editor.dir/editormainwindow.cpp.o	4aecad96ee027871
+5	894	1656255176245644929	CMakeFiles/Editor.dir/EditorMenu.cpp.o	fff858c1a0d4c66b
+6234	6753	1656255182101397197	Editor	2f2a69d243c47708
+2	4	0	Editor_autogen/mocs_compilation.cpp	151bfe691a87559e
+4	824	1656255176177647824	CMakeFiles/Editor.dir/textBox.cpp.o	77622d3ad03a0f58
+2441	3170	1656255178521548226	CMakeFiles/Editor.dir/ConstructionCenter.cpp.o	384f42f675edca8b
+2	4	0	CMakeFiles/Editor_autogen	151bfe691a87559e
+825	2281	1656255177633585891	CMakeFiles/Editor.dir/Editor.cpp.o	3d15ceed7da8f14e
+3170	4361	1656255179713497791	CMakeFiles/Editor.dir/Editor_autogen/mocs_compilation.cpp.o	13735b33e7ca2971

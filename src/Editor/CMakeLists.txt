@@ -4,6 +4,10 @@ project(Editor)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -pedantic -pedantic-errors")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
 
 find_package(SFML COMPONENTS system window graphics network audio)
 add_executable(Editor main.cpp Button.cpp textBox.cpp textBox.h EditorMenu.cpp EditorMenu.h camera.cpp ground.cpp Editor.cpp Editor.h StateSaver.cpp StateSaver.h

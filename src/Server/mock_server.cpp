@@ -50,7 +50,7 @@ std::vector<struct RawUnit> MockServer::get_state() const
 	std::vector<RawUnit> raw_units;
 	struct RawUnit raw_unit;
 	for (auto const &it : units) {
-		shared_ptr<Unit> unit = dynamic_pointer_cast<Unit>(it); // por ahora son todas unidades. Mas adelante con edificio y qcyo va a haber otros tipos
+		shared_ptr<Unit> unit = dynamic_pointer_cast<Unit>(it);
 		if (unit->get_state() == creating)
 			continue;
 

@@ -6,7 +6,6 @@
 #define CONSTRUCTIONMENU_H
 
 #include "Button.h"
-#include "BuildingImageHandler.h"
 #include "UnitImageHandler.h"
 #include "VehicleImageHandler.h"
 #include "common_protocol.h"

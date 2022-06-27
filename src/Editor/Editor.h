@@ -14,17 +14,17 @@ using namespace sf;
 class Editor {
 private:
     std::vector<ConstructionCenter*> centers;
-    std::string name;
     int posX;
     int posY;
     View view;
     View menu_view;
     RenderWindow window;
-    EditorMenu menu;
     Camera* camera;
     Ground* ground;
-    std::vector<std::vector<int>> level;
     bool game_over;
+    EditorMenu menu;
+    std::vector<std::vector<int>> level;
+    std::string name;
     int players;
     void updateCamera();
     bool checkConstruction(int, int);
@@ -35,7 +35,7 @@ public:
     void gameloop();
     ~Editor();
     void setMap(std::vector<std::vector<int>>);
-    void setCenters(std::vector<ConstructionCenter *>& centers);
+    void setCenters(std::vector<ConstructionCenter *>& center);
 };
 
 

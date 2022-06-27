@@ -10,12 +10,12 @@
 
 EditorMainWindow::EditorMainWindow(std::string& name,int& x, int& y, int& mode, int& nOfPlayers,QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::EditorMainWindow)
     , x(x)
     , y(y)
     , mode(mode)
-    , nOfPlayers(nOfPlayers)
     , name(name)
+    , nOfPlayers(nOfPlayers)
+    , ui(new Ui::EditorMainWindow)
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
@@ -25,14 +25,14 @@ EditorMainWindow::EditorMainWindow(std::string& name,int& x, int& y, int& mode, 
     MapLoader loader;
     std::string path = "../map/";
     for (const auto & entry : std::filesystem::directory_iterator(path)){
-        std::string path = entry.path();
+        std::string _path = entry.path();
         if (path.find("yaml")){
             Game newGame;
-            loader.loadMapPreview(path,newGame.y, newGame.x, newGame.players,newGame.name);
+            loader.loadMapPreview(_path,newGame.y, newGame.x, newGame.players,newGame.name);
             games.push_back(newGame);
         }
     }
-    for (int i = 0; i < games.size() ; ++i) {
+    for (int i = 0; i < (int) games.size() ; ++i) {
         QString n = QString::fromStdString(games[i].name);
         ui->comboBox->addItem(n);
     }
@@ -70,7 +70,7 @@ void EditorMainWindow::on_back_2_clicked()
 
 void EditorMainWindow::on_startLoad_clicked()
 {
-    for (int i = 0; i < games.size() ; ++i) {
+    for (int i = 0; i < (int) games.size() ; ++i) {
         if (games[i].name == ui->comboBox->currentText().toStdString()){
             x = games[i].x;
             y = games[i].y;
@@ -87,7 +87,6 @@ void EditorMainWindow::on_startnew_clicked()
 {
     QString _name(ui->gameName->text());
     if (!ui->MapX->text().isEmpty() || !ui->MapX->text().isEmpty() || !_name.isEmpty() ) {
-        QString _name(ui->gameName->text());
          x = ui->MapX->text().toInt();
          y = ui->MapY->text().toInt();
         name = _name.toStdString();
@@ -102,14 +101,14 @@ void EditorMainWindow::on_startnew_clicked()
 }
 
 void EditorMainWindow::on_comboBox_currentIndexChanged(int index) {
-    for (int i = 0; i < games.size() ; ++i) {
+    for (int i = 0; i < (int) games.size() ; ++i) {
         if (games[i].name == ui->comboBox->currentText().toStdString()){
             std::string rows = std::to_string(games[i].x);
-            QString x = QString::fromStdString(rows);
-            ui->MapX_2->setText(x);
+            QString _x = QString::fromStdString(rows);
+            ui->MapX_2->setText(_x);
             std::string cols = std::to_string(games[i].y);
-            QString y = QString::fromStdString(cols);
-            ui->MapY_2->setText(y);
+            QString _y = QString::fromStdString(cols);
+            ui->MapY_2->setText(_y);
             std::string players = std::to_string(games[i].players);
             QString n = QString::fromStdString(players);
             ui->MapY_3->setText(n);

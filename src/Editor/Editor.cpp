@@ -50,7 +50,7 @@ void Editor::gameloop() {
             Event event;
             while (window.pollEvent(event)) {
                 if (event.type == sf::Event::MouseButtonPressed){
-                    for (int i = 0; i < centers.size(); ++i) {
+                    for (int i = 0; i < (int) centers.size(); ++i) {
                         centers[i]->unSelect();
                     }
                 }
@@ -102,7 +102,7 @@ void Editor::gameloop() {
                     window.setView(view);
                     sf::Vector2i WinPos = sf::Mouse::getPosition(window);
                     sf::Vector2f mouse = window.mapPixelToCoords(WinPos);
-                    for (int i = 0; i <centers.size() ; ++i) {
+                    for (int i = 0; i < (int) centers.size() ; ++i) {
                         int x = centers[i]->getPosition().x;
                         int y = centers[i]->getPosition().y;
                         int xc = mouse.x/TSIZE;
@@ -115,7 +115,7 @@ void Editor::gameloop() {
                 }
                 window.setView(menu_view);
                 menu.update(window, event, selection);
-                if (menu.checkSaved(window, event) && centers.size()==players){
+                if (menu.checkSaved(window, event) && (int) centers.size()==players){
                     saver.saveStatus(name, level, players,centers);
                 }
             }
@@ -167,7 +167,6 @@ void Editor::setSprite(int selection) {
     int TSIZE = ConstantGetter::getTsize();
     window.setView(view);
     sf::Vector2i WinPos = sf::Mouse::getPosition(window);
-    sf::Vector2f pos = view.getSize();
     int _x = window.getSize().x;
     int _y = window.getSize().y;
     float scale = view.getViewport().width;
@@ -181,7 +180,6 @@ void Editor::setSprite(int selection) {
 
 bool Editor::checkConstruction(int x1, int y1) {
     sf::Vector2i WinPos = sf::Mouse::getPosition(window);
-    sf::Vector2f pos = view.getSize();
     int _x = window.getSize().x;
     int _y = window.getSize().y;
     float scale = view.getViewport().width;
@@ -189,7 +187,7 @@ bool Editor::checkConstruction(int x1, int y1) {
     if (WinPos.x > _x * scale || WinPos.y > _y * scale2 ) {
         return false;
     }
-    if (centers.size()>=players){
+    if ((int)centers.size()>=players){
         return false;
     }
     for (int i = 0; i < 3; ++i) {
@@ -201,8 +199,8 @@ bool Editor::checkConstruction(int x1, int y1) {
     }
 
     for (auto & center : centers) {
-       Vector2i pos = center->getPosition();
-        int distance = sqrt(pow(pos.x - x1, 2) + pow(pos.y - y1, 2));
+       Vector2i position = center->getPosition();
+        int distance = sqrt(pow(position.x - x1, 2) + pow(position.y - y1, 2));
         if (distance<10){
             return false;
         }
@@ -211,14 +209,14 @@ bool Editor::checkConstruction(int x1, int y1) {
 }
 
 Editor::~Editor() {
-    for (int i = 0; i <centers.size() ; ++i) {
+    for (int i = 0; i <(int)centers.size() ; ++i) {
         delete centers[i];
     }
     delete this->ground;
     delete this->camera;
 }
 
-void Editor::setCenters(std::vector<ConstructionCenter *>& centers) {
-    this->centers = centers;
+void Editor::setCenters(std::vector<ConstructionCenter *>& center) {
+    this->centers = center;
 }
 

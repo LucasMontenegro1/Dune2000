@@ -55,7 +55,7 @@ int Model::get_x_size(){
 }
 
 int Model::get_unit(float cordX, float cordY){
-	int id;
+	int id = 0;
 	for(auto iter = units.begin(); iter != units.end(); ++iter){
 		if(iter->second->is_there(cordX, cordY)) id = iter->second->get_id_unit();
 	}	

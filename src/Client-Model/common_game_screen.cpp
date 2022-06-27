@@ -8,7 +8,7 @@
 #include <typeinfo>
 #include <tuple>
 #include <map>
-#include "client.h"
+#include "client_class.h"
 #include <vector>
 #include <sstream>
 #include <SFML/Graphics.hpp>

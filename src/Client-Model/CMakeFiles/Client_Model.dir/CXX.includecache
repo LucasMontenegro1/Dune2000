@@ -1,0 +1,908 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/Button.cpp
+iostream
+-
+Button.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/Button.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/Button.h
+SFML/Graphics.hpp
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/ConstructionMenu.cpp
+iostream
+-
+ConstructionMenu.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/ConstructionMenu.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/ConstructionMenu.h
+Button.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/Button.h
+UnitImageHandler.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/UnitImageHandler.h
+VehicleImageHandler.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/VehicleImageHandler.h
+common_protocol.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/UnitButton.cpp
+iostream
+-
+UnitButton.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/UnitButton.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/UnitButton.h
+Button.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/Button.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/UnitImageHandler.cpp
+UnitImageHandler.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/UnitImageHandler.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/UnitImageHandler.h
+Button.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/Button.h
+UnitButton.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/UnitButton.h
+common_protocol.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/VehicleImageHandler.cpp
+VehicleImageHandler.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/VehicleImageHandler.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/VehicleImageHandler.h
+Button.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/Button.h
+UnitButton.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/UnitButton.h
+common_protocol.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/client.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_protocol.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+common_model.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_model.h
+common_game_screen.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_game_screen.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/client_class.cpp
+iostream
+-
+string
+-
+fstream
+-
+arpa/inet.h
+-
+stdlib.h
+-
+sys/socket.h
+-
+cstring
+-
+tuple
+-
+client.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/client.h
+vector
+-
+sstream
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_protocol.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+common_model.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_model.h
+common_game_screen.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_game_screen.h
+map
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/client_main.cpp
+iostream
+-
+string
+-
+fstream
+-
+arpa/inet.h
+-
+stdlib.h
+-
+sys/socket.h
+-
+client.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/client.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_assault.cpp
+vector
+-
+iostream
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+time.h
+-
+common_assault.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_assault.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_assault.h
+vector
+-
+string
+-
+tuple
+-
+map
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+SFML/Audio.hpp
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_camera.cpp
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_camera.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_camera.h
+common_model.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_model.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_camera.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_model.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_model.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_canyon.cpp
+vector
+-
+iostream
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+time.h
+-
+common_canyon.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_canyon.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_canyon.h
+vector
+-
+string
+-
+tuple
+-
+map
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+SFML/Audio.hpp
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_explosion.cpp
+vector
+-
+iostream
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+time.h
+-
+common_explosion.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_explosion.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_explosion.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+SFML/Audio.hpp
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_frames.cpp
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+time.h
+-
+iostream
+-
+tuple
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_game_screen.cpp
+iostream
+-
+string
+-
+fstream
+-
+arpa/inet.h
+-
+stdlib.h
+-
+sys/socket.h
+-
+cstring
+-
+typeinfo
+-
+tuple
+-
+map
+-
+client.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/client.h
+vector
+-
+sstream
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_protocol.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+common_model.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_model.h
+common_game_screen.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_game_screen.h
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+common_camera.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_camera.h
+common_ground.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_ground.h
+common_pointer.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_pointer.h
+ConstructionMenu.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/ConstructionMenu.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_game_screen.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_protocol.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+common_model.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_model.h
+common_camera.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_camera.h
+common_pointer.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_pointer.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_ground.cpp
+iostream
+-
+string
+-
+fstream
+-
+stdlib.h
+-
+tuple
+-
+vector
+-
+sstream
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_ground.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_ground.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_ground.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_model.cpp
+vector
+-
+string
+-
+tuple
+-
+map
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+common_ground.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_ground.h
+common_model.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_model.h
+common_explosion.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_explosion.h
+../Server/mock_server.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/mock_server.h
+iostream
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_model.h
+vector
+-
+string
+-
+tuple
+-
+map
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+common_ground.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_ground.h
+common_explosion.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_explosion.h
+../Server/mock_server.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/mock_server.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_pointer.cpp
+iostream
+-
+string
+-
+fstream
+-
+arpa/inet.h
+-
+stdlib.h
+-
+sys/socket.h
+-
+cstring
+-
+tuple
+-
+client.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/client.h
+vector
+-
+sstream
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_protocol.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+common_pointer.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_pointer.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_pointer.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.cpp
+vector
+-
+string
+-
+tuple
+-
+map
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+iostream
+-
+common_trike.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_trike.h
+common_tank.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_tank.h
+common_protocol.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+common_ground.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_ground.h
+../Server/mock_server.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/mock_server.h
+netinet/in.h
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_protocol.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+map
+-
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+common_trike.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_trike.h
+common_tank.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_tank.h
+common_ground.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_ground.h
+common_frames.cpp
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_frames.cpp
+../Server/mock_server.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/mock_server.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_selector.cpp
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+iostream
+-
+common_selector.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_selector.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_selector.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_tank.cpp
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+time.h
+-
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+common_tank.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_tank.h
+common_canyon.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_canyon.h
+iostream
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_tank.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+common_canyon.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_canyon.h
+SFML/Audio.hpp
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_trike.cpp
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+time.h
+-
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+common_trike.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_trike.h
+common_assault.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_assault.h
+iostream
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_trike.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Audio.hpp
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+common_assault.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_assault.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.cpp
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+common_assault.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_assault.h
+iostream
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_unit.h
+vector
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
+-
+time.h
+-
+common_selector.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/common_selector.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/building.cpp
+building.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/building.h
+../configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/building.h
+teamable.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/teamable.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/construction_centre.cpp
+construction_centre.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/construction_centre.h
+../configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/construction_centre.h
+building.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/building.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/light_infantry.cpp
+light_infantry.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/light_infantry.h
+../configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/light_infantry.h
+unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/unit.h
+../Mobility/infantry_mobility.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/infantry_mobility.h
+../Weapons/assault_rifle.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/assault_rifle.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/tank.cpp
+tank.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/tank.h
+../configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/tank.h
+unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/unit.h
+../Mobility/vehicle_mobility.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/vehicle_mobility.h
+../Weapons/cannon.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/cannon.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/teamable.cpp
+teamable.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/teamable.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/teamable.h
+../Map/block_position.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/block_position.h
+vector
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/trike.cpp
+trike.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/trike.h
+../configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/trike.h
+unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/unit.h
+../Mobility/vehicle_mobility.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/vehicle_mobility.h
+../Weapons/assault_rifle.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/assault_rifle.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/unit.cpp
+unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/unit.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/unit.h
+teamable.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/teamable.h
+../Map/terrain_map.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/terrain_map.h
+../Weapons/weapon.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/weapon.h
+map
+-
+memory
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/block_position.cpp
+block_position.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/block_position.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/block_position.h
+complex
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/block_terrain.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/path_node.cpp
+./path_node.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/path_node.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/path_node.h
+./block_position.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/block_position.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/terrain_map.cpp
+./terrain_map.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/terrain_map.h
+queue
+-
+stdexcept
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/terrain_map.h
+./block_terrain.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/block_terrain.h
+./block_position.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/block_position.h
+../Mobility/unit_mobility.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/unit_mobility.h
+./path_node.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/path_node.h
+list
+-
+vector
+-
+map
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/infantry_mobility.cpp
+./infantry_mobility.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/infantry_mobility.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/infantry_mobility.h
+./unit_mobility.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/unit_mobility.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/unit_mobility.h
+../Map/block_terrain.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/block_terrain.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp
+vehicle_mobility.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/vehicle_mobility.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/vehicle_mobility.h
+unit_mobility.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Mobility/unit_mobility.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/assault_rifle.cpp
+assault_rifle.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/assault_rifle.h
+../configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/assault_rifle.h
+weapon.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/weapon.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/cannon.cpp
+cannon.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/cannon.h
+../configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/cannon.h
+weapon.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/weapon.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/weapon.cpp
+weapon.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/weapon.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Weapons/weapon.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/configuration_loader.cpp
+../Model/configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/control_unit.cpp
+control_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/control_unit.h
+../Model/Entities/unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/unit.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/control_unit.h
+../Model/Map/terrain_map.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/terrain_map.h
+../Model/Entities/teamable.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/teamable.h
+entity_factory.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/entity_factory.h
+vector
+-
+map
+-
+memory
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/entity_factory.cpp
+entity_factory.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/entity_factory.h
+../Model/configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+../Model/Entities/light_infantry.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/light_infantry.h
+../Model/Entities/tank.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/tank.h
+../Model/Entities/trike.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/trike.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/entity_factory.h
+../Model/Map/terrain_map.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Map/terrain_map.h
+../Model/Entities/teamable.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/teamable.h
+memory
+-
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/mock_server.cpp
+mock_server.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/mock_server.h
+../Model/Entities/unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/Entities/unit.h
+../Model/configurations.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Model/configurations.h
+
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/mock_server.h
+control_unit.h
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/control_unit.h
+vector
+-
+string
+-
+

@@ -142,7 +142,7 @@ bool Unit::animate_destruction(){
 }
 
 int Unit::calculeFramePosition(bool moveRight, bool moveLeft, bool moveUp, bool moveDown){
-	int frameDestiny;
+	int frameDestiny = 0;
 	if(moveRight){
 		if(moveUp) frameDestiny = 5;
 		if(moveDown) frameDestiny = 13;

@@ -69,6 +69,8 @@ void Button::buttonAction() {
         case BTN_PRESSED:
             shape.setFillColor(sf::Color(255,255,255,120));
             break;
+        case BTN_CLICKED:
+            break;
     }
 }
 
