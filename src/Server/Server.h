@@ -8,9 +8,11 @@
 #include <atomic>
 #include "../Common/Sockets.h"
 #include "GamesHandler.h"
+#include "blocking_queue.h"
 #include "Protocol.h"
 #include "ClientHandler.h"
 #include <vector>
+
 
 
 class Server {
@@ -19,6 +21,9 @@ class Server {
     Socket skt;
     std::atomic<bool> is_running;
     GamesHandler gamesHandler;
+
+    void send_state();
+
 public:
     explicit Server(const char* servicename);
     ~Server();

@@ -19,15 +19,23 @@ Server::Server(const char *servicename):skt(servicename), is_running(true){
 Server::~Server() {
 }
 
+void Server::send_state(){
+    
+}
 
 void Server::listener() {
     while (is_running) {
         try {
             Socket accept = skt.accept();
             auto *nuevo = new ClientHandler(std::move(accept), &gamesHandler);
+            gamesHandler.update();
             nuevo->start();
             clients.push_back(nuevo);
             auto it = clients.begin();
+            T actual_state = gamesHandler.send_state(); //Obtengo el estado actual del juego
+            for(size_t i = 0; i < clients.size(); i++){
+                clients[i].send(actual_state); //Envio el estado a cada uno de los clientes
+            }
             while (it != clients.end()) {
                 if ((*it)->isOver()) {
                     (*it)->stop();
@@ -52,6 +60,7 @@ void Server::listener() {
 
 }
 
+template<class T>
 void Server::run() {
     std::thread acceptor(&Server::listener, this);
     while (is_running){

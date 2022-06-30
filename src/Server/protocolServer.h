@@ -19,6 +19,8 @@ class ProtocolServer {
 
     void send_units(Socket &socket);
 
+    uint8_t receive_order(Socket &socket);
+
     void receive_unit_move(Socket &socket);
 
     void receive_unit_attack(Socket &socket);

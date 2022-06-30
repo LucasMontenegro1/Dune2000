@@ -5,13 +5,19 @@
 #define SERVER_GAMESHANDLER_H
 #include "mock_server.h"
 #include "blocking_queue.h"
-#include "GameHandler.h"
 
-
+template<class T>
 class GamesHandler {
     //std::map<std::string, MockServer*> games;
-    std::map<std::string, GameHandler> games;
+    MockServer game;
+    BlockingQueue receiver;
+    
     public:
+    void push_order(const T &val);
+
+    void update();
+
+    T send_state();
 
     /*
     bool create_game(std::string gameName, int limitPlayers, std::string playerName, int team);

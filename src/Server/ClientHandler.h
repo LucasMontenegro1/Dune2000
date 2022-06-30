@@ -16,7 +16,10 @@ private:
     Protocol pr;
     Socket peer;
     std::atomic<bool> is_over;
-    GamesHandler* games;
+    GamesHandler* game;
+    BlockingQueue sender;
+
+
 public:
     void run() override;
     void stop() override;

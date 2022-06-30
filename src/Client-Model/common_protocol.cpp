@@ -20,7 +20,7 @@
 #define ATREIDES 2
 #define ORDOS 3 
 
-Protocol::Protocol(): server{}, skins{} {
+Protocol::Protocol(): server{0, "a", 0}, skins{} {
 	this->server.create_unit(0, 1, 0, 30);
 	this->server.create_unit(1, 1, 5,30);
 	this->server.create_unit(0, 2, 0, 10);
@@ -116,8 +116,10 @@ std::vector<struct RawUnit> Protocol::receive_units(std::map <int, Unit*> &units
 
 void Protocol::send_unit_attack(int unit_id, int unit_target_id){
 	/*
+	uint8_t order_attack = 2;
 	uint64_t unit_player = htons(unit_id);
 	uint64_t unit_enemy = htons(unit_target_id);
+	socket.send(&order_attack, 1);
 	socket.send(&unit_player, 4);
 	socket.send(&unit_enemy, 4);
 	*/
@@ -128,9 +130,11 @@ void Protocol::send_unit_attack(int unit_id, int unit_target_id){
 	
 void Protocol::send_unit_move(int unit_id, float cordX, float cordY){
 	/*
+	uint8_t order_move = 1;
 	uint64_t unit_player = htons(unit_id);
 	uint32_t go_x = htons(cordX / BITS);
 	uint32_t go_Y = htons(cordY / BITS);
+	socket.send(&order_move, 1);
 	socket.send(&unit_player, 4);
 	socket.send(&go_x, 2);
 	socket.send(&go_y, 2);

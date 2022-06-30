@@ -42,6 +42,12 @@ void ProtocolServer::send_units(Socket &socket){
     }
 }
 
+uint8_t ProtocolServer::receive_order(Socket &socket){
+	uint8_t order;
+	socket.receive(&order, 1);
+	return order;
+}
+
 void ProtocolServer::receive_unit_move(Socket &socket){
     uint64_t unit_player_received; uint32_t go_x_received; uint32_t go_Y_received;
     socket.receive(&unit_player_received, 4);

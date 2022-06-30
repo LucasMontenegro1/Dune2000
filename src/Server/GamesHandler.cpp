@@ -6,10 +6,23 @@
 #include "mock_server.h"
 #include <iostream>
 
+//Game es el modelo de la partida y receiver la blockingqueue que recibe todas las instrucciones
+template<class T>
+void GamesHandler::push_order(const T &val){
+    receiver.push(val);
+}
 
+template<class T>
+void GamesHandler::update(){
+    T order = receiver.pop();
+    game.apply_order(order); //Aplico esa instruccion al servidor
+}
 
-
-
+template<class T>
+T GamesHandler::send_state(){
+    T state = game.get_state();
+    return state;
+}
 
 
 //Esto esta mal pero lo guardo por si llega a servir --------------------------------------------------
