@@ -33,9 +33,16 @@ struct map_coor {
 
 class MockServer {
 	ControlUnit cu;
+	std::map<std::string, int> players;
+	int limitPlayers;
+	int actualPlayers;
 
 public:
-	MockServer();
+	MockServer(int limitPlayres, std::string playerName, int team);
+
+	bool addPlayer(std::string playerName, int team);
+
+	std::tuple<int, int> listGame();
 
 	void load_map(std::vector<std::pair<struct map_coor, unsigned int>> terrains);
 
