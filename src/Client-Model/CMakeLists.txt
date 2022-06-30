@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(Client_Model)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -pedantic -pedantic-errors")
@@ -38,11 +39,17 @@ file(GLOB Model_SRCS
         "${PROJECT_SOURCE_DIR}/../Model/Weapons/*.cpp"
         )
 
+file(GLOB Common_SRCS
+        "${PROJECT_SOURCE_DIR}/../Common/*cpp"
+        "${PROJECT_SOURCE_DIR}/../Common/*h"
+        )
+
 
 add_executable(Client_Model
         ${all_SRCS}
         ${server_SRCS}
         ${Model_SRCS}
+        ${Common_SRCS}
         )
 
 find_package(yaml-cpp REQUIRED)

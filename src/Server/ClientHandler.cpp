@@ -9,9 +9,11 @@
 #define JOIN_GAME 1
 #define LIST_GAMES 2
 #define CREATE_GAME 3
+#define LIST_MAPS 4
 
 ClientHandler::ClientHandler(Socket skt, GamesHandler *gamesHandler)
         : is_over(false), games(gamesHandler) {
+    this->peer = std::move(skt);
 }
 
 void ClientHandler::run() {
@@ -27,6 +29,9 @@ void ClientHandler::run() {
                     case LIST_GAMES:
                         break;
                     case CREATE_GAME:
+                        break;
+                    case LIST_MAPS:
+                        //pr.sendMaps();
                         break;
                 }
             }

@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Client_Model",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Client_Model::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Client_Model-Debug-8a43265c48dfa614d5cf.json",
+					"name" : "Client_Model",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Client_Model_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Client_Model_autogen-Debug-3b50ce91a9445d2f5fd8.json",
+					"name" : "Client_Model_autogen",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug",
+		"source" : "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

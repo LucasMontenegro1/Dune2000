@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 27 11:56:18 2022
+# Make data base, printed on Mon Jun 27 13:48:11 2022
 
 # Variables
 
@@ -42,24 +42,24 @@ GDMSESSION = ubuntu
 XMODIFIERS = @im=ibus
 # makefile
 CURDIR := /home/lucas/Desktop/Taller I/Dune2000/src/Client-Model
-# makefile (from 'Makefile', line 4)
-UNIT_FILES = ../Model/Entities/unit.cpp ../Model/Entities/teamable.cpp ../Model/Weapons/weapon.cpp
-# makefile
+# makefile (from 'Makefile', line 39)
 SHELL = /bin/sh
+# makefile (from 'Makefile', line 45)
+RM = /usr/bin/cmake -E remove -f
 # environment
 SNAP_DATA = /var/snap/code/99
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 JOURNAL_STREAM = 8:42718
-# makefile (from 'Makefile', line 1)
-CFLAGS = -Wall -Werror -pedantic -pedantic-errors -std=c++17
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
 SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
+# makefile (from 'Makefile', line 54)
+CMAKE_BINARY_DIR = "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model"
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
@@ -68,10 +68,6 @@ JAVA_HOME = /home/lucas/.sdkman/candidates/java/current
 @F = $(notdir $@)
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
-# makefile (from 'Makefile', line 3)
-MAP_FILES = ../Model/Map/terrain_map.cpp ../Model/Map/block_position.cpp ../Model/Map/path_node.cpp
-# makefile (from 'Makefile', line 10)
-CLIENT_FILES = client_class.cpp common_camera.cpp common_game_screen.cpp common_ground.cpp common_model.cpp common_explosion.cpp  common_protocol.cpp common_pointer.cpp common_selector.cpp common_frames.cpp Button.cpp Button.h ConstructionMenu.cpp ConstructionMenu.h UnitImageHandler.cpp UnitImageHandler.h VehicleImageHandler.cpp VehicleImageHandler.h  UnitButton.h UnitButton.cpp
 # environment
 USERNAME = lucas
 # environment
@@ -139,11 +135,9 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 40241
+GIO_LAUNCHED_DESKTOP_FILE_PID = 46773
 # automatic
 %F = $(notdir $%)
-# makefile (from 'Makefile', line 9)
-SRV_FILES = ../Server/mock_server.cpp ../Server/control_unit.cpp ../Server/entity_factory.cpp ../Server/configuration_loader.cpp
 # environment
 DISPLAY = :0
 # environment
@@ -152,8 +146,6 @@ VSCODE_PIPE_LOGGING = true
 SNAP_INSTANCE_KEY = 
 # environment
 PWD = /home/lucas/Desktop/Taller I/Dune2000/src/Client-Model
-# makefile (from 'Makefile', line 8)
-BUILDING_FILES = ../Model/Entities/building.cpp ../Model/Entities/teamable.cpp ../Model/Map/block_position.cpp ../Server/configuration_loader.cpp
 # environment
 GROOVY_HOME = /home/lucas/.sdkman/candidates/groovy/current
 # default
@@ -162,8 +154,6 @@ GROOVY_HOME = /home/lucas/.sdkman/candidates/groovy/current
 SSH_AGENT_PID = 1724
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
-# makefile (from 'Makefile', line 12)
-WEAPONS_FILES = common_assault.cpp common_canyon.cpp
 # environment
 GTK_MODULES = gail:atk-bridge
 # environment
@@ -172,8 +162,6 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 HOME = /home/lucas
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
-# makefile (from 'Makefile', line 5)
-INFANTRY_FILES = ../Model/Entities/light_infantry.cpp ../Model/Mobility/infantry_mobility.cpp
 # environment
 VSCODE_CLI = 1
 # environment
@@ -182,6 +170,8 @@ VSCODE_CODE_CACHE_PATH = /home/lucas/.config/Code/CachedData/30d9c6cd9483b2cc586
 LOGNAME = lucas
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from 'Makefile', line 48)
+EQUALS = =
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -217,7 +207,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-222a9a8f-7cf0-4a0b-b243-c4db5a1c15b0.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8e9f5695-91ea-416a-bae9-8d236336579d.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -227,9 +217,11 @@ SNAP_REVISION = 99
 # environment
 LC_MONETARY = es_AR.UTF-8
 # makefile
-.DEFAULT_GOAL := client
+.DEFAULT_GOAL := default_target
 # environment
 XDG_CURRENT_DESKTOP = Unity
+# makefile (from 'Makefile', line 51)
+CMAKE_SOURCE_DIR = "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model"
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -245,13 +237,11 @@ VSCODE_IPC_HOOK = /run/user/1000/vscode-f23a0542-1.68.1-main.sock
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile
-MAKEFLAGS = pqrR
+MAKEFLAGS = pqrRs
 # environment
-MFLAGS = -pqrR
+MFLAGS = -pqrRs
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# makefile (from 'Makefile', line 11)
-UNITS_FILES = common_tank.cpp common_trike.cpp common_unit.cpp 
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -272,8 +262,6 @@ MAKEFILES :=
 SNAP_COOKIE = QTlEglPx84aMa0suHGVg6E8HRUsui5Lre2jR5cEHag5fgaooWRlE
 # environment
 LC_NUMERIC = es_AR.UTF-8
-# makefile (from 'Makefile', line 6)
-VEHICLE_FILES = ../Model/Entities/tank.cpp ../Model/Entities/trike.cpp ../Model/Mobility/vehicle_mobility.cpp
 # automatic
 <F = $(notdir $<)
 # environment
@@ -282,21 +270,16 @@ LC_MEASUREMENT = es_AR.UTF-8
 SNAP_NAME = code
 # environment
 SDKMAN_CANDIDATES_DIR = /home/lucas/.sdkman/candidates
-# makefile (from 'Makefile', line 7)
-WEAPON_FILES = ../Model/Weapons/assault_rifle.cpp ../Model/Weapons/cannon.cpp
 # environment
 LC_ALL = C
- 
-make: *** No rule to make target 'all'.  Stop.
-
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
-# makefile (from 'Makefile', line 2)
-LIBS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
+# makefile (from 'Makefile', line 42)
+CMAKE_COMMAND = /usr/bin/cmake
 # automatic
 ^F = $(notdir $^)
-# default
-SUFFIXES := 
+# makefile (from 'Makefile', line 21)
+SUFFIXES = 
 # environment
 SNAP_REEXEC = 
 # environment
@@ -307,6 +290,7 @@ WINDOWPATH = 2
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
+ 
 # default
 .RECIPEPREFIX := 
 # environment
@@ -314,9 +298,9 @@ LC_ADDRESS = es_AR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 40290
+VSCODE_PID = 46823
 # variable set hash-table stats:
-# Load=151/1024=15%, Rehash=0, Collisions=27/185=15%
+# Load=144/1024=14%, Rehash=0, Collisions=27/178=15%
 
 # Pattern-specific Variable Values
 
@@ -324,179 +308,1256 @@ VSCODE_PID = 40290
 
 # Directories
 
-# . (device 2066, inode 16515199): 51 files, no impossibilities.
+# . (device 2066, inode 16515199): 54 files, no impossibilities.
 
-# 51 files, no impossibilities in 1 directories.
+# 54 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+%.hpux_make_needs_suffix_list:
+
+# 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-# Not a target:
-common_pointer.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.s
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-../Model/Map/terrain_map.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-../Server/mock_server.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-Button.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-all:
-#  Command line target.
-#  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
 
-client: client_main.cpp client_class.cpp common_camera.cpp common_game_screen.cpp common_ground.cpp common_model.cpp common_explosion.cpp common_protocol.cpp common_pointer.cpp common_selector.cpp common_frames.cpp Button.cpp Button.h ConstructionMenu.cpp ConstructionMenu.h UnitImageHandler.cpp UnitImageHandler.h VehicleImageHandler.cpp VehicleImageHandler.h UnitButton.h UnitButton.cpp ../Server/mock_server.cpp ../Server/control_unit.cpp ../Server/entity_factory.cpp ../Server/configuration_loader.cpp ../Model/Entities/light_infantry.cpp ../Model/Mobility/infantry_mobility.cpp ../Model/Entities/tank.cpp ../Model/Entities/trike.cpp ../Model/Mobility/vehicle_mobility.cpp ../Model/Weapons/assault_rifle.cpp ../Model/Weapons/cannon.cpp ../Model/Entities/unit.cpp ../Model/Entities/teamable.cpp ../Model/Weapons/weapon.cpp ../Model/Map/terrain_map.cpp ../Model/Map/block_position.cpp ../Model/Map/path_node.cpp common_tank.cpp common_trike.cpp common_unit.cpp common_assault.cpp common_canyon.cpp
+common_pointer.cpp.o:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
-	g++ $(CFLAGS) -o client client_main.cpp $(CLIENT_FILES) $(SRV_FILES) $(INFANTRY_FILES) $(VEHICLE_FILES) $(WEAPON_FILES) $(UNIT_FILES) $(MAP_FILES) $(UNITS_FILES) $(LIBS) $(WEAPONS_FILES)
+#  recipe to execute (from 'Makefile', line 537):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_pointer.cpp.o
 
-# Not a target:
-../Model/Mobility/infantry_mobility.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-common_ground.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-common_selector.cpp:
+cmake_force:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+ConstructionMenu.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 177):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/ConstructionMenu.cpp.s
+
+common_explosion.i: common_explosion.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+client_main.s: client_main.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_canyon.i: common_canyon.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_canyon.o: common_canyon.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1113):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1104):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.o
+
+common_pointer.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 546):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_pointer.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1032):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_camera.i: common_camera.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1023):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.o
+
+edit_cache:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 72):
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+
+common_camera.o: common_camera.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 906):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.s
+
+ConstructionMenu.i: ConstructionMenu.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+client_class.s: client_class.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+ConstructionMenu.o: ConstructionMenu.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1176):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 825):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.s
+
+all: cmake_check_build_system
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'Makefile', line 83):
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/CMakeFiles" "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/CMakeFiles/progress.marks"
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/CMakeFiles" 0
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 852):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.s
+
+UnitImageHandler.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 231):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/UnitImageHandler.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PHONY: default_target cmake_force rebuild_cache rebuild_cache/fast edit_cache edit_cache/fast all clean clean/fast preinstall preinstall/fast depend Client_Model Client_Model/fast Button.o Button.cpp.o Button.i Button.cpp.i Button.s Button.cpp.s ConstructionMenu.o ConstructionMenu.cpp.o ConstructionMenu.i ConstructionMenu.cpp.i ConstructionMenu.s ConstructionMenu.cpp.s UnitButton.o UnitButton.cpp.o UnitButton.i UnitButton.cpp.i UnitButton.s UnitButton.cpp.s UnitImageHandler.o UnitImageHandler.cpp.o UnitImageHandler.i UnitImageHandler.cpp.i UnitImageHandler.s UnitImageHandler.cpp.s VehicleImageHandler.o VehicleImageHandler.cpp.o VehicleImageHandler.i VehicleImageHandler.cpp.i VehicleImageHandler.s VehicleImageHandler.cpp.s client_class.o client_class.cpp.o client_class.i client_class.cpp.i client_class.s client_class.cpp.s client_main.o client_main.cpp.o client_main.i client_main.cpp.i client_main.s client_main.cpp.s common_assault.o common_assault.cpp.o common_assault.i common_assault.cpp.i common_assault.s common_assault.cpp.s common_camera.o common_camera.cpp.o common_camera.i common_camera.cpp.i common_camera.s common_camera.cpp.s common_canyon.o common_canyon.cpp.o common_canyon.i common_canyon.cpp.i common_canyon.s common_canyon.cpp.s common_explosion.o common_explosion.cpp.o common_explosion.i common_explosion.cpp.i common_explosion.s common_explosion.cpp.s common_frames.o common_frames.cpp.o common_frames.i common_frames.cpp.i common_frames.s common_frames.cpp.s common_game_screen.o common_game_screen.cpp.o common_game_screen.i common_game_screen.cpp.i common_game_screen.s common_game_screen.cpp.s common_ground.o common_ground.cpp.o common_ground.i common_ground.cpp.i common_ground.s common_ground.cpp.s common_model.o common_model.cpp.o common_model.i common_model.cpp.i common_model.s common_model.cpp.s common_pointer.o common_pointer.cpp.o common_pointer.i common_pointer.cpp.i common_pointer.s common_pointer.cpp.s common_protocol.o common_protocol.cpp.o common_protocol.i common_protocol.cpp.i common_protocol.s common_protocol.cpp.s common_selector.o common_selector.cpp.o common_selector.i common_selector.cpp.i common_selector.s common_selector.cpp.s common_tank.o common_tank.cpp.o common_tank.i common_tank.cpp.i common_tank.s common_tank.cpp.s common_trike.o common_trike.cpp.o common_trike.i common_trike.cpp.i common_trike.s common_trike.cpp.s common_unit.o common_unit.cpp.o common_unit.i common_unit.cpp.i common_unit.s common_unit.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.s home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.o home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.i home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.s home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.o home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.i home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.s home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.o home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.i home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.s home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.s home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.o home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.o home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.i home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.i home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.s home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.s help cmake_check_build_system
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-../Model/Weapons/weapon.cpp:
+common_ground.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 492):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_ground.cpp.i
+
+common_ground.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+ 
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 483):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_ground.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_model.s: common_model.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_selector.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 600):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_selector.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.i: home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_selector.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 591):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_selector.cpp.o
+
+common_explosion.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 411):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_explosion.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.o: home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1140):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.i
+
+client_main.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 312):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/client_main.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_protocol.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 582):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_protocol.cpp.s
+
+VehicleImageHandler.i: VehicleImageHandler.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Button.s: Button.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+VehicleImageHandler.o: VehicleImageHandler.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+UnitImageHandler.i: UnitImageHandler.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_tank.s: common_tank.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+UnitImageHandler.o: UnitImageHandler.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+preinstall/fast:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 105):
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1203):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.o: home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 924):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 915):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 978):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.s: home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 969):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_frames.s: common_frames.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_protocol.i: common_protocol.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_protocol.o: common_protocol.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.i: home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+VehicleImageHandler.s: VehicleImageHandler.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_assault.s: common_assault.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.SUFFIXES: .hpux_make_needs_suffix_list
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-../Server/configuration_loader.cpp:
+common_game_screen.cpp.s:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 474):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_game_screen.cpp.s
+
+UnitButton.s: UnitButton.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-../Model/Weapons/assault_rifle.cpp:
+client_class.cpp.i:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 276):
+ 
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/client_class.cpp.i
+
+common_model.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 528):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_model.cpp.s
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 11:54:58.433050692
+#  Last modified 2022-06-27 12:44:52.611766283
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-client_class.cpp:
+client_class.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 267):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/client_class.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 726):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1095):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.s
+
+common_trike.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 663):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_trike.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 870):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 861):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.o
+
+common_game_screen.i: common_game_screen.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.o: home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.NOTPARALLEL:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-Button.h:
+common_game_screen.o: common_game_screen.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_pointer.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 555):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_pointer.cpp.s
+
+Button.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 141):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/Button.cpp.i
+
+clean/fast: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_tank.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 627):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_tank.cpp.i
+
+common_protocol.s: common_protocol.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+client_main.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 303):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/client_main.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_trike.i: common_trike.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_tank.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_tank.cpp.o
+
+client_main.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 294):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/client_main.cpp.o
+
+VehicleImageHandler.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 258):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/VehicleImageHandler.cpp.s
+
+common_trike.o: common_trike.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 708):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 699):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.o
+
+common_canyon.s: common_canyon.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1122):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_frames.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 438):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_frames.cpp.i
+
+cmake_check_build_system:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := cmake_check_build_system
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/14=21%
+#  recipe to execute (from 'Makefile', line 1346):
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1041):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.s
+
+common_frames.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 429):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_frames.cpp.o
+
+common_camera.s: common_camera.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+ 
+common_pointer.i: common_pointer.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_pointer.o: common_pointer.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.o: home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+ConstructionMenu.s: ConstructionMenu.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_assault.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 330):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_assault.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 762):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.i
+
+common_assault.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 321):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_assault.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 753):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.o
+
+UnitButton.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 195):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/UnitButton.cpp.i
+
+UnitButton.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 186):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/UnitButton.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 960):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.i: home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+preinstall: all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 100):
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 735):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_ground.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 501):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_ground.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1167):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.i
+
+help:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1208):
+	@echo "The following are some of the valid targets for this Makefile:"
+	@echo "... all (the default if no target is provided)"
+	@echo "... clean"
+	@echo "... depend"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... Client_Model"
+	@echo "... Button.o"
+	@echo "... Button.i"
+	@echo "... Button.s"
+	@echo "... ConstructionMenu.o"
+	@echo "... ConstructionMenu.i"
+	@echo "... ConstructionMenu.s"
+	@echo "... UnitButton.o"
+	@echo "... UnitButton.i"
+	@echo "... UnitButton.s"
+	@echo "... UnitImageHandler.o"
+	@echo "... UnitImageHandler.i"
+	@echo "... UnitImageHandler.s"
+	@echo "... VehicleImageHandler.o"
+	@echo "... VehicleImageHandler.i"
+	@echo "... VehicleImageHandler.s"
+	@echo "... client_class.o"
+	@echo "... client_class.i"
+	@echo "... client_class.s"
+	@echo "... client_main.o"
+	@echo "... client_main.i"
+	@echo "... client_main.s"
+	@echo "... common_assault.o"
+	@echo "... common_assault.i"
+	@echo "... common_assault.s"
+	@echo "... common_camera.o"
+	@echo "... common_camera.i"
+	@echo "... common_camera.s"
+	@echo "... common_canyon.o"
+	@echo "... common_canyon.i"
+	@echo "... common_canyon.s"
+	@echo "... common_explosion.o"
+	@echo "... common_explosion.i"
+	@echo "... common_explosion.s"
+	@echo "... common_frames.o"
+	@echo "... common_frames.i"
+	@echo "... common_frames.s"
+	@echo "... common_game_screen.o"
+	@echo "... common_game_screen.i"
+	@echo "... common_game_screen.s"
+	@echo "... common_ground.o"
+	@echo "... common_ground.i"
+	@echo "... common_ground.s"
+	@echo "... common_model.o"
+	@echo "... common_model.i"
+	@echo "... common_model.s"
+	@echo "... common_pointer.o"
+	@echo "... common_pointer.i"
+	@echo "... common_pointer.s"
+	@echo "... common_protocol.o"
+	@echo "... common_protocol.i"
+	@echo "... common_protocol.s"
+	@echo "... common_selector.o"
+	@echo "... common_selector.i"
+	@echo "... common_selector.s"
+	@echo "... common_tank.o"
+	@echo "... common_tank.i"
+	@echo "... common_tank.s"
+	@echo "... common_trike.o"
+	@echo "... common_trike.i"
+	@echo "... common_trike.s"
+	@echo "... common_unit.o"
+	@echo "... common_unit.i"
+	@echo "... common_unit.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.s"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.o"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.i"
+	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.s"
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_selector.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 609):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_selector.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.s: home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_unit.o: common_unit.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_model.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+ 
+#  recipe to execute (from 'Makefile', line 519):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_model.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1005):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1149):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.s
+
+common_model.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 510):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_model.cpp.o
+
+.SILENT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-common_explosion.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 996):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-../Server/control_unit.cpp:
+depend:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 110):
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-client_main.cpp:
+UnitImageHandler.s: UnitImageHandler.cpp.s
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-../Model/Entities/tank.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.s:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 798):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 933):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.s
+
+common_ground.i: common_ground.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-UnitButton.h:
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.o:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1185):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.o
+
+common_ground.o: common_ground.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-../Model/Map/path_node.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 987):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 780):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.o
+
+common_selector.i: common_selector.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-common_frames.cpp:
+common_selector.o: common_selector.cpp.o
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-common_assault.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.s
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-UnitButton.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-common_model.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-../Model/Entities/unit.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-ConstructionMenu.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
 # Not a target:
@@ -505,135 +1566,774 @@ ConstructionMenu.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-common_canyon.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.i: home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.i
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-common_camera.cpp:
+common_canyon.cpp.i:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 384):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_canyon.cpp.i
+
+default_target: all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-ConstructionMenu.cpp:
+common_canyon.cpp.o:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 375):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_canyon.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-VehicleImageHandler.h:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.i:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1059):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1050):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.o
+
+common_camera.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 357):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_camera.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-UnitImageHandler.h:
+common_camera.cpp.o:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 348):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_camera.cpp.o
+
+common_unit.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 690):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_unit.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-../Model/Entities/light_infantry.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-VehicleImageHandler.cpp:
+ConstructionMenu.cpp.i:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 168):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/ConstructionMenu.cpp.i
 
-# Not a target:
-UnitImageHandler.cpp:
+client_class.cpp.s:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 285):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/client_class.cpp.s
 
-# Not a target:
-../Model/Mobility/vehicle_mobility.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.s:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
-
-# Not a target:
-common_protocol.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-common_trike.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-../Model/Weapons/cannon.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-common_game_screen.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-common_unit.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-../Model/Map/block_position.cpp:
+#  recipe to execute (from 'Makefile', line 744):
  
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.s
+
+ConstructionMenu.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 159):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/ConstructionMenu.cpp.o
+
+common_unit.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 672):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_unit.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1014):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s
+
+Client_Model/fast:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 123):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/build
+
+common_explosion.s: common_explosion.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 90):
+	$(MAKE) -f CMakeFiles/Makefile2 clean
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 879):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_explosion.o: common_explosion.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_game_screen.s: common_game_screen.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+rebuild_cache/fast: rebuild_cache
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 897):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.i
+
+client_class.i: client_class.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 888):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+edit_cache/fast: edit_cache
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+client_class.o: client_class.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1158):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 816):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.i
+
+VehicleImageHandler.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 249):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/VehicleImageHandler.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 807):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.o
+
+Button.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 150):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/Button.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 843):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.i
+
+VehicleImageHandler.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 240):
+ 
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/VehicleImageHandler.cpp.o
+
+UnitImageHandler.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 222):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/UnitImageHandler.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 834):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.o
+
+common_tank.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 636):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_tank.cpp.s
+
+UnitImageHandler.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 213):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/UnitImageHandler.cpp.o
+
+common_trike.s: common_trike.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1131):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 717):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 951):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.i
+
+common_frames.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 447):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_frames.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 942):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.o
+
+common_protocol.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 573):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_protocol.cpp.i
+
+common_pointer.s: common_pointer.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_explosion.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 420):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_explosion.cpp.s
+
+Button.i: Button.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Button.o: Button.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_tank.i: common_tank.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+client_main.i: client_main.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Button.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 132):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/Button.cpp.o
+
+common_tank.o: common_tank.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+client_main.o: client_main.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_assault.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 339):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_assault.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 771):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.s
+
+common_explosion.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 402):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_explosion.cpp.o
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+UnitButton.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 204):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/UnitButton.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.s: home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_unit.i: common_unit.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_frames.i: common_frames.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_frames.o: common_frames.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.hpux_make_needs_suffix_list:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-../Server/entity_factory.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-common_tank.cpp:
+common_assault.i: common_assault.cpp.i
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-../Model/Entities/teamable.cpp:
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.i
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-../Model/Entities/trike.cpp:
+common_assault.o: common_assault.cpp.o
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
+
+common_game_screen.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 465):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_game_screen.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1194):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.i
+
+UnitButton.i: UnitButton.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_game_screen.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 456):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_game_screen.cpp.o
+ 
+
+UnitButton.o: UnitButton.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 789):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.i
+
+common_unit.s: common_unit.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_ground.s: common_ground.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1086):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1077):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.o
+
+common_trike.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 654):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_trike.cpp.i
+
+common_selector.s: common_selector.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_trike.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 645):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_trike.cpp.o
+
+common_model.i: common_model.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Client_Model: cmake_check_build_system
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 118):
+	$(MAKE) -f CMakeFiles/Makefile2 Client_Model
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.s: home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_model.o: common_model.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_canyon.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 393):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_canyon.cpp.s
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+common_unit.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 681):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_unit.cpp.i
+
+home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1068):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.s
+
+common_protocol.cpp.o:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 564):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_protocol.cpp.o
+
+common_camera.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 366):
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_camera.cpp.s
+
+rebuild_cache:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 61):
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 
 # files hash-table stats:
-# Load=48/1024=5%, Rehash=0, Collisions=11/101=11%
+# Load=263/1024=26%, Rehash=0, Collisions=154/1037=15%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 73 / storage = 1371 B / avg = 18 B
-# current buf: size = 8162 B / used = 1371 B / count = 73 / avg = 18 B
+# strcache buffers: 2 (1) / strings = 318 / storage = 11404 B / avg = 35 B
+# current buf: size = 8162 B / used = 3266 B / count = 49 / avg = 66 B
+# other used: total = 8138 B / count = 269 / avg = 30 B
+# other free: total = 24 B / max = 24 B / min = 24 B / avg = 24 B
 
-# strcache performance: lookups = 105 / hit rate = 30%
+# strcache performance: lookups = 1481 / hit rate = 78%
 # hash-table stats:
-# Load=73/8192=1%, Rehash=0, Collisions=1/105=1%
-# Finished Make data base on Mon Jun 27 11:56:18 2022
+# Load=318/8192=4%, Rehash=0, Collisions=24/1481=2%
+# Finished Make data base on Mon Jun 27 13:48:11 2022
 
  

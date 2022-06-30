@@ -39,6 +39,8 @@ class Protocol {
 
     void createTrike();
 
+
+
 	//SERIALIZE -----------------------------------------------------------------------------
 	/*
 	uint8_t Protocol::receive_player_code(Socket &socket);

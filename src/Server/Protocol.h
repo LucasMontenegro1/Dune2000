@@ -12,6 +12,7 @@ class Protocol {
 public:
     Protocol();
     int decodeLoginInstruction(Socket& socket, bool& was_closed);
+    void sendMapList();
 };
 
 
