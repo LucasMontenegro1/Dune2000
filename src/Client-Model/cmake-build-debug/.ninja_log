@@ -1,0 +1,72 @@
+# ninja log v5
+0	196	0	CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+0	196	0	Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+0	196	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+0	196	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+196	1035	1656354206912208678	CMakeFiles/Client_Model.dir/Button.cpp.o	2b244d8a1b7a21c3
+196	1596	1656354207476194309	CMakeFiles/Client_Model.dir/Client_Model_autogen/mocs_compilation.cpp.o	16eefbb84dcd932
+196	1703	1656354207584191557	CMakeFiles/Client_Model.dir/ConstructionMenu.cpp.o	7a1e7b26284a1c7b
+1037	1930	1656354207812185750	CMakeFiles/Client_Model.dir/UnitButton.cpp.o	5b49295b92dd7ce6
+1596	3041	1656354208924157446	CMakeFiles/Client_Model.dir/UnitImageHandler.cpp.o	7c006692fb5c99
+1704	3140	1656354209020155003	CMakeFiles/Client_Model.dir/VehicleImageHandler.cpp.o	727bf22e9b76985c
+1930	4094	1656354209976130697	CMakeFiles/Client_Model.dir/client_class.cpp.o	5bf10cb507990a8f
+3141	4118	1656354209996130188	CMakeFiles/Client_Model.dir/common_assault.cpp.o	d8e4e48eae0ea406
+3042	4544	1656354210424119315	CMakeFiles/Client_Model.dir/client_main.cpp.o	468cca376e7b3c49
+4095	5268	1656354211148100928	CMakeFiles/Client_Model.dir/common_camera.cpp.o	17e4fd5a02674efc
+4119	5302	1656354211184100014	CMakeFiles/Client_Model.dir/common_canyon.cpp.o	ac448ac3fce7328
+4544	5548	1656354211428093821	CMakeFiles/Client_Model.dir/common_explosion.cpp.o	60fcc8783dc3e5b0
+5269	6390	1656354212272072407	CMakeFiles/Client_Model.dir/common_frames.cpp.o	cb06f2cbd58ee9cb
+5548	6628	1656354212508066423	CMakeFiles/Client_Model.dir/common_ground.cpp.o	f718b7ec2fdd58aa
+5303	7180	1656354213060052428	CMakeFiles/Client_Model.dir/common_game_screen.cpp.o	d416f56ecc25acae
+6390	8177	1656354214060027095	CMakeFiles/Client_Model.dir/common_model.cpp.o	8b38b2594bfe667e
+6628	8201	1656354214080026589	CMakeFiles/Client_Model.dir/common_pointer.cpp.o	36f4c6e925c313a4
+8177	9158	1656354215040002293	CMakeFiles/Client_Model.dir/common_selector.cpp.o	e493cede67d1490c
+8202	9356	1656354215235997337	CMakeFiles/Client_Model.dir/common_tank.cpp.o	1709a624e421b2f
+7181	9512	1656354215391993392	CMakeFiles/Client_Model.dir/common_protocol.cpp.o	50ae7b1fffde2375
+9159	10187	1656354216067976299	CMakeFiles/Client_Model.dir/common_trike.cpp.o	ce63f3f4e1720be5
+10187	10202	1656354216083975895	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.o	d2a4f5e0d59e96af
+9357	10440	1656354216319969933	CMakeFiles/Client_Model.dir/common_unit.cpp.o	f80828730ded460e
+10203	11228	1656354217107950026	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.o	a80dcc817cb80e0b
+10440	11537	1656354217419942152	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.o	376cb00f5a7827c8
+9512	11781	1656354217659936094	CMakeFiles/Client_Model.dir/dunelogin.cpp.o	900149eb7ca9dcf4
+11538	12238	1656354218119924486	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.o	d54deb5b9e779931
+11782	12274	1656354218155923577	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.o	345f77fb4fae1d9f
+11229	12376	1656354218255921056	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.o	3cfe9ab46d0c87b8
+12376	12930	1656354218811907035	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.o	64f0f6ce6ea85bad
+12274	12965	1656354218847906127	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.o	503e4d4624c31f00
+12238	12969	1656354218851906026	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.o	698a187fee7efdf8
+12969	13556	1656354219435891308	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.o	9bf0b12ecb43cb7c
+12930	13621	1656354219503889595	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.o	3d5298a77acf0bec
+12966	13988	1656354219867880424	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.o	36cbb0378a4931b2
+13988	14013	1656354219895879718	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o	2448b629086db08b
+14013	14039	1656354219919879113	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o	3e1905e98d5a4b3f
+14040	14070	1656354219951878308	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.o	976115c9c87ee993
+13556	14085	1656354219967877905	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.o	a1fdfe2a72717a4e
+14071	14101	1656354219983877501	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.o	2f8968cb50af4dc5
+14085	14124	1656354220003876997	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.o	66b3be71ffa4a17c
+14102	14497	1656354220375867634	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Common/SocketException.cpp.o	57f4335d7d3c9d17
+14124	14711	1656354220591862197	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Common/Sockets.cpp.o	890e64bd00606e53
+13621	14934	1656354220815856558	CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.o	c962dcfea54b97c7
+14934	15557	1656354221435840961	Client_Model	ab70f6508ae11f83
+3	6	0	CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+3	6	0	Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+3	6	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+3	6	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+2	6	0	CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+2	6	0	Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+2	6	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+2	6	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+2	5	0	CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+2	5	0	Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+2	5	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+5	1928	1656354804887905347	CMakeFiles/Client_Model.dir/dunelogin.cpp.o	900149eb7ca9dcf4
+1928	2429	1656354805387896730	Client_Model	ab70f6508ae11f83
+187	234	0	CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+187	234	0	Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+187	234	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+187	234	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+3	6	0	CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+3	6	0	Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c
+3	6	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/CMakeFiles/Client_Model_autogen	d0d064d2dc45e80c
+3	6	0	/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/cmake-build-debug/Client_Model_autogen/mocs_compilation.cpp	d0d064d2dc45e80c

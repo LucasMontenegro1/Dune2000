@@ -215,6 +215,9 @@ Server_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Server_SOURCE_DIR:STATIC=/home/lucas/Desktop/Taller I/Dune2000/src/Server
 
+//The directory containing a CMake configuration file for yaml-cpp.
+yaml-cpp_DIR:PATH=/usr/local/share/cmake/yaml-cpp
+
 
 ########################
 # INTERNAL cache entries
