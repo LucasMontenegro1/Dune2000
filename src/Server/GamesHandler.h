@@ -6,19 +6,19 @@
 #include "mock_server.h"
 #include "blocking_queue.h"
 
-template<class T>
 class GamesHandler {
     //std::map<std::string, MockServer*> games;
     MockServer game;
-    BlockingQueue receiver;
+    //BlockingQueue receiver;
     
     public:
+/*
     void push_order(const T &val);
 
     void update();
 
     T send_state();
-
+*/
     /*
     bool create_game(std::string gameName, int limitPlayers, std::string playerName, int team);
 

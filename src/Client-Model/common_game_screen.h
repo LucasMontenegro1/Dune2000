@@ -10,11 +10,14 @@
 #include "common_model.h"
 #include "common_camera.h"
 #include "common_pointer.h"
+#include "common_music_controller.h"
+
 
 
 class GameScreen {
 	int posX;//Posiciones de la camara respecto al mapa
 	int posY;
+	MusicController musics;
 	
 	void check_events(Pointer &pointer, Event &event, Model &model, Protocol &protocol, int posX, int posY);
 	

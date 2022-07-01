@@ -7,6 +7,7 @@
 #include <iostream>
 
 //Game es el modelo de la partida y receiver la blockingqueue que recibe todas las instrucciones
+/*
 template<class T>
 void GamesHandler::push_order(const T &val){
     receiver.push(val);
@@ -23,7 +24,7 @@ T GamesHandler::send_state(){
     T state = game.get_state();
     return state;
 }
-
+*/
 
 //Esto esta mal pero lo guardo por si llega a servir --------------------------------------------------
 /*

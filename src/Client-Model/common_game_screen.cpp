@@ -27,7 +27,7 @@
 using namespace sf;
 
 
-GameScreen::GameScreen(): posX(0), posY(0) {}
+GameScreen::GameScreen(): posX(0), posY(0), musics{} {}
 
 
 void GameScreen::draw_grounds(RenderWindow &window, Model &model, Camera &camera, int sizeX, int sizeY){
@@ -56,6 +56,7 @@ void GameScreen::draw_units(RenderWindow &window, Model &model, Camera &camera, 
 			model.eliminate_unit(i);
 		}
 	}
+	size_t count = 0;
 	for(auto iter = model.get_units().begin(); iter != model.get_units().end(); ++iter){
 		model.move_by_position(iter->first);
 		std::tuple<int, int, int, int> uBits = iter->second->get_bits();
@@ -64,10 +65,13 @@ void GameScreen::draw_units(RenderWindow &window, Model &model, Camera &camera, 
 			if(iter->second->was_damaged()) iter->second->animate_damage();
 			window.draw(*iter->second);
 			if(iter->second->is_attacking()){
+				count++;
+				musics.reproduceAttacking();
 				if(iter->second->animate_attack()) window.draw(iter->second->get_weapon());
 			}
 		}
 	}
+	if(count == 0) musics.reproducePredifine();
 }
 
 

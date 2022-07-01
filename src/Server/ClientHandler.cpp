@@ -4,6 +4,7 @@
 
 #include <sys/socket.h>
 #include "ClientHandler.h"
+#include "GamesHandler.h"
 #include "../Common/SocketException.h"
 
 #define JOIN_GAME 1
@@ -11,8 +12,9 @@
 #define CREATE_GAME 3
 #define LIST_MAPS 4
 
+
 ClientHandler::ClientHandler(Socket skt, GamesHandler *gamesHandler)
-        : is_over(false), games(gamesHandler) {
+        : is_over(false), game(gamesHandler) {
     this->peer = std::move(skt);
 }
 
@@ -21,7 +23,7 @@ void ClientHandler::run() {
         try {
 
             bool was_closed = false;
-            game.push_order(pr.decodeLoginInstruction(peer, was_closed)); //Pusheo cada una de las ordenes en la blockingqueue recieve
+            //game.push_order(pr.decodeLoginInstruction(peer, was_closed)); //Pusheo cada una de las ordenes en la blockingqueue recieve
             //int instr = pr.decodeLoginInstruction(peer, was_closed);
             this->is_over = was_closed;
             /*
@@ -47,9 +49,10 @@ void ClientHandler::run() {
     }
 }
 
+/*
 void ClientHandler::send_state(const T &val){
     sender.push(val); //Pusheo el estado en la cola propia del cliente 
-}
+}*/
 
 void ClientHandler::stop() {
     peer.shutdown(SHUT_RDWR);

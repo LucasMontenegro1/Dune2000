@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model"
+CMAKE_SOURCE_DIR = /home/agus/Documentos/tallerI/Dune2000/src/Client-Model
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model"
+CMAKE_BINARY_DIR = /home/agus/Documentos/tallerI/Dune2000/src/Client-Model
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/CMakeFiles" "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/agus/Documentos/tallerI/Dune2000/src/Client-Model/CMakeFiles /home/agus/Documentos/tallerI/Dune2000/src/Client-Model/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lucas/Desktop/Taller I/Dune2000/src/Client-Model/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/agus/Documentos/tallerI/Dune2000/src/Client-Model/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,19 @@ Client_Model/fast:
 	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/build
 .PHONY : Client_Model/fast
 
+#=============================================================================
+# Target rules for targets named Client_Model_autogen
+
+# Build rule for target.
+Client_Model_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Client_Model_autogen
+.PHONY : Client_Model_autogen
+
+# fast build rule for target.
+Client_Model_autogen/fast:
+	$(MAKE) -f CMakeFiles/Client_Model_autogen.dir/build.make CMakeFiles/Client_Model_autogen.dir/build
+.PHONY : Client_Model_autogen/fast
+
 Button.o: Button.cpp.o
 
 .PHONY : Button.o
@@ -149,6 +162,33 @@ Button.s: Button.cpp.s
 Button.cpp.s:
 	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/Button.cpp.s
 .PHONY : Button.cpp.s
+
+Client_Model_autogen/mocs_compilation.o: Client_Model_autogen/mocs_compilation.cpp.o
+
+.PHONY : Client_Model_autogen/mocs_compilation.o
+
+# target to build an object file
+Client_Model_autogen/mocs_compilation.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/Client_Model_autogen/mocs_compilation.cpp.o
+.PHONY : Client_Model_autogen/mocs_compilation.cpp.o
+
+Client_Model_autogen/mocs_compilation.i: Client_Model_autogen/mocs_compilation.cpp.i
+
+.PHONY : Client_Model_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+Client_Model_autogen/mocs_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/Client_Model_autogen/mocs_compilation.cpp.i
+.PHONY : Client_Model_autogen/mocs_compilation.cpp.i
+
+Client_Model_autogen/mocs_compilation.s: Client_Model_autogen/mocs_compilation.cpp.s
+
+.PHONY : Client_Model_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+Client_Model_autogen/mocs_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/Client_Model_autogen/mocs_compilation.cpp.s
+.PHONY : Client_Model_autogen/mocs_compilation.cpp.s
 
 ConstructionMenu.o: ConstructionMenu.cpp.o
 
@@ -528,6 +568,33 @@ common_model.cpp.s:
 	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_model.cpp.s
 .PHONY : common_model.cpp.s
 
+common_music_controller.o: common_music_controller.cpp.o
+
+.PHONY : common_music_controller.o
+
+# target to build an object file
+common_music_controller.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_music_controller.cpp.o
+.PHONY : common_music_controller.cpp.o
+
+common_music_controller.i: common_music_controller.cpp.i
+
+.PHONY : common_music_controller.i
+
+# target to preprocess a source file
+common_music_controller.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_music_controller.cpp.i
+.PHONY : common_music_controller.cpp.i
+
+common_music_controller.s: common_music_controller.cpp.s
+
+.PHONY : common_music_controller.s
+
+# target to generate assembly for a file
+common_music_controller.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_music_controller.cpp.s
+.PHONY : common_music_controller.cpp.s
+
 common_pointer.o: common_pointer.cpp.o
 
 .PHONY : common_pointer.o
@@ -690,518 +757,599 @@ common_unit.cpp.s:
 	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/common_unit.cpp.s
 .PHONY : common_unit.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.o
+dunelogin.o: dunelogin.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.o
-
-# target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.o
-
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.i
-
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.i
-
-# target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.i
-
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.s
-
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.s
-
-# target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.cpp.s
-
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.o
-
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.o
+.PHONY : dunelogin.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.o
+dunelogin.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/dunelogin.cpp.o
+.PHONY : dunelogin.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.i
+dunelogin.i: dunelogin.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.i
+.PHONY : dunelogin.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.i
+dunelogin.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/dunelogin.cpp.i
+.PHONY : dunelogin.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.s
+dunelogin.s: dunelogin.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.s
+.PHONY : dunelogin.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.cpp.s
+dunelogin.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/dunelogin.cpp.s
+.PHONY : dunelogin.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.o: home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.i: home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.s: home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.o: home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.i: home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.s: home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.o: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.i: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.s: home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.o: home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.i: home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.s: home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.o: home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.i: home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.s: home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.o: home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.i: home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.s: home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.cpp.s
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.o: home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.o: home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.o
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.o
 
 # target to build an object file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.o:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.o
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.o
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.o
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.i: home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.i: home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.i
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.i
 
 # target to preprocess a source file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.i:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.i
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.i
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.i
 
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.s: home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.s: home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.s
 
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.s
 
 # target to generate assembly for a file
-home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.s:
-	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.s
-.PHONY : home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.cpp.s
+home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.cpp.s
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.o: home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.o
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.o
+
+# target to build an object file
+home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.o
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.i: home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.i
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.i
+
+# target to preprocess a source file
+home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.i
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.s: home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.s
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.s
+
+# target to generate assembly for a file
+home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.cpp.s
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.o: home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.o
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.o
+
+# target to build an object file
+home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.o
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.i: home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.i
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.i
+
+# target to preprocess a source file
+home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.i
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.s: home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.s
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.s
+
+# target to generate assembly for a file
+home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.cpp.s
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.o: home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.o
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.o
+
+# target to build an object file
+home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.o
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.i: home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.i
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.i
+
+# target to preprocess a source file
+home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.i
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.s: home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.s
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.s
+
+# target to generate assembly for a file
+home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.cpp.s
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.o: home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.o
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.o
+
+# target to build an object file
+home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.o:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.o
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.o
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.i: home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.i
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.i
+
+# target to preprocess a source file
+home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.i:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.i
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.i
+
+home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.s: home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.s
+
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.s
+
+# target to generate assembly for a file
+home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.s:
+	$(MAKE) -f CMakeFiles/Client_Model.dir/build.make CMakeFiles/Client_Model.dir/home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.s
+.PHONY : home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.cpp.s
 
 # Help Target
 help:
@@ -1212,9 +1360,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Client_Model"
+	@echo "... Client_Model_autogen"
 	@echo "... Button.o"
 	@echo "... Button.i"
 	@echo "... Button.s"
+	@echo "... Client_Model_autogen/mocs_compilation.o"
+	@echo "... Client_Model_autogen/mocs_compilation.i"
+	@echo "... Client_Model_autogen/mocs_compilation.s"
 	@echo "... ConstructionMenu.o"
 	@echo "... ConstructionMenu.i"
 	@echo "... ConstructionMenu.s"
@@ -1257,6 +1409,9 @@ help:
 	@echo "... common_model.o"
 	@echo "... common_model.i"
 	@echo "... common_model.s"
+	@echo "... common_music_controller.o"
+	@echo "... common_music_controller.i"
+	@echo "... common_music_controller.s"
 	@echo "... common_pointer.o"
 	@echo "... common_pointer.i"
 	@echo "... common_pointer.s"
@@ -1275,63 +1430,72 @@ help:
 	@echo "... common_unit.o"
 	@echo "... common_unit.i"
 	@echo "... common_unit.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/building.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/construction_centre.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/light_infantry.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/tank.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/teamable.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/trike.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Entities/unit.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/block_position.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/path_node.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Map/terrain_map.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/infantry_mobility.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Mobility/vehicle_mobility.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/assault_rifle.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/cannon.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Model/Weapons/weapon.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/configuration_loader.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/control_unit.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/entity_factory.s"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.o"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.i"
-	@echo "... home/lucas/Desktop/Taller_I/Dune2000/src/Server/mock_server.s"
+	@echo "... dunelogin.o"
+	@echo "... dunelogin.i"
+	@echo "... dunelogin.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Common/SocketException.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Common/Sockets.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/building.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/construction_centre.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/light_infantry.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/tank.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/teamable.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/trike.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Entities/unit.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Map/block_position.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Map/path_node.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Map/terrain_map.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/infantry_mobility.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Mobility/vehicle_mobility.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/assault_rifle.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/cannon.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Model/Weapons/weapon.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/configuration_loader.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/control_unit.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/entity_factory.s"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.o"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.i"
+	@echo "... home/agus/Documentos/tallerI/Dune2000/src/Server/mock_server.s"
 .PHONY : help
 
 

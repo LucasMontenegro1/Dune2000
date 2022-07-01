@@ -61,15 +61,13 @@ find_package(Qt5 COMPONENTS
 
 find_package(SFML COMPONENTS system window graphics network audio)
 
-find_package(Qt5Multimedia REQUIRED )
-find_package(Qt5MultimediaWidgets REQUIRED)
+
 
 target_link_libraries(Client_Model yaml-cpp)
 target_link_libraries(Client_Model
         Qt5::Core
         Qt5::Gui
         Qt5::Widgets
-        Qt5::Multimedia
         )
 
 target_link_libraries(Client_Model sfml-graphics sfml-window sfml-system sfml-audio)

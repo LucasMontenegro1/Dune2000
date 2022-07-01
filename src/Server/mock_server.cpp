@@ -18,6 +18,7 @@ cu(360, 360){
 bool MockServer::addPlayer(std::string playerName, int team){
 	if(actualPlayers + 1 > limitPlayers) return false;
 	players.insert(std::pair<std::string, int>(playerName, team));
+	return true;
 }
 
 std::tuple<int, int> MockServer::listGame(){

@@ -17,7 +17,7 @@ private:
     Socket peer;
     std::atomic<bool> is_over;
     GamesHandler* game;
-    BlockingQueue sender;
+    //BlockingQueue sender;
 
 
 public:
