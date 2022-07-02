@@ -166,5 +166,6 @@ void GameScreen::show(Model &model, Protocol &protocol){
         pointer.render(window);
         window.display();
         protocol.update();
+		musics.reproduce();
     }
 }

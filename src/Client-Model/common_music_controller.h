@@ -14,6 +14,8 @@ class MusicController{
     Music predifine1;
     Music predifine2;
     bool is_attacking;
+    bool is_reproducing;
+    int cont;
 
     public:
     MusicController();
@@ -21,6 +23,8 @@ class MusicController{
     void reproducePredifine();
 
     void reproduceAttacking();
+
+    void reproduce();
 
 };
 #endif

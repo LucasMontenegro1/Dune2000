@@ -25,7 +25,6 @@ Protocol::Protocol(): server{0, "a", 0}, skins{} {
 	this->server.create_unit(1, 1, 5,30);
 	this->server.create_unit(0, 2, 0, 10);
 	this->server.create_unit(1, 1, 5,10);
-	this->server.create_unit(1, 2, 0,20);
 }
 
 Ground Protocol::receive_grounds(){

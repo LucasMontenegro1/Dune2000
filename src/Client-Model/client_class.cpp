@@ -21,7 +21,7 @@
 
 using namespace sf;
 
-Client::Client(char* host, char* port): protocol{}, screen{}, skt(host, port) {}
+Client::Client(char* host, char* port): protocol{}, screen{} {}//, skt(host, port) {}
 	
 	
 void Client::show_window(){
