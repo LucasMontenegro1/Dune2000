@@ -8,7 +8,7 @@
 
 class GamesHandler {
     //std::map<std::string, MockServer*> games;
-    MockServer game;
+    //MockServer game;
     //BlockingQueue receiver;
     
     public:

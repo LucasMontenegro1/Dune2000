@@ -1,0 +1,13 @@
+# ninja log v5
+1	33	1656863744108912391	CMakeFiles/Server.dir/Protocol.cpp.o	51033a44aa7ee38d
+0	330	1656863744404902493	CMakeFiles/Server.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Common/SocketException.cpp.o	e2bfeefc93cc5588
+1	393	1656863744468900354	CMakeFiles/Server.dir/Thread.cpp.o	cc98f41cd8a32993
+0	412	1656863744488899685	CMakeFiles/Server.dir/home/lucas/Desktop/Taller_I/Dune2000/src/Common/Sockets.cpp.o	3a5dca5c35aa6b73
+1	491	1656863744568897011	CMakeFiles/Server.dir/GamesHandler.cpp.o	de470c02bb1e5eb3
+33	516	1656863744592896208	CMakeFiles/Server.dir/Game.cpp.o	ea587ede20a010fa
+1	620	1656863744696892731	CMakeFiles/Server.dir/ClientHandler.cpp.o	7440f8caaace2734
+0	624	1656863744700892597	CMakeFiles/Server.dir/main.cpp.o	9fa71ed15755f9d0
+1	1297	1656863745372870130	CMakeFiles/Server.dir/MapLoader.cpp.o	3c34e09ae1007eb5
+1	490	1656863764652227008	CMakeFiles/Server.dir/GamesHandler.cpp.o	de470c02bb1e5eb3
+1	502	1656863764664226608	CMakeFiles/Server.dir/main.cpp.o	9fa71ed15755f9d0
+1	520	1656863764684225942	CMakeFiles/Server.dir/ClientHandler.cpp.o	7440f8caaace2734

@@ -1,0 +1,3 @@
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/CMakeFiles/Server.dir
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/CMakeFiles/edit_cache.dir
+/home/lucas/Desktop/Taller I/Dune2000/src/Server/CMakeFiles/rebuild_cache.dir

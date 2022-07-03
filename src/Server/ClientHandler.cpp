@@ -24,14 +24,16 @@ void ClientHandler::run() {
 
             bool was_closed = false;
             //game.push_order(pr.decodeLoginInstruction(peer, was_closed)); //Pusheo cada una de las ordenes en la blockingqueue recieve
-            //int instr = pr.decodeLoginInstruction(peer, was_closed);
+            int instr = pr.decodeLoginInstruction(peer, was_closed);
             this->is_over = was_closed;
-            /*
             if (!is_over) {
                 switch (instr) {
                     case JOIN_GAME:
+                        //join game -->si se une pasar a mandar el estado del juego
+                        //pr.sendstate
                         break;
                     case LIST_GAMES:
+                        //pr.sendListogames
                         break;
                     case CREATE_GAME:
                         break;
@@ -40,7 +42,7 @@ void ClientHandler::run() {
                         break;
                 }
             }
-            */
+
 
         } catch (SocketException &e) {
             is_over = true;
