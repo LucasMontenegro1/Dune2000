@@ -6,7 +6,7 @@
 #include "mock_server.h"
 #include <iostream>
 
-//Game es el modelo de la partida y receiver la blockingqueue que recibe todas las instrucciones
+
 /*
 template<class T>
 void GamesHandler::push_order(const T &val){
@@ -45,3 +45,21 @@ void GamesHandler::list_games(){
 	}	
 }
 */
+bool GamesHandler::findGame(const string &name) {
+    std::map<std::string, Game> ::iterator it;
+    it = games.find(name);
+    if (it!= games.end()){
+        return true;
+    }
+
+    return false;
+}
+
+void GamesHandler::runGameIfCOmpleted(std::string& name) {
+    int r = findGame(name);
+    if (r) {
+        if (games.at(name).isCompleted()) {
+            games.at(name).run();
+        }
+    }
+}

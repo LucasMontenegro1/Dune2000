@@ -17,6 +17,7 @@ private:
     int max_players;
     int currentPlayers;
     bool verifySize();
+    void OrderReciever();
 public:
     Game(const std::string&, const int);
     const std::string getName();

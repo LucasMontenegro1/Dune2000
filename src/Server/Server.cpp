@@ -60,7 +60,6 @@ void Server::listener() {
 
 }
 
-template<class T>
 void Server::run() {
     std::thread acceptor(&Server::listener, this);
     while (is_running){

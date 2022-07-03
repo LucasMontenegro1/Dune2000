@@ -5,8 +5,13 @@
 #define SERVER_GAMESHANDLER_H
 #include "mock_server.h"
 #include "blocking_queue.h"
+#include "Game.h"
 
 class GamesHandler {
+    std::mutex mute;
+    std::map<std::string, Game> games;
+    bool findGame(const std::string&);
+
     //std::map<std::string, MockServer*> games;
     //MockServer game;
     //BlockingQueue receiver;
@@ -26,6 +31,7 @@ class GamesHandler {
 
     void list_games();
     */
+    void runGameIfCOmpleted(std::string& name);
 };
 
 
