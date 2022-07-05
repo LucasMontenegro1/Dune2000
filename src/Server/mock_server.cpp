@@ -8,7 +8,7 @@
 
 typedef std::pair<BlockPosition, BlockTerrain> TerrainPos;
 
-MockServer::MockServer(int limitPlayres, std::string playerName, int team) :
+MockServer::MockServer(int limitPlayers, std::string playerName, int team) :
 cu(360, 360){
 	players.insert(std::pair<std::string, int>(playerName, team));
 	this->limitPlayers = limitPlayers;

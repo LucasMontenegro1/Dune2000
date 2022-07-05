@@ -28,14 +28,17 @@ void Server::listener() {
         try {
             Socket accept = skt.accept();
             auto *nuevo = new ClientHandler(std::move(accept), &gamesHandler);
+
+            /* esto esta mal porque el aceptador es bloqueante
             gamesHandler.update();
-            nuevo->start();
-            clients.push_back(nuevo);
-            auto it = clients.begin();
             T actual_state = gamesHandler.send_state(); //Obtengo el estado actual del juego
             for(size_t i = 0; i < clients.size(); i++){
                 clients[i].send(actual_state); //Envio el estado a cada uno de los clientes
             }
+             */
+            nuevo->start();
+            clients.push_back(nuevo);
+            auto it = clients.begin();
             while (it != clients.end()) {
                 if ((*it)->isOver()) {
                     (*it)->stop();
